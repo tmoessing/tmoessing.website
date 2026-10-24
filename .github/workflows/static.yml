@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Only upload your site files
-          path: './tyler.moessing'
+          path: "."
 
       - name: Deploy to GitHub Pages
         id: deployment
