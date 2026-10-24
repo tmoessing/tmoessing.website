@@ -16,23 +16,31 @@ export class ContentLoader {
     }
 
     /**
-     * Entry point: Fetches professional and personal content concurrently.
+     * Entry point: Fetches general, professional, and personal content concurrently.
      */
     async load() {
         try {
-            const [profRes, persRes] = await Promise.all([
-                fetch('docs/professional_content.md?v=3.3'),
-                fetch('docs/personal_content.md?v=3.3')
-            ]);
-            
-            const [profText, persText] = await Promise.all([
-                profRes.text(),
-                persRes.text()
-            ]);
+            const files = [
+                'docs/general.md',
+                'docs/professional_content/about.md',
+                'docs/professional_content/experience.md',
+                'docs/professional_content/projects.md',
+                'docs/professional_content/education.md',
+                'docs/professional_content/skills.md',
+                'docs/professional_content/service.md',
+                'docs/professional_content/volunteer.md',
+                'docs/professional_content/interests.md',
+                'docs/professional_content/credentials.md',
+                'docs/personal_content/picks_and_plugs.md',
+                'docs/personal_content/personal_projects.md'
+            ];
+            const texts = await Promise.all(
+                files.map(f => fetch(`${f}?v=3.4`).then(res => res.text()))
+            );
 
-            this.content = this.parser.parseContent(profText);
-            this.content = this.parser.parseContent(persText, this.content);
-            
+            // Each file merges into the same content object.
+            this.content = texts.reduce((content, text) => this.parser.parseContent(text, content), {});
+
             this.search.collectSearchableItems(this.content);
             this.populatePage();
             

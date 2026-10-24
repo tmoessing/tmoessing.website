@@ -33,9 +33,23 @@ export class Renderer {
     renderProfile(profile) {
         if (!profile) return;
         this.setTextContent('.profile-name', profile.name);
-        const titleHTML = (profile.title || '').split('|').map(part => `<span>${part.trim()}</span>`).join('');
-        this.setHTML('.profile-title', titleHTML);
-        this.setAttr('.profile-photo', 'src', profile.photo);
+        const toTitleHTML = (title) => (title || '').split('|').map(part => `<span>${part.trim()}</span>`).join(' ');
+        const isPersonal = window.location.hash.startsWith('#/personal');
+
+        // Store both titles and photos so app.js can swap them when the view changes.
+        const title = document.querySelector('.profile-title');
+        if (title) {
+            title.dataset.professionalTitle = toTitleHTML(profile.professional_title);
+            title.dataset.personalTitle = toTitleHTML(profile.personal_title || profile.professional_title);
+            title.innerHTML = isPersonal ? title.dataset.personalTitle : title.dataset.professionalTitle;
+        }
+
+        const photo = document.querySelector('.profile-photo');
+        if (photo) {
+            photo.dataset.professionalPhoto = profile.professional_photo || '';
+            photo.dataset.personalPhoto = profile.personal_photo || profile.professional_photo || '';
+            photo.src = isPersonal ? photo.dataset.personalPhoto : photo.dataset.professionalPhoto;
+        }
     }
 
     renderContact(contact) {

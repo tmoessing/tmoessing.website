@@ -6,6 +6,17 @@ export function initApp() {
     let currentActiveView = 'resume';
     let previousView = 'resume';
 
+    // Swap the sidebar photo and title to the ones stored for this mode by Renderer.renderProfile.
+    const setProfileMode = (mode) => {
+        const photo = document.querySelector('.profile-photo');
+        const src = photo?.dataset[`${mode}Photo`];
+        if (src) photo.src = src;
+
+        const title = document.querySelector('.profile-title');
+        const titleHTML = title?.dataset[`${mode}Title`];
+        if (titleHTML) title.innerHTML = titleHTML;
+    };
+
     // Export functions to window for HTML onclick attributes
     window.switchView = (view, updateHash = true) => {
         const resumeBtn = document.getElementById('btn-resume');
@@ -38,6 +49,7 @@ export function initApp() {
             document.querySelectorAll('.resume-nav, .professional-only-nav').forEach(el => el.style.display = 'flex');
             document.querySelectorAll('.library-nav').forEach(el => el.style.display = 'none');
             
+            setProfileMode('professional');
             document.title = "Tyler Moessing - Professional";
             if (updateHash) window.location.hash = '/professional';
         } else if (view === 'search' || view.includes('search')) {
@@ -79,6 +91,7 @@ export function initApp() {
             document.querySelectorAll('.resume-nav, .professional-only-nav').forEach(el => el.style.display = 'none');
             document.querySelectorAll('.library-nav').forEach(el => el.style.display = 'flex');
             
+            setProfileMode('personal');
             document.title = "Tyler Moessing - Personal";
             if (updateHash) {
                 if (window.location.hash === '#/personal/personal-projects') {
@@ -246,7 +259,22 @@ export function initApp() {
             if (targetId && targetId.startsWith('#') && !targetId.includes('/')) {
                 e.preventDefault();
                 const targetSection = document.querySelector(targetId);
-                if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (!targetSection) return;
+
+                // Section links live in the resume/library views, so leave search/AI first.
+                if (currentActiveView === 'search' || currentActiveView === 'ai') {
+                    const view = this.classList.contains('library-nav') ? 'library'
+                        : this.classList.contains('resume-nav') ? 'resume'
+                        : previousView;
+                    window.switchView(view, false);
+                    // replaceState avoids a hashchange that would re-run switchView and scroll to top.
+                    history.replaceState(null, '', view === 'library' ? '#/personal' : '#/professional');
+                    // Wait a frame so the view is visible before scrolling to it.
+                    requestAnimationFrame(() => targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+                    return;
+                }
+
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });

@@ -51,3 +51,8 @@ body {
 .btn-outline { background: transparent; border: 1.5px solid var(--primary-blue); color: var(--primary-blue); }
 .btn-outline:hover:not(.disabled) { background: var(--primary-blue); color: white; transform: translateY(-1px); }
 .btn-outline.disabled { border-color: var(--text-muted); color: var(--text-muted); opacity: 0.6; cursor: not-allowed; }
+
+/* Hover tooltip, e.g. "Coming soon" on disabled features */
+[data-tooltip] { position: relative; }
+[data-tooltip]::after { content: attr(data-tooltip); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); padding: 4px 8px; border-radius: var(--radius-sm); background: #000000; color: white; font-size: 0.65rem; font-weight: 600; font-style: normal; text-transform: none; letter-spacing: normal; white-space: nowrap; pointer-events: none; opacity: 0; visibility: hidden; transition: opacity 0.2s ease; z-index: 100; }
+[data-tooltip]:hover::after { opacity: 1; visibility: visible; }

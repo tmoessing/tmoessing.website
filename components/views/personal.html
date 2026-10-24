@@ -1,0 +1,23 @@
+            <div id="library-view" class="view-section" style="display: none;">
+                <section id="personal-unified" class="section">
+                    <div class="section-header-row" style="margin-bottom: var(--spacing-md); justify-content: center;">
+                        <h2 class="section-title" style="margin-bottom: 0;">Personal</h2>
+                    </div>
+
+                    <div class="personal-toggle-container">
+                        <div class="toggle-container personal-sub-toggle">
+                            <div class="toggle-slider" id="personal-sub-slider"></div>
+                            <button onclick="switchPersonalView('picks')" class="toggle-btn active" id="btn-picks">
+                                Sick Picks & Plugs
+                            </button>
+                            <button onclick="switchPersonalView('projects')" class="toggle-btn" id="btn-personal-projects">
+                                Personal Projects
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="personal-unified-container">
+                        <!-- Populated by content-loader.js -->
+                    </div>
+                </section>
+            </div>

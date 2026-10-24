@@ -1,0 +1,29 @@
+            <div id="search-view" class="view-section" style="display: none;">
+                <section class="section">
+                    <div class="search-view-container">
+                        <h2 class="section-title" style="margin-bottom: 0;">Search Content</h2>
+                        <button onclick="goBackFromSearch()" class="btn btn-outline search-back-btn">Back to Previous</button>
+                    </div>
+                    
+                    <div class="search-box">
+                        <div class="search-input-wrapper">
+                            <div class="search-input-inner">
+                                <svg class="icon icon-stroke search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" /></svg>
+                                <input type="text" id="search-input" placeholder="Search by tag, technology, or keywords..." 
+                                    oninput="if(window.contentLoader) window.contentLoader.performSearch(this.value)">
+                            </div>
+                            <button class="btn btn-outline" style="gap: 8px; white-space: nowrap; padding: 12px 20px;" disabled title="Coming Soon">
+                                <svg class="icon icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.722L18 9.75l-.259-1.028a2.25 2.25 0 00-1.463-1.463L15.25 7l1.028-.259a2.25 2.25 0 001.463-1.463L18 4.25l.259 1.028a2.25 2.25 0 001.463 1.463L20.75 7l-1.028.259a2.25 2.25 0 00-1.463 1.463z" /></svg>
+                                Ask AI (Soon)
+                            </button>
+                        </div>
+                        <div class="search-meta">
+                            Found <span id="search-count" class="search-count-highlight">0</span> results for "<span id="search-query-display">...</span>"
+                        </div>
+                    </div>
+
+                    <div id="search-results-container">
+                        <!-- Populated by content-loader.js -->
+                    </div>
+                </section>
+            </div>

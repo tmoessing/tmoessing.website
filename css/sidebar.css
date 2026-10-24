@@ -22,7 +22,9 @@
   padding: 0 var(--spacing-xs); 
   margin-top: var(--spacing-xs);
 }
-.profile-title span { display: block; }
+/* Title parts flow inline as "A · B · C", wrapping only between parts. */
+.profile-title span { white-space: nowrap; }
+.profile-title span + span::before { content: "· "; }
 
 /* Sidebar Navigation */
 .nav-links { display: flex; flex-direction: column; gap: 0; }

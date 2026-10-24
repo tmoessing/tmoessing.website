@@ -69,6 +69,7 @@ export class Timeline {
         const yearScale = 150; // Balanced scale for readability and density
         container.style.height = `${(maxYear - minYear) * yearScale}px`;
         container.innerHTML = '<div class="timeline-tracks"></div>';
+        const tracks = container.querySelector('.timeline-tracks');
         
         for (let y = Math.floor(maxYear); y >= Math.floor(minYear); y--) {
             const marker = document.createElement('div');
@@ -153,7 +154,7 @@ export class Timeline {
                 <div class="timeline-bar-tooltip ${tooltipAlignClass}">
                     <strong>${item.title}</strong><br>${item.org}<br>${item.dateLabel}
                 </div>`;
-            container.appendChild(el);
+            tracks.appendChild(el);
         });
     }
 }
