@@ -35,7 +35,7 @@ export class ContentLoader {
                 'docs/personal_content/personal_projects.md'
             ];
             const texts = await Promise.all(
-                files.map(f => fetch(`${f}?v=3.4`).then(res => res.text()))
+                files.map(f => fetch(`${f}?v=3.5`).then(res => res.text()))
             );
 
             // Each file merges into the same content object.
@@ -307,7 +307,7 @@ export class ContentLoader {
 
         // Projects below - Pulls from both Professional and Personal
         const allProjects = [
-            ...(this.content.projects || []).map(p => ({ ...p, category: 'Professional' })),
+            ...(this.content.projects || []).map(p => ({ ...p, description: p.portfolio || p.description, category: 'Professional' })),
             ...(this.content['personal projects'] || []).map(p => ({ ...p, category: 'Personal' }))
         ];
         allProjects.sort((a, b) => this.parser.parseDateRange(b.dates).end - this.parser.parseDateRange(a.dates).end);
