@@ -121,4 +121,4 @@ description: Meta's personal AI agent that can handle everyday tasks on your beh
 link: https://muse.ai/
 tags: TECH, LIFE HACK
 image: assets/picks_and_plugs/muse.png
-why: It's proactive and finds things for me.
+why: It's proactive and suggests things for me. I don't have to prompt it.
