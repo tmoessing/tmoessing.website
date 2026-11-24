@@ -286,6 +286,20 @@ body.dark-mode :is(a, button).skill-tag.tag-chip.is-active { color: #0f172a; }
   flex-direction: row;
 }
 
+/* Stack image above text on phones. This has to come after the row rules
+   above, or they win and squeeze the text to zero width. */
+@media (max-width: 640px) {
+  .project-card.has-image,
+  #personal-unified-container .project-card.has-image {
+    flex-direction: column;
+  }
+  .project-card .card-image-container,
+  #personal-unified-container .project-card .card-image-container {
+    width: 100%;
+    height: 200px;
+  }
+}
+
 .card-title-container {
   display: flex;
   align-items: center;
