@@ -36,7 +36,7 @@ tags: Machine Learning, Computer Vision, Object Detection, YOLO, PyTorch, Model 
 company: BYU Basketball
 dates: Oct 2024 - May 2025
 description: Entered and maintained player and game data with high attention to detail and accuracy. Generated a custom analytics report to support coaching staff in evaluating performance trends.
-tags: Data Analytics, Sports Analytics, Pandas
+tags: Data Analytics, Sports Analytics
 
 ### Student Tutor
 
