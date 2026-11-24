@@ -104,6 +104,20 @@ export function initApp() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    // Maps '#/personal/sick-picks-and-plugs/<slug>' to its tag via the sidebar sub-links.
+    window.pickTagFromHash = (hash) => {
+        const match = hash.match(/^#\/personal\/sick-picks-and-plugs\/([\w-]+)/);
+        if (!match) return 'All';
+        const link = document.querySelector(`.nav-sublink[href="#/personal/sick-picks-and-plugs/${match[1]}"]`);
+        return link ? link.dataset.pickTag : 'All';
+    };
+
+    const showPicks = (hash) => {
+        window.switchView('library', false);
+        window.switchPersonalView('picks', false);
+        window.contentLoader?.filterPicks?.(window.pickTagFromHash(hash));
+    };
+
     window.switchPersonalView = (view, updateHash = true) => {
         const picksBtn = document.getElementById('btn-picks');
         const projectsBtn = document.getElementById('btn-personal-projects');
@@ -129,6 +143,7 @@ export function initApp() {
             if (updateHash) window.location.hash = '/personal/personal-projects';
             document.getElementById('nav-picks')?.classList.remove('active');
             document.getElementById('nav-personal-projects')?.classList.add('active');
+            document.querySelectorAll('.nav-sublink').forEach(l => l.classList.remove('active'));
         }
     };
 
@@ -192,9 +207,8 @@ export function initApp() {
             if (window.contentLoader) window.contentLoader.handleSearchFromHash();
         } else if (hash === '#/professional/ai') {
             if (currentActiveView !== 'ai') window.switchView('ai', false);
-        } else if (hash === '#/personal/sick-picks-and-plugs') {
-            window.switchView('library', false);
-            window.switchPersonalView('picks', false);
+        } else if (hash.startsWith('#/personal/sick-picks-and-plugs')) {
+            showPicks(hash);
         } else if (hash === '#/personal/personal-projects') {
             window.switchView('library', false);
             window.switchPersonalView('projects', false);
@@ -289,9 +303,8 @@ export function initApp() {
         window.switchView('search', false);
     } else if (initialHash === '#/professional/ai') {
         window.switchView('ai', false);
-    } else if (initialHash === '#/personal/sick-picks-and-plugs') {
-        window.switchView('library', false);
-        window.switchPersonalView('picks', false);
+    } else if (initialHash.startsWith('#/personal/sick-picks-and-plugs')) {
+        showPicks(initialHash);
     } else if (initialHash === '#/personal/personal-projects') {
         window.switchView('library', false);
         window.switchPersonalView('projects', false);

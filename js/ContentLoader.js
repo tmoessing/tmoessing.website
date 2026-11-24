@@ -164,7 +164,7 @@ export class ContentLoader {
 
             const filtered = filterTag === 'All' 
                 ? libraryItems 
-                : libraryItems.filter(item => item.tags && item.tags.split(this.parser.TAG_SPLIT_REGEX).some(t => t.trim() === filterTag));
+                : libraryItems.filter(item => item.tags && item.tags.split(this.parser.TAG_SPLIT_REGEX).some(t => t.trim().toUpperCase() === filterTag.toUpperCase()));
 
             // Group by first tag
             const groups = {};
@@ -236,7 +236,13 @@ export class ContentLoader {
                     btn.style.boxShadow = 'none';
                 }
             });
+
+            // Highlight the matching sidebar sub-link
+            document.querySelectorAll('.nav-sublink').forEach(link => {
+                link.classList.toggle('active', link.dataset.pickTag === filterTag.toUpperCase());
+            });
         };
+        this.filterPicks = renderFilteredLibrary;
 
         libraryTags.forEach(tag => {
             const tagBtn = document.createElement('button');
@@ -245,7 +251,12 @@ export class ContentLoader {
             tagBtn.style.cursor = 'pointer';
             tagBtn.style.transition = 'all 0.2s ease';
             
-            tagBtn.onclick = () => renderFilteredLibrary(tag);
+            tagBtn.onclick = () => {
+                renderFilteredLibrary(tag);
+                // replaceState keeps the URL shareable without triggering a hashchange re-render
+                const slug = tag.toLowerCase().replace(/\s+/g, '-');
+                history.replaceState(null, '', tag === 'All' ? '#/personal/sick-picks-and-plugs' : `#/personal/sick-picks-and-plugs/${slug}`);
+            };
             filterBar.appendChild(tagBtn);
         });
 
@@ -305,6 +316,7 @@ export class ContentLoader {
                 window.switchPersonalView('projects', false);
             } else if (hash.startsWith('#/personal')) {
                 window.switchPersonalView('picks', false);
+                if (typeof window.pickTagFromHash === 'function') renderFilteredLibrary(window.pickTagFromHash(hash));
             }
         }
     }
