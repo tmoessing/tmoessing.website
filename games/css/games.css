@@ -781,6 +781,30 @@
 .picker-result-actions { display: flex; gap: var(--spacing-sm); justify-content: center; flex-wrap: wrap; }
 .picker-result { animation: reveal-pop 0.5s cubic-bezier(0.2, 0.8, 0.3, 1.2); }
 
+/* other matching options under the pick */
+.picker-others {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-color);
+}
+.picker-others-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0 0 var(--spacing-lg);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.picker-others-count {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
 /* matching grid */
 .picker-matching-head {
   display: flex;

@@ -3,7 +3,8 @@
  *
  * A stateful modal with four views that swap inside one overlay:
  *   filters  -> choose players / duration / categories / complexity (live count)
- *   result   -> a random pick revealed via a shuffle-reel + confetti
+ *   result   -> a random pick revealed via a shuffle-reel + confetti,
+ *               with the other matching games listed below it
  *   matching -> the full grid of games that match, sortable + shuffleable
  *   empty    -> friendly message + broaden suggestions + Clear Filters
  *
@@ -35,6 +36,7 @@ const DURATIONS = [
   ["u30", "Under 30"],
   ["30-60", "30–60"],
   ["60-90", "60–90"],
+  ["30-90", "30–90"],
   ["90+", "90+"],
   ["custom", "Custom"]
 ];
@@ -439,7 +441,7 @@ function pickRandom() {
   }
   const chosen = matches[Math.floor(Math.random() * matches.length)];
   if (matches.length === 1 || reduceMotion()) {
-    renderResult(chosen, matches.length === 1);
+    renderResult(chosen, matches);
     return;
   }
   runReel(matches, chosen);
@@ -477,13 +479,15 @@ function runReel(matches, chosen) {
     if (elapsed < total) {
       setTimeout(tick, delay);
     } else {
-      renderResult(chosen, false);
+      renderResult(chosen, matches);
     }
   };
   tick();
 }
 
-function renderResult(game, singleMatch) {
+function renderResult(game, matches) {
+  const singleMatch = matches.length === 1;
+  const others = sortGames(matches.filter((g) => g.id !== game.id), state.matchSort);
   const cover = game.cover || placeholderDataURI(game.title);
   const fallback = placeholderDataURI(game.title);
   const tags = (game.tags || []).map(tagPill).join("");
@@ -507,7 +511,19 @@ function renderResult(game, singleMatch) {
         </button>
         <button type="button" class="btn btn-outline" id="picker-back">Back to Filters</button>
       </div>
-    </div>`;
+    </div>
+    ${others.length ? `
+    <section class="picker-others" aria-label="Other matching games">
+      <h3 class="picker-others-title">Other options <span class="picker-others-count">${others.length}</span></h3>
+      <div class="games-grid picker-grid" id="picker-others-grid"></div>
+    </section>` : ""}`;
+
+  const othersGrid = content().querySelector("#picker-others-grid");
+  if (othersGrid) {
+    const frag = document.createDocumentFragment();
+    others.forEach((g) => frag.appendChild(createGameCard(g)));
+    othersGrid.appendChild(frag);
+  }
 
   content().querySelector("#picker-play-now").addEventListener("click", () => openGameDetails(game));
   content().querySelector("#picker-again").addEventListener("click", pickRandom);
