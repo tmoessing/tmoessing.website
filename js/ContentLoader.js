@@ -337,8 +337,8 @@ export class ContentLoader {
     /**
      * Proxy to Search module.
      */
-    performSearch(query) {
-        this.search.performSearch(query);
+    performSearch(query, options) {
+        this.search.performSearch(query, options);
     }
 
     renderSuggestedTags() {
@@ -357,7 +357,7 @@ export class ContentLoader {
             if (query) {
                 const searchInput = document.querySelector('#search-input');
                 if (searchInput) searchInput.value = query;
-                this.performSearch(query);
+                this.performSearch(query, { exactTag: Boolean(tag) });
             }
             
             if (typeof window.switchView === 'function') {

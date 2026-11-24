@@ -57,9 +57,10 @@ export class Search {
     }
 
     /**
-     * Performs a search across all items by tag or text.
+     * Performs a search across all items by text, or by exact tag when exactTag is set
+     * (tag clicks and ?tag= links), so "DEV" doesn't also match "developed".
      */
-    performSearch(query) {
+    performSearch(query, { exactTag = false } = {}) {
         const queryEl = document.querySelector('#search-query-display');
         const countEl = document.querySelector('#search-count');
 
@@ -70,8 +71,21 @@ export class Search {
             return;
         }
 
+        this.renderSearchResults(this.findMatches(query, exactTag), query);
+    }
+
+    /**
+     * Returns the items matching a query (tags, title, description or company).
+     * Shared by searches and the tag-cloud counts so the numbers always agree.
+     */
+    findMatches(query, exactTag = false) {
         const normalizedQuery = query.toLowerCase().trim();
-        const results = this.searchableItems.filter(item => {
+        if (exactTag) {
+            return this.searchableItems.filter(item => (item.tags || '')
+                .split(this.parser.TAG_SPLIT_REGEX)
+                .some(t => t.trim().toLowerCase() === normalizedQuery));
+        }
+        return this.searchableItems.filter(item => {
             const tags = (item.tags || '').toLowerCase();
             const title = (item.title || item.degree || '').toLowerCase();
             const description = (item.description || '').toLowerCase();
@@ -82,8 +96,6 @@ export class Search {
                    description.includes(normalizedQuery) || 
                    company.includes(normalizedQuery);
         });
-
-        this.renderSearchResults(results, query);
     }
 
     /**
@@ -93,13 +105,20 @@ export class Search {
         const container = document.querySelector('#search-results-container');
         if (!container) return;
 
+        // Only tags that lead to 2+ results, most results first. The badge shows exactly what a click returns.
+        const tags = Array.from(this.allTags)
+            .map(tag => ({ tag, count: this.findMatches(tag, true).length }))
+            .filter(({ count }) => count >= 2)
+            .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+        const hues = this.renderer.tagHues(tags.map(({ tag }) => tag));
+
         container.innerHTML = `
             <div class="suggested-tags-section">
                 <h3 class="suggested-tags-title">Explore by Tag</h3>
                 <div class="card-tags suggested-tags-cloud">
-                    ${(() => { const tags = Array.from(this.allTags); const hues = this.renderer.tagHues(tags); return tags.map((t, i) => `
-                        <a href="#/professional/search?tag=${encodeURIComponent(t)}" class="skill-tag tag-chip suggested-tag-btn" style="${this.renderer.tagChipStyle(hues[i])}" title="See everything tagged ${t}" onclick="event.preventDefault(); document.querySelector('#search-input').value = '${t}'; window.location.hash = '/professional/search?tag=${encodeURIComponent(t)}'; window.contentLoader.performSearch('${t}');">${t.toUpperCase()}</a>
-                    `).join(''); })()}
+                    ${tags.map(({ tag, count }, i) => `
+                        <a href="#/professional/search?tag=${encodeURIComponent(tag)}" class="skill-tag tag-chip suggested-tag-btn" style="${this.renderer.tagChipStyle(hues[i])}" title="${count} results for ${tag}" onclick="event.preventDefault(); document.querySelector('#search-input').value = '${tag}'; window.location.hash = '/professional/search?tag=${encodeURIComponent(tag)}'; window.contentLoader.performSearch('${tag}', { exactTag: true });">${tag.toUpperCase()}<span class="tag-count" aria-label="${count} results">${count}</span></a>
+                    `).join('')}
                 </div>
             </div>
         `;

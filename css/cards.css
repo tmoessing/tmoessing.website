@@ -42,6 +42,37 @@ a.skill-tag.tag-chip:focus-visible {
 a.skill-tag.tag-chip:focus-visible { outline: 2px solid var(--tag-text); outline-offset: 2px; }
 a.skill-tag.tag-chip:active { transform: translateY(0); box-shadow: none; }
 
+/* Result count badge sitting above the top-right corner of each search-cloud tag */
+.suggested-tags-cloud { gap: 14px 12px; padding-top: 8px; }
+.suggested-tags-cloud .tag-chip { position: relative; }
+.tag-count {
+  position: absolute;
+  top: -9px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  border-radius: var(--radius-full);
+  background: var(--tag-text);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  box-shadow: 0 0 0 2px var(--bg-primary);
+}
+body.dark-mode .tag-count { color: #0f172a; }
+@media (prefers-color-scheme: dark) { body:not(.light-mode) .tag-count { color: #0f172a; } }
+a.skill-tag.tag-chip:hover .tag-count,
+a.skill-tag.tag-chip:focus-visible .tag-count { background: #fff; color: var(--tag-text); }
+body.dark-mode a.skill-tag.tag-chip:hover .tag-count,
+body.dark-mode a.skill-tag.tag-chip:focus-visible .tag-count { background: #0f172a; color: var(--tag-text); }
+@media (prefers-color-scheme: dark) {
+  body:not(.light-mode) a.skill-tag.tag-chip:hover .tag-count,
+  body:not(.light-mode) a.skill-tag.tag-chip:focus-visible .tag-count { background: #0f172a; color: var(--tag-text); }
+}
+
 body.dark-mode .skill-tag.tag-chip {
   --tag-text: hsl(var(--h) 90% var(--dl, 72%));
   background: hsl(var(--h) 90% 60% / 0.16);
