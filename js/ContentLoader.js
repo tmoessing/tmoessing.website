@@ -150,6 +150,19 @@ export class ContentLoader {
 
         const libraryTags = ['All', ...sortTags(rawTags)];
 
+        // Show how many picks each sidebar tag holds, e.g. "Dev (3)"
+        document.querySelectorAll('.nav-sublink').forEach(link => {
+            const tag = link.dataset.pickTag;
+            const count = libraryItems.filter(item => item.tags && item.tags.split(this.parser.TAG_SPLIT_REGEX).some(t => t.trim().toUpperCase() === tag)).length;
+            let badge = link.querySelector('.nav-count');
+            if (!badge) {
+                badge = document.createElement('span');
+                badge.className = 'nav-count';
+                link.appendChild(badge);
+            }
+            badge.textContent = `(${count})`;
+        });
+
         // Create Filter Bar
         const filterBar = document.createElement('div');
         filterBar.className = 'card-tags personal-filter-bar';
