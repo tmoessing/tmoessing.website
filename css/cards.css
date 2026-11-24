@@ -19,33 +19,36 @@
 .skill-tag:hover { background: var(--primary-blue); color: white; border-color: var(--primary-blue); }
 .skill-tag { text-decoration: none; }
 
-/* Clickable tag chips: bright tint at rest, solid fill on hover so it's obvious they're buttons */
+/* Tag chips: bright tint with a colored outline. Only linked chips (the search tag cloud) get the hover/click styles. */
 .skill-tag.tag-chip {
   --tag-text: hsl(var(--h) 85% var(--tl, 40%));
   color: var(--tag-text);
   background: hsl(var(--h) 90% 50% / 0.14);
   border: 1px solid hsl(var(--h) 85% 45% / 0.5);
+  cursor: default;
+}
+a.skill-tag.tag-chip {
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
-.skill-tag.tag-chip:hover,
-.skill-tag.tag-chip:focus-visible {
+a.skill-tag.tag-chip:hover,
+a.skill-tag.tag-chip:focus-visible {
   background: var(--tag-text);
   border-color: var(--tag-text);
   color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 3px 10px hsl(var(--h) 85% 40% / 0.35);
 }
-.skill-tag.tag-chip:focus-visible { outline: 2px solid var(--tag-text); outline-offset: 2px; }
-.skill-tag.tag-chip:active { transform: translateY(0); box-shadow: none; }
+a.skill-tag.tag-chip:focus-visible { outline: 2px solid var(--tag-text); outline-offset: 2px; }
+a.skill-tag.tag-chip:active { transform: translateY(0); box-shadow: none; }
 
 body.dark-mode .skill-tag.tag-chip {
   --tag-text: hsl(var(--h) 90% var(--dl, 72%));
   background: hsl(var(--h) 90% 60% / 0.16);
   border-color: hsl(var(--h) 90% 65% / 0.45);
 }
-body.dark-mode .skill-tag.tag-chip:hover,
-body.dark-mode .skill-tag.tag-chip:focus-visible { color: #0f172a; }
+body.dark-mode a.skill-tag.tag-chip:hover,
+body.dark-mode a.skill-tag.tag-chip:focus-visible { color: #0f172a; }
 
 @media (prefers-color-scheme: dark) {
   body:not(.light-mode) .skill-tag.tag-chip {
@@ -53,13 +56,13 @@ body.dark-mode .skill-tag.tag-chip:focus-visible { color: #0f172a; }
     background: hsl(var(--h) 90% 60% / 0.16);
     border-color: hsl(var(--h) 90% 65% / 0.45);
   }
-  body:not(.light-mode) .skill-tag.tag-chip:hover,
-  body:not(.light-mode) .skill-tag.tag-chip:focus-visible { color: #0f172a; }
+  body:not(.light-mode) a.skill-tag.tag-chip:hover,
+  body:not(.light-mode) a.skill-tag.tag-chip:focus-visible { color: #0f172a; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .skill-tag.tag-chip { transition: none; }
-  .skill-tag.tag-chip:hover, .skill-tag.tag-chip:focus-visible { transform: none; }
+  a.skill-tag.tag-chip { transition: none; }
+  a.skill-tag.tag-chip:hover, a.skill-tag.tag-chip:focus-visible { transform: none; }
 }
 
 /* Education */

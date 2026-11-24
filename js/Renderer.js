@@ -385,11 +385,7 @@ export class Renderer {
         if (!tagStr) return '';
         const tags = tagStr.split(this.parser.TAG_SPLIT_REGEX).map(t => t.trim()).filter(t => t);
         const hues = this.tagHues(tags);
-        return `<div class="card-tags">${tags.map((t, i) => `<a href="#/professional/search?tag=${encodeURIComponent(t)}"
-               class="skill-tag tag-chip"
-               style="${this.tagChipStyle(hues[i])}"
-               title="See everything tagged ${t}"
-               onclick="event.preventDefault(); window.location.hash = '/professional/search?tag=${encodeURIComponent(t)}';">${t.toUpperCase()}</a>`).join('')}</div>`;
+        return `<div class="card-tags">${tags.map((t, i) => `<span class="skill-tag tag-chip" style="${this.tagChipStyle(hues[i])}">${t.toUpperCase()}</span>`).join('')}</div>`;
     }
 
     /**
