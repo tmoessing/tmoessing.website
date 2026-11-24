@@ -44,14 +44,13 @@ export class Search {
             }
         };
 
+        // Professional tab only: Picks & Plugs ('resources') and Personal Projects stay out of search.
         addItems('experience', 'job');
         addItems('projects', 'project');
-        addItems('personal projects', 'project');
         addItems('service', 'service');
         addItems('volunteer', 'volunteer');
         addItems('interests', 'leadership');
         addItems('education', 'education');
-        addItems('resources', 'resource');
         
         this.allTags = new Set(Array.from(this.allTags).sort());
     }
