@@ -113,7 +113,7 @@ description: Claude's agent mode for knowledge work beyond code. It works throug
 link: https://claude.com/product/cowork
 tags: TECH
 image: assets/picks_and_plugs/claude_cowork.png
-why: Claude Code energy for everything that isn't code. Hand it the busywork and get your time back.
+why: I've been giving it the tasks, the busywork, that I want done in my life but don't want to do.
 
 ### Muse
 
