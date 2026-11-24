@@ -43,7 +43,7 @@ description: Great development podcast talking specially about web development
 link: https://syntax.fm/
 tags: DEV, Podcast
 image: assets/picks_and_plugs/syntax.png
-why: My go-to for staying current on web dev without it feeling like homework.
+why: Love learning from these guys. Super entertaining.
 
 ### Exit VIM
 
