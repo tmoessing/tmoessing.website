@@ -3,7 +3,6 @@ title: Breakfast Burritos
 description: Make-ahead egg, sausage, and cheese burritos built for the freezer.
 prepTime: 20
 cookTime: 20
-totalTime: 40
 estimatedCost: 12
 servings: 6
 categories:
@@ -15,7 +14,6 @@ categories:
 tags:
   - Freezer Friendly
   - Grab and Go
-image: ../meals/images/breakfast-burritos.jpg
 walmartList: # TODO paste Walmart grocery list URL
 recipeSource:
 prepDuration: 50

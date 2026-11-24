@@ -25,6 +25,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      # Regenerate meals/data/meals.json from the recipe .md files, so adding a
+      # recipe never requires running the build by hand. Problems in a recipe
+      # show up as warnings on the run but never block the deploy.
+      - name: Build meal data
+        run: node meals/build.mjs
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 

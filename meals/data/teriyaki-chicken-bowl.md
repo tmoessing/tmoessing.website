@@ -3,7 +3,6 @@ title: Teriyaki Chicken Bowl
 description: Sticky teriyaki chicken over rice with steamed veggies — great for meal prep.
 prepTime: 15
 cookTime: 20
-totalTime: 35
 estimatedCost: 13
 servings: 4
 categories:
@@ -18,7 +17,6 @@ categories:
 tags:
   - Batch Cook
   - Balanced
-image: ../meals/images/teriyaki-chicken-bowl.jpg
 walmartList: # TODO paste Walmart grocery list URL
 recipeSource:
 prepDuration: 45

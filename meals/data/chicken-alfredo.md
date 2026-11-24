@@ -3,7 +3,6 @@ title: Chicken Alfredo
 description: Creamy homemade fettuccine alfredo with seared chicken.
 prepTime: 15
 cookTime: 20
-totalTime: 35
 estimatedCost: 14
 servings: 4
 categories:
@@ -16,7 +15,6 @@ categories:
 tags:
   - Weeknight
   - One Pan Sauce
-image: ../meals/images/chicken-alfredo.jpg
 walmartList: # TODO paste Walmart grocery list URL
 recipeSource:
 prepDuration: 45
