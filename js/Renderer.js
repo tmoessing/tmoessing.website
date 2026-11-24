@@ -383,14 +383,78 @@ export class Renderer {
 
     renderTags(tagStr) {
         if (!tagStr) return '';
-        const tags = tagStr.split(this.parser.TAG_SPLIT_REGEX).map(t => t.trim());
-        return `<div class="card-tags">${tags.map(t => {
-            const style = this.getTagStyle(t);
-            return `<a href="#/professional/search?tag=${encodeURIComponent(t)}" 
-               class="skill-tag" 
-               style="background: ${style.bg}; color: ${style.text}; border-color: transparent;"
-               onclick="event.preventDefault(); window.location.hash = '/professional/search?tag=${encodeURIComponent(t)}';">${t.toUpperCase()}</a>`;
-        }).join('')}</div>`;
+        const tags = tagStr.split(this.parser.TAG_SPLIT_REGEX).map(t => t.trim()).filter(t => t);
+        const hues = this.tagHues(tags);
+        return `<div class="card-tags">${tags.map((t, i) => `<a href="#/professional/search?tag=${encodeURIComponent(t)}"
+               class="skill-tag tag-chip"
+               style="${this.tagChipStyle(hues[i])}"
+               title="See everything tagged ${t}"
+               onclick="event.preventDefault(); window.location.hash = '/professional/search?tag=${encodeURIComponent(t)}';">${t.toUpperCase()}</a>`).join('')}</div>`;
+    }
+
+    /**
+     * Picks a hue (0-360) for each tag. Each tag prefers a hue derived from its name, so it
+     * looks the same across the site, but hues already used in the same list are skipped
+     * so no two tags side by side share a color.
+     */
+    tagHues(tags) {
+        const fixed = {
+            'life hack': 160, 'book': 258, 'photos': 330, 'podcast': 0,
+            'self-help': 189, 'tech': 217, 'dev': 239, 'humor': 38
+        };
+        const minGap = Math.min(35, (360 / Math.max(tags.length, 1)) * 0.75);
+        const used = [];
+        const distance = (a, b) => { const d = Math.abs(a - b) % 360; return Math.min(d, 360 - d); };
+        const nearestUsed = hue => used.reduce((m, u) => Math.min(m, distance(u, hue)), 360);
+
+        return tags.map(tag => {
+            const key = tag.toLowerCase();
+            let preferred;
+            if (key in fixed) {
+                preferred = fixed[key];
+            } else {
+                let hash = 0;
+                for (let i = 0; i < key.length; i++) hash = key.charCodeAt(i) + ((hash << 5) - hash);
+                preferred = Math.abs(hash) % 360;
+            }
+            let hue = preferred;
+            if (nearestUsed(hue) < minGap) {
+                // Taken: move to the open spot farthest from every used hue, staying near the preferred one on ties.
+                let best = -1;
+                for (let h = 0; h < 360; h++) {
+                    const gap = nearestUsed(h);
+                    if (gap > best || (gap === best && distance(h, preferred) < distance(hue, preferred))) {
+                        best = gap;
+                        hue = h;
+                    }
+                }
+            }
+            used.push(hue);
+            return hue;
+        });
+    }
+
+    /**
+     * Inline CSS variables consumed by .tag-chip. The text lightness for light (--tl) and dark (--dl)
+     * themes is the brightest value that still meets 4.5:1 contrast against the chip's tinted background.
+     */
+    tagChipStyle(hue) {
+        const toRgb = (h, s, l) => {
+            s /= 100; l /= 100;
+            const k = n => (n + h / 30) % 12, a = s * Math.min(l, 1 - l);
+            return [0, 8, 4].map(n => l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1)));
+        };
+        const lum = c => { const [r, g, b] = c.map(v => v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+        const contrast = (x, y) => { const [hi, lo] = [lum(x), lum(y)].sort((p, q) => q - p); return (hi + 0.05) / (lo + 0.05); };
+        const tint = (base, alpha, under) => toRgb(hue, 90, base).map((v, i) => v * alpha + under[i] * (1 - alpha));
+
+        const lightBg = tint(50, 0.14, [1, 1, 1]);
+        const darkBg = tint(60, 0.16, [30 / 255, 41 / 255, 59 / 255]); // over the dark card colour
+        let tl = 48;
+        while (tl > 15 && contrast(toRgb(hue, 85, tl), lightBg) < 4.6) tl--;
+        let dl = 60;
+        while (dl < 92 && contrast(toRgb(hue, 90, dl), darkBg) < 4.6) dl++;
+        return `--h: ${hue}; --tl: ${tl}%; --dl: ${dl}%;`;
     }
 
     getTagStyle(tagName) {
