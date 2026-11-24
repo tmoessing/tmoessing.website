@@ -343,40 +343,68 @@ export class Renderer {
 
     createResourceCard(resource, defaultCategory = null) {
         const card = document.createElement('div');
-        const slug = this.parser.slugify(resource.name || resource.title);
-        card.className = resource.image ? 'card has-image' : 'card';
+        const title = resource.name || resource.title;
+        const slug = this.parser.slugify(title);
+        const link = resource.url || resource.link;
+        const why = resource.why;
         card.id = `card-${slug}`;
 
-        const link = resource.url || resource.link;
-        
         let statusBadge = '';
         if (resource.status === 'coming-soon') {
             statusBadge = `<span class="skill-tag category-badge coming-soon">COMING SOON</span>`;
         }
-        
+
+        const linkIcon = link
+            ? `<span class="resource-link-icon" aria-hidden="true"><svg class="icon icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg></span>`
+            : '';
+
         const content = `
             <div class="card-header resource-header">
-                <h3 class="card-title">${resource.name || resource.title}</h3>
+                <h3 class="card-title">${title}</h3>
                 ${statusBadge}
-                ${link ? `<a href="${link}" target="_blank" class="resource-link-icon"><svg class="icon icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg></a>` : ''}
+                ${linkIcon}
             </div>
             <p class="card-description">${resource.description || ''}</p>
+            ${why ? `<p class="pick-why-inline"><span class="pick-why-label">Why I love it</span> ${why}</p>` : ''}
             <div class="card-footer">
                 ${this.renderTags(resource.tags)}
             </div>
         `;
 
-        if (resource.image) {
-            card.innerHTML = `
-                <div class="card-image-container">
-                    <img src="${resource.image}" alt="${resource.name || resource.title}" class="card-image resource-logo">
+        const body = resource.image
+            ? `<div class="card-image-container">
+                    <img src="${resource.image}" alt="${title}" class="card-image resource-logo">
                 </div>
                 <div class="card-content-with-image">
                     ${content}
+                </div>`
+            : content;
+
+        // The link sits on top of the whole card, so anywhere you click opens it.
+        const overlayLink = link
+            ? `<a href="${link}" target="_blank" rel="noopener noreferrer" class="card-overlay-link" aria-label="Visit ${title}${why ? `. Why I love it: ${why}` : ''}"></a>`
+            : '';
+
+        if (why) {
+            // Flip card: the front is the usual card, the back is the "why I love it" blurb.
+            card.className = 'card pick-flip' + (link ? ' card-linked' : '');
+            card.innerHTML = `
+                <div class="pick-flip-inner">
+                    <div class="pick-face pick-front${resource.image ? ' with-image' : ''}">
+                        ${body}
+                    </div>
+                    <div class="pick-face pick-back" aria-hidden="true">
+                        <span class="pick-why-label">Why I love it</span>
+                        <p class="pick-back-title">${title}</p>
+                        <p class="pick-back-why">${why}</p>
+                        ${link ? `<span class="pick-back-cta">Visit ${linkIcon}</span>` : ''}
+                    </div>
                 </div>
+                ${overlayLink}
             `;
         } else {
-            card.innerHTML = content;
+            card.className = (resource.image ? 'card has-image' : 'card') + (link ? ' card-linked' : '');
+            card.innerHTML = body + overlayLink;
         }
 
         return card;
