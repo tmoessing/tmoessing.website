@@ -2,6 +2,14 @@
 
 ## Projects
 
+### Emergency Triage Prediction (BYU AI Association)
+
+description: Competed on a BYU AI Association competitive machine learning team in a Kaggle competition, building a model that predicts emergency department triage acuity from initial patient data such as vital signs and reported symptoms. Featured in BYU's Daily Universe.
+portfolio: Competed on a BYU AI Association competitive machine learning team in a Kaggle competition to predict emergency department triage acuity. Our model uses initial patient data, such as vital signs and reported symptoms, to rank patients by urgency and help determine who needs care first. The project was featured in BYU's Daily Universe article "From disasters to diagnoses: BYU students use AI to solve real-world problems."
+link: https://universe.byu.edu/campus/from-disasters-to-diagnoses-byu-students-use-ai-to-solve-real-world-problems
+tags: Machine Learning, Kaggle, Healthcare AI, Predictive Modeling, Teamwork
+dates: Winter 2026
+
 ### Amazon Alexa Skills Development
 
 image: assets/personal_projects/alexa.png
