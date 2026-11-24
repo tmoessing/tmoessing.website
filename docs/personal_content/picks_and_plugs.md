@@ -51,7 +51,7 @@ description: Funny read on how to exit vim
 link: https://github.com/hakluke/how-to-exit-vim/blob/master/README.md
 tags: DEV, HUMOR
 image: assets/picks_and_plugs/vim.png
-why: Every dev has been trapped in vim at least once. This is our shared trauma, documented.
+why: I never knew there were so many ways to exit Vim.
 
 ### DEV Memes
 
