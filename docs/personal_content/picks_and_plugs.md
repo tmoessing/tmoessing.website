@@ -8,6 +8,30 @@ description: A transformative guide on the disciplined pursuit of less. It teach
 tags: BOOK
 image: assets/picks_and_plugs/essentialism.jpg
 
+### Percy Jackson and the Olympians by Rick Riordan
+
+description: The original 5-book series following Percy Jackson, a modern-day demigod, as he battles monsters and Greek gods. Funny, fast-paced, and packed with mythology.
+tags: BOOK
+image: assets/picks_and_plugs/percy_jackson.jpg
+
+### The Heroes of Olympus by Rick Riordan
+
+description: The 5-book sequel series to Percy Jackson that brings Roman mythology into the mix with a new crew of demigods and an even bigger quest.
+tags: BOOK
+image: assets/picks_and_plugs/heroes_of_olympus.jpg
+
+### The Maze Runner Series by James Dashner
+
+description: Dystopian series about a group of teens who wake up with no memories in the middle of a giant, ever-changing maze and have to figure out how to escape.
+tags: BOOK
+image: assets/picks_and_plugs/maze_runner.jpg
+
+### The Martian by Andy Weir
+
+description: An astronaut gets stranded alone on Mars and has to science his way to survival. Nerdy, hilarious, and genuinely gripping from start to finish.
+tags: BOOK
+image: assets/picks_and_plugs/the_martian.jpg
+
 ### Syntax. Podcast
 
 description: Great development podcast talking specially about web development
@@ -36,11 +60,19 @@ link: https://immich.app/
 tags: TECH, PHOTOS
 image: assets/picks_and_plugs/immich.png
 
+### Brave Browser
+
+description: Fast, privacy-first web browser that blocks trackers and ads by default. No extensions needed to stop sites from following you around the internet.
+link: https://brave.com/
+tags: PRIVACY, TECH
+image: assets/picks_and_plugs/brave.png
+
 ### Do Not Call Registry
 
 description: Official government site to reduce unwanted telemarketing calls
 link: https://www.donotcall.gov/
 tags: PRIVACY, LIFE HACK
+image: assets/picks_and_plugs/donotcall.jpg
 
 ### Opt-Out Prescreen
 
