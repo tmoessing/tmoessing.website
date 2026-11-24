@@ -62,6 +62,7 @@ export class Renderer {
             kaggle: contact.kaggle,
             leetcode: contact.leetcode,
             facebook: contact.facebook,
+            threads: contact.threads,
             venmo: contact.venmo,
             orcid: contact.orcid,
             kattis: contact.kattis,
@@ -467,6 +468,8 @@ export class Renderer {
         if (tag === 'tech') return { bg: 'var(--color-tech)', text: '#fff' };
         if (tag === 'dev') return { bg: 'var(--color-dev)', text: '#fff' };
         if (tag === 'humor') return { bg: 'var(--color-humor)', text: '#fff' };
+        if (tag === 'picks') return { bg: 'var(--color-photos)', text: '#fff' };
+        if (tag === 'projects') return { bg: 'var(--color-project)', text: '#fff' };
 
         // Simple hash function to get a consistent index
         let hash = 0;

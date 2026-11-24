@@ -7,7 +7,7 @@ export class Parser {
         this.ARRAY_SECTIONS = [
             'experience', 'projects', 'personal projects', 
             'resources', 'reading list', 'service', 
-            'volunteer', 'interests'
+            'volunteer', 'interests', 'threads posts'
         ];
     }
 
