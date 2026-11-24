@@ -284,7 +284,7 @@ export class Renderer {
                              project.status === 'personal-use' ? 'Personal Use' :
                              project.status.charAt(0).toUpperCase() + project.status.slice(1);
             if (project.status.toLowerCase() !== 'live') {
-                statusHTML = `<p class="project-status-note">${statusText}${project.note ? ` (${project.note})` : ''}</p>`;
+                statusHTML = `<span class="project-status-badge">${statusText}${project.note ? ` (${project.note})` : ''}</span>`;
             }
         }
 
@@ -296,13 +296,13 @@ export class Renderer {
                 <div class="card-title-container">
                     <h3 class="card-title">${project.title}</h3>
                     ${categoryTag}
+                    ${statusHTML}
                 </div>
                 ${project.dates ? `<div class="card-meta">${project.dates}</div>` : ''}
             </div>
             <p class="card-description">${project.description || ''}</p>
-            ${project.link || statusHTML ? `<div class="project-actions">
-                ${project.link ? `<a href="${project.link}" target="_blank" class="btn btn-primary btn-sm">View →</a>` : ''}
-                ${statusHTML}
+            ${project.link ? `<div class="project-actions">
+                <a href="${project.link}" target="_blank" class="btn btn-primary btn-sm">View →</a>
             </div>` : ''}
             ${showTags ? `<div class="card-footer">
                 ${this.renderTags(project.tags)}
