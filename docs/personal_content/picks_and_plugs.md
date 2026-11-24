@@ -61,12 +61,14 @@ image: assets/picks_and_plugs/immich.png
 description: Fast, privacy-first web browser that blocks trackers and ads by default. No extensions needed to stop sites from following you around the internet.
 link: https://brave.com/
 tags: PRIVACY, TECH
+image: assets/picks_and_plugs/brave.png
 
 ### Do Not Call Registry
 
 description: Official government site to reduce unwanted telemarketing calls
 link: https://www.donotcall.gov/
 tags: PRIVACY, LIFE HACK
+image: assets/picks_and_plugs/donotcall.jpg
 
 ### Opt-Out Prescreen
 
