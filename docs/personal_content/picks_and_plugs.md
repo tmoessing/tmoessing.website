@@ -14,36 +14,36 @@ why: Taught me that saying no is a skill, and the best way to protect the things
 description: The original 5-book series following Percy Jackson, a modern-day demigod, as he battles monsters and Greek gods. Funny, fast-paced, and packed with mythology.
 tags: BOOK
 image: assets/picks_and_plugs/percy_jackson.jpg
-why: The series that turned me into a reader. Still a comfort read I come back to.
+why: The series that turned me into a reader.
 
 ### The Heroes of Olympus by Rick Riordan
 
 description: The 5-book sequel series to Percy Jackson that brings Roman mythology into the mix with a new crew of demigods and an even bigger quest.
 tags: BOOK
 image: assets/picks_and_plugs/heroes_of_olympus.jpg
-why: Bigger cast, bigger stakes, same humor. The perfect level-up after the original five.
+why: An extension of the series that turned me into a reader.
 
 ### The Maze Runner Series by James Dashner
 
 description: Dystopian series about a group of teens who wake up with no memories in the middle of a giant, ever-changing maze and have to figure out how to escape.
 tags: BOOK
 image: assets/picks_and_plugs/maze_runner.jpg
-why: Every chapter ends on a cliffhanger. Zero chance you read just one.
+why: Really good book.
 
 ### The Martian by Andy Weir
 
 description: An astronaut gets stranded alone on Mars and has to science his way to survival. Nerdy, hilarious, and genuinely gripping from start to finish.
 tags: BOOK
 image: assets/picks_and_plugs/the_martian.jpg
-why: Proof that problem-solving and duct tape can be the most thrilling thing in a book.
+why: Really good book, with a very inspirational ending about mankind.
 
-### Syntax. Podcast
+### Syntax Podcast
 
-description: Great development podcast talking specially about web development
+description: Great development podcast talking specifically about web development.
 link: https://syntax.fm/
 tags: DEV, Podcast
 image: assets/picks_and_plugs/syntax.png
-why: My go-to for staying current on web dev without it feeling like homework.
+why: Love learning from these guys. Super entertaining.
 
 ### Exit VIM
 
@@ -51,7 +51,7 @@ description: Funny read on how to exit vim
 link: https://github.com/hakluke/how-to-exit-vim/blob/master/README.md
 tags: DEV, HUMOR
 image: assets/picks_and_plugs/vim.png
-why: Every dev has been trapped in vim at least once. This is our shared trauma, documented.
+why: I never knew there were so many ways to exit Vim.
 
 ### DEV Memes
 
@@ -59,7 +59,7 @@ description: My collection of CS memes
 link: https://drive.google.com/drive/folders/1p0CU9K-GG1n_fjq9AwYNesFYWcZIe-er?usp=sharing
 tags: DEV, HUMOR
 image: assets/picks_and_plugs/memes.png
-why: Because sometimes the best debugging tool is a good laugh.
+why: Because I'm a nerd.
 
 ### Immich
 
@@ -67,7 +67,7 @@ description: Great FOSS (Free and Open Source Software) photo self storage app s
 link: https://immich.app/
 tags: TECH, PHOTOS
 image: assets/picks_and_plugs/immich.png
-why: Own your photos. All the Google Photos convenience without handing over your memories.
+why: I have total control of my photos. No ties to Google Photos, iCloud Photos, Amazon Photos, etc.
 
 ### Brave Browser
 
@@ -105,7 +105,7 @@ description: Anthropic's agentic coding tool. It reads your codebase, edits file
 link: https://claude.com/product/claude-code
 tags: TECH, DEV
 image: assets/picks_and_plugs/claude_code.png
-why: It's like pair programming with someone who never gets tired. This site was built with it.
+why: This thing is amazing. I love it.
 
 ### Claude Cowork
 
@@ -113,12 +113,12 @@ description: Claude's agent mode for knowledge work beyond code. It works throug
 link: https://claude.com/product/cowork
 tags: TECH
 image: assets/picks_and_plugs/claude_cowork.png
-why: Claude Code energy for everything that isn't code. Hand it the busywork and get your time back.
+why: I've been giving it the tasks, the busywork, that I want done in my life but don't want to do.
 
 ### Muse
 
 description: Meta's personal AI agent that can handle everyday tasks on your behalf. Available on iOS, Android, WhatsApp, and the web.
 link: https://muse.ai/
-tags: TECH
+tags: TECH, LIFE HACK
 image: assets/picks_and_plugs/muse.png
-why: A peek at where personal assistants are headed: less chatting, more actually getting stuff done.
+why: It's proactive and finds things for me.

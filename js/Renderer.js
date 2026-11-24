@@ -362,7 +362,6 @@ export class Renderer {
             <div class="card-header resource-header">
                 <h3 class="card-title">${title}</h3>
                 ${statusBadge}
-                ${linkIcon}
             </div>
             <p class="card-description">${resource.description || ''}</p>
             ${why ? `<p class="pick-why-inline"><span class="pick-why-label">Why I love it</span> ${why}</p>` : ''}
