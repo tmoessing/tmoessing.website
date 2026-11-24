@@ -118,6 +118,8 @@ export function initApp() {
             if (picksSection) picksSection.style.display = 'flex';
             if (projectsSection) projectsSection.style.display = 'none';
             if (updateHash) window.location.hash = '/personal/sick-picks-and-plugs';
+            document.getElementById('nav-picks')?.classList.add('active');
+            document.getElementById('nav-personal-projects')?.classList.remove('active');
         } else {
             if (picksBtn) picksBtn.classList.remove('active');
             if (projectsBtn) projectsBtn.classList.add('active');
@@ -125,6 +127,8 @@ export function initApp() {
             if (picksSection) picksSection.style.display = 'none';
             if (projectsSection) projectsSection.style.display = 'flex';
             if (updateHash) window.location.hash = '/personal/personal-projects';
+            document.getElementById('nav-picks')?.classList.remove('active');
+            document.getElementById('nav-personal-projects')?.classList.add('active');
         }
     };
 
