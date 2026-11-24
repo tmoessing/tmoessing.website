@@ -481,6 +481,67 @@
   margin-bottom: var(--spacing-sm);
 }
 
+/* ---------- how to play ---------- */
+.game-howto {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-color-light);
+}
+.game-howto h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+.howto-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  margin-bottom: var(--spacing-lg);
+}
+.howto-video iframe,
+.howto-video-thumb { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.howto-video-thumb { padding: 0; cursor: pointer; background: #000; }
+.howto-video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; transition: opacity 0.2s ease; }
+.howto-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+}
+.howto-play-icon svg { width: 100%; height: 100%; display: block; }
+.howto-video-thumb:hover img, .howto-video-thumb:focus-visible img { opacity: 1; }
+.howto-video-thumb:hover .howto-play-icon,
+.howto-video-thumb:focus-visible .howto-play-icon { transform: translate(-50%, -50%) scale(1.1); }
+.howto-video-thumb:focus-visible { outline: 3px solid var(--primary-blue); outline-offset: -3px; }
+.howto-search { margin-bottom: var(--spacing-lg); }
+.howto-search a { color: var(--primary-blue); font-weight: 700; text-decoration: none; }
+.howto-search a:hover { text-decoration: underline; }
+.howto-goal {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.5;
+}
+.howto-steps {
+  margin: 0;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.howto-steps li::marker { color: var(--primary-blue); font-weight: 800; }
+
 /* ---------- picker ---------- */
 .picker-content { padding: var(--spacing-2xl); }
 .picker-title { font-size: 1.6rem; font-weight: 800; color: var(--text-primary); }

@@ -66,6 +66,60 @@ export function closeModal() {
   returnFocusTo = null;
 }
 
+/** Pull the 11-char video id out of a youtube.com/watch?v= URL, else null. */
+function youTubeId(url) {
+  const m = /[?&]v=([A-Za-z0-9_-]{11})/.exec(url || "");
+  return m ? m[1] : null;
+}
+
+/**
+ * "How to Play" section: a click-to-load video (thumbnail first, so opening
+ * the modal doesn't pull in YouTube's player) followed by the rules summary.
+ */
+function howToPlayHTML(game, videoUrl) {
+  const id = youTubeId(game.howToPlayVideo);
+  const rules = game.howToPlay;
+  if (!id && !rules) return "";
+
+  const video = id
+    ? `<div class="howto-video">
+        <button type="button" class="howto-video-thumb" data-video-id="${esc(id)}"
+                aria-label="Play how-to-play video for ${esc(game.title)}">
+          <img src="https://i.ytimg.com/vi/${esc(id)}/hqdefault.jpg" alt="" loading="lazy">
+          <span class="howto-play-icon" aria-hidden="true">
+            <svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.6 8.6 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.6 8.6 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.6 8.6 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
+          </span>
+        </button>
+      </div>`
+    : `<p class="howto-search"><a href="${esc(videoUrl)}" target="_blank" rel="noopener noreferrer">Find a tutorial video on YouTube →</a></p>`;
+
+  const steps = rules
+    ? `${rules.goal ? `<p class="howto-goal"><strong>Goal:</strong> ${esc(rules.goal)}</p>` : ""}
+       <ol class="howto-steps">${(rules.steps || []).map((s) => `<li>${esc(s)}</li>`).join("")}</ol>`
+    : "";
+
+  return `
+    <section class="game-howto" aria-labelledby="howto-heading">
+      <h3 id="howto-heading">How to Play</h3>
+      ${video}
+      ${steps}
+    </section>`;
+}
+
+/** Swap a video thumbnail for the real (privacy-enhanced) YouTube player. */
+function wireVideo(root) {
+  const thumb = root.querySelector(".howto-video-thumb");
+  if (!thumb) return;
+  thumb.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(thumb.dataset.videoId)}?autoplay=1&rel=0`;
+    iframe.title = thumb.getAttribute("aria-label").replace(/^Play /, "");
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+    thumb.replaceWith(iframe);
+  });
+}
+
 function detailsHTML(game) {
   const cover = game.cover || placeholderDataURI(game.title);
   const fallback = placeholderDataURI(game.title);
@@ -116,16 +170,17 @@ function detailsHTML(game) {
         <p class="game-details-desc">${esc(game.description || "")}</p>
         <div class="game-details-links">
           ${game.bggUrl ? `<a href="${esc(game.bggUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm bgg-link"><svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> BoardGameGeek</a>` : ""}
-          <a href="${esc(videoUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm video-link"><svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><polygon points="5 3 19 12 5 21 5 3"/></svg> How to Play</a>
         </div>
         ${cats ? `<div class="game-details-section"><h4>Categories</h4><div class="card-tags">${cats}</div></div>` : ""}
         ${tags ? `<div class="game-details-section"><h4>Tags</h4><div class="card-tags">${tags}</div></div>` : ""}
       </div>
-    </div>`;
+    </div>
+    ${howToPlayHTML(game, videoUrl)}`;
 }
 
 export function openGameDetails(game) {
   openModal(detailsHTML(game));
+  if (overlay) wireVideo(overlay);
 }
 
 // Cards call this globally so they don't each need an import wire-up.

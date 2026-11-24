@@ -17,6 +17,7 @@
  *   bggWeight    BoardGameGeek complexity weight (1-5), or null if BGG has none
  *   tags         string[]  (free-form key tags)
  *   bggUrl       BoardGameGeek URL (string)
+ *   howToPlay    { goal: string, steps: string[] } short rules summary
  *   howToPlayVideo YouTube 'How to Play' URL (string)
  *
  * Data here is author-controlled static content. If untrusted data is ever
@@ -59,6 +60,15 @@ export const GAMES = [
     bggWeight: 1.63,
     tags: ["Hidden Roles", "Variable Player Powers", "Team Play", "Player Elimination", "Take That", "Hand Management", "Wild West"],
     bggUrl: "https://boardgamegeek.com/boardgame/3955/bang",
+    howToPlay: {
+      goal: "Your secret role decides how you win: the Sheriff and Deputies must take out the Outlaws and the Renegade, the Outlaws want the Sheriff dead, and the Renegade wants to be the last one standing.",
+      steps: [
+        "Everyone gets a secret role (only the Sheriff reveals theirs) and a character with a special ability. Your life points are also your hand limit.",
+        "On your turn, draw 2 cards, then play as many as you like, but only one BANG! per turn. Shoot players within range, heal with Beer, or equip guns and horses.",
+        "A target can dodge a BANG! with a Missed! card; otherwise they lose a life point. Discard down to your life total at the end of your turn.",
+        "Eliminated players reveal their role. The game ends the moment one side's win condition is met."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=dcanu6cwfxc"
   },
   {
@@ -75,6 +85,16 @@ export const GAMES = [
     bggWeight: 2.28,
     tags: ["Trading", "Negotiation", "Resource Management", "Network Building", "Modular Board", "5-6 Player Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/13/catan",
+    howToPlay: {
+      goal: "Be the first to reach 10 victory points.",
+      steps: [
+        "Each turn, roll two dice. Every settlement or city touching a hex with that number produces its resource (cities produce two).",
+        "Trade resources with other players, or with the bank at 4:1 (better at ports).",
+        "Spend resources to build roads, settlements (1 point), and cities (2 points), or to buy development cards.",
+        "Rolling a 7 moves the robber: it blocks a hex, lets you steal a card, and anyone holding more than 7 cards discards half.",
+        "Longest Road and Largest Army are each worth 2 bonus points."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=6OF32Eq5DZo"
   },
   {
@@ -91,6 +111,15 @@ export const GAMES = [
     bggWeight: 1.25,
     tags: ["Team Play", "Clue Giving", "Word Association", "Deduction"],
     bggUrl: "https://boardgamegeek.com/boardgame/178900/codenames",
+    howToPlay: {
+      goal: "Be the first team to find all of your agents on the 5×5 grid of words.",
+      steps: [
+        "Split into two teams. Each has a spymaster who can see the secret key card showing which words belong to which team.",
+        "The spymaster gives a one-word clue plus a number, like “Ocean, 2,” pointing to that many of their team's words.",
+        "Teammates touch words one at a time. Right guesses let you keep going (up to the number plus one); a bystander or the other team's word ends your turn.",
+        "Touch the assassin and your team loses instantly."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=9BSi6Gi3Bzo"
   },
   {
@@ -107,6 +136,16 @@ export const GAMES = [
     bggWeight: 1.41,
     tags: ["Hidden Roles", "Player Elimination", "Take That", "Variable Player Powers", "Team Factions", "Reformation Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/131357/coup",
+    howToPlay: {
+      goal: "Be the last player with any influence (face-down character cards) left.",
+      steps: [
+        "Everyone starts with 2 face-down character cards and 2 coins.",
+        "On your turn, take one action: Income (1 coin), Foreign Aid (2 coins), Coup (pay 7 to make someone lose a card), or a character action like the Duke's Tax, the Assassin's kill, or the Captain's steal.",
+        "You can claim any character whether you have it or not, but anyone can challenge you. Whoever is wrong loses a card.",
+        "Some actions can be blocked by claiming the right character. With 10 or more coins, you must Coup.",
+        "The Reformation expansion adds Loyalist and Reformist factions so bigger groups (up to 10) can play."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=lPlBDZnxHQA"
   },
   {
@@ -123,6 +162,15 @@ export const GAMES = [
     bggWeight: 1.15,
     tags: ["Real-Time", "Trading", "Shouting", "Set Collection"],
     bggUrl: "https://boardgamegeek.com/boardgame/140/pit",
+    howToPlay: {
+      goal: "Corner the market by collecting all nine cards of one commodity, and be the first to 500 points.",
+      steps: [
+        "Deal out the cards so each player holds nine.",
+        "When the round starts, everyone trades at once. Hold out 1–4 matching cards face down and shout the number (“Two! Two!”). Swap sight unseen with anyone offering the same number.",
+        "When you hold all nine of one commodity, ring the bell to win the round and score that commodity's value.",
+        "In editions with the Bull and Bear, the Bull is wild and helps you; get stuck holding the Bear and you lose points."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=OFht7Lnp1Ko"
   },
   {
@@ -139,6 +187,15 @@ export const GAMES = [
     bggWeight: 1.02,
     tags: ["Music", "Timeline", "Companion App", "Team Play"],
     bggUrl: "https://boardgamegeek.com/boardgame/318243/hitster",
+    howToPlay: {
+      goal: "Be the first to build a timeline of 10 songs in the correct order.",
+      steps: [
+        "Scan a song card's QR code with the free Hitster app to play the song through Spotify.",
+        "Without looking at the back, place the card in your timeline where you think its release year belongs.",
+        "Flip it over. If it's in the right spot, it stays; if not, it's discarded.",
+        "Name the artist and title to earn tokens. Spend them to skip a song, or to challenge another player's placement and steal the card if you're right."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=Y_NW6iZh1O0"
   },
   {
@@ -155,6 +212,15 @@ export const GAMES = [
     bggWeight: 1.06,
     tags: ["Clue Giving", "Color Identification", "Guessing", "Communication"],
     bggUrl: "https://boardgamegeek.com/boardgame/302520/hues-and-cues",
+    howToPlay: {
+      goal: "Score the most points by guessing colors from your friends' clues.",
+      steps: [
+        "The cue giver draws a card, secretly picks one of its four colors, and finds it on the 480-color board.",
+        "They give a one-word clue (no color names, and no pointing at things in the room). Everyone places one cone on the board.",
+        "Then they give a two-word clue, and everyone places a second cone.",
+        "Reveal the color. Cones on it score 3, one space away score 2, and two spaces away score 1. The cue giver scores for every cone inside the 3×3 frame."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=oZSveXpjbak"
   },
   {
@@ -171,6 +237,15 @@ export const GAMES = [
     bggWeight: null,
     tags: ["Roll and Move", "Trading", "Negotiation", "Property Management", "Player Elimination", "Paper Money", "Star Wars"],
     bggUrl: "https://boardgamegeek.com/boardgame/38577/monopoly-clone-wars",
+    howToPlay: {
+      goal: "Bankrupt everyone else and be the last player standing.",
+      steps: [
+        "Roll two dice and move around the board. Buy any unowned property you land on, or it goes up for auction.",
+        "Land on someone else's property and pay rent. Own a whole color group to start building settlements and then cities, this edition's version of houses and hotels.",
+        "Draw a Jedi or Sith card when you land on those spaces.",
+        "Trade properties and money freely. If you can't pay what you owe, you're out."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=4nz-_hvFw44"
   },
   {
@@ -187,6 +262,15 @@ export const GAMES = [
     bggWeight: 1.38,
     tags: ["Hidden Roles", "Variable Player Powers", "Team Play", "Deduction", "Companion App"],
     bggUrl: "https://boardgamegeek.com/boardgame/147949/one-night-ultimate-werewolf",
+    howToPlay: {
+      goal: "Villagers win by voting out a werewolf. Werewolves win if no werewolf is voted out.",
+      steps: [
+        "Deal one role card to each player and three to the center. Everyone secretly looks at theirs.",
+        "Night: everyone closes their eyes while the app narrates. Roles wake in order and act: the Seer peeks at a card, the Robber swaps with someone, the Troublemaker swaps two other players.",
+        "Day: you get a few minutes to discuss, claim, and bluff. Your card may have changed overnight without you knowing.",
+        "Everyone points at once. The player with the most votes is eliminated, and the card in front of them decides who wins."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=CI8P-ErLCOs"
   },
   {
@@ -203,6 +287,15 @@ export const GAMES = [
     bggWeight: 1.25,
     tags: ["Rummy", "Set Collection", "Melding", "Hand Management", "Take That"],
     bggUrl: "https://boardgamegeek.com/boardgame/1258/phase-10",
+    howToPlay: {
+      goal: "Be the first to complete all 10 phases, like two sets of three or a run of seven.",
+      steps: [
+        "On your turn, draw from the deck or the discard pile, then discard one card.",
+        "When you have your current phase, lay it down. After that, you can add cards to any laid-down phase to empty your hand.",
+        "Wilds fit anywhere; Skip cards make another player lose a turn.",
+        "When someone goes out, everyone who completed their phase moves on to the next one. Cards left in your hand count as points against you, which break ties."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=e3tZ3YboyO4"
   },
   {
@@ -219,6 +312,15 @@ export const GAMES = [
     bggWeight: 1.2,
     tags: ["Team Play", "Clue Giving", "Real-Time", "Communication"],
     bggUrl: "https://boardgamegeek.com/boardgame/1111/taboo",
+    howToPlay: {
+      goal: "Score more points than the other team by getting your teammates to guess words.",
+      steps: [
+        "On your team's turn, one player draws cards and races the timer.",
+        "Describe the word at the top of the card without saying it, part of it, or any of the five “taboo” words listed below it.",
+        "Every correct guess scores a point. Skipping a card gives the other team a point.",
+        "A player from the other team watches with the buzzer and buzzes if you slip. That card goes to the other team."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=4QeA4nrcQV0"
   },
   {
@@ -235,6 +337,15 @@ export const GAMES = [
     bggWeight: 1.02,
     tags: ["Mature Content", "Humor", "Debating", "Team Play", "Storytelling"],
     bggUrl: "https://boardgamegeek.com/boardgame/282171/trial-by-trolley",
+    howToPlay: {
+      goal: "Win rounds by convincing the conductor to spare your track and run over the other one.",
+      steps: [
+        "One player is the conductor. Everyone else splits into two teams, each with a track.",
+        "Each team adds an Innocent card to its own track and a Guilty card to the other team's track, then plays a Modifier card to twist things further.",
+        "Both teams argue, loudly and creatively, for why their track should be spared.",
+        "The conductor pulls the lever. The team whose track survives wins the round."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=6oeHHfSoqt8"
   },
   {
@@ -251,6 +362,15 @@ export const GAMES = [
     bggWeight: 1.1,
     tags: ["Shedding", "Matching", "Take That", "Hand Management", "Classic"],
     bggUrl: "https://boardgamegeek.com/boardgame/2223/uno",
+    howToPlay: {
+      goal: "Be the first to play all of your cards.",
+      steps: [
+        "Match the top card of the discard pile by color, number, or symbol. If you can't, draw a card.",
+        "Action cards shake things up: Skip, Reverse, Draw Two, and Wilds. Wild Draw Four lets you pick the color and makes the next player draw four.",
+        "Yell “UNO!” when you're down to one card. Get caught not saying it and you draw two.",
+        "First to empty their hand wins the round. Optional scoring: first to 500 points wins."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=FkuqYtE1rw0"
   },
   {
@@ -267,6 +387,15 @@ export const GAMES = [
     bggWeight: 1.22,
     tags: ["Rummy", "Set Collection", "Wild Cards", "Hand Management", "Solo Mode"],
     bggUrl: "https://boardgamegeek.com/boardgame/1472/five-crowns",
+    howToPlay: {
+      goal: "Have the lowest score after 11 rounds.",
+      steps: [
+        "Round one deals 3 cards, round two deals 4, and so on up to 13 cards in the last round.",
+        "The wild card changes each round to match the hand size: 3s are wild in round one, up to Kings in the last. Jokers are always wild.",
+        "On your turn, draw and discard, trying to arrange your whole hand into books (3+ of a kind) and runs (3+ in a row in one suit).",
+        "Once someone goes out, everyone else gets one final turn. Unmatched cards count as points against you."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=8BP2B8ifavc"
   },
   {
@@ -283,6 +412,15 @@ export const GAMES = [
     bggWeight: 1.65,
     tags: ["Real-Time", "Pattern Recognition", "Puzzle", "Visual Perception", "Educational", "Solo Mode"],
     bggUrl: "https://boardgamegeek.com/boardgame/1198/set",
+    howToPlay: {
+      goal: "Find the most sets.",
+      steps: [
+        "Lay out 12 cards. Each card has four features: number, shape, color, and shading.",
+        "A set is three cards where each feature is either all the same or all different across the three cards.",
+        "There are no turns. The first person to spot a set shouts “Set!” and takes it, and three new cards are dealt.",
+        "If nobody can find a set, add three more cards. When the deck runs out, the player with the most sets wins."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=azaArSs-i0c"
   },
   {
@@ -299,6 +437,15 @@ export const GAMES = [
     bggWeight: 1.2,
     tags: ["Humor", "Writing", "Guessing", "Deduction", "Paper and Pencil"],
     bggUrl: "https://boardgamegeek.com/boardgame/10934/the-game-of-things",
+    howToPlay: {
+      goal: "Score points by guessing who wrote which answer, and by staying hidden.",
+      steps: [
+        "The reader draws a topic card, like “Things you shouldn't say at a wedding,” and reads it aloud.",
+        "Everyone secretly writes an answer. The reader shuffles them and reads them all out loud.",
+        "Starting left of the reader, players take turns guessing who wrote which answer. A correct guess scores a point, and the identified player is out for the round.",
+        "Keep guessing until one player is left; they score bonus points for staying hidden."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=z4SHjRHmCaE"
   },
   {
@@ -315,6 +462,15 @@ export const GAMES = [
     bggWeight: 1.07,
     tags: ["Drawing", "Humor", "Telephone Game", "Communication"],
     bggUrl: "https://boardgamegeek.com/boardgame/46213/telestrations",
+    howToPlay: {
+      goal: "Laugh at how a word gets mangled as it travels around the table. Scoring is optional.",
+      steps: [
+        "Everyone secretly picks a word and writes it on the first page of their sketchbook.",
+        "Draw your word, then pass your book to the left.",
+        "Look at the drawing you received, turn the page, and write what you think it is. Pass again.",
+        "Alternate drawing and guessing until the books return to their owners, then reveal each chain from start to finish."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=w5zVtncdgWg"
   },
   {
@@ -331,6 +487,15 @@ export const GAMES = [
     bggWeight: 1.09,
     tags: ["Physical Activity", "Dexterity", "Spinner", "Classic"],
     bggUrl: "https://boardgamegeek.com/boardgame/5894/twister",
+    howToPlay: {
+      goal: "Be the last player standing without falling over.",
+      steps: [
+        "Lay out the mat with its rows of red, yellow, green, and blue circles.",
+        "A referee spins the spinner and calls out a body part and a color, like “Right hand, green.”",
+        "Every player moves that hand or foot to an open circle of that color.",
+        "Fall over, or touch the mat with an elbow or knee, and you're out."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=7A5XO0udmdo"
   },
   {
@@ -347,6 +512,15 @@ export const GAMES = [
     bggWeight: 1.16,
     tags: ["Card Drafting", "Set Collection", "Simultaneous Action", "Hand Management", "Cute Artwork"],
     bggUrl: "https://boardgamegeek.com/boardgame/133473/sushi-go",
+    howToPlay: {
+      goal: "Score the most points over three rounds by collecting the best sushi combos.",
+      steps: [
+        "Everyone gets a hand of cards. Each turn, keep one card face down and pass the rest to your left.",
+        "Everyone reveals their chosen card at the same time. Repeat until all the cards are played.",
+        "Each dish scores differently: tempura in pairs, sashimi in sets of three, dumplings grow with more, wasabi triples your next nigiri, and the most maki rolls earns a bonus.",
+        "Puddings are scored after the third round: the most earns points, the fewest loses them."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=vkBMxDgteFg"
   },
   {
@@ -363,6 +537,15 @@ export const GAMES = [
     bggWeight: 1.39,
     tags: ["Ever-changing Rules", "Chaos", "Take That", "Set Collection", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/258/fluxx",
+    howToPlay: {
+      goal: "Meet whatever the current Goal card says. When the goal changes, so does how you win.",
+      steps: [
+        "The game starts with one rule: draw one card, play one card.",
+        "Play New Rule cards to change how many cards you draw, play, or can hold.",
+        "Play Keepers in front of you, and play Goal cards to set the winning condition (usually owning two specific Keepers).",
+        "Action cards cause one-time chaos. The moment anyone meets the current goal, they win."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=8D-7ty1hPuc"
   },
   {
@@ -379,6 +562,15 @@ export const GAMES = [
     bggWeight: 1.08,
     tags: ["Chaos", "Humor", "Take That", "Player Elimination", "Real-Time", "Legacies Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/31016/we-didnt-playtest-all",
+    howToPlay: {
+      goal: "Win. Somehow.",
+      steps: [
+        "Everyone starts with two cards. On your turn, draw one card and play one card.",
+        "Cards do ridiculous things: make someone lose instantly, start a rock-paper-scissors duel, or protect you from the next disaster.",
+        "Get eliminated and you're out until the next game, which starts about 30 seconds later.",
+        "With the Legacies expansion, players write on cards and add stickers to permanently change the game."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=iHLN937oiLE"
   },
   {
@@ -395,6 +587,15 @@ export const GAMES = [
     bggWeight: 1.32,
     tags: ["Hidden Roles", "Team Play", "Path Building"],
     bggUrl: "https://boardgamegeek.com/boardgame/9220/saboteur",
+    howToPlay: {
+      goal: "Miners want to dig a tunnel to the gold; saboteurs want to stop them. Most gold after three rounds wins.",
+      steps: [
+        "Secret role cards decide who is a miner and who is a saboteur.",
+        "On your turn, play a path card to extend the tunnel toward one of three face-down goal cards, play an action card (break someone's tools, repair yours, or peek at a goal with a map), or discard.",
+        "Broken tools stop you from playing path cards until someone repairs them.",
+        "If the tunnel reaches the treasure, the miners split the gold. If the cards run out first, the saboteurs take it."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=FNTesrTLh4I"
   },
   {
@@ -411,6 +612,15 @@ export const GAMES = [
     bggWeight: 1.31,
     tags: ["Set Collection", "Take That", "Stealing", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/40398/monopoly-deal-card-game",
+    howToPlay: {
+      goal: "Be the first to collect three complete property sets of different colors.",
+      steps: [
+        "Draw 2 cards each turn (5 if your hand is empty) and play up to 3.",
+        "Play cards as money into your bank, as properties in front of you, or as actions.",
+        "Action cards let you charge rent, steal a property (Sly Deal), take a whole set (Deal Breaker), or cancel anything with Just Say No.",
+        "When you owe money, pay from your bank or your properties. There's no change given."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=Gc0XrTjmCV8"
   },
   {
@@ -427,6 +637,15 @@ export const GAMES = [
     bggWeight: null,
     tags: ["Set Collection", "Life Choices", "Hand Management", "Classic Remake"],
     bggUrl: "https://boardgamegeek.com/boardgame/88691/game-life-adventures-card-game",
+    howToPlay: {
+      goal: "Score the most points by building the best life story out of cards.",
+      steps: [
+        "On your turn, draw a card and play one into your life story: Career, Family, Wealth, and Adventure cards.",
+        "Many cards have requirements, so you need the right cards in play before you can add them.",
+        "Action cards let you swap or steal cards from other players' lives.",
+        "When the game ends, total the points on your cards. The highest score wins."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=uuykGYWG_PQ"
   },
   {
@@ -443,6 +662,15 @@ export const GAMES = [
     bggWeight: null,
     tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker"],
     bggUrl: "",
+    howToPlay: {
+      goal: "Be the first team to get four of your players sitting on the couch.",
+      steps: [
+        "Everyone writes their name on a slip. Shuffle and deal them out; the name you get is your secret identity.",
+        "Sit in a circle with teams alternating (two from each team start on the couch), leaving one seat empty.",
+        "The player next to the empty seat calls out a name. Whoever holds that name moves into the empty seat, and the caller and the mover swap name slips.",
+        "Names keep moving, so remembering who holds which one is the whole game."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=eKIjx5mBNCw"
   },
   {
@@ -459,6 +687,15 @@ export const GAMES = [
     bggWeight: 1.38,
     tags: ["Hidden Roles", "Player Elimination", "Team Play", "Deduction", "Narrator Needed", "No Props Needed", "Classic"],
     bggUrl: "https://boardgamegeek.com/boardgame/925/werewolf",
+    howToPlay: {
+      goal: "Citizens win by eliminating all the Mafia. The Mafia wins once they equal or outnumber the citizens.",
+      steps: [
+        "A narrator secretly assigns roles: a few Mafia, plus citizens (often including a Doctor and a Detective).",
+        "Night: everyone closes their eyes. The Mafia silently choose a victim, the Doctor picks someone to protect, and the Detective asks the narrator about one player.",
+        "Day: the narrator reveals who was eliminated. Everyone debates, accuses, and votes to eliminate one suspect.",
+        "Repeat until one side wins. Eliminated players stay silent."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=CU1fGfErrXA"
   },
   {
@@ -475,6 +712,15 @@ export const GAMES = [
     bggWeight: 1.14,
     tags: ["Classic Deck", "Shedding", "Social Hierarchy", "Card Trading", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/26353/scum",
+    howToPlay: {
+      goal: "Get rid of your cards first to become President, and avoid finishing last as the Scum.",
+      steps: [
+        "Deal out the whole deck. The leader plays a single, a pair, a triple, or four of a kind.",
+        "Going around, each player must play the same number of cards at a higher rank, or pass. In most house rules, 2s are high.",
+        "When everyone passes, the last player to play clears the pile and leads again.",
+        "Finishing order sets the ranks for the next hand: the Scum hands their best cards to the President, who passes back their worst."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=ZLOo4EGYTl4"
   },
   {
@@ -491,6 +737,15 @@ export const GAMES = [
     bggWeight: null,
     tags: ["Deduction", "Roleplay", "Observation", "No Props Needed", "Icebreaker"],
     bggUrl: "",
+    howToPlay: {
+      goal: "As the Psychiatrist, figure out the “condition” the whole group secretly shares.",
+      steps: [
+        "The Psychiatrist leaves the room. Everyone else agrees on a rule for answering, like “answer as the person on your right.”",
+        "The Psychiatrist returns and asks players questions, one at a time.",
+        "Everyone answers following the rule. If someone breaks it, the group shouts “Psychiatrist!” and everyone switches seats.",
+        "Keep asking until the Psychiatrist diagnoses the condition."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=D1mUwHHkxxA"
   },
   {
@@ -507,6 +762,15 @@ export const GAMES = [
     bggWeight: null,
     tags: ["Word Guessing", "Deduction", "No Props Needed", "Icebreaker", "Communication"],
     bggUrl: "",
+    howToPlay: {
+      goal: "Figure out the secret verb the group chose.",
+      steps: [
+        "The guesser leaves the room while everyone else picks a verb, like “swim” or “cook.”",
+        "The guesser comes back and asks questions, swapping in “smurf” for the unknown verb: “Do you smurf outdoors?” “How often do you smurf?”",
+        "Everyone answers honestly about the real verb.",
+        "Keep going until the guesser names the verb, then someone new takes a turn."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+smurf+party+game"
   },
   {
@@ -523,6 +787,15 @@ export const GAMES = [
     bggWeight: 1.82,
     tags: ["Deduction", "Clue Giving", "Team Play", "Word Association", "Codes"],
     bggUrl: "https://boardgamegeek.com/boardgame/225694/decrypto",
+    howToPlay: {
+      goal: "Intercept two of the other team's codes before they intercept two of yours, without miscommunicating twice.",
+      steps: [
+        "Each team has four secret keywords, numbered 1–4, hidden behind their screen.",
+        "Each round, one player per team draws a three-digit code (like 3-1-4) and gives three clues hinting at those keywords, in order.",
+        "Their team tries to guess the code, and the other team tries to intercept it.",
+        "Clues pile up every round, so the other team slowly learns your words. Be clever without being obvious."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=2DBg7Z2-pQ4"
   },
   {
@@ -539,6 +812,15 @@ export const GAMES = [
     bggWeight: null,
     tags: ["Memory", "Classic Deck", "Card Swapping", "Spying", "Hand Management"],
     bggUrl: "",
+    howToPlay: {
+      goal: "Have the lowest total card value when the round ends.",
+      steps: [
+        "Each player gets four cards face down and may peek at two of them once.",
+        "On your turn, draw a card and either swap it with one of your face-down cards or discard it. Discarded power cards let you peek at your cards, peek at an opponent's, or swap cards (house rules vary).",
+        "When a card matching one of yours is discarded, slap yours on top to get rid of it. Guess wrong and you take a penalty card.",
+        "When you think you're lowest, call “Cambio.” Everyone else gets one more turn, then all cards are revealed."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=dlLbkVR8oe8"
   },
   {
@@ -555,6 +837,15 @@ export const GAMES = [
     bggWeight: null,
     tags: ["Team Play", "Charades", "Clue Giving", "Real-Time", "Memory", "Paper and Pencil"],
     bggUrl: "",
+    howToPlay: {
+      goal: "Score the most points for your team across three rounds.",
+      steps: [
+        "Everyone writes a few names, words, or phrases on slips and drops them in the bowl.",
+        "Teams alternate. One player gets about a minute to get their team to guess as many slips as possible.",
+        "Round 1: describe it using any words except the answer. Round 2: one word only. Round 3: charades, no words at all.",
+        "The same slips are reused every round, so remembering earlier answers is the key."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/watch?v=17dCJgvbxIs"
   },
   {
@@ -571,6 +862,15 @@ export const GAMES = [
     bggWeight: null,
     tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker"],
     bggUrl: "",
+    howToPlay: {
+      goal: "Recruit everyone onto your team by figuring out who wrote which name.",
+      steps: [
+        "Everyone secretly writes down a famous name (real or fictional) and hands it to a reader.",
+        "The reader reads every name aloud once, and only once.",
+        "On your turn, ask someone if they wrote a specific name. Guess right and they join your team and you go again; guess wrong and it's their turn.",
+        "Keep going until one team has recruited everyone."
+      ]
+    },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+name+game+party+game"
   }
 ];
