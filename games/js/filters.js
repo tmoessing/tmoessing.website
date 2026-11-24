@@ -23,13 +23,14 @@ export function complexityLabel(c) {
 
 /**
  * Resolve a duration filter into a { lo, hi } minute bucket, or null for "any".
- * Buckets: u30 / 30-60 / 60-90 / 90+ / custom / any.
+ * Buckets: u30 / 30-60 / 60-90 / 30-90 / 90+ / custom / any.
  */
 export function durationBucket(filters) {
   switch (filters.duration) {
     case "u30": return { lo: 0, hi: 30 };
     case "30-60": return { lo: 30, hi: 60 };
     case "60-90": return { lo: 60, hi: 90 };
+    case "30-90": return { lo: 30, hi: 90 };
     case "90+": return { lo: 90, hi: Infinity };
     case "custom": {
       const lo = Number.isFinite(filters.customLo) ? filters.customLo : 0;

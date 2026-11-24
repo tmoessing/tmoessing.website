@@ -1,22 +1,24 @@
 /**
  * The game library grid page: renders every game and wires the toolbar
- * (search with tag autocomplete, sort, shuffle, grid/list view) and the
+ * (search with tag autocomplete, sort, large-card / small-card / list view) and the
  * Pick-a-Game button. Search, tags and sort are mirrored into the URL so a
  * filtered view can be shared.
  */
 import { GAMES, CATEGORIES } from "../data/games.js";
 import { createGameCard } from "./GameCard.js";
-import { sortGames, shuffle, esc } from "./filters.js";
+import { sortGames, esc } from "./filters.js";
 import { openPicker } from "./PickerModal.js";
 import { icon } from "./icons.js";
 import { readUrlState, writeFilters } from "./urlState.js";
 
 const VIEW_KEY = "library-view";
+const VIEWS = ["grid", "compact", "list"];
 const SEARCH_PLACEHOLDER = "Search games...";
 
 function readStoredView() {
   try {
-    return localStorage.getItem(VIEW_KEY) === "list" ? "list" : "grid";
+    const v = localStorage.getItem(VIEW_KEY);
+    return VIEWS.includes(v) ? v : "grid";
   } catch (_) {
     return "grid";
   }
@@ -28,9 +30,6 @@ export class LibraryPage {
     this.searchQuery = "";
     this.activeTags = new Set();
     this.selectedSuggestionIndex = 0;
-    // When set, a shuffled order (game id -> rank) that survives filtering
-    // until the user picks a sort option again.
-    this.shuffleRank = null;
     this.view = readStoredView();
   }
 
@@ -38,8 +37,7 @@ export class LibraryPage {
     this.grid = document.getElementById("games-grid");
     this.countEl = document.getElementById("games-count");
     this.sortSel = document.getElementById("library-sort");
-    this.gridBtn = document.getElementById("view-grid");
-    this.listBtn = document.getElementById("view-list");
+    this.viewBtns = Array.from(document.querySelectorAll(".view-btn[data-view]"));
     this.searchInput = document.getElementById("game-search-input");
     this.searchBox = document.getElementById("game-search-box-container");
     this.suggestionsDiv = document.getElementById("game-search-suggestions");
@@ -53,21 +51,12 @@ export class LibraryPage {
     });
     this.matchableTags = Array.from(tagsSet);
 
-    this.gridBtn.addEventListener("click", () => this.setView("grid"));
-    this.listBtn.addEventListener("click", () => this.setView("list"));
+    this.viewBtns.forEach((b) => b.addEventListener("click", () => this.setView(b.dataset.view)));
     this.applyView();
 
     document.getElementById("pick-a-game-btn").addEventListener("click", () => openPicker());
 
-    document.getElementById("library-shuffle").addEventListener("click", () => {
-      this.shuffleRank = new Map(shuffle(GAMES).map((g, i) => [g.id, i]));
-      this.updateList();
-    });
-
-    this.sortSel.addEventListener("change", () => {
-      this.shuffleRank = null;
-      this.updateList();
-    });
+    this.sortSel.addEventListener("change", () => this.updateList());
 
     this.searchBox.addEventListener("click", () => this.searchInput.focus());
     this.searchInput.addEventListener("input", () => {
@@ -97,9 +86,10 @@ export class LibraryPage {
       const match = this.matchableTags.find((m) => m.toLowerCase() === t.toLowerCase());
       if (match) this.activeTags.add(match);
     });
-    if (sort && [...this.sortSel.options].some((o) => o.value === sort)) {
-      this.sortSel.value = sort;
-    }
+    // Default to title A–Z unless a shared link says otherwise (also undoes
+    // browsers restoring the last-used <select> value on reload).
+    const validSort = sort && [...this.sortSel.options].some((o) => o.value === sort);
+    this.sortSel.value = validSort ? sort : "alpha";
     this.renderActiveTags();
   }
 
@@ -231,13 +221,7 @@ export class LibraryPage {
   }
 
   updateList() {
-    const filtered = this.getFilteredGames();
-    if (this.shuffleRank) {
-      const rank = this.shuffleRank;
-      this.games = [...filtered].sort((a, b) => rank.get(a.id) - rank.get(b.id));
-    } else {
-      this.games = sortGames(filtered, this.sortSel.value);
-    }
+    this.games = sortGames(this.getFilteredGames(), this.sortSel.value);
     writeFilters({
       q: this.searchInput.value.trim(),
       tags: Array.from(this.activeTags),
@@ -247,7 +231,7 @@ export class LibraryPage {
   }
 
   setView(view) {
-    if (this.view === view) return;
+    if (this.view === view || !VIEWS.includes(view)) return;
     this.view = view;
     try {
       localStorage.setItem(VIEW_KEY, view);
@@ -258,12 +242,13 @@ export class LibraryPage {
   }
 
   applyView() {
-    const isList = this.view === "list";
-    this.grid.classList.toggle("list-view", isList);
-    this.gridBtn.classList.toggle("active", !isList);
-    this.gridBtn.setAttribute("aria-pressed", String(!isList));
-    this.listBtn.classList.toggle("active", isList);
-    this.listBtn.setAttribute("aria-pressed", String(isList));
+    this.grid.classList.toggle("compact-view", this.view === "compact");
+    this.grid.classList.toggle("list-view", this.view === "list");
+    this.viewBtns.forEach((b) => {
+      const on = b.dataset.view === this.view;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
   }
 
   render() {
