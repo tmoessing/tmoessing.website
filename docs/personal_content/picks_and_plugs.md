@@ -67,7 +67,7 @@ description: Great FOSS (Free and Open Source Software) photo self storage app s
 link: https://immich.app/
 tags: TECH, PHOTOS
 image: assets/picks_and_plugs/immich.png
-why: Own your photos. All the Google Photos convenience without handing over your memories.
+why: I have total control of my photos. No ties to Google Photos, iCloud Photos, Amazon Photos, etc.
 
 ### Brave Browser
 
