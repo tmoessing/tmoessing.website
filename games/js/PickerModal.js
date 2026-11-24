@@ -53,6 +53,7 @@ const CONFETTI_COLORS = [
 
 let overlay = null;
 let state = null;
+let returnFocusTo = null;
 
 function defaultState() {
   return {
@@ -88,6 +89,7 @@ function currentMatches() {
 export function openPicker() {
   if (overlay) return;
   state = defaultState();
+  returnFocusTo = document.activeElement;
 
   overlay = document.createElement("div");
   overlay.className = "game-modal-overlay picker-overlay";
@@ -107,6 +109,7 @@ export function openPicker() {
   document.addEventListener("keydown", onEsc);
 
   renderFilters();
+  overlay.querySelector(".game-modal-close").focus();
 }
 
 function onEsc(e) {
@@ -121,6 +124,8 @@ export function closePicker() {
   unlockScroll();
   document.removeEventListener("keydown", onEsc);
   document.querySelectorAll(".confetti-piece").forEach((c) => c.remove());
+  if (returnFocusTo && document.contains(returnFocusTo)) returnFocusTo.focus();
+  returnFocusTo = null;
 }
 
 /* ---------- helpers ---------- */
@@ -499,8 +504,8 @@ function renderResult(game, singleMatch) {
       <div class="card-tags picker-result-tags">${tags}</div>
       <div class="picker-result-actions">
         <button type="button" class="btn btn-primary" id="picker-play-now" style="display: inline-flex; align-items: center; gap: 6px;">
-          <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Play Now
+          <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          View Details
         </button>
         <button type="button" class="btn btn-secondary" id="picker-again" style="display: inline-flex; align-items: center; gap: 6px;">
           <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>

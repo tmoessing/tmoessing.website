@@ -26,6 +26,7 @@ export function unlockScroll() {
 }
 
 let overlay = null;
+let returnFocusTo = null;
 
 function onEsc(e) {
   if (e.key === "Escape") closeModal();
@@ -33,6 +34,7 @@ function onEsc(e) {
 
 export function openModal(html) {
   closeModal();
+  returnFocusTo = document.activeElement;
   overlay = document.createElement("div");
   overlay.className = "game-modal-overlay details-overlay";
   overlay.innerHTML = `
@@ -50,6 +52,7 @@ export function openModal(html) {
   });
   overlay.querySelector(".game-modal-close").addEventListener("click", closeModal);
   document.addEventListener("keydown", onEsc);
+  overlay.querySelector(".game-modal-close").focus();
 }
 
 export function closeModal() {
@@ -59,6 +62,8 @@ export function closeModal() {
   window.__gameDetailsOpen = false;
   unlockScroll();
   document.removeEventListener("keydown", onEsc);
+  if (returnFocusTo && document.contains(returnFocusTo)) returnFocusTo.focus();
+  returnFocusTo = null;
 }
 
 function detailsHTML(game) {
@@ -68,6 +73,9 @@ function detailsHTML(game) {
     game.minPlayers === game.maxPlayers
       ? `${game.minPlayers}`
       : `${game.minPlayers}–${game.maxPlayers}`;
+  const videoUrl =
+    game.howToPlayVideo ||
+    `https://www.youtube.com/results?search_query=how+to+play+${encodeURIComponent(game.title)}+board+game`;
   const time =
     game.playtimeMin === game.playtimeMax
       ? `${game.playtimeMin} min`
@@ -106,7 +114,7 @@ function detailsHTML(game) {
         <p class="game-details-desc">${esc(game.description || "")}</p>
         <div class="game-details-links">
           ${game.bggUrl ? `<a href="${esc(game.bggUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm bgg-link"><svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> BoardGameGeek</a>` : ""}
-          <a href="https://www.youtube.com/results?search_query=how+to+play+${encodeURIComponent(game.title)}+board+game" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm video-link"><svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><polygon points="5 3 19 12 5 21 5 3"/></svg> How to Play</a>
+          <a href="${esc(videoUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm video-link"><svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><polygon points="5 3 19 12 5 21 5 3"/></svg> How to Play</a>
         </div>
         ${cats ? `<div class="game-details-section"><h4>Categories</h4><div class="card-tags">${cats}</div></div>` : ""}
         ${tags ? `<div class="game-details-section"><h4>Tags</h4><div class="card-tags">${tags}</div></div>` : ""}

@@ -261,6 +261,11 @@
 .game-meta { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; }
 .game-card-tags { margin-top: 2px; }
 .game-view-btn { margin-top: auto; justify-content: center; }
+.game-card:focus-within {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+.remove-tag-btn:hover, .remove-tag-btn:focus-visible { opacity: 1 !important; }
 
 /* ---------- complexity badge ---------- */
 .complexity-badge {

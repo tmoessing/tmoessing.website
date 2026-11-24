@@ -76,7 +76,7 @@ export function createGameCard(game) {
         ${catsHTML ? `<div class="game-card-categories card-tags">${catsHTML}</div>` : ""}
         <div class="card-tags game-card-tags">${tagsHTML}</div>
       </div>
-      <button class="btn btn-primary btn-sm game-view-btn" type="button">View Details</button>
+      <button class="btn btn-primary btn-sm game-view-btn" type="button" aria-label="View details for ${esc(game.title)}">View Details</button>
     </div>
   `;
 

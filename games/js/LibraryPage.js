@@ -4,7 +4,7 @@
  */
 import { GAMES } from "../data/games.js";
 import { createGameCard } from "./GameCard.js";
-import { sortGames, shuffle } from "./filters.js";
+import { sortGames, shuffle, esc } from "./filters.js";
 import { openPicker } from "./PickerModal.js";
 
 const VIEW_KEY = "library-view";
@@ -17,6 +17,9 @@ export class LibraryPage {
     this.searchQuery = "";
     this.activeTags = new Set();
     this.selectedSuggestionIndex = 0;
+    // When set, a shuffled order (game id -> rank) that survives filtering
+    // until the user picks a sort option again.
+    this.shuffleRank = null;
     this.view = localStorage.getItem(VIEW_KEY) === "list" ? "list" : "grid";
   }
 
@@ -49,17 +52,15 @@ export class LibraryPage {
     const shuffleBtn = document.getElementById("library-shuffle");
     if (shuffleBtn) {
       shuffleBtn.addEventListener("click", () => {
-        const filtered = this.getFilteredGames();
-        this.games = shuffle(filtered);
-        this.renderFiltered(this.games);
+        this.shuffleRank = new Map(shuffle(GAMES).map((g, i) => [g.id, i]));
+        this.updateList();
       });
     }
 
     if (this.sortSel) {
       this.sortSel.addEventListener("change", () => {
-        const filtered = this.getFilteredGames();
-        this.games = sortGames(filtered, this.sortSel.value);
-        this.renderFiltered(this.games);
+        this.shuffleRank = null;
+        this.updateList();
       });
     }
 
@@ -200,7 +201,7 @@ export class LibraryPage {
 
       pill.innerHTML = `
         <span>${esc(tag)}</span>
-        <span class="remove-tag-btn" style="cursor:pointer; font-weight:800; opacity:0.6; margin-left: 2px;">✕</span>
+        <button type="button" class="remove-tag-btn" aria-label="Remove ${esc(tag)} filter" style="cursor:pointer; font-weight:800; opacity:0.6; margin-left: 2px; background:none; border:none; padding:0; color:inherit; font-size:inherit; line-height:1;">✕</button>
       `;
 
       pill.querySelector(".remove-tag-btn").addEventListener("click", (e) => {
@@ -253,8 +254,13 @@ export class LibraryPage {
 
   updateList() {
     const filtered = this.getFilteredGames();
-    const sortBy = this.sortSel ? this.sortSel.value : "alpha";
-    this.games = sortGames(filtered, sortBy);
+    if (this.shuffleRank) {
+      const rank = this.shuffleRank;
+      this.games = [...filtered].sort((a, b) => rank.get(a.id) - rank.get(b.id));
+    } else {
+      const sortBy = this.sortSel ? this.sortSel.value : "alpha";
+      this.games = sortGames(filtered, sortBy);
+    }
     this.render();
   }
 
