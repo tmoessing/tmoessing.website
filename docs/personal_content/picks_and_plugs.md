@@ -8,6 +8,21 @@ description: A transformative guide on the disciplined pursuit of less. It teach
 tags: BOOK
 image: assets/picks_and_plugs/essentialism.jpg
 
+### Percy Jackson and the Olympians by Rick Riordan
+
+description: The original 5-book series following Percy Jackson, a modern-day demigod, as he battles monsters and Greek gods. Funny, fast-paced, and packed with mythology.
+tags: BOOK
+
+### The Heroes of Olympus by Rick Riordan
+
+description: The 5-book sequel series to Percy Jackson that brings Roman mythology into the mix with a new crew of demigods and an even bigger quest.
+tags: BOOK
+
+### The Maze Runner Series by James Dashner
+
+description: Dystopian series about a group of teens who wake up with no memories in the middle of a giant, ever-changing maze and have to figure out how to escape.
+tags: BOOK
+
 ### Syntax. Podcast
 
 description: Great development podcast talking specially about web development
