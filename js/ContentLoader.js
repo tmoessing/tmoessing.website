@@ -289,7 +289,7 @@ export class ContentLoader {
         allProjects.sort((a, b) => this.parser.parseDateRange(b.dates).end - this.parser.parseDateRange(a.dates).end);
         
         allProjects.forEach(project => {
-            gridContainer.appendChild(this.renderer.createProjectCard(project, project.category));
+            gridContainer.appendChild(this.renderer.createProjectCard(project, null, false));
         });
 
         // Update contact venmo links if they exist

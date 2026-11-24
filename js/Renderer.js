@@ -272,7 +272,7 @@ export class Renderer {
         return card;
     }
 
-    createProjectCard(project, category = null) {
+    createProjectCard(project, category = null, showTags = true) {
         const card = document.createElement('div');
         const slug = this.parser.slugify(project.title);
         card.className = project.image ? 'card has-image project-card' : 'card project-card';
@@ -300,13 +300,13 @@ export class Renderer {
                 ${project.dates ? `<div class="card-meta">${project.dates}</div>` : ''}
             </div>
             <p class="card-description">${project.description || ''}</p>
-            <div class="project-actions">
+            ${project.link || statusHTML ? `<div class="project-actions">
                 ${project.link ? `<a href="${project.link}" target="_blank" class="btn btn-primary btn-sm">View →</a>` : ''}
                 ${statusHTML}
-            </div>
-            <div class="card-footer">
+            </div>` : ''}
+            ${showTags ? `<div class="card-footer">
                 ${this.renderTags(project.tags)}
-            </div>
+            </div>` : ''}
         `;
 
         if (project.image) {
