@@ -45,6 +45,16 @@ export const CATEGORIES = [
   "Campaign"
 ];
 
+/** The categories shown first on cards and in the picker (rest behind "Show More"). */
+export const CORE_CATEGORIES = [
+  "Party",
+  "Strategy",
+  "Cooperative",
+  "Social Deduction",
+  "Card Game",
+  "Family"
+];
+
 export const GAMES = [
   {
     id: "bang",

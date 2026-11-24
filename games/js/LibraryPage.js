@@ -1,15 +1,26 @@
 /**
- * The /game-library grid page: renders every game, wires the toolbar
- * (sort + shuffle) and the Pick-a-Game button.
+ * The game library grid page: renders every game and wires the toolbar
+ * (search with tag autocomplete, sort, shuffle, grid/list view) and the
+ * Pick-a-Game button. Search, tags and sort are mirrored into the URL so a
+ * filtered view can be shared.
  */
-import { GAMES } from "../data/games.js";
+import { GAMES, CATEGORIES } from "../data/games.js";
 import { createGameCard } from "./GameCard.js";
 import { sortGames, shuffle, esc } from "./filters.js";
 import { openPicker } from "./PickerModal.js";
+import { icon } from "./icons.js";
+import { readUrlState, writeFilters } from "./urlState.js";
 
 const VIEW_KEY = "library-view";
+const SEARCH_PLACEHOLDER = "Search games...";
 
-import { CATEGORIES } from "../data/games.js";
+function readStoredView() {
+  try {
+    return localStorage.getItem(VIEW_KEY) === "list" ? "list" : "grid";
+  } catch (_) {
+    return "grid";
+  }
+}
 
 export class LibraryPage {
   constructor() {
@@ -20,7 +31,7 @@ export class LibraryPage {
     // When set, a shuffled order (game id -> rank) that survives filtering
     // until the user picks a sort option again.
     this.shuffleRank = null;
-    this.view = localStorage.getItem(VIEW_KEY) === "list" ? "list" : "grid";
+    this.view = readStoredView();
   }
 
   init() {
@@ -30,92 +41,94 @@ export class LibraryPage {
     this.gridBtn = document.getElementById("view-grid");
     this.listBtn = document.getElementById("view-list");
     this.searchInput = document.getElementById("game-search-input");
-    this.searchBoxContainer = document.getElementById("game-search-box-container");
+    this.searchBox = document.getElementById("game-search-box-container");
     this.suggestionsDiv = document.getElementById("game-search-suggestions");
     this.activeTagsDiv = document.getElementById("game-search-tags");
 
-    // Extract unique tags and categories for autocomplete suggestions
+    // Every category and tag is a possible autocomplete suggestion.
     const tagsSet = new Set();
     GAMES.forEach((g) => {
-      if (g.categories) g.categories.forEach((c) => tagsSet.add(c));
-      if (g.tags) g.tags.forEach((t) => tagsSet.add(t));
+      (g.categories || []).forEach((c) => tagsSet.add(c));
+      (g.tags || []).forEach((t) => tagsSet.add(t));
     });
     this.matchableTags = Array.from(tagsSet);
 
-    if (this.gridBtn) this.gridBtn.addEventListener("click", () => this.setView("grid"));
-    if (this.listBtn) this.listBtn.addEventListener("click", () => this.setView("list"));
+    this.gridBtn.addEventListener("click", () => this.setView("grid"));
+    this.listBtn.addEventListener("click", () => this.setView("list"));
     this.applyView();
 
-    const pickBtn = document.getElementById("pick-a-game-btn");
-    if (pickBtn) pickBtn.addEventListener("click", () => openPicker());
+    document.getElementById("pick-a-game-btn").addEventListener("click", () => openPicker());
 
-    const shuffleBtn = document.getElementById("library-shuffle");
-    if (shuffleBtn) {
-      shuffleBtn.addEventListener("click", () => {
-        this.shuffleRank = new Map(shuffle(GAMES).map((g, i) => [g.id, i]));
-        this.updateList();
-      });
-    }
-
-    if (this.sortSel) {
-      this.sortSel.addEventListener("change", () => {
-        this.shuffleRank = null;
-        this.updateList();
-      });
-    }
-
-    if (this.searchBoxContainer && this.searchInput) {
-      this.searchBoxContainer.addEventListener("click", () => {
-        this.searchInput.focus();
-      });
-    }
-
-    if (this.searchInput) {
-      this.searchInput.addEventListener("input", () => {
-        this.searchQuery = this.searchInput.value.toLowerCase().trim();
-        this.selectedSuggestionIndex = 0;
-        this.renderSuggestions();
-        this.updateList();
-      });
-
-      this.searchInput.addEventListener("keydown", (e) => {
-        const matches = this.getMatchingTags();
-        if (matches.length > 0 && this.suggestionsDiv && this.suggestionsDiv.style.display !== "none") {
-          if (e.key === "ArrowDown") {
-            e.preventDefault();
-            this.selectedSuggestionIndex = (this.selectedSuggestionIndex + 1) % matches.length;
-            this.highlightSuggestion();
-          } else if (e.key === "ArrowUp") {
-            e.preventDefault();
-            this.selectedSuggestionIndex = (this.selectedSuggestionIndex - 1 + matches.length) % matches.length;
-            this.highlightSuggestion();
-          } else if (e.key === "Tab" || e.key === "Enter") {
-            e.preventDefault();
-            this.addActiveTag(matches[this.selectedSuggestionIndex]);
-          }
-        } else {
-          if (e.key === "Backspace" && !this.searchInput.value) {
-            const tagsArray = Array.from(this.activeTags);
-            if (tagsArray.length > 0) {
-              this.activeTags.delete(tagsArray[tagsArray.length - 1]);
-              this.renderActiveTags();
-              this.updateList();
-            }
-          }
-        }
-      });
-    }
-
-    document.addEventListener("click", (e) => {
-      const isInside = e.target.closest(".search-container-relative");
-      if (!isInside) this.hideSuggestions();
+    document.getElementById("library-shuffle").addEventListener("click", () => {
+      this.shuffleRank = new Map(shuffle(GAMES).map((g, i) => [g.id, i]));
+      this.updateList();
     });
 
+    this.sortSel.addEventListener("change", () => {
+      this.shuffleRank = null;
+      this.updateList();
+    });
+
+    this.searchBox.addEventListener("click", () => this.searchInput.focus());
+    this.searchInput.addEventListener("input", () => {
+      this.searchQuery = this.searchInput.value.toLowerCase().trim();
+      this.selectedSuggestionIndex = 0;
+      this.renderSuggestions();
+      this.updateList();
+    });
+    this.searchInput.addEventListener("keydown", (e) => this.onSearchKeydown(e));
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".search-container")) this.hideSuggestions();
+    });
+
+    this.applyUrlState();
     this.updateList();
   }
 
+  /** Restore search text, tags and sort from a shared link. */
+  applyUrlState() {
+    const { q, tags, sort } = readUrlState();
+    if (q) {
+      this.searchInput.value = q;
+      this.searchQuery = q.toLowerCase().trim();
+    }
+    tags.forEach((t) => {
+      const match = this.matchableTags.find((m) => m.toLowerCase() === t.toLowerCase());
+      if (match) this.activeTags.add(match);
+    });
+    if (sort && [...this.sortSel.options].some((o) => o.value === sort)) {
+      this.sortSel.value = sort;
+    }
+    this.renderActiveTags();
+  }
+
+  onSearchKeydown(e) {
+    const matches = this.getMatchingTags();
+    if (matches.length > 0 && !this.suggestionsDiv.hidden) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        this.selectedSuggestionIndex = (this.selectedSuggestionIndex + 1) % matches.length;
+        this.highlightSuggestion();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        this.selectedSuggestionIndex =
+          (this.selectedSuggestionIndex - 1 + matches.length) % matches.length;
+        this.highlightSuggestion();
+      } else if (e.key === "Tab" || e.key === "Enter") {
+        e.preventDefault();
+        this.addActiveTag(matches[this.selectedSuggestionIndex]);
+      } else if (e.key === "Escape") {
+        this.hideSuggestions();
+      }
+    } else if (e.key === "Backspace" && !this.searchInput.value && this.activeTags.size > 0) {
+      const last = Array.from(this.activeTags).pop();
+      this.removeActiveTag(last, false);
+    }
+  }
+
   getMatchingTags() {
-    const val = this.searchInput ? this.searchInput.value.toLowerCase().trim() : "";
+    const val = this.searchInput.value.toLowerCase().trim();
     if (!val) return [];
     return this.matchableTags
       .filter((t) => t.toLowerCase().includes(val) && !this.activeTags.has(t))
@@ -123,7 +136,6 @@ export class LibraryPage {
   }
 
   renderSuggestions() {
-    if (!this.suggestionsDiv) return;
     const matches = this.getMatchingTags();
     if (matches.length === 0) {
       this.hideSuggestions();
@@ -134,119 +146,85 @@ export class LibraryPage {
     matches.forEach((tag, index) => {
       const item = document.createElement("div");
       item.className = "suggestion-item" + (index === this.selectedSuggestionIndex ? " active" : "");
-      
-      const isCategory = CATEGORIES.includes(tag);
-      const typeLabel = isCategory ? "Category" : "Tag";
-
       item.innerHTML = `
         <span>${esc(tag)}</span>
-        <span class="suggestion-type">${typeLabel}</span>
+        <span class="suggestion-type">${CATEGORIES.includes(tag) ? "Category" : "Tag"}</span>
       `;
-
       item.addEventListener("click", (e) => {
         e.stopPropagation();
         this.addActiveTag(tag);
       });
-
       this.suggestionsDiv.appendChild(item);
     });
-
-    this.suggestionsDiv.style.display = "block";
+    this.suggestionsDiv.hidden = false;
   }
 
   highlightSuggestion() {
-    if (!this.suggestionsDiv) return;
-    const items = this.suggestionsDiv.querySelectorAll(".suggestion-item");
-    items.forEach((item, index) => {
+    this.suggestionsDiv.querySelectorAll(".suggestion-item").forEach((item, index) => {
       item.classList.toggle("active", index === this.selectedSuggestionIndex);
     });
   }
 
   hideSuggestions() {
-    if (this.suggestionsDiv) {
-      this.suggestionsDiv.style.display = "none";
-    }
+    this.suggestionsDiv.hidden = true;
     this.selectedSuggestionIndex = 0;
   }
 
   addActiveTag(tag) {
     this.activeTags.add(tag);
-    if (this.searchInput) {
-      this.searchInput.value = "";
-      this.searchQuery = "";
-    }
+    this.searchInput.value = "";
+    this.searchQuery = "";
     this.renderActiveTags();
     this.hideSuggestions();
     this.updateList();
-    if (this.searchInput) this.searchInput.focus();
+    this.searchInput.focus();
+  }
+
+  removeActiveTag(tag, refocus = true) {
+    this.activeTags.delete(tag);
+    this.renderActiveTags();
+    this.updateList();
+    if (refocus) this.searchInput.focus();
   }
 
   renderActiveTags() {
-    if (!this.activeTagsDiv) return;
     this.activeTagsDiv.innerHTML = "";
     this.activeTags.forEach((tag) => {
       const pill = document.createElement("span");
-      pill.className = "skill-tag category-tag";
-      pill.style.display = "inline-flex";
-      pill.style.alignItems = "center";
-      pill.style.gap = "6px";
-      pill.style.margin = "0";
-      pill.style.padding = "2px 8px";
-      pill.style.background = "var(--bg-tertiary)";
-      pill.style.border = "1px solid var(--border-color)";
-      pill.style.borderRadius = "var(--radius-md)";
-      pill.style.fontSize = "0.78rem";
-      pill.style.fontWeight = "700";
-      pill.style.color = "var(--primary-blue)";
-
+      pill.className = "search-pill";
       pill.innerHTML = `
         <span>${esc(tag)}</span>
-        <button type="button" class="remove-tag-btn" aria-label="Remove ${esc(tag)} filter" style="cursor:pointer; font-weight:800; opacity:0.6; margin-left: 2px; background:none; border:none; padding:0; color:inherit; font-size:inherit; line-height:1;">✕</button>
+        <button type="button" class="remove-tag-btn" aria-label="Remove ${esc(tag)} filter">✕</button>
       `;
-
       pill.querySelector(".remove-tag-btn").addEventListener("click", (e) => {
         e.stopPropagation();
-        this.activeTags.delete(tag);
-        this.renderActiveTags();
-        this.updateList();
-        if (this.searchInput) this.searchInput.focus();
+        this.removeActiveTag(tag);
       });
-
       this.activeTagsDiv.appendChild(pill);
     });
-
-    if (this.searchInput) {
-      if (this.activeTags.size > 0) {
-        this.searchInput.placeholder = "";
-      } else {
-        this.searchInput.placeholder = "Search games...";
-      }
-    }
+    this.searchInput.placeholder = this.activeTags.size > 0 ? "" : SEARCH_PLACEHOLDER;
   }
 
   getFilteredGames() {
     let filtered = GAMES;
 
-    // Filter by locked active tags
+    // Locked tags: a game must have every one (as a tag or a category).
     if (this.activeTags.size > 0) {
+      const wanted = Array.from(this.activeTags, (t) => t.toLowerCase());
       filtered = filtered.filter((g) => {
-        return Array.from(this.activeTags).every((tag) => {
-          const inCategories = (g.categories || []).some((c) => c.toLowerCase() === tag.toLowerCase());
-          const inTags = (g.tags || []).some((t) => t.toLowerCase() === tag.toLowerCase());
-          return inCategories || inTags;
-        });
+        const have = [...(g.categories || []), ...(g.tags || [])].map((t) => t.toLowerCase());
+        return wanted.every((t) => have.includes(t));
       });
     }
 
-    // Filter by text search query
+    // Free-text search over title, description, tags and categories.
     if (this.searchQuery) {
-      filtered = filtered.filter((g) => {
-        const titleMatch = g.title.toLowerCase().includes(this.searchQuery);
-        const descMatch = (g.description || "").toLowerCase().includes(this.searchQuery);
-        const tagMatch = (g.tags || []).some((t) => t.toLowerCase().includes(this.searchQuery));
-        const catMatch = (g.categories || []).some((c) => c.toLowerCase().includes(this.searchQuery));
-        return titleMatch || descMatch || tagMatch || catMatch;
-      });
+      const q = this.searchQuery;
+      filtered = filtered.filter((g) =>
+        [g.title, g.description || "", ...(g.tags || []), ...(g.categories || [])].some((s) =>
+          s.toLowerCase().includes(q)
+        )
+      );
     }
 
     return filtered;
@@ -258,60 +236,53 @@ export class LibraryPage {
       const rank = this.shuffleRank;
       this.games = [...filtered].sort((a, b) => rank.get(a.id) - rank.get(b.id));
     } else {
-      const sortBy = this.sortSel ? this.sortSel.value : "alpha";
-      this.games = sortGames(filtered, sortBy);
+      this.games = sortGames(filtered, this.sortSel.value);
     }
+    writeFilters({
+      q: this.searchInput.value.trim(),
+      tags: Array.from(this.activeTags),
+      sort: this.sortSel.value
+    });
     this.render();
   }
 
   setView(view) {
     if (this.view === view) return;
     this.view = view;
-    localStorage.setItem(VIEW_KEY, view);
+    try {
+      localStorage.setItem(VIEW_KEY, view);
+    } catch (_) {
+      /* storage unavailable (private mode): view just won't persist */
+    }
     this.applyView();
   }
 
   applyView() {
     const isList = this.view === "list";
-    if (this.grid) this.grid.classList.toggle("list-view", isList);
-    if (this.gridBtn) {
-      this.gridBtn.classList.toggle("active", !isList);
-      this.gridBtn.setAttribute("aria-pressed", String(!isList));
-    }
-    if (this.listBtn) {
-      this.listBtn.classList.toggle("active", isList);
-      this.listBtn.setAttribute("aria-pressed", String(isList));
-    }
+    this.grid.classList.toggle("list-view", isList);
+    this.gridBtn.classList.toggle("active", !isList);
+    this.gridBtn.setAttribute("aria-pressed", String(!isList));
+    this.listBtn.classList.toggle("active", isList);
+    this.listBtn.setAttribute("aria-pressed", String(isList));
   }
 
-  renderFiltered(gamesList) {
-    if (!this.grid) return;
+  render() {
     this.grid.innerHTML = "";
-    if (gamesList.length === 0) {
+    if (this.games.length === 0) {
       const empty = document.createElement("div");
-      empty.className = "picker-empty";
-      empty.style.width = "100%";
-      empty.style.gridColumn = "1 / -1";
+      empty.className = "picker-empty library-empty";
       empty.innerHTML = `
-        <div class="picker-empty-icon" style="margin-bottom: var(--spacing-md); text-align: center;">
-          <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:3rem; height:3rem; margin:0 auto; stroke:var(--text-muted);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <h3 style="text-align: center; color: var(--text-primary);">No games match your search</h3>
-        <p style="text-align: center; color: var(--text-secondary);">Try adjusting your query or keywords</p>
+        <div class="picker-empty-icon">${icon("alert", "icon-hero")}</div>
+        <h3>No games match your search</h3>
+        <p>Try adjusting your query or keywords</p>
       `;
       this.grid.appendChild(empty);
     } else {
       const frag = document.createDocumentFragment();
-      gamesList.forEach((g) => frag.appendChild(createGameCard(g)));
+      this.games.forEach((g) => frag.appendChild(createGameCard(g)));
       this.grid.appendChild(frag);
     }
-    if (this.countEl) {
-      const n = gamesList.length;
-      this.countEl.textContent = `${n} game${n === 1 ? "" : "s"}`;
-    }
-  }
-
-  render() {
-    this.renderFiltered(this.games);
+    const n = this.games.length;
+    this.countEl.textContent = `${n} game${n === 1 ? "" : "s"}`;
   }
 }

@@ -1,7 +1,7 @@
 /**
  * Pure helpers for the game library: matching predicate, sort
- * comparators, shuffle, tag styling, and a generated cover placeholder.
- * No DOM, no imports — safe to reuse anywhere.
+ * comparators, shuffle, label/markup builders, and a generated cover
+ * placeholder. No DOM access, no imports — safe to reuse anywhere.
  */
 
 /** Escape a string for safe use inside an HTML attribute or text node. */
@@ -135,16 +135,40 @@ export function shuffle(games) {
 
 /**
  * Consistent tag colors matching the rest of the site (mirrors
- * Renderer.getTagStyle): a hash maps each tag onto the --tag-1..8 palette.
+ * Renderer.getTagStyle): a hash maps each tag onto the --tag-1..8 palette,
+ * exposed as .tag-color-N classes in games.css.
  */
-export function getTagStyle(tagName) {
-  if (!tagName) return { bg: "var(--bg-tertiary)", text: "var(--text-secondary)" };
+export function tagColorClass(tagName) {
+  if (!tagName) return "";
   let hash = 0;
   for (let i = 0; i < tagName.length; i++) {
     hash = tagName.charCodeAt(i) + ((hash << 5) - hash);
   }
-  const index = (Math.abs(hash) % 8) + 1;
-  return { bg: `var(--tag-${index}-bg)`, text: `var(--tag-${index}-text)` };
+  return `tag-color-${(Math.abs(hash) % 8) + 1}`;
+}
+
+/** A colored tag pill. */
+export function tagPill(tag) {
+  return `<span class="skill-tag ${tagColorClass(tag)}">${esc(tag)}</span>`;
+}
+
+/** "4–7" or "4" when min and max match. */
+export function playersLabel(g) {
+  return g.minPlayers === g.maxPlayers ? `${g.minPlayers}` : `${g.minPlayers}–${g.maxPlayers}`;
+}
+
+/** "20–40 min" or "30 min" when min and max match. */
+export function playtimeLabel(g) {
+  return g.playtimeMin === g.playtimeMax
+    ? `${g.playtimeMin} min`
+    : `${g.playtimeMin}–${g.playtimeMax} min`;
+}
+
+/** Complexity badge (Easy / Medium / Involved), or "" when unset. */
+export function complexityBadge(g) {
+  return g.complexity
+    ? `<span class="complexity-badge ${esc(g.complexity)}">${esc(complexityLabel(g.complexity))}</span>`
+    : "";
 }
 
 /**
