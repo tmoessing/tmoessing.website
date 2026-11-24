@@ -56,6 +56,7 @@ export function createGameCard(game) {
     <div class="game-cover-wrap">
       <img class="game-cover" src="${esc(cover)}" alt="${esc(game.title)} cover"
            loading="lazy" onerror="this.onerror=null;this.src='${esc(fallback)}';">
+      ${game.complexity ? `<span class="complexity-badge ${esc(game.complexity)}">${esc(complexityLabel(game.complexity))}</span>` : ""}
     </div>
     <div class="game-card-body">
       <div class="game-card-main-info">

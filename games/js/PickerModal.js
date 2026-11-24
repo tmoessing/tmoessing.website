@@ -46,6 +46,13 @@ const DURATIONS = [
   ["custom", "Custom"]
 ];
 
+const COMPLEXITIES = [
+  ["any", "Any"],
+  ["easy", "Easy"],
+  ["medium", "Medium"],
+  ["heavy", "Involved"]
+];
+
 const CONFETTI_COLORS = [
   "var(--tag-1-text)", "var(--tag-2-text)", "var(--tag-3-text)", "var(--tag-4-text)",
   "var(--tag-5-text)", "var(--tag-6-text)", "var(--tag-7-text)", "var(--tag-8-text)"
@@ -286,6 +293,10 @@ function renderFilters() {
             </button>
           </div>
         </div>
+        <div class="picker-section" style="margin: var(--spacing-xl) 0 0;">
+          <div class="picker-section-title">Complexity</div>
+          <div class="pill-row" id="picker-complexity">${pillRow(COMPLEXITIES, state.complexity)}</div>
+        </div>
       </div>
 
       <div class="picker-footer">
@@ -415,6 +426,14 @@ function wireFilters() {
       if (state.categories.has(c)) state.categories.delete(c);
       else state.categories.add(c);
       btn.classList.toggle("active");
+      updateCount();
+    });
+    const cx = content().querySelector("#picker-complexity");
+    cx.addEventListener("click", (e) => {
+      const btn = e.target.closest(".picker-pill");
+      if (!btn) return;
+      state.complexity = btn.dataset.val;
+      activate(cx, state.complexity);
       updateCount();
     });
     content().querySelector("#picker-toggle-categories").addEventListener("click", () => {
@@ -561,6 +580,7 @@ function renderMatching() {
             <option value="alpha">A–Z</option>
             <option value="playtime">Playtime</option>
             <option value="players">Players</option>
+            <option value="complexity">Complexity</option>
           </select>
         </label>
         <button type="button" class="btn btn-secondary btn-sm" id="picker-match-shuffle" style="display: inline-flex; align-items: center; gap: 6px;">
@@ -603,6 +623,8 @@ function renderEmpty() {
     suggestions.push("Widen the play time.");
   if (state.categories.size > 0)
     suggestions.push("Remove a category or two.");
+  if (state.complexity !== "any")
+    suggestions.push("Set complexity back to “Any”.");
   if (suggestions.length === 0)
     suggestions.push("Add some games to the library!");
 

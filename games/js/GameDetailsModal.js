@@ -100,6 +100,7 @@ function detailsHTML(game) {
       <div class="game-details-info">
         <div class="game-details-head">
           <h2 class="game-details-title">${esc(game.title)}</h2>
+          ${game.complexity ? `<span class="complexity-badge ${esc(game.complexity)}">${esc(complexityLabel(game.complexity))}</span>` : ""}
         </div>
         <div class="game-meta-row">
           <span class="game-meta" style="display: inline-flex; align-items: center; gap: 4px;">
@@ -110,6 +111,7 @@ function detailsHTML(game) {
             <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem; stroke:var(--text-muted);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             ${time}
           </span>
+          ${game.bggWeight ? `<span class="game-meta" title="BoardGameGeek complexity weight, 1 (light) to 5 (heavy)">BGG weight ${game.bggWeight.toFixed(2)} / 5</span>` : ""}
         </div>
         <p class="game-details-desc">${esc(game.description || "")}</p>
         <div class="game-details-links">

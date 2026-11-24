@@ -15,7 +15,7 @@ export function esc(str) {
 }
 
 const COMPLEXITY_RANK = { easy: 0, medium: 1, heavy: 2 };
-const COMPLEXITY_LABEL = { easy: "Easy", medium: "Medium", heavy: "Heavy" };
+const COMPLEXITY_LABEL = { easy: "Easy", medium: "Medium", heavy: "Involved" };
 
 export function complexityLabel(c) {
   return COMPLEXITY_LABEL[c] || c || "";
@@ -108,7 +108,12 @@ export function sortGames(games, key) {
       arr.sort((a, b) => a.maxPlayers - b.maxPlayers || a.minPlayers - b.minPlayers);
       break;
     case "complexity":
-      arr.sort((a, b) => COMPLEXITY_RANK[a.complexity] - COMPLEXITY_RANK[b.complexity]);
+      arr.sort(
+        (a, b) =>
+          COMPLEXITY_RANK[a.complexity] - COMPLEXITY_RANK[b.complexity] ||
+          (a.bggWeight ?? 0) - (b.bggWeight ?? 0) ||
+          a.title.localeCompare(b.title)
+      );
       break;
     case "alpha":
     default:
