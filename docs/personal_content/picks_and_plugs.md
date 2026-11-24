@@ -21,7 +21,7 @@ why: The series that turned me into a reader.
 description: The 5-book sequel series to Percy Jackson that brings Roman mythology into the mix with a new crew of demigods and an even bigger quest.
 tags: BOOK
 image: assets/picks_and_plugs/heroes_of_olympus.jpg
-why: Bigger cast, bigger stakes, same humor. The perfect level-up after the original five.
+why: An extension of the series that turned me into a reader.
 
 ### The Maze Runner Series by James Dashner
 
