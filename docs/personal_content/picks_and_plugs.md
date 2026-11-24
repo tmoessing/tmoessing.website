@@ -119,6 +119,6 @@ why: I've been giving it the tasks, the busywork, that I want done in my life bu
 
 description: Meta's personal AI agent that can handle everyday tasks on your behalf. Available on iOS, Android, WhatsApp, and the web.
 link: https://muse.ai/
-tags: TECH
+tags: TECH, LIFE HACK
 image: assets/picks_and_plugs/muse.png
-why: A peek at where personal assistants are headed: less chatting, more actually getting stuff done.
+why: It's proactive and finds things for me.
