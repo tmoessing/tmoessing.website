@@ -97,9 +97,9 @@ export class Search {
             <div class="suggested-tags-section">
                 <h3 class="suggested-tags-title">Explore by Tag</h3>
                 <div class="card-tags suggested-tags-cloud">
-                    ${Array.from(this.allTags).map(t => `
-                        <a href="#/professional/search?tag=${encodeURIComponent(t)}" class="skill-tag suggested-tag-btn" onclick="event.preventDefault(); document.querySelector('#search-input').value = '${t}'; window.location.hash = '/professional/search?tag=${encodeURIComponent(t)}'; window.contentLoader.performSearch('${t}');">${t.toUpperCase()}</a>
-                    `).join('')}
+                    ${(() => { const tags = Array.from(this.allTags); const hues = this.renderer.tagHues(tags); return tags.map((t, i) => `
+                        <a href="#/professional/search?tag=${encodeURIComponent(t)}" class="skill-tag tag-chip suggested-tag-btn" style="${this.renderer.tagChipStyle(hues[i])}" title="See everything tagged ${t}" onclick="event.preventDefault(); document.querySelector('#search-input').value = '${t}'; window.location.hash = '/professional/search?tag=${encodeURIComponent(t)}'; window.contentLoader.performSearch('${t}');">${t.toUpperCase()}</a>
+                    `).join(''); })()}
                 </div>
             </div>
         `;
