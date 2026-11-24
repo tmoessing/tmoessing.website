@@ -111,7 +111,7 @@ why: I've never coded faster in my life.
 
 description: Claude's agent mode for knowledge work beyond code. It works through multi-step tasks across your files and apps, so you can hand off whole projects instead of single prompts.
 link: https://claude.com/product/cowork
-tags: TECH
+tags: TECH, LIFE HACK
 image: assets/picks_and_plugs/claude_cowork.png
 why: It can get the things I want done, but don't want to spend time on, done!
 
