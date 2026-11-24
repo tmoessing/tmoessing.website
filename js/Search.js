@@ -47,6 +47,7 @@ export class Search {
         // Professional tab only: Picks & Plugs ('resources') and Personal Projects stay out of search.
         addItems('experience', 'job');
         addItems('projects', 'project');
+        addItems('publications', 'publication');
         addItems('service', 'service');
         addItems('volunteer', 'volunteer');
         addItems('interests', 'leadership');
@@ -162,6 +163,8 @@ export class Search {
                 card = this.renderer.createEducationCard(item);
             } else if (item.section === 'projects' || item.section === 'personal projects') {
                 card = this.renderer.createProjectCard(item);
+            } else if (item.section === 'publications') {
+                card = this.renderer.createPublicationCard(item);
             } else if (item.section === 'resources') {
                 card = this.renderer.createResourceCard(item, 'Resource');
             } else {

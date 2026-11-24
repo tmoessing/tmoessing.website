@@ -244,6 +244,38 @@ export class Renderer {
         return card;
     }
 
+    createPublicationCard(pub) {
+        const card = document.createElement('div');
+        const slug = this.parser.slugify(pub.title);
+        card.className = 'card publication-card';
+        card.id = `card-${slug}`;
+        // Bold Tyler's name in the author list so his position is easy to spot.
+        const authors = (pub.authors || '')
+            .split(',')
+            .map(a => a.trim())
+            .filter(Boolean)
+            .map(a => /moessing/i.test(a) ? `<strong>${a}</strong>` : a)
+            .join(', ');
+        card.innerHTML = `
+            <div class="card-header">
+                <div>
+                    <h3 class="card-title">${pub.title}</h3>
+                    <p class="card-subtitle">${pub.company || ''}</p>
+                </div>
+                <div class="card-meta">${pub.dates || ''}</div>
+            </div>
+            ${pub.type ? `<p class="publication-type">${pub.type}</p>` : ''}
+            ${authors ? `<p class="publication-authors">${authors}${pub.advisor ? ` · Advisor: ${pub.advisor}` : ''}</p>` : ''}
+            <p class="card-description">${pub.description || ''}</p>
+            ${pub.link ? `<div class="project-actions">
+                <a href="${pub.link}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">${pub.doi ? `DOI: ${pub.doi}` : 'View Abstract'} →</a>
+            </div>` : ''}
+            ${this.renderTags(pub.tags)}
+        `;
+        this.addHoverListeners(card, slug);
+        return card;
+    }
+
     createEducationCard(edu) {
         const coursework = edu.coursework ? edu.coursework.split(this.parser.TAG_SPLIT_REGEX).map(c => c.trim()) : [];
         const card = document.createElement('div');

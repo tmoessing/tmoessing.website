@@ -25,6 +25,7 @@ export class ContentLoader {
                 'docs/professional_content/about.md',
                 'docs/professional_content/experience.md',
                 'docs/professional_content/projects.md',
+                'docs/professional_content/publications.md',
                 'docs/professional_content/education.md',
                 'docs/professional_content/skills.md',
                 'docs/professional_content/service.md',
@@ -36,7 +37,7 @@ export class ContentLoader {
                 'docs/personal_content/threads.md'
             ];
             const texts = await Promise.all(
-                files.map(f => fetch(`${f}?v=3.7`).then(res => res.text()))
+                files.map(f => fetch(`${f}?v=3.9`).then(res => res.text()))
             );
 
             // Each file merges into the same content object.
@@ -72,6 +73,8 @@ export class ContentLoader {
         projects.sort((a, b) => this.parser.parseDateRange(b.dates).end - this.parser.parseDateRange(a.dates).end);
         this.renderer.renderSection(projects, '#projects-container', this.renderer.createProjectCard);
         
+        this.renderer.renderSection(c.publications, '#publications-container', this.renderer.createPublicationCard);
+
         this.renderer.renderSkills(c.skills);
 
         // Professional Extensions
