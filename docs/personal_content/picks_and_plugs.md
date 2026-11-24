@@ -23,6 +23,11 @@ tags: BOOK
 description: Dystopian series about a group of teens who wake up with no memories in the middle of a giant, ever-changing maze and have to figure out how to escape.
 tags: BOOK
 
+### The Martian by Andy Weir
+
+description: An astronaut gets stranded alone on Mars and has to science his way to survival. Nerdy, hilarious, and genuinely gripping from start to finish.
+tags: BOOK
+
 ### Syntax. Podcast
 
 description: Great development podcast talking specially about web development
