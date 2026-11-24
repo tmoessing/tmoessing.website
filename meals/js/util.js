@@ -1,7 +1,8 @@
 /**
  * Pure helpers for the meal library: HTML escaping, tag colors, a generated
  * cover placeholder, the meal match predicate + sort comparators, prep-time /
- * cost buckets, a tiny Markdown renderer, and a Google Calendar link builder.
+ * cost buckets, a tiny Markdown renderer, and Google Calendar helpers
+ * (next-week day chooser, ingredient extraction, 5 PM event links).
  * No DOM state, no data imports — safe to reuse anywhere.
  */
 
@@ -212,7 +213,13 @@ function pad(n) {
   return String(n).padStart(2, "0");
 }
 
-function fmtCalDate(d) {
+/** YYYYMMDD for a local calendar date (Google's all-day event format). */
+function fmtCalDay(d) {
+  return String(d.getFullYear()).padStart(4, "0") + pad(d.getMonth() + 1) + pad(d.getDate());
+}
+
+/** UTC timestamp (YYYYMMDDTHHMMSSZ) for a timed Google Calendar event. */
+function fmtCalDateTime(d) {
   return (
     String(d.getUTCFullYear()).padStart(4, "0") +
     pad(d.getUTCMonth() + 1) +
@@ -220,9 +227,64 @@ function fmtCalDate(d) {
     "T" +
     pad(d.getUTCHours()) +
     pad(d.getUTCMinutes()) +
-    pad(d.getUTCSeconds()) +
-    "Z"
+    "00Z"
   );
+}
+
+/** Meal-prep events start at 5:00 PM local time. */
+export const PREP_START_HOUR = 17;
+
+/**
+ * The planning week: Monday through Sunday of the *next* week, i.e. starting
+ * the first Monday after today (planning on a Saturday gives the Monday two
+ * days out; planning on a Monday gives the Monday a week out).
+ * Each entry: { date, key: "YYYYMMDD", label: "Mon", sub: "Dec 1" }.
+ */
+export function upcomingWeek(from = new Date()) {
+  const today = new Date(from.getFullYear(), from.getMonth(), from.getDate());
+  const daysToMonday = ((8 - today.getDay()) % 7) || 7; // getDay(): 0 = Sun, 1 = Mon
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const date = new Date(today.getFullYear(), today.getMonth(), today.getDate() + daysToMonday + i);
+    days.push({
+      date,
+      key: fmtCalDay(date),
+      label: date.toLocaleDateString(undefined, { weekday: "short" }),
+      sub: date.toLocaleDateString(undefined, { month: "short", day: "numeric" })
+    });
+  }
+  return days;
+}
+
+/** Strip inline Markdown (bold, italics, code, links) down to plain text. */
+function plainText(md) {
+  return md
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/(\*\*|__|\*|_|`)/g, "")
+    .trim();
+}
+
+/**
+ * Pull the ingredient lines out of a recipe body's "## Ingredients" section
+ * (bullets or numbered items; "### Sauce"-style subheadings become "Sauce:").
+ */
+export function ingredientsFromBody(body) {
+  const lines = String(body || "").split("\n");
+  const out = [];
+  let inSection = false;
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (/^##\s+/.test(line) && !/^###/.test(line)) {
+      inSection = /^##\s+ingredients\b/i.test(line);
+      continue;
+    }
+    if (!inSection || !line) continue;
+    const sub = /^###\s+(.*)$/.exec(line);
+    if (sub) { out.push(`${plainText(sub[1])}:`); continue; }
+    const item = /^(?:[-*+]|\d+[.)])\s+(.*)$/.exec(line);
+    if (item) out.push(plainText(item[1]));
+  }
+  return out;
 }
 
 /** Absolute URL back to a meal's deep-linked recipe on this page. */
@@ -232,33 +294,158 @@ export function recipeUrl(meal) {
 }
 
 /**
- * Build a Google Calendar "TEMPLATE" link that pre-fills a meal-prep event:
- * title, a sized time block (defaults to next top-of-hour), and notes with a
- * link back to the recipe. Opens in a new tab — no login, no backend.
+ * Google Calendar "TEMPLATE" link for one timed event starting at
+ * PREP_START_HOUR (5 PM) local time on `day`. Opens a pre-filled event in a
+ * new tab: no login, no backend, nothing saved until the user clicks Save.
  */
-export function googleCalendarUrl(meal) {
-  const start = new Date();
-  start.setMinutes(0, 0, 0);
-  start.setHours(start.getHours() + 1);
-  const durMin = num(meal.prepDuration) || num(meal.prepTime) + num(meal.cookTime) || 60;
-  const end = new Date(start.getTime() + durMin * 60000);
-
-  const detailLines = [];
-  if (meal.description) detailLines.push(meal.description);
-  const link = recipeUrl(meal);
-  if (link) detailLines.push(`Recipe: ${link}`);
-  const timing = [];
-  if (num(meal.prepTime)) timing.push(`Prep ~${num(meal.prepTime)} min`);
-  if (num(meal.cookTime)) timing.push(`Cook ~${num(meal.cookTime)} min`);
-  if (timing.length) detailLines.push(timing.join(" · "));
-
+export function calendarEventUrl({ title, day, minutes, details }) {
+  const start = new Date(day.getFullYear(), day.getMonth(), day.getDate(), PREP_START_HOUR, 0, 0);
+  const end = new Date(start.getTime() + minutes * 60000);
   const params = new URLSearchParams({
     action: "TEMPLATE",
-    text: `Meal Prep: ${meal.title}`,
-    dates: `${fmtCalDate(start)}/${fmtCalDate(end)}`,
-    details: detailLines.join("\n\n")
+    text: title,
+    // Local 5 PM converted to UTC, so it lands at 5 PM in the viewer's time zone.
+    dates: `${fmtCalDateTime(start)}/${fmtCalDateTime(end)}`,
+    details: details || ""
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+/** Bulleted text for event notes, capped so links stay a sane length. */
+export function bulletList(items, max = 40) {
+  const shown = items.slice(0, max).map((i) => (i.endsWith(":") ? i : `• ${i}`));
+  if (items.length > max) shown.push(`…plus ${items.length - max} more`);
+  return shown.join("\n");
+}
+
+/**
+ * Meal-prep event for one recipe on `day`: 5 PM, lasting the prep block
+ * (prepDuration, else prep + cook, else 60 min), with the description, the
+ * ingredient list (a shopping list), and a link back to the recipe.
+ */
+export function googleCalendarUrl(meal, day = new Date()) {
+  const block = num(meal.prepDuration) || num(meal.prepTime) + num(meal.cookTime) || 60;
+
+  const details = [];
+  if (meal.description) details.push(meal.description);
+  const timing = [];
+  if (num(meal.prepTime)) timing.push(`prep ${num(meal.prepTime)}`);
+  if (num(meal.cookTime)) timing.push(`cook ${num(meal.cookTime)}`);
+  if (timing.length) details.push(`About ${block} min (${timing.join(", ")}).`);
+
+  const ingredients = ingredientsFromBody(meal.body);
+  if (ingredients.length) {
+    const servings = num(meal.servings) ? ` (serves ${num(meal.servings)})` : "";
+    details.push(`Ingredients${servings}:\n${bulletList(ingredients)}`);
+  }
+
+  const link = recipeUrl(meal);
+  if (link) details.push(`Full recipe: ${link}`);
+
+  return calendarEventUrl({
+    title: `Meal Prep: ${meal.title}`,
+    day,
+    minutes: block,
+    details: details.join("\n\n")
+  });
+}
+
+/* ---------- Combined grocery list ---------- */
+
+const UNITS = [
+  "lb", "lbs", "pound", "pounds", "oz", "ounce", "ounces", "g", "kg", "ml", "l",
+  "cup", "cups", "tbsp", "tablespoon", "tablespoons", "tsp", "teaspoon", "teaspoons",
+  "clove", "cloves", "can", "cans", "package", "packages", "pkg", "bunch", "bunches",
+  "slice", "slices", "stick", "sticks", "pinch", "dash", "large", "medium", "small"
+];
+const UNIT_ALIASES = {
+  lbs: "lb", pound: "lb", pounds: "lb", ounce: "oz", ounces: "oz",
+  cups: "cup", tablespoon: "tbsp", tablespoons: "tbsp", teaspoon: "tsp", teaspoons: "tsp",
+  cloves: "clove", cans: "can", packages: "package", pkg: "package", bunches: "bunch",
+  slices: "slice", sticks: "stick"
+};
+const PLURAL_UNITS = { lb: "lb", oz: "oz", cup: "cups", tbsp: "tbsp", tsp: "tsp", clove: "cloves",
+  can: "cans", package: "packages", bunch: "bunches", slice: "slices", stick: "sticks" };
+
+/** "1", "1.5", "1/2", "1 1/2" -> number, or NaN. */
+function parseQty(str) {
+  const t = str.trim();
+  let m = /^(\d+)\s+(\d+)\/(\d+)$/.exec(t);
+  if (m) return +m[1] + +m[2] / +m[3];
+  m = /^(\d+)\/(\d+)$/.exec(t);
+  if (m) return +m[1] / +m[2];
+  return /^\d+(\.\d+)?$/.test(t) ? parseFloat(t) : NaN;
+}
+
+/** 2.5 -> "2 1/2", 0.333 -> "1/3", 1.2 -> "1.2". */
+function formatQty(n) {
+  const whole = Math.floor(n + 1e-9);
+  const frac = n - whole;
+  if (frac < 0.01) return String(whole);
+  const nice = [[1 / 4, "1/4"], [1 / 3, "1/3"], [1 / 2, "1/2"], [2 / 3, "2/3"], [3 / 4, "3/4"]];
+  for (const [v, label] of nice) {
+    if (Math.abs(frac - v) < 0.02) return whole ? `${whole} ${label}` : label;
+  }
+  return String(Math.round(n * 100) / 100);
+}
+
+/**
+ * Split "2 cloves garlic, minced" into { qty: 2, unit: "clove", name: "garlic",
+ * rest: ", minced" }. Lines without a leading number get qty NaN.
+ */
+function parseIngredient(line) {
+  const m = /^(\d+\s+\d+\/\d+|\d+\/\d+|\d+(?:\.\d+)?)\s+(.*)$/.exec(line);
+  if (!m) return { qty: NaN, unit: "", name: line, rest: "" };
+  let words = m[2];
+  let unit = "";
+  const um = /^([A-Za-z]+)\.?\s+(.*)$/.exec(words);
+  if (um && UNITS.includes(um[1].toLowerCase())) {
+    unit = UNIT_ALIASES[um[1].toLowerCase()] || um[1].toLowerCase();
+    words = um[2];
+  }
+  const comma = words.indexOf(",");
+  return {
+    qty: parseQty(m[1]),
+    unit,
+    name: comma === -1 ? words.trim() : words.slice(0, comma).trim(),
+    rest: comma === -1 ? "" : words.slice(comma)
+  };
+}
+
+/**
+ * Merge ingredient lines from several recipes into one shopping list.
+ * `entries` is [{ meal, times }] (times = how many days that recipe is planned).
+ * Same ingredient + unit is summed ("2 cloves garlic" + "3 cloves garlic" ->
+ * "5 cloves garlic"); everything else is listed once with a ×N count.
+ * Returns [{ key, text, meals: [titles] }], sorted by name.
+ */
+export function combineIngredients(entries) {
+  const merged = new Map();
+  for (const { meal, times } of entries) {
+    for (const line of ingredientsFromBody(meal.body)) {
+      if (line.endsWith(":")) continue; // "Sauce:" subheadings
+      const p = parseIngredient(line);
+      const key = `${p.unit}|${p.name.toLowerCase()}|${Number.isNaN(p.qty) ? line.toLowerCase() : ""}`;
+      const cur = merged.get(key) || { key, qty: 0, count: 0, p, meals: [] };
+      if (!Number.isNaN(p.qty)) cur.qty += p.qty * times;
+      cur.count += times;
+      if (!cur.meals.includes(meal.title)) cur.meals.push(meal.title);
+      merged.set(key, cur);
+    }
+  }
+  return [...merged.values()]
+    .map((e) => {
+      let text;
+      if (Number.isNaN(e.p.qty)) {
+        text = e.count > 1 ? `${e.p.name} (×${e.count})` : e.p.name;
+      } else {
+        const unit = e.p.unit ? ` ${e.qty > 1 ? PLURAL_UNITS[e.p.unit] || e.p.unit : e.p.unit}` : "";
+        text = `${formatQty(e.qty)}${unit} ${e.p.name}${e.p.rest}`;
+      }
+      return { key: e.key, text, sortName: e.p.name.toLowerCase(), meals: e.meals };
+    })
+    .sort((a, b) => a.sortName.localeCompare(b.sortName))
+    .map(({ key, text, meals }) => ({ key, text, meals }));
 }
 
 /* ---------- tiny Markdown renderer ---------- */

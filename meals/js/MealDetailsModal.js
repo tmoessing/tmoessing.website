@@ -19,7 +19,8 @@ import {
   servingsLabel,
   totalMinutes,
   groceryLink,
-  googleCalendarUrl
+  googleCalendarUrl,
+  upcomingWeek
 } from "./util.js";
 
 let scrollLocks = 0;
@@ -111,14 +112,28 @@ function detailsHTML(meal) {
 
   const walmart = groceryLink(meal, "walmart");
   const source = meal.recipeSource && /^https?:\/\//i.test(meal.recipeSource) ? meal.recipeSource : null;
-  const calUrl = googleCalendarUrl(meal);
+  // "Plan Meal Prep" reveals next week's Monday–Sunday; each day is a link that
+  // opens Google Calendar with a 5 PM prep event on that date.
+  const dayLinks = upcomingWeek()
+    .map(
+      (d) => `<a class="plan-day" href="${esc(googleCalendarUrl(meal, d.date))}" target="_blank" rel="noopener noreferrer"
+                 aria-label="Plan meal prep for ${esc(d.label)}, ${esc(d.sub)} (opens Google Calendar)">
+          <span class="plan-day-label">${esc(d.label)}</span>
+          <span class="plan-day-date">${esc(d.sub)}</span>
+        </a>`
+    )
+    .join("");
 
   const actions = `
     <div class="meal-details-actions">
       <button type="button" class="btn btn-primary btn-sm" id="meal-view-recipe">📖 View Recipe</button>
       ${walmart ? `<a href="${esc(walmart)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">🛒 Walmart Grocery List</a>` : ""}
-      <a href="${esc(calUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">📅 Plan Meal Prep</a>
+      <button type="button" class="btn btn-secondary btn-sm" id="meal-plan-btn" aria-expanded="false" aria-controls="meal-plan-days">📅 Plan Meal Prep</button>
       ${source ? `<a href="${esc(source)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">🌐 Original Recipe</a>` : ""}
+    </div>
+    <div class="meal-plan-days" id="meal-plan-days" hidden>
+      <p class="meal-plan-prompt">Plan for next week: pick a day and it opens Google Calendar with a 5:00 PM prep event and the ingredient list in the notes.</p>
+      <div class="plan-day-row">${dayLinks}</div>
     </div>`;
 
   return `
@@ -155,6 +170,23 @@ export function openMealDetails(meal, opts = {}) {
     viewBtn.addEventListener("click", () => {
       const body = overlay.querySelector("#meal-recipe-body");
       if (body) body.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  const planBtn = overlay.querySelector("#meal-plan-btn");
+  const planDays = overlay.querySelector("#meal-plan-days");
+  if (planBtn && planDays) {
+    planBtn.addEventListener("click", () => {
+      const open = planDays.hidden;
+      planDays.hidden = !open;
+      planBtn.setAttribute("aria-expanded", String(open));
+      if (open) planDays.querySelector(".plan-day").focus();
+    });
+    // Once a day is picked (Google opens in a new tab), fold the chooser away.
+    planDays.addEventListener("click", (e) => {
+      if (!e.target.closest(".plan-day")) return;
+      planDays.hidden = true;
+      planBtn.setAttribute("aria-expanded", "false");
     });
   }
 
