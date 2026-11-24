@@ -12,21 +12,25 @@ image: assets/picks_and_plugs/essentialism.jpg
 
 description: The original 5-book series following Percy Jackson, a modern-day demigod, as he battles monsters and Greek gods. Funny, fast-paced, and packed with mythology.
 tags: BOOK
+image: assets/picks_and_plugs/percy_jackson.jpg
 
 ### The Heroes of Olympus by Rick Riordan
 
 description: The 5-book sequel series to Percy Jackson that brings Roman mythology into the mix with a new crew of demigods and an even bigger quest.
 tags: BOOK
+image: assets/picks_and_plugs/heroes_of_olympus.jpg
 
 ### The Maze Runner Series by James Dashner
 
 description: Dystopian series about a group of teens who wake up with no memories in the middle of a giant, ever-changing maze and have to figure out how to escape.
 tags: BOOK
+image: assets/picks_and_plugs/maze_runner.jpg
 
 ### The Martian by Andy Weir
 
 description: An astronaut gets stranded alone on Mars and has to science his way to survival. Nerdy, hilarious, and genuinely gripping from start to finish.
 tags: BOOK
+image: assets/picks_and_plugs/the_martian.jpg
 
 ### Syntax. Podcast
 
