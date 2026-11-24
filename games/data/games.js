@@ -55,7 +55,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Hidden Roles", "Variable Player Powers", "Team Play", "Player Elimination", "Take That", "Hand Management", "Wild West"],
     bggUrl: "https://boardgamegeek.com/boardgame/3955/bang",
-    howToPlayVideo: "https://www.youtube.com/watch?v=kYJzXv-Z5b0"
+    howToPlayVideo: "https://www.youtube.com/watch?v=dcanu6cwfxc"
   },
   {
     id: "catan",
@@ -70,7 +70,7 @@ export const GAMES = [
     complexity: "medium",
     tags: ["Trading", "Negotiation", "Resource Management", "Network Building", "Modular Board", "5-6 Player Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/13/catan",
-    howToPlayVideo: "https://www.youtube.com/watch?v=Ak7XV715y04"
+    howToPlayVideo: "https://www.youtube.com/watch?v=6OF32Eq5DZo"
   },
   {
     id: "codenames",
@@ -85,7 +85,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Team Play", "Clue Giving", "Word Association", "Deduction"],
     bggUrl: "https://boardgamegeek.com/boardgame/178900/codenames",
-    howToPlayVideo: "https://www.youtube.com/watch?v=Vd0iQ0Z8j0I"
+    howToPlayVideo: "https://www.youtube.com/watch?v=9BSi6Gi3Bzo"
   },
   {
     id: "coup",
@@ -100,7 +100,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Hidden Roles", "Player Elimination", "Take That", "Variable Player Powers", "Team Factions", "Reformation Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/131357/coup",
-    howToPlayVideo: "https://www.youtube.com/watch?v=xa476iCNIDk"
+    howToPlayVideo: "https://www.youtube.com/watch?v=lPlBDZnxHQA"
   },
   {
     id: "pit",
@@ -109,13 +109,13 @@ export const GAMES = [
     description: "A noisy and chaotic real-time trading card game where players scream out offers to swap commodities, trying to corner the market on wheat, barley, or other goods.",
     minPlayers: 3,
     maxPlayers: 8,
-    playtimeMin: 10,
-    playtimeMax: 90,
+    playtimeMin: 20,
+    playtimeMax: 30,
     categories: ["Card Game", "Party", "Competitive", "Family"],
     complexity: "easy",
     tags: ["Real-Time", "Trading", "Shouting", "Set Collection"],
     bggUrl: "https://boardgamegeek.com/boardgame/140/pit",
-    howToPlayVideo: "https://www.youtube.com/watch?v=oX-08c35w78"
+    howToPlayVideo: "https://www.youtube.com/watch?v=OFht7Lnp1Ko"
   },
   {
     id: "hitster",
@@ -130,7 +130,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Music", "Timeline", "Companion App", "Team Play"],
     bggUrl: "https://boardgamegeek.com/boardgame/318243/hitster",
-    howToPlayVideo: "https://www.youtube.com/watch?v=J98a8Xy3l5o"
+    howToPlayVideo: "https://www.youtube.com/watch?v=Y_NW6iZh1O0"
   },
   {
     id: "hues-and-cues",
@@ -145,7 +145,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Clue Giving", "Color Identification", "Guessing", "Communication"],
     bggUrl: "https://boardgamegeek.com/boardgame/302520/hues-and-cues",
-    howToPlayVideo: "https://www.youtube.com/watch?v=5U7s8Yl0uQ8"
+    howToPlayVideo: "https://www.youtube.com/watch?v=oZSveXpjbak"
   },
   {
     id: "monopoly-star-wars-the-clone-wars",
@@ -159,7 +159,7 @@ export const GAMES = [
     categories: ["Board Game", "Competitive", "Dice", "Family"],
     complexity: "easy",
     tags: ["Roll and Move", "Trading", "Negotiation", "Property Management", "Player Elimination", "Paper Money", "Star Wars"],
-    bggUrl: "https://boardgamegeek.com/boardgame/37452/monopoly-star-wars-the-clone-wars-edition",
+    bggUrl: "https://boardgamegeek.com/boardgame/38577/monopoly-clone-wars",
     howToPlayVideo: "https://www.youtube.com/watch?v=4nz-_hvFw44"
   },
   {
@@ -175,7 +175,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Hidden Roles", "Variable Player Powers", "Team Play", "Deduction", "Companion App"],
     bggUrl: "https://boardgamegeek.com/boardgame/147949/one-night-ultimate-werewolf",
-    howToPlayVideo: "https://www.youtube.com/watch?v=k45a2pW0pLg"
+    howToPlayVideo: "https://www.youtube.com/watch?v=CI8P-ErLCOs"
   },
   {
     id: "phase-10",
@@ -205,7 +205,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Team Play", "Clue Giving", "Real-Time", "Communication"],
     bggUrl: "https://boardgamegeek.com/boardgame/1111/taboo",
-    howToPlayVideo: "https://www.youtube.com/watch?v=vVj4u_393Gg"
+    howToPlayVideo: "https://www.youtube.com/watch?v=4QeA4nrcQV0"
   },
   {
     id: "trial-by-trolley",
@@ -219,8 +219,8 @@ export const GAMES = [
     categories: ["Party", "Card Game", "Competitive"],
     complexity: "easy",
     tags: ["Mature Content", "Humor", "Debating", "Team Play", "Storytelling"],
-    bggUrl: "https://boardgamegeek.com/boardgame/280017/trial-trolley",
-    howToPlayVideo: "https://www.youtube.com/watch?v=2T1nF9b2s7E"
+    bggUrl: "https://boardgamegeek.com/boardgame/282171/trial-by-trolley",
+    howToPlayVideo: "https://www.youtube.com/watch?v=6oeHHfSoqt8"
   },
   {
     id: "uno",
@@ -250,7 +250,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Rummy", "Set Collection", "Wild Cards", "Hand Management", "Solo Mode"],
     bggUrl: "https://boardgamegeek.com/boardgame/1472/five-crowns",
-    howToPlayVideo: "https://www.youtube.com/watch?v=9g0H290gq6A"
+    howToPlayVideo: "https://www.youtube.com/watch?v=8BP2B8ifavc"
   },
   {
     id: "set",
@@ -265,7 +265,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Real-Time", "Pattern Recognition", "Puzzle", "Visual Perception", "Educational", "Solo Mode"],
     bggUrl: "https://boardgamegeek.com/boardgame/1198/set",
-    howToPlayVideo: "https://www.youtube.com/watch?v=P6Yy2e6yD6o"
+    howToPlayVideo: "https://www.youtube.com/watch?v=azaArSs-i0c"
   },
   {
     id: "the-game-of-things",
@@ -279,8 +279,8 @@ export const GAMES = [
     categories: ["Party", "Bluffing", "Competitive"],
     complexity: "easy",
     tags: ["Humor", "Writing", "Guessing", "Deduction", "Paper and Pencil"],
-    bggUrl: "https://boardgamegeek.com/boardgame/10934/things",
-    howToPlayVideo: "https://www.youtube.com/watch?v=L2Gv4M94Z_Q"
+    bggUrl: "https://boardgamegeek.com/boardgame/10934/the-game-of-things",
+    howToPlayVideo: "https://www.youtube.com/watch?v=z4SHjRHmCaE"
   },
   {
     id: "telestrations",
@@ -310,7 +310,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Physical Activity", "Dexterity", "Spinner", "Classic"],
     bggUrl: "https://boardgamegeek.com/boardgame/5894/twister",
-    howToPlayVideo: "https://www.youtube.com/watch?v=G30tX9Xo_7E"
+    howToPlayVideo: "https://www.youtube.com/watch?v=7A5XO0udmdo"
   },
   {
     id: "sushi-go",
@@ -325,7 +325,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Card Drafting", "Set Collection", "Simultaneous Action", "Hand Management", "Cute Artwork"],
     bggUrl: "https://boardgamegeek.com/boardgame/133473/sushi-go",
-    howToPlayVideo: "https://www.youtube.com/watch?v=Fs_bC54ZM3l"
+    howToPlayVideo: "https://www.youtube.com/watch?v=vkBMxDgteFg"
   },
   {
     id: "fluxx",
@@ -339,8 +339,8 @@ export const GAMES = [
     categories: ["Card Game", "Competitive", "Party"],
     complexity: "easy",
     tags: ["Ever-changing Rules", "Chaos", "Take That", "Set Collection", "Hand Management"],
-    bggUrl: "https://boardgamegeek.com/boardgame/280/fluxx",
-    howToPlayVideo: "https://www.youtube.com/watch?v=yVv_oD_iS0A"
+    bggUrl: "https://boardgamegeek.com/boardgame/258/fluxx",
+    howToPlayVideo: "https://www.youtube.com/watch?v=8D-7ty1hPuc"
   },
   {
     id: "we-didnt-playtest-this-at-all",
@@ -355,7 +355,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Chaos", "Humor", "Take That", "Player Elimination", "Real-Time", "Legacies Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/31016/we-didnt-playtest-all",
-    howToPlayVideo: "https://www.youtube.com/watch?v=l_aGv85p364"
+    howToPlayVideo: "https://www.youtube.com/watch?v=iHLN937oiLE"
   },
   {
     id: "saboteur",
@@ -370,7 +370,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Hidden Roles", "Team Play", "Path Building"],
     bggUrl: "https://boardgamegeek.com/boardgame/9220/saboteur",
-    howToPlayVideo: "https://www.youtube.com/watch?v=Jm_Xz6-U1yQ"
+    howToPlayVideo: "https://www.youtube.com/watch?v=FNTesrTLh4I"
   },
   {
     id: "monopoly-deal",
@@ -385,7 +385,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Set Collection", "Take That", "Stealing", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/40398/monopoly-deal-card-game",
-    howToPlayVideo: "https://www.youtube.com/watch?v=t5R0Fw6_0yE"
+    howToPlayVideo: "https://www.youtube.com/watch?v=Gc0XrTjmCV8"
   },
   {
     id: "the-game-of-life-adventures-card-game",
@@ -400,7 +400,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Set Collection", "Life Choices", "Hand Management", "Classic Remake"],
     bggUrl: "https://boardgamegeek.com/boardgame/88691/game-life-adventures-card-game",
-    howToPlayVideo: "https://www.youtube.com/watch?v=cW5iK5L-W3o"
+    howToPlayVideo: "https://www.youtube.com/watch?v=uuykGYWG_PQ"
   },
   {
     id: "four-on-a-couch",
@@ -415,7 +415,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker"],
     bggUrl: "",
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+four+on+a+couch+party+game"
+    howToPlayVideo: "https://www.youtube.com/watch?v=eKIjx5mBNCw"
   },
   {
     id: "mafia",
@@ -429,8 +429,8 @@ export const GAMES = [
     categories: ["Social Deduction", "Bluffing", "Party"],
     complexity: "easy",
     tags: ["Hidden Roles", "Player Elimination", "Team Play", "Deduction", "Narrator Needed", "No Props Needed", "Classic"],
-    bggUrl: "https://boardgamegeek.com/boardgame/925/mafia",
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+mafia+party+game"
+    bggUrl: "https://boardgamegeek.com/boardgame/925/werewolf",
+    howToPlayVideo: "https://www.youtube.com/watch?v=CU1fGfErrXA"
   },
   {
     id: "scum",
@@ -444,8 +444,8 @@ export const GAMES = [
     categories: ["Card Game", "Competitive", "Party"],
     complexity: "easy",
     tags: ["Classic Deck", "Shedding", "Social Hierarchy", "Card Trading", "Hand Management"],
-    bggUrl: "https://boardgamegeek.com/boardgame/1195/president",
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+scum+card+game"
+    bggUrl: "https://boardgamegeek.com/boardgame/6748/scum-the-food-chain-game",
+    howToPlayVideo: "https://www.youtube.com/watch?v=ZLOo4EGYTl4"
   },
   {
     id: "psychiatrist",
@@ -460,7 +460,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Deduction", "Roleplay", "Observation", "No Props Needed", "Icebreaker"],
     bggUrl: "",
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+psychiatrist+party+game"
+    howToPlayVideo: "https://www.youtube.com/watch?v=D1mUwHHkxxA"
   },
   {
     id: "smurf",
@@ -490,7 +490,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Deduction", "Clue Giving", "Team Play", "Word Association", "Codes"],
     bggUrl: "https://boardgamegeek.com/boardgame/225694/decrypto",
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+decrypto+board+game"
+    howToPlayVideo: "https://www.youtube.com/watch?v=2DBg7Z2-pQ4"
   },
   {
     id: "cambio",
@@ -505,7 +505,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Memory", "Classic Deck", "Card Swapping", "Spying", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/271321/cabo-second-edition",
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+cambio+card+game"
+    howToPlayVideo: "https://www.youtube.com/watch?v=dlLbkVR8oe8"
   },
   {
     id: "fishbowl",
@@ -520,7 +520,7 @@ export const GAMES = [
     complexity: "easy",
     tags: ["Team Play", "Charades", "Clue Giving", "Real-Time", "Memory", "Paper and Pencil"],
     bggUrl: "",
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+fishbowl+name+game"
+    howToPlayVideo: "https://www.youtube.com/watch?v=17dCJgvbxIs"
   },
   {
     id: "name-game",
