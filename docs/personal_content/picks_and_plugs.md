@@ -36,6 +36,12 @@ link: https://immich.app/
 tags: TECH, PHOTOS
 image: assets/picks_and_plugs/immich.png
 
+### Brave Browser
+
+description: Fast, privacy-first web browser that blocks trackers and ads by default. No extensions needed to stop sites from following you around the internet.
+link: https://brave.com/
+tags: PRIVACY, TECH
+
 ### Do Not Call Registry
 
 description: Official government site to reduce unwanted telemarketing calls
