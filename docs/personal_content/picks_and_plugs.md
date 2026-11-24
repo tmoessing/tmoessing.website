@@ -14,7 +14,7 @@ why: Taught me that saying no is a skill, and the best way to protect the things
 description: The original 5-book series following Percy Jackson, a modern-day demigod, as he battles monsters and Greek gods. Funny, fast-paced, and packed with mythology.
 tags: BOOK
 image: assets/picks_and_plugs/percy_jackson.jpg
-why: The series that turned me into a reader. Still a comfort read I come back to.
+why: The series that turned me into a reader.
 
 ### The Heroes of Olympus by Rick Riordan
 
