@@ -215,7 +215,7 @@ export const GAMES = [
     minPlayers: 3,
     maxPlayers: 13,
     playtimeMin: 30,
-    playtimeMax: 30,
+    playtimeMax: 90,
     categories: ["Party", "Card Game", "Competitive"],
     complexity: "easy",
     tags: ["Mature Content", "Humor", "Debating", "Team Play", "Storytelling"],
@@ -244,8 +244,8 @@ export const GAMES = [
     description: "A five-suited rummy-style card game where the wild card shifts in each round as players make runs and books to minimize their score.",
     minPlayers: 1,
     maxPlayers: 7,
-    playtimeMin: 45,
-    playtimeMax: 45,
+    playtimeMin: 30,
+    playtimeMax: 30,
     categories: ["Card Game", "Competitive", "Family"],
     complexity: "easy",
     tags: ["Rummy", "Set Collection", "Wild Cards", "Hand Management", "Solo Mode"],
@@ -504,7 +504,7 @@ export const GAMES = [
     categories: ["Card Game", "Party", "Competitive"],
     complexity: "easy",
     tags: ["Memory", "Classic Deck", "Card Swapping", "Spying", "Hand Management"],
-    bggUrl: "https://boardgamegeek.com/boardgame/271321/cabo-second-edition",
+    bggUrl: "",
     howToPlayVideo: "https://www.youtube.com/watch?v=dlLbkVR8oe8"
   },
   {
