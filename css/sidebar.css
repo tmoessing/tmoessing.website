@@ -59,9 +59,9 @@
 .social-link.email { border-color: var(--primary-blue); color: var(--primary-blue); }
 .social-link.facebook { border-color: #1877f2; color: #1877f2; }
 
-@media (prefers-color-scheme: dark) {
-  .social-link.github { border-color: var(--text-muted); color: var(--text-secondary); }
-}
+/* Dark-brand links need lighter colors on the site's dark theme (toggled via body.dark-mode) */
+body.dark-mode .social-link.github { border-color: var(--text-muted); color: var(--text-primary); }
+body.dark-mode .social-link.kattis { border-color: #3b8fd9; color: #5aa9ec; }
 
 .resume-combined-link { justify-content: flex-start !important; border-color: var(--primary-blue) !important; color: var(--primary-blue) !important; }
 .resume-combined-link .icon { color: var(--text-muted); }
