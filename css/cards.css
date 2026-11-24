@@ -359,3 +359,99 @@ body.dark-mode a.skill-tag.tag-chip.is-active { color: #0f172a; }
 
 @keyframes glow { 0%, 100% { border-color: var(--border-color); } 50% { border-color: var(--primary-blue); box-shadow: 0 0 15px rgba(37, 99, 235, 0.2); } }
 .highlight-card { animation: glow 2s ease; }
+
+/* Creations: Threads posts */
+.threads-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.threads-section-header {
+  margin-top: var(--spacing-xl);
+}
+
+.threads-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--text-primary);
+  color: var(--bg-primary) !important;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.threads-follow-btn:hover {
+  opacity: 0.85;
+}
+
+.threads-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: var(--spacing-md);
+  align-items: start;
+  width: 100%;
+}
+
+.threads-post {
+  min-width: 0;
+}
+
+/* Meta's embed sets its own inline sizing; keep it inside the grid cell. */
+.threads-post blockquote.text-post-media,
+.threads-post iframe {
+  margin: 0 !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.threads-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 120px;
+  padding: var(--spacing-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.threads-fallback:hover {
+  border-color: var(--text-secondary);
+}
+
+.threads-empty {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.threads-empty .threads-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.threads-empty-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.threads-empty-sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}

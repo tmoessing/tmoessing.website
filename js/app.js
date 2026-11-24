@@ -94,8 +94,8 @@ export function initApp() {
             setProfileMode('personal');
             document.title = "Tyler Moessing - Personal";
             if (updateHash) {
-                if (window.location.hash === '#/personal/personal-projects') {
-                    window.location.hash = '/personal/personal-projects';
+                if (window.isCreationsHash(window.location.hash)) {
+                    window.location.hash = '/personal/creations';
                 } else {
                     window.location.hash = '/personal/sick-picks-and-plugs';
                 }
@@ -112,6 +112,23 @@ export function initApp() {
         return link ? link.dataset.pickTag : 'All';
     };
 
+    // Creations holds Personal Projects + Threads posts. The old personal-projects URL still works.
+    window.isCreationsHash = (hash) =>
+        hash === '#/personal/creations' || hash.startsWith('#/personal/creations/') || hash === '#/personal/personal-projects';
+
+    window.scrollToThreadsIfRequested = (hash) => {
+        if (!hash.startsWith('#/personal/creations/threads')) return;
+        const target = document.getElementById('threads-section');
+        // Wait a frame so the view is visible (and switchView's scroll-to-top has started) first.
+        if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    };
+
+    const showCreations = (hash) => {
+        window.switchView('library', false);
+        window.switchPersonalView('creations', false);
+        window.scrollToThreadsIfRequested(hash);
+    };
+
     const showPicks = (hash) => {
         window.switchView('library', false);
         window.switchPersonalView('picks', false);
@@ -120,7 +137,7 @@ export function initApp() {
 
     window.switchPersonalView = (view, updateHash = true) => {
         const picksBtn = document.getElementById('btn-picks');
-        const projectsBtn = document.getElementById('btn-personal-projects');
+        const projectsBtn = document.getElementById('btn-creations');
         const slider = document.getElementById('personal-sub-slider');
         const picksSection = document.getElementById('picks-section');
         const projectsSection = document.getElementById('projects-section-personal');
@@ -133,17 +150,17 @@ export function initApp() {
             if (projectsSection) projectsSection.style.display = 'none';
             if (updateHash) window.location.hash = '/personal/sick-picks-and-plugs';
             document.getElementById('nav-picks')?.classList.add('active');
-            document.getElementById('nav-personal-projects')?.classList.remove('active');
+            document.getElementById('nav-creations')?.classList.remove('active');
         } else {
             if (picksBtn) picksBtn.classList.remove('active');
             if (projectsBtn) projectsBtn.classList.add('active');
             if (slider) slider.style.transform = 'translateX(100%)';
             if (picksSection) picksSection.style.display = 'none';
             if (projectsSection) projectsSection.style.display = 'flex';
-            if (updateHash) window.location.hash = '/personal/personal-projects';
+            if (updateHash) window.location.hash = '/personal/creations';
             document.getElementById('nav-picks')?.classList.remove('active');
-            document.getElementById('nav-personal-projects')?.classList.add('active');
-            document.querySelectorAll('.nav-sublink').forEach(l => l.classList.remove('active'));
+            document.getElementById('nav-creations')?.classList.add('active');
+            document.querySelectorAll('.nav-sublink[data-pick-tag]').forEach(l => l.classList.remove('active'));
         }
     };
 
@@ -209,9 +226,8 @@ export function initApp() {
             if (currentActiveView !== 'ai') window.switchView('ai', false);
         } else if (hash.startsWith('#/personal/sick-picks-and-plugs')) {
             showPicks(hash);
-        } else if (hash === '#/personal/personal-projects') {
-            window.switchView('library', false);
-            window.switchPersonalView('projects', false);
+        } else if (window.isCreationsHash(hash)) {
+            showCreations(hash);
         } else if (hash === '#/personal') {
             window.switchView('library', false);
         } else {
@@ -305,9 +321,8 @@ export function initApp() {
         window.switchView('ai', false);
     } else if (initialHash.startsWith('#/personal/sick-picks-and-plugs')) {
         showPicks(initialHash);
-    } else if (initialHash === '#/personal/personal-projects') {
-        window.switchView('library', false);
-        window.switchPersonalView('projects', false);
+    } else if (window.isCreationsHash(initialHash)) {
+        showCreations(initialHash);
     } else if (initialHash === '#/personal') {
         window.switchView('library', false);
         window.switchPersonalView('picks', false);
