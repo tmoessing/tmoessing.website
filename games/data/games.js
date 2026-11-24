@@ -53,7 +53,7 @@ export const GAMES = [
     playtimeMax: 40,
     categories: ["Card Game", "Social Deduction", "Bluffing", "Party", "Competitive"],
     complexity: "easy",
-    tags: ["Hidden Roles", "Hand Management", "Take That", "Player Elimination", "Wild West"],
+    tags: ["Hidden Roles", "Variable Player Powers", "Team Play", "Player Elimination", "Take That", "Hand Management", "Wild West"],
     bggUrl: "https://boardgamegeek.com/boardgame/3955/bang",
     howToPlayVideo: "https://www.youtube.com/watch?v=kYJzXv-Z5b0"
   },
@@ -66,9 +66,9 @@ export const GAMES = [
     maxPlayers: 6,
     playtimeMin: 60,
     playtimeMax: 120,
-    categories: ["Strategy", "Competitive", "Board Game", "Dice", "Family"],
+    categories: ["Strategy", "Board Game", "Family", "Dice", "Competitive"],
     complexity: "medium",
-    tags: ["Trading", "Resource Management", "Modular Board", "Network Building", "Settlers", "5-6 Player Expansion"],
+    tags: ["Trading", "Negotiation", "Resource Management", "Network Building", "Modular Board", "5-6 Player Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/13/catan",
     howToPlayVideo: "https://www.youtube.com/watch?v=Ak7XV715y04"
   },
@@ -81,9 +81,9 @@ export const GAMES = [
     maxPlayers: 8,
     playtimeMin: 15,
     playtimeMax: 30,
-    categories: ["Party", "Word Game", "Competitive", "Card Game", "Family"],
+    categories: ["Party", "Word Game", "Family", "Competitive"],
     complexity: "easy",
-    tags: ["Team Play", "Word Association", "Deduction", "Spymaster", "Grid Coverage"],
+    tags: ["Team Play", "Clue Giving", "Word Association", "Deduction"],
     bggUrl: "https://boardgamegeek.com/boardgame/178900/codenames",
     howToPlayVideo: "https://www.youtube.com/watch?v=Vd0iQ0Z8j0I"
   },
@@ -98,7 +98,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Social Deduction", "Bluffing", "Card Game", "Competitive", "Party"],
     complexity: "easy",
-    tags: ["Hidden Roles", "Bluffing", "Player Elimination", "Take That", "Variable Player Powers", "Reformation Expansion", "Team Factions"],
+    tags: ["Hidden Roles", "Player Elimination", "Take That", "Variable Player Powers", "Team Factions", "Reformation Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/131357/coup",
     howToPlayVideo: "https://www.youtube.com/watch?v=xa476iCNIDk"
   },
@@ -113,7 +113,7 @@ export const GAMES = [
     playtimeMax: 90,
     categories: ["Card Game", "Party", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Real-Time", "Trading", "Commodity Trading", "Set Collection", "Shouting"],
+    tags: ["Real-Time", "Trading", "Shouting", "Set Collection"],
     bggUrl: "https://boardgamegeek.com/boardgame/140/pit",
     howToPlayVideo: "https://www.youtube.com/watch?v=oX-08c35w78"
   },
@@ -126,9 +126,9 @@ export const GAMES = [
     maxPlayers: 10,
     playtimeMin: 30,
     playtimeMax: 30,
-    categories: ["Party", "Trivia", "Competitive", "Card Game"],
+    categories: ["Party", "Trivia", "Card Game", "Competitive"],
     complexity: "easy",
-    tags: ["Music", "Timeline", "Trivia", "App Integration", "Party Game"],
+    tags: ["Music", "Timeline", "Companion App", "Team Play"],
     bggUrl: "https://boardgamegeek.com/boardgame/318243/hitster",
     howToPlayVideo: "https://www.youtube.com/watch?v=J98a8Xy3l5o"
   },
@@ -141,9 +141,9 @@ export const GAMES = [
     maxPlayers: 10,
     playtimeMin: 30,
     playtimeMax: 30,
-    categories: ["Party", "Word Game", "Competitive", "Family"],
+    categories: ["Party", "Board Game", "Word Game", "Family", "Competitive"],
     complexity: "easy",
-    tags: ["Color Identification", "Clue Giving", "Communication", "Deduction", "Grid Movement"],
+    tags: ["Clue Giving", "Color Identification", "Guessing", "Communication"],
     bggUrl: "https://boardgamegeek.com/boardgame/302520/hues-and-cues",
     howToPlayVideo: "https://www.youtube.com/watch?v=5U7s8Yl0uQ8"
   },
@@ -158,7 +158,7 @@ export const GAMES = [
     playtimeMax: 180,
     categories: ["Board Game", "Competitive", "Dice", "Family"],
     complexity: "easy",
-    tags: ["Roll and Move", "Trading", "Star Wars", "Property Management", "Paper Money"],
+    tags: ["Roll and Move", "Trading", "Negotiation", "Property Management", "Player Elimination", "Paper Money", "Star Wars"],
     bggUrl: "https://boardgamegeek.com/boardgame/37452/monopoly-star-wars-the-clone-wars-edition",
     howToPlayVideo: "https://www.youtube.com/watch?v=4nz-_hvFw44"
   },
@@ -171,9 +171,9 @@ export const GAMES = [
     maxPlayers: 10,
     playtimeMin: 10,
     playtimeMax: 10,
-    categories: ["Social Deduction", "Bluffing", "Party", "Card Game", "Cooperative", "Competitive"],
+    categories: ["Social Deduction", "Bluffing", "Party", "Card Game", "Competitive"],
     complexity: "easy",
-    tags: ["Hidden Roles", "Bluffing", "Deduction", "Team Play", "App-Driven"],
+    tags: ["Hidden Roles", "Variable Player Powers", "Team Play", "Deduction", "Companion App"],
     bggUrl: "https://boardgamegeek.com/boardgame/147949/one-night-ultimate-werewolf",
     howToPlayVideo: "https://www.youtube.com/watch?v=k45a2pW0pLg"
   },
@@ -188,7 +188,7 @@ export const GAMES = [
     playtimeMax: 45,
     categories: ["Card Game", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Set Collection", "Hand Management", "Melding", "Rummy", "Take That"],
+    tags: ["Rummy", "Set Collection", "Melding", "Hand Management", "Take That"],
     bggUrl: "https://boardgamegeek.com/boardgame/1258/phase-10",
     howToPlayVideo: "https://www.youtube.com/watch?v=e3tZ3YboyO4"
   },
@@ -203,7 +203,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Party", "Word Game", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Clue Giving", "Word Association", "Team Play", "Real-Time", "Communication"],
+    tags: ["Team Play", "Clue Giving", "Real-Time", "Communication"],
     bggUrl: "https://boardgamegeek.com/boardgame/1111/taboo",
     howToPlayVideo: "https://www.youtube.com/watch?v=vVj4u_393Gg"
   },
@@ -216,9 +216,9 @@ export const GAMES = [
     maxPlayers: 13,
     playtimeMin: 30,
     playtimeMax: 30,
-    categories: ["Party", "Competitive", "Social Deduction"],
+    categories: ["Party", "Card Game", "Competitive"],
     complexity: "easy",
-    tags: ["Humor", "Team Play", "Storytelling", "Debating", "Card Game"],
+    tags: ["Mature Content", "Humor", "Debating", "Team Play", "Storytelling"],
     bggUrl: "https://boardgamegeek.com/boardgame/280017/trial-trolley",
     howToPlayVideo: "https://www.youtube.com/watch?v=2T1nF9b2s7E"
   },
@@ -233,7 +233,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Card Game", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Hand Management", "Matching", "Take That", "Player Elimination", "Shedding"],
+    tags: ["Shedding", "Matching", "Take That", "Hand Management", "Classic"],
     bggUrl: "https://boardgamegeek.com/boardgame/2223/uno",
     howToPlayVideo: "https://www.youtube.com/watch?v=FkuqYtE1rw0"
   },
@@ -248,7 +248,7 @@ export const GAMES = [
     playtimeMax: 45,
     categories: ["Card Game", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Rummy", "Set Collection", "Hand Management", "Wild Cards", "Solo Mode"],
+    tags: ["Rummy", "Set Collection", "Wild Cards", "Hand Management", "Solo Mode"],
     bggUrl: "https://boardgamegeek.com/boardgame/1472/five-crowns",
     howToPlayVideo: "https://www.youtube.com/watch?v=9g0H290gq6A"
   },
@@ -263,7 +263,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Card Game", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Pattern Recognition", "Real-Time", "Visual Perception", "Educational", "Puzzle"],
+    tags: ["Real-Time", "Pattern Recognition", "Puzzle", "Visual Perception", "Educational", "Solo Mode"],
     bggUrl: "https://boardgamegeek.com/boardgame/1198/set",
     howToPlayVideo: "https://www.youtube.com/watch?v=P6Yy2e6yD6o"
   },
@@ -278,7 +278,7 @@ export const GAMES = [
     playtimeMax: 45,
     categories: ["Party", "Bluffing", "Competitive"],
     complexity: "easy",
-    tags: ["Humor", "Communication", "Deduction", "Writing", "Guessing"],
+    tags: ["Humor", "Writing", "Guessing", "Deduction", "Paper and Pencil"],
     bggUrl: "https://boardgamegeek.com/boardgame/10934/things",
     howToPlayVideo: "https://www.youtube.com/watch?v=L2Gv4M94Z_Q"
   },
@@ -293,7 +293,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Party", "Cooperative", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Drawing", "Communication", "Humor", "Paper and Pencil", "Telephone Game"],
+    tags: ["Drawing", "Humor", "Telephone Game", "Communication"],
     bggUrl: "https://boardgamegeek.com/boardgame/46213/telestrations",
     howToPlayVideo: "https://www.youtube.com/watch?v=w5zVtncdgWg"
   },
@@ -308,7 +308,7 @@ export const GAMES = [
     playtimeMax: 10,
     categories: ["Party", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Physical Skill", "Dexterity", "Spinner", "Action / Movement", "Classic"],
+    tags: ["Physical Activity", "Dexterity", "Spinner", "Classic"],
     bggUrl: "https://boardgamegeek.com/boardgame/5894/twister",
     howToPlayVideo: "https://www.youtube.com/watch?v=G30tX9Xo_7E"
   },
@@ -323,7 +323,7 @@ export const GAMES = [
     playtimeMax: 15,
     categories: ["Card Game", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Card Drafting", "Set Collection", "Hand Management", "Closed Drafting", "Cute Artwork"],
+    tags: ["Card Drafting", "Set Collection", "Simultaneous Action", "Hand Management", "Cute Artwork"],
     bggUrl: "https://boardgamegeek.com/boardgame/133473/sushi-go",
     howToPlayVideo: "https://www.youtube.com/watch?v=Fs_bC54ZM3l"
   },
@@ -338,7 +338,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Card Game", "Competitive", "Party"],
     complexity: "easy",
-    tags: ["Ever-changing Rules", "Hand Management", "Set Collection", "Take That", "Chaos"],
+    tags: ["Ever-changing Rules", "Chaos", "Take That", "Set Collection", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/280/fluxx",
     howToPlayVideo: "https://www.youtube.com/watch?v=yVv_oD_iS0A"
   },
@@ -351,9 +351,9 @@ export const GAMES = [
     maxPlayers: 10,
     playtimeMin: 1,
     playtimeMax: 10,
-    categories: ["Card Game", "Party", "Competitive"],
+    categories: ["Card Game", "Party", "Competitive", "Legacy"],
     complexity: "easy",
-    tags: ["Humor", "Player Elimination", "Take That", "Chaos", "Real-Time", "Legacies Expansion", "Legacy Mechanics"],
+    tags: ["Chaos", "Humor", "Take That", "Player Elimination", "Real-Time", "Legacies Expansion"],
     bggUrl: "https://boardgamegeek.com/boardgame/31016/we-didnt-playtest-all",
     howToPlayVideo: "https://www.youtube.com/watch?v=l_aGv85p364"
   },
@@ -368,7 +368,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Card Game", "Social Deduction", "Bluffing", "Competitive", "Party"],
     complexity: "easy",
-    tags: ["Hidden Roles", "Path Building", "Grid Coverage", "Team Play", "Deception"],
+    tags: ["Hidden Roles", "Team Play", "Path Building"],
     bggUrl: "https://boardgamegeek.com/boardgame/9220/saboteur",
     howToPlayVideo: "https://www.youtube.com/watch?v=Jm_Xz6-U1yQ"
   },
@@ -383,7 +383,7 @@ export const GAMES = [
     playtimeMax: 15,
     categories: ["Card Game", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Set Collection", "Hand Management", "Take That", "Property Trading", "Stealing"],
+    tags: ["Set Collection", "Take That", "Stealing", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/40398/monopoly-deal-card-game",
     howToPlayVideo: "https://www.youtube.com/watch?v=t5R0Fw6_0yE"
   },
@@ -398,7 +398,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Card Game", "Competitive", "Family"],
     complexity: "easy",
-    tags: ["Set Collection", "Life Choices", "Point Scoring", "Classic Remake", "Hand Management"],
+    tags: ["Set Collection", "Life Choices", "Hand Management", "Classic Remake"],
     bggUrl: "https://boardgamegeek.com/boardgame/88691/game-life-adventures-card-game",
     howToPlayVideo: "https://www.youtube.com/watch?v=cW5iK5L-W3o"
   },
@@ -411,9 +411,9 @@ export const GAMES = [
     maxPlayers: 20,
     playtimeMin: 15,
     playtimeMax: 30,
-    categories: ["Party", "Social Deduction", "Bluffing"],
+    categories: ["Party", "Competitive"],
     complexity: "easy",
-    tags: ["Memory", "Team Play", "Secret Names", "No Props Needed", "Icebreaker", "Couch Game"],
+    tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker"],
     bggUrl: "",
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+four+on+a+couch+party+game"
   },
@@ -428,7 +428,7 @@ export const GAMES = [
     playtimeMax: 60,
     categories: ["Social Deduction", "Bluffing", "Party"],
     complexity: "easy",
-    tags: ["Hidden Roles", "Deduction", "Player Elimination", "No Props Needed", "Classic", "Team Play"],
+    tags: ["Hidden Roles", "Player Elimination", "Team Play", "Deduction", "Narrator Needed", "No Props Needed", "Classic"],
     bggUrl: "https://boardgamegeek.com/boardgame/925/mafia",
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+mafia+party+game"
   },
@@ -443,7 +443,7 @@ export const GAMES = [
     playtimeMax: 40,
     categories: ["Card Game", "Competitive", "Party"],
     complexity: "easy",
-    tags: ["Shedding", "Hand Management", "Social Hierarchy", "Card Trading", "Classic Deck"],
+    tags: ["Classic Deck", "Shedding", "Social Hierarchy", "Card Trading", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/1195/president",
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+scum+card+game"
   },
@@ -458,7 +458,7 @@ export const GAMES = [
     playtimeMax: 45,
     categories: ["Party", "Social Deduction"],
     complexity: "easy",
-    tags: ["Deduction", "Observation", "Roleplay", "No Props Needed", "Icebreaker"],
+    tags: ["Deduction", "Roleplay", "Observation", "No Props Needed", "Icebreaker"],
     bggUrl: "",
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+psychiatrist+party+game"
   },
@@ -473,7 +473,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Party", "Word Game"],
     complexity: "easy",
-    tags: ["Deduction", "Communication", "Word Guessing", "No Props Needed", "Icebreaker"],
+    tags: ["Word Guessing", "Deduction", "No Props Needed", "Icebreaker", "Communication"],
     bggUrl: "",
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+smurf+party+game"
   },
@@ -503,7 +503,7 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Card Game", "Party", "Competitive"],
     complexity: "easy",
-    tags: ["Memory", "Hand Management", "Card Swapping", "Spying", "Bluffing"],
+    tags: ["Memory", "Classic Deck", "Card Swapping", "Spying", "Hand Management"],
     bggUrl: "https://boardgamegeek.com/boardgame/271321/cabo-second-edition",
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+cambio+card+game"
   },
@@ -516,9 +516,9 @@ export const GAMES = [
     maxPlayers: 20,
     playtimeMin: 30,
     playtimeMax: 45,
-    categories: ["Party", "Word Game", "Cooperative"],
+    categories: ["Party", "Word Game", "Competitive"],
     complexity: "easy",
-    tags: ["Charades", "Memory", "Team Play", "Real-Time", "Low Props", "Clue Giving"],
+    tags: ["Team Play", "Charades", "Clue Giving", "Real-Time", "Memory", "Paper and Pencil"],
     bggUrl: "",
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+fishbowl+name+game"
   },
@@ -531,9 +531,9 @@ export const GAMES = [
     maxPlayers: 20,
     playtimeMin: 15,
     playtimeMax: 30,
-    categories: ["Party", "Memory"],
+    categories: ["Party", "Competitive"],
     complexity: "easy",
-    tags: ["Memory", "Team Play", "Secret Names", "No Props Needed", "Icebreaker"],
+    tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker"],
     bggUrl: "",
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+name+game+party+game"
   }
