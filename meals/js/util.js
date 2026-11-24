@@ -2,7 +2,7 @@
  * Pure helpers for the meal library: HTML escaping, tag colors, a generated
  * cover placeholder, the meal match predicate + sort comparators, prep-time /
  * cost buckets, a tiny Markdown renderer, and Google Calendar helpers
- * (upcoming-day chooser, ingredient extraction, all-day event links).
+ * (next-week day chooser, ingredient extraction, 5 PM event links).
  * No DOM state, no data imports — safe to reuse anywhere.
  */
 
@@ -218,19 +218,38 @@ function fmtCalDay(d) {
   return String(d.getFullYear()).padStart(4, "0") + pad(d.getMonth() + 1) + pad(d.getDate());
 }
 
+/** UTC timestamp (YYYYMMDDTHHMMSSZ) for a timed Google Calendar event. */
+function fmtCalDateTime(d) {
+  return (
+    String(d.getUTCFullYear()).padStart(4, "0") +
+    pad(d.getUTCMonth() + 1) +
+    pad(d.getUTCDate()) +
+    "T" +
+    pad(d.getUTCHours()) +
+    pad(d.getUTCMinutes()) +
+    "00Z"
+  );
+}
+
+/** Meal-prep events start at 5:00 PM local time. */
+export const PREP_START_HOUR = 17;
+
 /**
- * The next `count` days starting today, for the "pick a prep day" chooser.
- * Each entry: { date, key: "YYYYMMDD", label: "Today" | "Tomorrow" | "Wed", sub: "Nov 26" }.
+ * The planning week: Monday through Sunday of the *next* week, i.e. starting
+ * the first Monday after today (planning on a Saturday gives the Monday two
+ * days out; planning on a Monday gives the Monday a week out).
+ * Each entry: { date, key: "YYYYMMDD", label: "Mon", sub: "Dec 1" }.
  */
-export function upcomingDays(count = 7, from = new Date()) {
+export function upcomingWeek(from = new Date()) {
+  const today = new Date(from.getFullYear(), from.getMonth(), from.getDate());
+  const daysToMonday = ((8 - today.getDay()) % 7) || 7; // getDay(): 0 = Sun, 1 = Mon
   const days = [];
-  for (let i = 0; i < count; i++) {
-    const date = new Date(from.getFullYear(), from.getMonth(), from.getDate() + i);
+  for (let i = 0; i < 7; i++) {
+    const date = new Date(today.getFullYear(), today.getMonth(), today.getDate() + daysToMonday + i);
     days.push({
       date,
       key: fmtCalDay(date),
-      label:
-        i === 0 ? "Today" : i === 1 ? "Tomorrow" : date.toLocaleDateString(undefined, { weekday: "short" }),
+      label: date.toLocaleDateString(undefined, { weekday: "short" }),
       sub: date.toLocaleDateString(undefined, { month: "short", day: "numeric" })
     });
   }
@@ -275,24 +294,25 @@ export function recipeUrl(meal) {
 }
 
 /**
- * Build a Google Calendar "TEMPLATE" link for an all-day meal-prep event on
- * `day` (a Date; defaults to today). The notes carry the description, how long
- * to block off, the ingredient list (a shopping list), and a link back to the
+ * Build a Google Calendar "TEMPLATE" link for a meal-prep event on `day`
+ * (a Date), starting at 5:00 PM local time and lasting the prep block
+ * (prepDuration, else prep + cook, else 60 min). The notes carry the
+ * description, the ingredient list (a shopping list), and a link back to the
  * recipe. Opens in a new tab: no login, no backend, nothing saved until the
  * user clicks Save in Google Calendar.
  */
 export function googleCalendarUrl(meal, day = new Date()) {
-  const startDay = new Date(day.getFullYear(), day.getMonth(), day.getDate());
-  const endDay = new Date(startDay.getFullYear(), startDay.getMonth(), startDay.getDate() + 1);
+  const block = num(meal.prepDuration) || num(meal.prepTime) + num(meal.cookTime) || 60;
+  const start = new Date(day.getFullYear(), day.getMonth(), day.getDate(), PREP_START_HOUR, 0, 0);
+  const end = new Date(start.getTime() + block * 60000);
 
   const details = [];
   if (meal.description) details.push(meal.description);
 
-  const block = num(meal.prepDuration) || num(meal.prepTime) + num(meal.cookTime);
   const timing = [];
   if (num(meal.prepTime)) timing.push(`prep ${num(meal.prepTime)}`);
   if (num(meal.cookTime)) timing.push(`cook ${num(meal.cookTime)}`);
-  if (block) details.push(`Block off about ${block} min${timing.length ? ` (${timing.join(", ")})` : ""}.`);
+  if (timing.length) details.push(`About ${block} min (${timing.join(", ")}).`);
 
   const ingredients = ingredientsFromBody(meal.body);
   if (ingredients.length) {
@@ -309,8 +329,8 @@ export function googleCalendarUrl(meal, day = new Date()) {
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: `Meal Prep: ${meal.title}`,
-    // All-day event: date-only values, end date exclusive (the next day).
-    dates: `${fmtCalDay(startDay)}/${fmtCalDay(endDay)}`,
+    // Local 5 PM converted to UTC, so it lands at 5 PM in the viewer's time zone.
+    dates: `${fmtCalDateTime(start)}/${fmtCalDateTime(end)}`,
     details: details.join("\n\n")
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;

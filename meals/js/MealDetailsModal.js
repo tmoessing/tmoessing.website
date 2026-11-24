@@ -20,7 +20,7 @@ import {
   totalMinutes,
   groceryLink,
   googleCalendarUrl,
-  upcomingDays
+  upcomingWeek
 } from "./util.js";
 
 let scrollLocks = 0;
@@ -112,9 +112,9 @@ function detailsHTML(meal) {
 
   const walmart = groceryLink(meal, "walmart");
   const source = meal.recipeSource && /^https?:\/\//i.test(meal.recipeSource) ? meal.recipeSource : null;
-  // "Plan Meal Prep" reveals a chooser of the next 7 days; each day is a link
-  // that opens Google Calendar with an all-day prep event on that date.
-  const dayLinks = upcomingDays(7)
+  // "Plan Meal Prep" reveals next week's Monday–Sunday; each day is a link that
+  // opens Google Calendar with a 5 PM prep event on that date.
+  const dayLinks = upcomingWeek()
     .map(
       (d) => `<a class="plan-day" href="${esc(googleCalendarUrl(meal, d.date))}" target="_blank" rel="noopener noreferrer"
                  aria-label="Plan meal prep for ${esc(d.label)}, ${esc(d.sub)} (opens Google Calendar)">
@@ -132,7 +132,7 @@ function detailsHTML(meal) {
       ${source ? `<a href="${esc(source)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">🌐 Original Recipe</a>` : ""}
     </div>
     <div class="meal-plan-days" id="meal-plan-days" hidden>
-      <p class="meal-plan-prompt">Which day do you want to prep? It'll open Google Calendar as an all-day event, with the ingredient list in the notes.</p>
+      <p class="meal-plan-prompt">Plan for next week: pick a day and it opens Google Calendar with a 5:00 PM prep event and the ingredient list in the notes.</p>
       <div class="plan-day-row">${dayLinks}</div>
     </div>`;
 
