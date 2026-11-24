@@ -80,27 +80,33 @@
   margin-bottom: 1rem;
 }
 
-.suggested-tags-section {
+/* Row of top tags under the search input */
+.search-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin-top: 12px;
+  padding-top: 6px;
+}
+.search-tag-row:empty { display: none; }
+.search-tag-row-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.search-tag-row .tag-chip {
+  position: relative;
+  padding: 3px 9px;
+  font-size: 0.68rem;
+}
+
+.search-empty-hint {
   padding: 2rem;
   text-align: center;
-  animation: fadeIn 0.5s ease;
-}
-
-.suggested-tags-title {
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-}
-
-.suggested-tags-cloud {
-  justify-content: center;
-  gap: 12px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.suggested-tag-btn {
-  padding: 8px 16px;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 

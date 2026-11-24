@@ -42,6 +42,7 @@ export class ContentLoader {
             this.content = texts.reduce((content, text) => this.parser.parseContent(text, content), {});
 
             this.search.collectSearchableItems(this.content);
+            this.search.renderTagRow();
             this.populatePage();
             
             // Check if we should perform an initial search

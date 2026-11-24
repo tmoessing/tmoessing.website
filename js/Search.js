@@ -44,14 +44,13 @@ export class Search {
             }
         };
 
+        // Professional tab only: Picks & Plugs ('resources') and Personal Projects stay out of search.
         addItems('experience', 'job');
         addItems('projects', 'project');
-        addItems('personal projects', 'project');
         addItems('service', 'service');
         addItems('volunteer', 'volunteer');
         addItems('interests', 'leadership');
         addItems('education', 'education');
-        addItems('resources', 'resource');
         
         this.allTags = new Set(Array.from(this.allTags).sort());
     }
@@ -63,6 +62,9 @@ export class Search {
     performSearch(query, { exactTag = false } = {}) {
         const queryEl = document.querySelector('#search-query-display');
         const countEl = document.querySelector('#search-count');
+
+        this.renderTagRow();
+        this.markActiveTag(exactTag ? query : '');
 
         if (!query || query.trim().length === 0) {
             if (queryEl) queryEl.textContent = '...';
@@ -99,29 +101,40 @@ export class Search {
     }
 
     /**
-     * Renders a tag cloud when search is empty.
+     * Empty search: make sure the tag row is there and show a hint in place of results.
      */
     renderSuggestedTags() {
+        this.renderTagRow();
+        this.markActiveTag('');
         const container = document.querySelector('#search-results-container');
-        if (!container) return;
+        if (container) container.innerHTML = '<p class="search-empty-hint">Pick a tag above or start typing to search.</p>';
+    }
 
-        // Only tags that lead to 2+ results, most results first. The badge shows exactly what a click returns.
+    /**
+     * Renders the row of top tags under the search input (once content has loaded).
+     * Only tags with 2+ results are shown, most results first, each with its result count.
+     */
+    renderTagRow() {
+        const row = document.querySelector('#search-tag-row');
+        if (!row || row.dataset.rendered) return;
+
         const tags = Array.from(this.allTags)
             .map(tag => ({ tag, count: this.findMatches(tag, true).length }))
             .filter(({ count }) => count >= 2)
             .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+        if (tags.length === 0) return;
         const hues = this.renderer.tagHues(tags.map(({ tag }) => tag));
 
-        container.innerHTML = `
-            <div class="suggested-tags-section">
-                <h3 class="suggested-tags-title">Explore by Tag</h3>
-                <div class="card-tags suggested-tags-cloud">
-                    ${tags.map(({ tag, count }, i) => `
-                        <a href="#/professional/search?tag=${encodeURIComponent(tag)}" class="skill-tag tag-chip suggested-tag-btn" style="${this.renderer.tagChipStyle(hues[i])}" title="${count} results for ${tag}" onclick="event.preventDefault(); document.querySelector('#search-input').value = '${tag}'; window.location.hash = '/professional/search?tag=${encodeURIComponent(tag)}'; window.contentLoader.performSearch('${tag}', { exactTag: true });">${tag.toUpperCase()}<span class="tag-count" aria-label="${count} results">${count}</span></a>
-                    `).join('')}
-                </div>
-            </div>
-        `;
+        row.innerHTML = `<span class="search-tag-row-label">Top tags</span>` + tags.map(({ tag, count }, i) => `<a href="#/professional/search?tag=${encodeURIComponent(tag)}" class="skill-tag tag-chip search-tag" data-tag="${tag.toLowerCase()}" style="${this.renderer.tagChipStyle(hues[i])}" title="${count} results for ${tag}" onclick="event.preventDefault(); document.querySelector('#search-input').value = '${tag}'; window.location.hash = '/professional/search?tag=${encodeURIComponent(tag)}'; window.contentLoader.performSearch('${tag}', { exactTag: true });">${tag.toUpperCase()}<span class="tag-count" aria-label="${count} results">${count}</span></a>`).join('');
+        row.dataset.rendered = 'true';
+    }
+
+    /** Fills in the tag chip that matches the current tag search, if any. */
+    markActiveTag(tag) {
+        const active = (tag || '').toLowerCase().trim();
+        document.querySelectorAll('#search-tag-row .search-tag').forEach(chip => {
+            chip.classList.toggle('is-active', chip.dataset.tag === active);
+        });
     }
 
     /**
