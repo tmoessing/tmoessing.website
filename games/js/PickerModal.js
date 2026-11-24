@@ -568,7 +568,7 @@ function renderMatching() {
       <div class="picker-match-controls">
         <label>Sort
           <select id="picker-match-sort">
-            <option value="alpha">A–Z</option>
+            <option value="alpha">Title (A–Z)</option>
             <option value="playtime">Playtime</option>
             <option value="players">Players</option>
             <option value="complexity">Complexity</option>

@@ -39,25 +39,24 @@
             </div>
             <div class="toolbar-controls">
                 <div class="view-toggle" role="group" aria-label="View mode">
-                    <button type="button" id="view-grid" class="view-btn active" aria-label="Grid view" title="Grid view" aria-pressed="true">
+                    <button type="button" id="view-grid" class="view-btn active" data-view="grid" aria-label="Large cards" title="Large cards" aria-pressed="true">
                         <svg class="icon icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" /></svg>
                     </button>
-                    <button type="button" id="view-list" class="view-btn" aria-label="List view" title="List view" aria-pressed="false">
+                    <button type="button" id="view-compact" class="view-btn" data-view="compact" aria-label="Small cards" title="Small cards" aria-pressed="false">
+                        <svg class="icon icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.75" y="3.75" width="4.5" height="4.5" rx="1"/><rect x="9.75" y="3.75" width="4.5" height="4.5" rx="1"/><rect x="15.75" y="3.75" width="4.5" height="4.5" rx="1"/><rect x="3.75" y="9.75" width="4.5" height="4.5" rx="1"/><rect x="9.75" y="9.75" width="4.5" height="4.5" rx="1"/><rect x="15.75" y="9.75" width="4.5" height="4.5" rx="1"/><rect x="3.75" y="15.75" width="4.5" height="4.5" rx="1"/><rect x="9.75" y="15.75" width="4.5" height="4.5" rx="1"/><rect x="15.75" y="15.75" width="4.5" height="4.5" rx="1"/></svg>
+                    </button>
+                    <button type="button" id="view-list" class="view-btn" data-view="list" aria-label="Compact list" title="Compact list" aria-pressed="false">
                         <svg class="icon icon-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
                     </button>
                 </div>
                 <label>Sort
-                    <select id="library-sort">
-                        <option value="alpha">A–Z</option>
+                    <select id="library-sort" autocomplete="off">
+                        <option value="alpha" selected>Title (A–Z)</option>
                         <option value="playtime">Playtime</option>
                         <option value="players">Players</option>
                         <option value="complexity">Complexity</option>
                     </select>
                 </label>
-                <button type="button" id="library-shuffle" class="btn btn-secondary btn-icon">
-                    <svg class="icon icon-stroke gi icon-md" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
-                    Shuffle
-                </button>
                 <button type="button" id="pick-a-game-btn" class="btn btn-primary btn-icon">
                     <svg class="icon icon-stroke gi icon-md" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M12 12h.01M16 8h.01M8 16h.01M8 8h.01M16 16h.01"/></svg>
                     Pick a Game
