@@ -332,6 +332,23 @@ body.dark-mode a.skill-tag.tag-chip.is-active { color: #0f172a; }
   align-items: center;
 }
 
+/* Linked cards: the whole card is the click target, not just the corner icon. */
+.card.card-linked { position: relative; cursor: pointer; }
+.card-stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
+.card.card-linked:hover .resource-link-icon { transform: translate(2px, -2px); }
+.card.card-linked .resource-link-icon { transition: transform 0.2s ease; }
+.card.card-linked:has(.card-stretched-link:focus-visible) {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+.card-stretched-link:focus-visible { outline: none; }
+
 .skill-tag.coming-soon {
   background: var(--bg-tertiary);
   color: var(--text-muted);

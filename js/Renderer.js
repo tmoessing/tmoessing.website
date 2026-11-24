@@ -344,10 +344,9 @@ export class Renderer {
     createResourceCard(resource, defaultCategory = null) {
         const card = document.createElement('div');
         const slug = this.parser.slugify(resource.name || resource.title);
-        card.className = resource.image ? 'card has-image' : 'card';
-        card.id = `card-${slug}`;
-
         const link = resource.url || resource.link;
+        card.className = (resource.image ? 'card has-image' : 'card') + (link ? ' card-linked' : '');
+        card.id = `card-${slug}`;
         
         let statusBadge = '';
         if (resource.status === 'coming-soon') {
@@ -358,7 +357,7 @@ export class Renderer {
             <div class="card-header resource-header">
                 <h3 class="card-title">${resource.name || resource.title}</h3>
                 ${statusBadge}
-                ${link ? `<a href="${link}" target="_blank" class="resource-link-icon"><svg class="icon icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg></a>` : ''}
+                ${link ? `<a href="${link}" target="_blank" rel="noopener noreferrer" class="resource-link-icon card-stretched-link" aria-label="Visit ${resource.name || resource.title}"><svg class="icon icon-stroke" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg></a>` : ''}
             </div>
             <p class="card-description">${resource.description || ''}</p>
             <div class="card-footer">
