@@ -96,6 +96,7 @@ why: Cuts down the junk mail credit offers piling up in your mailbox.
 
 description: Exclusive discount plan for BYU alumni and students.
 link: https://alumni.byu.edu/at-t-discounted-cell-phone-plan
+tags: LIFE HACK
 image: assets/picks_and_plugs/byu_att.png
 why: Same network, lower bill. Free money if you're eligible.
 
