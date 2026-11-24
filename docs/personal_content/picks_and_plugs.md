@@ -28,14 +28,14 @@ why: An extension of the series that turned me into a reader.
 description: Dystopian series about a group of teens who wake up with no memories in the middle of a giant, ever-changing maze and have to figure out how to escape.
 tags: BOOK
 image: assets/picks_and_plugs/maze_runner.jpg
-why: Every chapter ends on a cliffhanger. Zero chance you read just one.
+why: Really good book.
 
 ### The Martian by Andy Weir
 
 description: An astronaut gets stranded alone on Mars and has to science his way to survival. Nerdy, hilarious, and genuinely gripping from start to finish.
 tags: BOOK
 image: assets/picks_and_plugs/the_martian.jpg
-why: Proof that problem-solving and duct tape can be the most thrilling thing in a book.
+why: Really good book, with a very inspirational ending about mankind.
 
 ### Syntax. Podcast
 
