@@ -3,7 +3,6 @@ title: Peanut Butter Overnight Oats
 description: No-cook, make-ahead oats with peanut butter and banana.
 prepTime: 5
 cookTime: 0
-totalTime: 5
 estimatedCost: 6
 servings: 2
 categories:
@@ -16,7 +15,6 @@ categories:
 tags:
   - No Cook
   - High Fiber
-image: ../meals/images/overnight-oats.jpg
 walmartList: # TODO paste Walmart grocery list URL
 recipeSource:
 prepDuration: 10

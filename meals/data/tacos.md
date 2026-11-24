@@ -3,7 +3,6 @@ title: Ground Beef Tacos
 description: Weeknight beef tacos with a quick homemade seasoning blend.
 prepTime: 10
 cookTime: 15
-totalTime: 25
 estimatedCost: 11
 servings: 4
 categories:
@@ -16,7 +15,6 @@ categories:
 tags:
   - Family Favorite
   - 30 Minutes
-image: ../meals/images/tacos.jpg
 walmartList: # TODO paste Walmart grocery list URL
 recipeSource:
 prepDuration: 30
