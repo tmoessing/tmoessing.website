@@ -10,16 +10,9 @@
  * Filter state persists across views so "Back" preserves the user's choices.
  * Respects prefers-reduced-motion (skips reel + confetti).
  */
-import { GAMES, CATEGORIES } from "../data/games.js";
-import {
-  matchGame,
-  sortGames,
-  shuffle,
-  getTagStyle,
-  placeholderDataURI,
-  complexityLabel,
-  esc
-} from "./filters.js";
+import { GAMES, CATEGORIES, CORE_CATEGORIES } from "../data/games.js";
+import { matchGame, sortGames, shuffle, tagPill, placeholderDataURI, esc } from "./filters.js";
+import { icon } from "./icons.js";
 import { createGameCard } from "./GameCard.js";
 import { lockScroll, unlockScroll, openGameDetails } from "./GameDetailsModal.js";
 
@@ -46,6 +39,13 @@ const DURATIONS = [
   ["custom", "Custom"]
 ];
 
+const COMPLEXITIES = [
+  ["any", "Any"],
+  ["easy", "Easy"],
+  ["medium", "Medium"],
+  ["heavy", "Involved"]
+];
+
 const CONFETTI_COLORS = [
   "var(--tag-1-text)", "var(--tag-2-text)", "var(--tag-3-text)", "var(--tag-4-text)",
   "var(--tag-5-text)", "var(--tag-6-text)", "var(--tag-7-text)", "var(--tag-8-text)"
@@ -53,6 +53,7 @@ const CONFETTI_COLORS = [
 
 let overlay = null;
 let state = null;
+let returnFocusTo = null;
 
 function defaultState() {
   return {
@@ -88,6 +89,7 @@ function currentMatches() {
 export function openPicker() {
   if (overlay) return;
   state = defaultState();
+  returnFocusTo = document.activeElement;
 
   overlay = document.createElement("div");
   overlay.className = "game-modal-overlay picker-overlay";
@@ -107,6 +109,7 @@ export function openPicker() {
   document.addEventListener("keydown", onEsc);
 
   renderFilters();
+  overlay.querySelector(".game-modal-close").focus();
 }
 
 function onEsc(e) {
@@ -121,6 +124,8 @@ export function closePicker() {
   unlockScroll();
   document.removeEventListener("keydown", onEsc);
   document.querySelectorAll(".confetti-piece").forEach((c) => c.remove());
+  if (returnFocusTo && document.contains(returnFocusTo)) returnFocusTo.focus();
+  returnFocusTo = null;
 }
 
 /* ---------- helpers ---------- */
@@ -143,6 +148,14 @@ function updateCount() {
   [pickBtn, viewBtn].forEach((b) => {
     if (b) b.disabled = n === 0;
   });
+}
+
+const DEFAULT_SUB = "Let's find the perfect game for your group.";
+
+function pickerHeading(sub) {
+  return `
+      <h2 class="picker-title">${icon("dice", "icon-xl")} Pick a Game</h2>
+      <p class="picker-sub">${esc(sub)}</p>`;
 }
 
 /* ---------- view: filters ---------- */
@@ -187,28 +200,24 @@ function renderFilters() {
 
   if (state.step === 1) {
     content().innerHTML = `
-      <h2 class="picker-title" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-        <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:1.6rem; height:1.6rem; stroke:var(--text-primary);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M12 12h.01M16 8h.01M8 16h.01M8 8h.01M16 16h.01"/></svg>
-        Pick a Game
-      </h2>
-      <p class="picker-sub" style="margin-bottom: 24px;">${subText}</p>
+      ${pickerHeading(subText)}
 
       ${headerHtml}
 
       <div class="picker-step-card">
-        <div class="picker-section" style="margin-bottom: 0;">
+        <div class="picker-section">
           <div class="picker-section-title">Players</div>
           <div class="pill-row" id="picker-players">
             ${PLAYER_NUMBERS.map(([val, label]) => 
               `<button type="button" class="picker-pill ${isPillActive(val) ? "active" : ""}" data-val="${esc(val)}">${esc(label)}</button>`
             ).join("")}
           </div>
-          <div class="picker-inline" id="picker-count-wrap" style="${showCustomInput ? "margin-top: var(--spacing-md);" : "display:none;"}">
-            <label style="display: flex; align-items: center; gap: 8px;">Enter player count:
-              <div class="picker-number-stepper" style="display: inline-flex; align-items: center; gap: 8px;">
-                <button type="button" class="picker-pill stepper-btn" id="picker-stepper-minus" style="padding: 4px 12px; min-width: 32px; font-weight: 800; font-size: 1.1rem; line-height: 1; border-color: var(--border-color); color: var(--text-secondary);">−</button>
-                <input type="number" min="1" max="100" class="picker-number" id="picker-player-count" value="${esc(state.playerCount)}" style="width: 60px; text-align: center; margin: 0;">
-                <button type="button" class="picker-pill stepper-btn" id="picker-stepper-plus" style="padding: 4px 12px; min-width: 32px; font-weight: 800; font-size: 1.1rem; line-height: 1; border-color: var(--border-color); color: var(--text-secondary);">+</button>
+          <div class="picker-inline" id="picker-count-wrap"${showCustomInput ? "" : " hidden"}>
+            <label>Enter player count:
+              <div class="picker-number-stepper">
+                <button type="button" class="picker-pill stepper-btn" id="picker-stepper-minus">−</button>
+                <input type="number" min="1" max="100" class="picker-number picker-number-compact" id="picker-player-count" value="${esc(state.playerCount)}">
+                <button type="button" class="picker-pill stepper-btn" id="picker-stepper-plus">+</button>
               </div>
             </label>
           </div>
@@ -222,19 +231,15 @@ function renderFilters() {
     `;
   } else if (state.step === 2) {
     content().innerHTML = `
-      <h2 class="picker-title" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-        <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:1.6rem; height:1.6rem; stroke:var(--text-primary);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M12 12h.01M16 8h.01M8 16h.01M8 8h.01M16 16h.01"/></svg>
-        Pick a Game
-      </h2>
-      <p class="picker-sub" style="margin-bottom: 24px;">Let's find the perfect game for your group.</p>
+      ${pickerHeading(DEFAULT_SUB)}
 
       ${headerHtml}
 
       <div class="picker-step-card">
-        <div class="picker-section" style="margin-bottom: 0;">
+        <div class="picker-section">
           <div class="picker-section-title">Duration</div>
           <div class="pill-row" id="picker-duration">${pillRow(DURATIONS, state.duration)}</div>
-          <div class="picker-inline picker-custom" id="picker-custom-wrap" style="${showCustom ? "margin-top: var(--spacing-md);" : "display:none;"}">
+          <div class="picker-inline picker-custom" id="picker-custom-wrap"${showCustom ? "" : " hidden"}>
             <label>From <input type="number" min="0" class="picker-number" id="picker-custom-lo" value="${esc(state.customLo)}"></label>
             <label>to <input type="number" min="0" class="picker-number" id="picker-custom-hi" value="${esc(state.customHi)}"></label>
             <span class="picker-unit">min</span>
@@ -249,37 +254,29 @@ function renderFilters() {
       </div>
     `;
   } else {
-    const CORE_CATEGORIES = [
-      "Party",
-      "Strategy",
-      "Cooperative",
-      "Social Deduction",
-      "Card Game",
-      "Family"
-    ];
     const visibleCategories = state.categoriesExpanded ? CATEGORIES : CORE_CATEGORIES;
 
     content().innerHTML = `
-      <h2 class="picker-title" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-        <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:1.6rem; height:1.6rem; stroke:var(--text-primary);"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M12 12h.01M16 8h.01M8 16h.01M8 8h.01M16 16h.01"/></svg>
-        Pick a Game
-      </h2>
-      <p class="picker-sub" style="margin-bottom: 24px;">Let's find the perfect game for your group.</p>
+      ${pickerHeading(DEFAULT_SUB)}
 
       ${headerHtml}
 
       <div class="picker-step-card">
-        <div class="picker-section" style="margin-bottom: 0;">
+        <div class="picker-section">
           <div class="picker-section-title">Categories</div>
           <div class="pill-row" id="picker-categories">
             ${visibleCategories.map(
               (c) =>
                 `<button type="button" class="picker-pill${state.categories.has(c) ? " active" : ""}" data-cat="${esc(c)}">${esc(c)}</button>`
             ).join("")}
-            <button type="button" class="picker-pill picker-expand-btn" id="picker-toggle-categories" style="border-style: dashed; color: var(--primary-blue); font-weight: bold;">
+            <button type="button" class="picker-pill picker-expand-btn" id="picker-toggle-categories">
               ${state.categoriesExpanded ? "– Show Less" : "+ Show More"}
             </button>
           </div>
+        </div>
+        <div class="picker-section picker-section-spaced">
+          <div class="picker-section-title">Complexity</div>
+          <div class="pill-row" id="picker-complexity">${pillRow(COMPLEXITIES, state.complexity)}</div>
         </div>
       </div>
 
@@ -381,8 +378,7 @@ function wireFilters() {
       if (!btn) return;
       state.duration = btn.dataset.val;
       activate(duration, state.duration);
-      content().querySelector("#picker-custom-wrap").style.display =
-        state.duration === "custom" ? "" : "none";
+      content().querySelector("#picker-custom-wrap").hidden = state.duration !== "custom";
       updateCount();
     });
     content().querySelector("#picker-custom-lo").addEventListener("input", (e) => {
@@ -410,6 +406,14 @@ function wireFilters() {
       if (state.categories.has(c)) state.categories.delete(c);
       else state.categories.add(c);
       btn.classList.toggle("active");
+      updateCount();
+    });
+    const cx = content().querySelector("#picker-complexity");
+    cx.addEventListener("click", (e) => {
+      const btn = e.target.closest(".picker-pill");
+      if (!btn) return;
+      state.complexity = btn.dataset.val;
+      activate(cx, state.complexity);
       updateCount();
     });
     content().querySelector("#picker-toggle-categories").addEventListener("click", () => {
@@ -482,12 +486,7 @@ function runReel(matches, chosen) {
 function renderResult(game, singleMatch) {
   const cover = game.cover || placeholderDataURI(game.title);
   const fallback = placeholderDataURI(game.title);
-  const tags = (game.tags || [])
-    .map((t) => {
-      const s = getTagStyle(t);
-      return `<span class="skill-tag" style="background:${s.bg};color:${s.text};border-color:transparent;">${esc(t)}</span>`;
-    })
-    .join("");
+  const tags = (game.tags || []).map(tagPill).join("");
 
   content().innerHTML = `
     <div class="picker-result">
@@ -498,12 +497,12 @@ function renderResult(game, singleMatch) {
       <p class="picker-result-desc">${esc(game.description || "")}</p>
       <div class="card-tags picker-result-tags">${tags}</div>
       <div class="picker-result-actions">
-        <button type="button" class="btn btn-primary" id="picker-play-now" style="display: inline-flex; align-items: center; gap: 6px;">
-          <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Play Now
+        <button type="button" class="btn btn-primary btn-icon" id="picker-play-now">
+          ${icon("info", "icon-md")}
+          View Details
         </button>
-        <button type="button" class="btn btn-secondary" id="picker-again" style="display: inline-flex; align-items: center; gap: 6px;">
-          <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.95rem; height:0.95rem;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        <button type="button" class="btn btn-secondary btn-icon" id="picker-again">
+          ${icon("refresh", "icon-md")}
           Pick Again
         </button>
         <button type="button" class="btn btn-outline" id="picker-back">Back to Filters</button>
@@ -556,10 +555,11 @@ function renderMatching() {
             <option value="alpha">A–Z</option>
             <option value="playtime">Playtime</option>
             <option value="players">Players</option>
+            <option value="complexity">Complexity</option>
           </select>
         </label>
-        <button type="button" class="btn btn-secondary btn-sm" id="picker-match-shuffle" style="display: inline-flex; align-items: center; gap: 6px;">
-          <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:0.85rem; height:0.85rem;"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        <button type="button" class="btn btn-secondary btn-sm btn-icon" id="picker-match-shuffle">
+          ${icon("shuffle")}
           Shuffle
         </button>
       </div>
@@ -598,13 +598,15 @@ function renderEmpty() {
     suggestions.push("Widen the play time.");
   if (state.categories.size > 0)
     suggestions.push("Remove a category or two.");
+  if (state.complexity !== "any")
+    suggestions.push("Set complexity back to “Any”.");
   if (suggestions.length === 0)
     suggestions.push("Add some games to the library!");
 
   content().innerHTML = `
     <div class="picker-empty">
-      <div class="picker-empty-icon" style="margin-bottom: var(--spacing-md);">
-        <svg class="icon icon-stroke" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:3rem; height:3rem; margin:0 auto; stroke:var(--text-muted);"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div class="picker-empty-icon">
+        ${icon("alert", "icon-hero")}
       </div>
       <h3>No games match those filters</h3>
       <p>Nothing in the collection fits every constraint. Try broadening:</p>
