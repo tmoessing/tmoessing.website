@@ -167,8 +167,9 @@ export class ContentLoader {
 
         // Create Filter Bar
         const filterBar = document.createElement('div');
-        filterBar.className = 'card-tags personal-filter-bar';
+        filterBar.className = 'card-tags personal-filter-bar picks-filter-bar';
         picksSection.appendChild(filterBar);
+        this.stickBelowHeader(filterBar);
 
         const libraryResultsContainer = document.createElement('div');
         libraryResultsContainer.className = 'personal-sub-view';
@@ -181,13 +182,20 @@ export class ContentLoader {
                 ? libraryItems 
                 : libraryItems.filter(item => item.tags && item.tags.split(this.parser.TAG_SPLIT_REGEX).some(t => t.trim().toUpperCase() === filterTag.toUpperCase()));
 
-            // Group by first tag
+            // Group by tag: a card with several tags shows up under each of them.
+            // When a tag is selected, only that tag's group is shown.
             const groups = {};
             filtered.forEach(item => {
-                const firstTag = item.tags ? item.tags.split(this.parser.TAG_SPLIT_REGEX)[0].trim().toUpperCase() : 'OTHER';
-                if (!groups[firstTag]) groups[firstTag] = [];
-                groups[firstTag].push(item);
+                const itemTags = item.tags
+                    ? [...new Set(item.tags.split(this.parser.TAG_SPLIT_REGEX).map(t => t.trim().toUpperCase()).filter(Boolean))]
+                    : ['OTHER'];
+                const groupTags = filterTag === 'All' ? itemTags : [filterTag.toUpperCase()];
+                groupTags.forEach(tag => {
+                    if (!groups[tag]) groups[tag] = [];
+                    groups[tag].push(item);
+                });
             });
+            const usedIds = new Set();
 
             // Sort group names using the same logic
             const groupNames = sortTags(Object.keys(groups)).sort((a, b) => {
@@ -224,6 +232,9 @@ export class ContentLoader {
                 groups[tagName].forEach((item, index) => {
                     const card = this.renderer.createResourceCard(item, 'Resource');
                     card.classList.add('library-item');
+                    // The same card can appear in more than one group; keep its id unique
+                    if (usedIds.has(card.id)) card.removeAttribute('id');
+                    else usedIds.add(card.id);
                     groupContainer.appendChild(card);
                 });
                 libraryResultsContainer.appendChild(groupContainer);
@@ -241,9 +252,23 @@ export class ContentLoader {
         libraryTags.forEach(tag => {
             const tagBtn = document.createElement('button');
             tagBtn.className = 'skill-tag';
-            tagBtn.textContent = tag.toUpperCase();
+            tagBtn.dataset.tag = tag.toUpperCase();
             tagBtn.style.cursor = 'pointer';
             tagBtn.style.transition = 'all 0.2s ease';
+            const count = tag === 'All'
+                ? libraryItems.length
+                : libraryItems.filter(item => item.tags && item.tags.split(this.parser.TAG_SPLIT_REGEX).some(t => t.trim().toUpperCase() === tag.toUpperCase())).length;
+            tagBtn.textContent = tag.toUpperCase();
+            const countBadge = document.createElement('span');
+            countBadge.className = 'tag-count';
+            countBadge.textContent = count;
+            countBadge.setAttribute('aria-label', `${count} picks`);
+            tagBtn.appendChild(countBadge);
+            if (tag !== 'All') {
+                // Same colour the tag gets on the cards below
+                tagBtn.classList.add('tag-chip');
+                tagBtn.setAttribute('style', this.renderer.tagChipStyle(this.renderer.tagHues([tag])[0]));
+            }
             
             tagBtn.onclick = () => {
                 renderFilteredLibrary(tag);
@@ -324,25 +349,54 @@ export class ContentLoader {
     /**
      * Highlights the active chip in a personal filter bar.
      */
+    /**
+     * Keeps a sticky element just under the page's own sticky header. On phones the sidebar
+     * becomes a sticky top bar, so the offset is its height; on desktop it is fixed at the side, so 0.
+     */
+    stickBelowHeader(el) {
+        const header = document.querySelector('.sidebar');
+        const update = () => {
+            const stuck = header && getComputedStyle(header).position === 'sticky';
+            el.style.top = stuck ? `${Math.round(header.getBoundingClientRect().height)}px` : '0px';
+        };
+        // The picks section can be re-rendered, so drop the previous listeners first
+        this.stickyCleanup?.();
+        let observer;
+        window.addEventListener('resize', update);
+        if (header && window.ResizeObserver) {
+            observer = new ResizeObserver(update);
+            observer.observe(header);
+        }
+        requestAnimationFrame(update);
+        this.stickyCleanup = () => {
+            window.removeEventListener('resize', update);
+            observer?.disconnect();
+        };
+    }
+
     styleFilterChips(filterBar, filterTag) {
         filterBar.querySelectorAll('.skill-tag').forEach(btn => {
-            const btnTag = btn.textContent.toUpperCase();
+            const btnTag = btn.dataset.tag || btn.textContent.toUpperCase();
             const isSelected = btnTag === filterTag.toUpperCase();
-            const style = btnTag === 'ALL' ? { bg: 'var(--primary-blue)', text: '#fff' } : this.renderer.getTagStyle(btnTag);
+            btn.setAttribute('aria-pressed', String(isSelected));
+
+            // Coloured tag chips get their look from CSS (.tag-chip / .is-active)
+            if (btn.classList.contains('tag-chip')) {
+                btn.classList.toggle('is-active', isSelected);
+                return;
+            }
 
             if (isSelected) {
-                btn.style.background = style.bg;
-                btn.style.color = style.text;
+                btn.style.background = 'var(--primary-blue)';
+                btn.style.color = '#fff';
                 btn.style.borderColor = 'transparent';
                 btn.style.opacity = '1';
-                btn.style.transform = 'scale(1.05)';
                 btn.style.boxShadow = 'var(--shadow-sm)';
             } else {
                 btn.style.background = 'transparent';
                 btn.style.color = 'var(--text-secondary)';
                 btn.style.borderColor = 'var(--border-color)';
                 btn.style.opacity = '0.7';
-                btn.style.transform = 'scale(1)';
                 btn.style.boxShadow = 'none';
             }
         });
@@ -449,9 +503,14 @@ export class ContentLoader {
         ['All', ...allTags].forEach(tag => {
             const btn = document.createElement('button');
             btn.className = 'skill-tag';
+            btn.dataset.tag = tag.toUpperCase();
             btn.textContent = tag.toUpperCase();
             btn.style.cursor = 'pointer';
             btn.style.transition = 'all 0.2s ease';
+            if (tag !== 'All') {
+                btn.classList.add('tag-chip');
+                btn.setAttribute('style', this.renderer.tagChipStyle(this.renderer.tagHues([tag])[0]));
+            }
             btn.onclick = () => applyFilter(tag);
             filterBar.appendChild(btn);
         });

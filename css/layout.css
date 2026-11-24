@@ -155,3 +155,17 @@
 .library-item + .library-item {
   border-top: 1px solid var(--border-color-light) !important;
 }
+
+/* Picks filter: stays pinned at the top while scrolling the picks */
+.picks-filter-bar {
+  position: sticky;
+  top: 0; /* JS moves it below the sticky top bar on phones */
+  z-index: 40;
+  background: var(--bg-secondary);
+  padding: 12px 0 var(--spacing-sm);
+  border-bottom: 1px solid var(--border-color-light);
+  gap: 12px 14px;
+}
+.picks-filter-bar .skill-tag { position: relative; }
+.picks-filter-bar .skill-tag:not(.tag-chip) .tag-count { background: var(--primary-blue); color: #fff; }
+.picks-filter-bar .skill-tag:not(.tag-chip)[aria-pressed="true"] .tag-count { background: #fff; color: var(--primary-blue); }
