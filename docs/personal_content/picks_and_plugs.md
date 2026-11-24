@@ -59,7 +59,7 @@ description: My collection of CS memes
 link: https://drive.google.com/drive/folders/1p0CU9K-GG1n_fjq9AwYNesFYWcZIe-er?usp=sharing
 tags: DEV, HUMOR
 image: assets/picks_and_plugs/memes.png
-why: Because sometimes the best debugging tool is a good laugh.
+why: Because I'm a nerd.
 
 ### Immich
 
