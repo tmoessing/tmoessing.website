@@ -261,7 +261,8 @@ body.dark-mode a.skill-tag.tag-chip.is-active { color: #0f172a; }
 }
 
 @media (max-width: 640px) {
-  .card.has-image {
+  .card.has-image,
+  .pick-front.with-image {
     flex-direction: column;
   }
   .card-image-container {
@@ -334,20 +335,112 @@ body.dark-mode a.skill-tag.tag-chip.is-active { color: #0f172a; }
 
 /* Linked cards: the whole card is the click target, not just the corner icon. */
 .card.card-linked { position: relative; cursor: pointer; }
-.card-stretched-link::after {
-  content: "";
+.card-overlay-link {
   position: absolute;
   inset: 0;
+  z-index: 2;
   border-radius: inherit;
-  z-index: 1;
 }
-.card.card-linked:hover .resource-link-icon { transform: translate(2px, -2px); }
+.card-overlay-link:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: 2px; }
 .card.card-linked .resource-link-icon { transition: transform 0.2s ease; }
-.card.card-linked:has(.card-stretched-link:focus-visible) {
-  outline: 2px solid var(--primary-blue);
-  outline-offset: 2px;
+.card.card-linked:hover .resource-link-icon { transform: translate(2px, -2px); }
+
+/* ---------- Flip cards (picks with a "why:" blurb) ---------- */
+.card.pick-flip {
+  position: relative;
+  padding: 0 !important; /* faces carry the padding so the back can fill edge to edge */
+  perspective: 1400px;
 }
-.card-stretched-link:focus-visible { outline: none; }
+.pick-flip-inner {
+  display: grid;
+  flex: 1 1 auto;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border-radius: inherit;
+}
+.pick-face {
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--card-bg);
+  border-radius: inherit;
+  padding: var(--spacing-lg);
+  min-width: 0;
+}
+.pick-front.with-image {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--spacing-lg);
+}
+#personal-unified-container .pick-face { padding: var(--spacing-md); }
+#personal-unified-container .pick-front.with-image { gap: var(--spacing-md); }
+
+.pick-back {
+  transform: rotateX(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--primary-blue) 14%, transparent), transparent 60%),
+    var(--card-bg);
+}
+.pick-why-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+}
+.pick-back-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.pick-back-why {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+.pick-back-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+.pick-back-cta .resource-link-icon { margin-left: 0; }
+
+/* Inline blurb is the phone/touch fallback; hidden where hover works. */
+.pick-why-inline { display: none; }
+
+@media (hover: hover) {
+  .card.pick-flip:hover .pick-flip-inner,
+  .card.pick-flip:focus-within .pick-flip-inner { transform: rotateX(180deg); }
+}
+
+/* No hover (phones/tablets): no flip, show the blurb on the front instead. */
+@media (hover: none) {
+  .pick-back { display: none; }
+  .pick-why-inline {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    border-left: 3px solid var(--primary-blue);
+    padding-left: var(--spacing-sm);
+    margin: calc(-1 * var(--spacing-sm)) 0 var(--spacing-md);
+  }
+  .pick-why-inline .pick-why-label { display: block; margin-bottom: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pick-flip-inner { transition: none; }
+}
 
 .skill-tag.coming-soon {
   background: var(--bg-tertiary);
