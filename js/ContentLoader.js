@@ -244,6 +244,11 @@ export class ContentLoader {
             tagBtn.textContent = tag.toUpperCase();
             tagBtn.style.cursor = 'pointer';
             tagBtn.style.transition = 'all 0.2s ease';
+            if (tag !== 'All') {
+                // Same colour the tag gets on the cards below
+                tagBtn.classList.add('tag-chip');
+                tagBtn.setAttribute('style', this.renderer.tagChipStyle(this.renderer.tagHues([tag])[0]));
+            }
             
             tagBtn.onclick = () => {
                 renderFilteredLibrary(tag);
@@ -328,21 +333,25 @@ export class ContentLoader {
         filterBar.querySelectorAll('.skill-tag').forEach(btn => {
             const btnTag = btn.textContent.toUpperCase();
             const isSelected = btnTag === filterTag.toUpperCase();
-            const style = btnTag === 'ALL' ? { bg: 'var(--primary-blue)', text: '#fff' } : this.renderer.getTagStyle(btnTag);
+            btn.setAttribute('aria-pressed', String(isSelected));
+
+            // Coloured tag chips get their look from CSS (.tag-chip / .is-active)
+            if (btn.classList.contains('tag-chip')) {
+                btn.classList.toggle('is-active', isSelected);
+                return;
+            }
 
             if (isSelected) {
-                btn.style.background = style.bg;
-                btn.style.color = style.text;
+                btn.style.background = 'var(--primary-blue)';
+                btn.style.color = '#fff';
                 btn.style.borderColor = 'transparent';
                 btn.style.opacity = '1';
-                btn.style.transform = 'scale(1.05)';
                 btn.style.boxShadow = 'var(--shadow-sm)';
             } else {
                 btn.style.background = 'transparent';
                 btn.style.color = 'var(--text-secondary)';
                 btn.style.borderColor = 'var(--border-color)';
                 btn.style.opacity = '0.7';
-                btn.style.transform = 'scale(1)';
                 btn.style.boxShadow = 'none';
             }
         });
@@ -452,6 +461,10 @@ export class ContentLoader {
             btn.textContent = tag.toUpperCase();
             btn.style.cursor = 'pointer';
             btn.style.transition = 'all 0.2s ease';
+            if (tag !== 'All') {
+                btn.classList.add('tag-chip');
+                btn.setAttribute('style', this.renderer.tagChipStyle(this.renderer.tagHues([tag])[0]));
+            }
             btn.onclick = () => applyFilter(tag);
             filterBar.appendChild(btn);
         });
