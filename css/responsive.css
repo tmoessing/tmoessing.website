@@ -7,7 +7,7 @@
 
 @media (max-width: 1024px) {
   :root {
-    --mobile-header-height: 128px;
+    --mobile-header-height: 145px; /* fallback; js/main.js keeps it in sync with the real header */
   }
   html {
     scroll-padding-top: calc(var(--mobile-header-height) + 20px);
