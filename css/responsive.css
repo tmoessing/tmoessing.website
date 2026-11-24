@@ -282,6 +282,13 @@
     color: var(--primary-blue);
   }
   .nav-links .library-nav { flex-basis: 100%; }
+  .nav-links .library-nav.nav-sublink {
+    flex: 0 0 auto;
+    min-height: 32px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    border-radius: 999px;
+  }
 
   /* Professional/Personal toggle and Outline/Search/AI row */
   .toggle-container {
