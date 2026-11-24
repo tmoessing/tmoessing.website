@@ -1,12 +1,13 @@
 /**
  * The /meal-library grid page: loads meals.json once, renders every meal, and
  * wires the toolbar — instant search, sort, shuffle, grid/list view — plus the
- * "Pick a Meal" button. Search covers name, description, ingredients,
+ * "Pick a Meal" and "Plan the Week" buttons. Search covers name, description, ingredients,
  * instructions, categories, and tags (the body text is indexed too).
  */
 import { createMealCard } from "./MealCard.js";
 import { sortMeals } from "./util.js";
 import { openPicker } from "./PickerModal.js";
+import { openWeekPlanner } from "./WeekPlanner.js";
 
 const VIEW_KEY = "meal-library-view";
 const DATA_URL = "../meals/data/meals.json?v=1";
@@ -35,6 +36,9 @@ export class MealLibraryPage {
 
     const pickBtn = document.getElementById("pick-a-meal-btn");
     if (pickBtn) pickBtn.addEventListener("click", () => openPicker(this.meals, this.categories));
+
+    const planBtn = document.getElementById("plan-week-btn");
+    if (planBtn) planBtn.addEventListener("click", () => openWeekPlanner(this.meals));
 
     const shuffleBtn = document.getElementById("meal-shuffle");
     if (shuffleBtn) {
