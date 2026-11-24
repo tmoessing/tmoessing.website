@@ -342,8 +342,6 @@ body.dark-mode a.skill-tag.tag-chip.is-active { color: #0f172a; }
   border-radius: inherit;
 }
 .card-overlay-link:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: 2px; }
-.card.card-linked .resource-link-icon { transition: transform 0.2s ease; }
-.card.card-linked:hover .resource-link-icon { transform: translate(2px, -2px); }
 
 /* ---------- Flip cards (picks with a "why:" blurb) ---------- */
 .card.pick-flip {

@@ -37,9 +37,9 @@ tags: BOOK
 image: assets/picks_and_plugs/the_martian.jpg
 why: Really good book, with a very inspirational ending about mankind.
 
-### Syntax. Podcast
+### Syntax Podcast
 
-description: Great development podcast talking specially about web development
+description: Great development podcast talking specifically about web development.
 link: https://syntax.fm/
 tags: DEV, Podcast
 image: assets/picks_and_plugs/syntax.png
