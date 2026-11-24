@@ -272,7 +272,7 @@ export class Renderer {
         return card;
     }
 
-    createProjectCard(project, category = null) {
+    createProjectCard(project, category = null, showTags = true) {
         const card = document.createElement('div');
         const slug = this.parser.slugify(project.title);
         card.className = project.image ? 'card has-image project-card' : 'card project-card';
@@ -284,7 +284,7 @@ export class Renderer {
                              project.status === 'personal-use' ? 'Personal Use' :
                              project.status.charAt(0).toUpperCase() + project.status.slice(1);
             if (project.status.toLowerCase() !== 'live') {
-                statusHTML = `<p class="project-status-note">${statusText}${project.note ? ` (${project.note})` : ''}</p>`;
+                statusHTML = `<span class="project-status-badge">${statusText}${project.note ? ` (${project.note})` : ''}</span>`;
             }
         }
 
@@ -296,17 +296,17 @@ export class Renderer {
                 <div class="card-title-container">
                     <h3 class="card-title">${project.title}</h3>
                     ${categoryTag}
+                    ${statusHTML}
                 </div>
                 ${project.dates ? `<div class="card-meta">${project.dates}</div>` : ''}
             </div>
             <p class="card-description">${project.description || ''}</p>
-            <div class="project-actions">
-                ${project.link ? `<a href="${project.link}" target="_blank" class="btn btn-primary btn-sm">View →</a>` : ''}
-                ${statusHTML}
-            </div>
-            <div class="card-footer">
+            ${project.link ? `<div class="project-actions">
+                <a href="${project.link}" target="_blank" class="btn btn-primary btn-sm">View →</a>
+            </div>` : ''}
+            ${showTags ? `<div class="card-footer">
                 ${this.renderTags(project.tags)}
-            </div>
+            </div>` : ''}
         `;
 
         if (project.image) {
