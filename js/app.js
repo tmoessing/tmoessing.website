@@ -1,3 +1,5 @@
+import { trackEvent } from './analytics.js';
+
 /**
  * App UI Module - Handles UI state, view switching, themes, and interactions.
  */
@@ -172,6 +174,7 @@ export function initApp() {
         const input = document.getElementById('ai-sidebar-input');
         const query = input.value.trim();
         if (query) {
+            trackEvent('ask-ai-submit', 'Ask AI about Tyler'); // never send the question itself
             window.switchView('ai');
             // For now, since AI is "Coming Soon", we just clear the input 
             // and maybe we could show the query in the AI view if it was fully implemented.

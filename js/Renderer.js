@@ -268,7 +268,7 @@ export class Renderer {
             ${authors ? `<p class="publication-authors">${authors}${pub.advisor ? ` · Advisor: ${pub.advisor}` : ''}</p>` : ''}
             <p class="card-description">${pub.description || ''}</p>
             ${pub.link ? `<div class="project-actions">
-                <a href="${pub.link}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">${pub.doi ? `DOI: ${pub.doi}` : 'View Abstract'} →</a>
+                <a href="${pub.link}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-gc-event="out-${pub.doi ? 'doi' : 'abstract'}-${pub.analytics || slug}">${pub.doi ? `DOI: ${pub.doi}` : 'View Abstract'} →</a>
             </div>` : ''}
             ${this.renderTags(pub.tags)}
         `;
@@ -335,7 +335,7 @@ export class Renderer {
             </div>
             <p class="card-description">${project.description || ''}</p>
             ${project.link ? `<div class="project-actions">
-                <a href="${project.link}" target="_blank" class="btn btn-primary btn-sm">View →</a>
+                <a href="${project.link}" target="_blank" class="btn btn-primary btn-sm" data-gc-event="out-project-${project.analytics || slug}">View →</a>
             </div>` : ''}
             ${showTags ? `<div class="card-footer">
                 ${this.renderTags(project.tags)}
