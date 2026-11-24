@@ -105,7 +105,7 @@ description: Anthropic's agentic coding tool. It reads your codebase, edits file
 link: https://claude.com/product/claude-code
 tags: TECH, DEV
 image: assets/picks_and_plugs/claude_code.png
-why: It's like pair programming with someone who never gets tired. This site was built with it.
+why: This thing is amazing. I love it.
 
 ### Claude Cowork
 
