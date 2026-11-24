@@ -105,15 +105,15 @@ description: Anthropic's agentic coding tool. It reads your codebase, edits file
 link: https://claude.com/product/claude-code
 tags: TECH, DEV
 image: assets/picks_and_plugs/claude_code.png
-why: This thing is amazing. I love it.
+why: I've never coded faster in my life.
 
 ### Claude Cowork
 
 description: Claude's agent mode for knowledge work beyond code. It works through multi-step tasks across your files and apps, so you can hand off whole projects instead of single prompts.
 link: https://claude.com/product/cowork
-tags: TECH
+tags: TECH, LIFE HACK
 image: assets/picks_and_plugs/claude_cowork.png
-why: I've been giving it the tasks, the busywork, that I want done in my life but don't want to do.
+why: It can get the things I want done, but don't want to spend time on, done!
 
 ### Muse
 
@@ -121,4 +121,4 @@ description: Meta's personal AI agent that can handle everyday tasks on your beh
 link: https://muse.ai/
 tags: TECH, LIFE HACK
 image: assets/picks_and_plugs/muse.png
-why: It's proactive and finds things for me.
+why: It's proactive and suggests things for me. I don't have to prompt it.
