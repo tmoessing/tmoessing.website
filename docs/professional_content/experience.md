@@ -49,7 +49,7 @@ tags: Tutoring, Computer Science, Mentoring
 
 company: BYU Computer Science Department
 dates: Aug 2023 - Apr 2025
-description: Designed a machine learning program to classify six figure skating jump types, using feature engineering to improve accuracy by 15% on average. Led daily operations for a 3-member research team. Presented findings at a university conference and presented a first-author poster at the inaugural SportsHCI Conference in the Netherlands (Nov 2025). Co-authored a related abstract in Medicine & Science in Sports & Exercise.
+description: Designed a machine learning program to classify six figure skating jump types, using feature engineering to improve accuracy by 15% on average. Led daily operations for a 3-member research team. Gave a 15-minute talk at BYU's Student Research Conference (2024) and presented a first-author poster at the inaugural SportsHCI Conference in the Netherlands (Nov 2025). Co-authored a related abstract in Medicine & Science in Sports & Exercise.
 tags: Machine Learning, Research, Feature Engineering, Classification, Sports Analytics, Python, Team Leadership, Public Speaking, Wearable Sensors, Publications
 
 ### Code Instructor

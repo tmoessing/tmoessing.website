@@ -265,10 +265,10 @@ export class Renderer {
                 <div class="card-meta">${pub.dates || ''}</div>
             </div>
             ${pub.type ? `<p class="publication-type">${pub.type}</p>` : ''}
-            ${authors ? `<p class="publication-authors">${authors}</p>` : ''}
+            ${authors ? `<p class="publication-authors">${authors}${pub.advisor ? ` · Advisor: ${pub.advisor}` : ''}</p>` : ''}
             <p class="card-description">${pub.description || ''}</p>
             ${pub.link ? `<div class="project-actions">
-                <a href="${pub.link}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">${pub.doi ? `DOI: ${pub.doi}` : 'Read'} →</a>
+                <a href="${pub.link}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">${pub.doi ? `DOI: ${pub.doi}` : 'View Abstract'} →</a>
             </div>` : ''}
             ${this.renderTags(pub.tags)}
         `;

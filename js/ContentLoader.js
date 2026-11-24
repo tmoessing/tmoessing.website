@@ -37,7 +37,7 @@ export class ContentLoader {
                 'docs/personal_content/threads.md'
             ];
             const texts = await Promise.all(
-                files.map(f => fetch(`${f}?v=3.8`).then(res => res.text()))
+                files.map(f => fetch(`${f}?v=3.9`).then(res => res.text()))
             );
 
             // Each file merges into the same content object.
