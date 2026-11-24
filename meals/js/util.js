@@ -1,7 +1,8 @@
 /**
  * Pure helpers for the meal library: HTML escaping, tag colors, a generated
  * cover placeholder, the meal match predicate + sort comparators, prep-time /
- * cost buckets, a tiny Markdown renderer, and a Google Calendar link builder.
+ * cost buckets, a tiny Markdown renderer, and Google Calendar helpers
+ * (upcoming-day chooser, ingredient extraction, all-day event links).
  * No DOM state, no data imports — safe to reuse anywhere.
  */
 
@@ -212,17 +213,59 @@ function pad(n) {
   return String(n).padStart(2, "0");
 }
 
-function fmtCalDate(d) {
-  return (
-    String(d.getUTCFullYear()).padStart(4, "0") +
-    pad(d.getUTCMonth() + 1) +
-    pad(d.getUTCDate()) +
-    "T" +
-    pad(d.getUTCHours()) +
-    pad(d.getUTCMinutes()) +
-    pad(d.getUTCSeconds()) +
-    "Z"
-  );
+/** YYYYMMDD for a local calendar date (Google's all-day event format). */
+function fmtCalDay(d) {
+  return String(d.getFullYear()).padStart(4, "0") + pad(d.getMonth() + 1) + pad(d.getDate());
+}
+
+/**
+ * The next `count` days starting today, for the "pick a prep day" chooser.
+ * Each entry: { date, key: "YYYYMMDD", label: "Today" | "Tomorrow" | "Wed", sub: "Nov 26" }.
+ */
+export function upcomingDays(count = 7, from = new Date()) {
+  const days = [];
+  for (let i = 0; i < count; i++) {
+    const date = new Date(from.getFullYear(), from.getMonth(), from.getDate() + i);
+    days.push({
+      date,
+      key: fmtCalDay(date),
+      label:
+        i === 0 ? "Today" : i === 1 ? "Tomorrow" : date.toLocaleDateString(undefined, { weekday: "short" }),
+      sub: date.toLocaleDateString(undefined, { month: "short", day: "numeric" })
+    });
+  }
+  return days;
+}
+
+/** Strip inline Markdown (bold, italics, code, links) down to plain text. */
+function plainText(md) {
+  return md
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/(\*\*|__|\*|_|`)/g, "")
+    .trim();
+}
+
+/**
+ * Pull the ingredient lines out of a recipe body's "## Ingredients" section
+ * (bullets or numbered items; "### Sauce"-style subheadings become "Sauce:").
+ */
+export function ingredientsFromBody(body) {
+  const lines = String(body || "").split("\n");
+  const out = [];
+  let inSection = false;
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (/^##\s+/.test(line) && !/^###/.test(line)) {
+      inSection = /^##\s+ingredients\b/i.test(line);
+      continue;
+    }
+    if (!inSection || !line) continue;
+    const sub = /^###\s+(.*)$/.exec(line);
+    if (sub) { out.push(`${plainText(sub[1])}:`); continue; }
+    const item = /^(?:[-*+]|\d+[.)])\s+(.*)$/.exec(line);
+    if (item) out.push(plainText(item[1]));
+  }
+  return out;
 }
 
 /** Absolute URL back to a meal's deep-linked recipe on this page. */
@@ -232,31 +275,43 @@ export function recipeUrl(meal) {
 }
 
 /**
- * Build a Google Calendar "TEMPLATE" link that pre-fills a meal-prep event:
- * title, a sized time block (defaults to next top-of-hour), and notes with a
- * link back to the recipe. Opens in a new tab — no login, no backend.
+ * Build a Google Calendar "TEMPLATE" link for an all-day meal-prep event on
+ * `day` (a Date; defaults to today). The notes carry the description, how long
+ * to block off, the ingredient list (a shopping list), and a link back to the
+ * recipe. Opens in a new tab: no login, no backend, nothing saved until the
+ * user clicks Save in Google Calendar.
  */
-export function googleCalendarUrl(meal) {
-  const start = new Date();
-  start.setMinutes(0, 0, 0);
-  start.setHours(start.getHours() + 1);
-  const durMin = num(meal.prepDuration) || num(meal.prepTime) + num(meal.cookTime) || 60;
-  const end = new Date(start.getTime() + durMin * 60000);
+export function googleCalendarUrl(meal, day = new Date()) {
+  const startDay = new Date(day.getFullYear(), day.getMonth(), day.getDate());
+  const endDay = new Date(startDay.getFullYear(), startDay.getMonth(), startDay.getDate() + 1);
 
-  const detailLines = [];
-  if (meal.description) detailLines.push(meal.description);
-  const link = recipeUrl(meal);
-  if (link) detailLines.push(`Recipe: ${link}`);
+  const details = [];
+  if (meal.description) details.push(meal.description);
+
+  const block = num(meal.prepDuration) || num(meal.prepTime) + num(meal.cookTime);
   const timing = [];
-  if (num(meal.prepTime)) timing.push(`Prep ~${num(meal.prepTime)} min`);
-  if (num(meal.cookTime)) timing.push(`Cook ~${num(meal.cookTime)} min`);
-  if (timing.length) detailLines.push(timing.join(" · "));
+  if (num(meal.prepTime)) timing.push(`prep ${num(meal.prepTime)}`);
+  if (num(meal.cookTime)) timing.push(`cook ${num(meal.cookTime)}`);
+  if (block) details.push(`Block off about ${block} min${timing.length ? ` (${timing.join(", ")})` : ""}.`);
+
+  const ingredients = ingredientsFromBody(meal.body);
+  if (ingredients.length) {
+    const servings = num(meal.servings) ? ` (serves ${num(meal.servings)})` : "";
+    const MAX = 40; // keep the link a sane length for very long recipes
+    const shown = ingredients.slice(0, MAX).map((i) => (i.endsWith(":") ? i : `• ${i}`));
+    if (ingredients.length > MAX) shown.push(`…plus ${ingredients.length - MAX} more (see recipe)`);
+    details.push(`Ingredients${servings}:\n${shown.join("\n")}`);
+  }
+
+  const link = recipeUrl(meal);
+  if (link) details.push(`Full recipe: ${link}`);
 
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: `Meal Prep: ${meal.title}`,
-    dates: `${fmtCalDate(start)}/${fmtCalDate(end)}`,
-    details: detailLines.join("\n\n")
+    // All-day event: date-only values, end date exclusive (the next day).
+    dates: `${fmtCalDay(startDay)}/${fmtCalDay(endDay)}`,
+    details: details.join("\n\n")
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
