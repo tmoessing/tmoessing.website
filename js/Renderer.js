@@ -331,7 +331,7 @@ export class Renderer {
         const content = `
             <div class="card-header">
                 <div class="card-title-container">
-                    <h3 class="card-title">${project.title}</h3>
+                    <h3 class="card-title">${project.title}${project.link && wholeCardLink ? `<svg class="icon icon-stroke project-link-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>` : ''}</h3>
                     ${categoryTag}
                     ${statusHTML}
                 </div>

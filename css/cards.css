@@ -602,3 +602,19 @@ body.dark-mode :is(a, button).skill-tag.tag-chip.is-active { color: #0f172a; }
 .project-card-linked .card-title { transition: color 0.2s ease; }
 .project-card-linked:hover .card-title,
 .project-card-linked:has(:focus-visible) .card-title { color: var(--primary-blue); }
+/* Small ↗ after the title so people can tell the card opens a link */
+.project-link-arrow {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.35em;
+  vertical-align: 0.05em;
+  color: var(--text-muted);
+  stroke-width: 2.5;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.project-card-linked:hover .project-link-arrow,
+.project-card-linked:has(:focus-visible) .project-link-arrow {
+  color: var(--primary-blue);
+  transform: translate(2px, -2px);
+}
