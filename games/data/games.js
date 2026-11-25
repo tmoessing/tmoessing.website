@@ -882,5 +882,130 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+name+game+party+game"
+  },
+  {
+    id: "azul",
+    title: "Azul",
+    cover: "",
+    description: "A gorgeous tile-drafting game where players compete as artisans decorating a Portuguese palace wall, grabbing colorful tiles from shared factories and arranging them into scoring patterns.",
+    minPlayers: 2,
+    maxPlayers: 4,
+    playtimeMin: 30,
+    playtimeMax: 45,
+    categories: ["Strategy", "Board Game", "Family", "Competitive"],
+    complexity: "medium",
+    bggWeight: 1.76,
+    tags: ["Tile Drafting", "Pattern Building", "Set Collection", "Abstract", "Hate Drafting"],
+    bggUrl: "https://boardgamegeek.com/boardgame/230802/azul",
+    howToPlay: {
+      goal: "Score the most points by completing rows, columns, and color sets on your wall.",
+      steps: [
+        "On your turn, take all tiles of one color from a factory display (the rest slide to the center) or all of one color from the center pile.",
+        "Place the tiles into one of your five pattern lines. Each line holds only one color, and any tiles that don't fit fall to your floor line as penalties.",
+        "When every tile has been taken, completed pattern lines move one tile to your wall and score points for each tile it touches in a row or column.",
+        "The game ends after a round in which someone finishes a full horizontal row. Add bonuses for complete rows, columns, and colors; highest score wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+azul+board+game"
+  },
+  {
+    id: "here-to-slay",
+    title: "Here to Slay",
+    cover: "",
+    description: "A fantasy card game from the creators of Unstable Unicorns where you build a party of heroes, roll dice to slay monsters, and sabotage your friends along the way.",
+    minPlayers: 2,
+    maxPlayers: 6,
+    playtimeMin: 30,
+    playtimeMax: 60,
+    categories: ["Card Game", "Strategy", "Dice", "Competitive"],
+    complexity: "medium",
+    bggWeight: null,
+    tags: ["Fantasy", "Dice Rolling", "Take That", "Hand Management", "Variable Player Powers"],
+    bggUrl: "https://boardgamegeek.com/boardgame/299252/here-slay",
+    howToPlay: {
+      goal: "Be the first to slay 3 monsters, or to build a party with 6 different hero classes.",
+      steps: [
+        "Everyone starts with a Party Leader card that sets their class and gives a special power.",
+        "On your turn you get 3 action points. Spend them to draw a card, play a Hero or Item, roll to use a Hero's ability, or spend all 3 to attack a monster.",
+        "Most actions involve rolling 2 dice against a target number. Other players can play Modifier cards to boost or wreck your roll, or Challenge cards to block a card you're playing.",
+        "Slaying a monster requires the right heroes in your party plus a successful roll. The first player to hit either win condition wins immediately."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+here+to+slay"
+  },
+  {
+    id: "5-second-rule",
+    title: "5 Second Rule",
+    cover: "",
+    description: "A fast, frantic party game where you have to name three things in a category before the twisty timer runs out. Sounds easy... until the pressure hits and your brain goes blank.",
+    minPlayers: 3,
+    maxPlayers: 6,
+    playtimeMin: 20,
+    playtimeMax: 30,
+    categories: ["Party", "Family", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Timer", "Rapid Fire", "Name Three", "Real-Time", "Under Pressure"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first player to move your pawn to the finish by answering prompts under pressure.",
+      steps: [
+        "The player to your left reads a card aloud, like “Name 3 types of cheese,” and flips the 5-second timer.",
+        "Shout out three valid answers before the timer runs out. Answers already given this turn don't count.",
+        "Get all three in time and move forward. Fail, and the next player gets the same prompt, but they can't repeat any of your answers.",
+        "Special cards like Pass and Switch let you dodge or redirect a tough prompt. First to the finish wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+5+second+rule+game"
+  },
+  {
+    id: "buzzword",
+    title: "Buzzword",
+    cover: "",
+    description: "A team party game where every clue on a card secretly contains the same hidden word. Race the timer to shout out the full answers and crack the buzzword.",
+    minPlayers: 4,
+    maxPlayers: 12,
+    playtimeMin: 30,
+    playtimeMax: 45,
+    categories: ["Party", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Team Play", "Clue Giving", "Timer", "Guessing", "Wordplay"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Score the most points for your team by guessing answers that all contain the round's buzzword.",
+      steps: [
+        "Split into two teams. The reader draws a card and announces the buzzword, like “Fire,” but keeps the clues secret.",
+        "Flip the 45-second timer. The reader gives clues one at a time; the team shouts the full answer, which always includes the buzzword (e.g. “A truck that puts out fires” → Fire Truck).",
+        "Each correct answer scores points. Pass if you're stuck and move to the next clue.",
+        "When time runs out, the other team can steal any unanswered clues. Play alternates; highest score at the end wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+buzzword+party+game"
+  },
+  {
+    id: "why-are-you-like-this",
+    title: "Why Are You Like This?",
+    cover: "",
+    description: "An Exploding Kittens party game where teammates talk, draw, or act out secret words, but each round's challenge card throws in a ridiculous twist that makes it way harder.",
+    minPlayers: 2,
+    maxPlayers: 99,
+    playtimeMin: 20,
+    playtimeMax: 30,
+    categories: ["Party", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Team Play", "Charades", "Drawing", "Clue Giving", "Timer", "Humor"],
+    bggUrl: "https://boardgamegeek.com/boardgame/425079/why-are-you-like-this",
+    howToPlay: {
+      goal: "Get your team to guess as many secret words as possible before time runs out.",
+      steps: [
+        "Split into teams. On your turn, draw a challenge card; it sets how you must give clues, plus a silly twist or restriction.",
+        "Start the timer and work through word cards, talking, drawing, or gesturing as the challenge allows.",
+        "Every word your team guesses before time is up scores a point. Break the challenge's rule and that word doesn't count.",
+        "Pass to the next team and keep rotating. Playing as a couple? Use the two-player Date Night mode."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+why+are+you+like+this+exploding+kittens"
   }
 ];
