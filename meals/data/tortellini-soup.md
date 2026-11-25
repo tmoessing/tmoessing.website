@@ -59,5 +59,5 @@ With frozen or fresh tortellini and pre-cooked carrots, this soup is done in abo
 - Using dried tortellini? Let it simmer a long time, or cook it before adding.
 
 ## Variations
-- Add or swap veggies however you like.
+- Add, swap, or leave out veggies however you like.
 - Add extra water or broth if you want it brothier.
