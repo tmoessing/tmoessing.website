@@ -890,7 +890,7 @@ export const GAMES = [
   {
     id: "azul",
     title: "Azul",
-    cover: "",
+    cover: "../games/images/azul.jpg",
     description: "A gorgeous tile-drafting game where players compete as artisans decorating a Portuguese palace wall, grabbing colorful tiles from shared factories and arranging them into scoring patterns.",
     minPlayers: 2,
     maxPlayers: 4,
@@ -898,7 +898,7 @@ export const GAMES = [
     playtimeMax: 45,
     categories: ["Strategy", "Board Game", "Family", "Competitive"],
     complexity: "medium",
-    bggWeight: 1.76,
+    bggWeight: 1.77,
     tags: ["Tile Drafting", "Pattern Building", "Set Collection", "Abstract", "Hate Drafting"],
     bggUrl: "https://boardgamegeek.com/boardgame/230802/azul",
     howToPlay: {
@@ -910,12 +910,12 @@ export const GAMES = [
         "The game ends after a round in which someone finishes a full horizontal row. Add bonuses for complete rows, columns, and colors; highest score wins."
       ]
     },
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+azul+board+game"
+    howToPlayVideo: "https://www.youtube.com/watch?v=dXuucWGrFMQ"
   },
   {
     id: "here-to-slay",
     title: "Here to Slay",
-    cover: "",
+    cover: "../games/images/here-to-slay.jpg",
     description: "A fantasy card game from the creators of Unstable Unicorns where you build a party of heroes, roll dice to slay monsters, and sabotage your friends along the way.",
     minPlayers: 2,
     maxPlayers: 6,
@@ -923,9 +923,9 @@ export const GAMES = [
     playtimeMax: 60,
     categories: ["Card Game", "Strategy", "Dice", "Competitive"],
     complexity: "medium",
-    bggWeight: null,
+    bggWeight: 1.69,
     tags: ["Fantasy", "Dice Rolling", "Take That", "Hand Management", "Variable Player Powers"],
-    bggUrl: "https://boardgamegeek.com/boardgame/299252/here-slay",
+    bggUrl: "https://boardgamegeek.com/boardgame/299252/here-to-slay",
     howToPlay: {
       goal: "Be the first to slay 3 monsters, or to build a party with 6 different hero classes.",
       steps: [
@@ -935,12 +935,12 @@ export const GAMES = [
         "Slaying a monster requires the right heroes in your party plus a successful roll. The first player to hit either win condition wins immediately."
       ]
     },
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+here+to+slay"
+    howToPlayVideo: "https://www.youtube.com/watch?v=gsPZoEJyYMM"
   },
   {
     id: "5-second-rule",
     title: "5 Second Rule",
-    cover: "",
+    cover: "../games/images/5-second-rule.jpg",
     description: "A fast, frantic party game where you have to name three things in a category before the twisty timer runs out. Sounds easy... until the pressure hits and your brain goes blank.",
     minPlayers: 3,
     maxPlayers: 6,
@@ -948,9 +948,9 @@ export const GAMES = [
     playtimeMax: 30,
     categories: ["Party", "Family", "Word Game", "Competitive"],
     complexity: "easy",
-    bggWeight: null,
+    bggWeight: 1.1,
     tags: ["Timer", "Rapid Fire", "Name Three", "Real-Time", "Under Pressure"],
-    bggUrl: "",
+    bggUrl: "https://boardgamegeek.com/boardgame/86073/5-second-rule",
     howToPlay: {
       goal: "Be the first player to move your pawn to the finish by answering prompts under pressure.",
       steps: [
@@ -960,22 +960,22 @@ export const GAMES = [
         "Special cards like Pass and Switch let you dodge or redirect a tough prompt. First to the finish wins."
       ]
     },
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+5+second+rule+game"
+    howToPlayVideo: "https://www.youtube.com/watch?v=XUvK5lE4Mj4"
   },
   {
     id: "buzzword",
     title: "Buzzword",
-    cover: "",
+    cover: "../games/images/buzzword.jpg",
     description: "A team party game where every clue on a card secretly contains the same hidden word. Race the timer to shout out the full answers and crack the buzzword.",
     minPlayers: 4,
     maxPlayers: 12,
-    playtimeMin: 30,
+    playtimeMin: 45,
     playtimeMax: 45,
     categories: ["Party", "Word Game", "Competitive"],
     complexity: "easy",
-    bggWeight: null,
+    bggWeight: 1.17,
     tags: ["Team Play", "Clue Giving", "Timer", "Guessing", "Wordplay"],
-    bggUrl: "",
+    bggUrl: "https://boardgamegeek.com/boardgame/8690/buzzword",
     howToPlay: {
       goal: "Score the most points for your team by guessing answers that all contain the round's buzzword.",
       steps: [
@@ -985,17 +985,17 @@ export const GAMES = [
         "When time runs out, the other team can steal any unanswered clues. Play alternates; highest score at the end wins."
       ]
     },
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+buzzword+party+game"
+    howToPlayVideo: "https://www.youtube.com/watch?v=ulAXZhCd2YI"
   },
   {
     id: "why-are-you-like-this",
     title: "Why Are You Like This?",
-    cover: "",
+    cover: "../games/images/why-are-you-like-this.jpg",
     description: "An Exploding Kittens party game where teammates talk, draw, or act out secret words, but each round's challenge card throws in a ridiculous twist that makes it way harder.",
     minPlayers: 2,
     maxPlayers: 99,
-    playtimeMin: 20,
-    playtimeMax: 30,
+    playtimeMin: 15,
+    playtimeMax: 15,
     categories: ["Party", "Word Game", "Competitive"],
     complexity: "easy",
     bggWeight: null,
@@ -1010,6 +1010,6 @@ export const GAMES = [
         "Pass to the next team and keep rotating. Playing as a couple? Use the two-player Date Night mode."
       ]
     },
-    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+why+are+you+like+this+exploding+kittens"
+    howToPlayVideo: "https://www.youtube.com/watch?v=IzGRFHWCGhA"
   }
 ];
