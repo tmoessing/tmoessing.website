@@ -8,9 +8,9 @@ categories:
   - Dessert
   - Budget Friendly
 tags:
+  - Mission Friend
   - Cookies
   - Big Batch
-  - Family Recipe
 ---
 
 ## Ingredients
@@ -32,6 +32,8 @@ tags:
 5. Drop rounded spoonfuls onto a baking sheet and bake for 10 minutes.
 
 ## Notes
+Shared by a friend from my mission.
+
 The original family recipe card lists only the ingredients and "Bake at 375 for 10 minutes." The mixing steps above are the standard method for this kind of cookie.
 
 ## Tips

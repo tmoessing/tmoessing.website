@@ -5,7 +5,7 @@ prepTime: 5
 cookTime: 30
 servings: 6
 categories:
-  - Dinner
+  - Main Course
   - Chicken
   - Comfort Food
   - Budget Friendly
@@ -13,6 +13,7 @@ categories:
 tags:
   - Bisquick
   - Weeknight
+recipeSource: https://www.allrecipes.com/recipe/179376/impossibly-easy-chicken-pot-pie/
 ---
 
 ## Ingredients
@@ -30,4 +31,4 @@ tags:
 4. Bake about 30 minutes, until golden brown.
 
 ## Notes
-The original card's directions were accidentally copied from the enchilada recipe, so these steps follow the classic Bisquick pot pie method that matches its ingredients.
+The original card's directions were accidentally copied from the enchilada recipe, so these steps follow the Allrecipes "Impossibly Easy Chicken Pot Pie" the card links to. For a bigger, freezer-friendly batch, see the Big-Batch Chicken Pot Pie recipe.

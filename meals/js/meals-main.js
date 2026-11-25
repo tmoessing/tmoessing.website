@@ -4,7 +4,7 @@
  * Deliberately self-contained: it does NOT reuse the resume's initApp(). It only
  * shares the theme via localStorage['theme'] so dark/light stays in sync across
  * pages, and it keeps a meal's details modal in sync with the URL hash so
- * recipes are shareable / deep-linkable (meal-library/#chicken-alfredo).
+ * recipes are shareable / deep-linkable (meal-library/#lasagna).
  */
 import { MealLibraryPage } from "./MealLibraryPage.js";
 import { openMealDetails, closeMeal, getOpenSlug } from "./MealDetailsModal.js";

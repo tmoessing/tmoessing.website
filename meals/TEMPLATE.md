@@ -12,7 +12,7 @@ servings: 4         # required
 estimatedCost: 15   # dollars for the whole recipe, number only
 
 # Pick from this list (spelling matters; the build warns about typos):
-#   Meals:    Breakfast, Lunch, Dinner, Snack, Dessert
+#   Meals:    Breakfast, Main Course, Side Dish, Snack, Dessert
 #   Diet:     High Protein, Low Carb, Vegetarian, Vegan, Gluten Free, Healthy
 #   Protein:  Chicken, Beef, Pork, Seafood
 #   Base:     Pasta, Rice
@@ -20,7 +20,7 @@ estimatedCost: 15   # dollars for the whole recipe, number only
 #   Method:   Slow Cooker, Air Fryer, Grill
 #   Style:    Comfort Food, Meal Prep, Budget Friendly, Quick Meals
 categories:
-  - Dinner
+  - Main Course
   - Seafood
 
 # Free-form labels, anything you like (e.g. Freezer Friendly, Family Favorite).

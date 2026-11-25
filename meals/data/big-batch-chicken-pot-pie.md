@@ -1,0 +1,34 @@
+---
+title: Big-Batch Chicken Pot Pie
+description: A 9x13 Bisquick chicken pot pie, easy to split in two and freeze half for later.
+prepTime: 15
+cookTime: 45
+servings: 6
+categories:
+  - Main Course
+  - Chicken
+  - Comfort Food
+  - Meal Prep
+  - Budget Friendly
+  - American
+tags:
+  - Bisquick
+  - Freezer Friendly
+  - Casserole
+---
+
+## Ingredients
+- 2–3 cans cooked chicken
+- 2 cans cream of chicken soup
+- 1 package frozen vegetables
+- 2 cups Bisquick
+- 1 1/2 cups milk
+
+## Instructions
+1. Preheat the oven to 400°F.
+2. Mix the chicken, soup, and vegetables in an ungreased 9x13 glass dish.
+3. Stir the Bisquick and milk until blended, then pour over the chicken mixture.
+4. Bake 40–45 minutes, until a knife comes out clean and the top is a little golden.
+
+## Tips
+- Split it between two 8x8 baking dishes and freeze one for later.

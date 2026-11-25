@@ -5,7 +5,7 @@ prepTime: 10
 cookTime: 20
 servings: 4
 categories:
-  - Dinner
+  - Main Course
   - Beef
   - High Protein
   - Comfort Food

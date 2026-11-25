@@ -5,7 +5,7 @@ prepTime: 15
 cookTime: 55
 servings: 6
 categories:
-  - Dinner
+  - Main Course
   - Beef
   - Pasta
   - Italian
