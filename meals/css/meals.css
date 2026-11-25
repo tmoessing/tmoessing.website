@@ -4,6 +4,7 @@
 @import "../../css/variables.css";
 @import "../../css/base.css";
 @import "../../css/cards.css";
+@import "../../css/crumbs.css";
 
 /* ---------- page shell ---------- */
 .library-page {
@@ -17,7 +18,6 @@
   align-items: center;
   margin-bottom: var(--spacing-2xl);
 }
-.back-to-site { gap: 6px; text-decoration: none; }
 .theme-toggle-btn {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);

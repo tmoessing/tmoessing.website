@@ -1,0 +1,17 @@
+/* Breadcrumb header for sub-pages (Tyler Moessing / Personal / <page>). */
+.site-crumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-width: 0;
+}
+.site-crumbs a { text-decoration: none; transition: color 0.2s ease; }
+.crumb-home { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-primary); }
+.crumb-logo { width: 28px; height: 28px; flex-shrink: 0; }
+.crumb-link { color: var(--text-secondary); }
+.crumb-home:hover, .crumb-link:hover { color: var(--primary-blue); }
+.crumb-sep { color: var(--text-muted); opacity: 0.6; }
+.crumb-current { color: var(--primary-blue); }

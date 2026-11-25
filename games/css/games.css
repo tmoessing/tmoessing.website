@@ -4,6 +4,7 @@
 @import "../../css/variables.css";
 @import "../../css/base.css";
 @import "../../css/cards.css";
+@import "../../css/crumbs.css";
 
 /* The hidden attribute must win over component display rules below. */
 [hidden] { display: none !important; }
@@ -37,15 +38,6 @@
   align-items: center;
   margin-bottom: var(--spacing-2xl);
 }
-.back-to-site {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-decoration: none;
-}
-.back-to-site .icon { color: var(--primary-blue); }
 .theme-toggle-btn {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
@@ -275,8 +267,10 @@
 .games-grid.compact-view .game-meta-row { gap: var(--spacing-sm); }
 .games-grid.compact-view .game-meta { font-size: 0.74rem; }
 .games-grid.compact-view .game-card-desc,
-.games-grid.compact-view .game-card-details-section,
+.games-grid.compact-view .game-card-categories,
 .games-grid.compact-view .game-view-btn { display: none; }
+.games-grid.compact-view .game-card-tags { gap: 4px; margin-top: 2px; }
+.games-grid.compact-view .game-card-tags .skill-tag { padding: 1px 7px; font-size: 0.66rem; }
 .games-grid.compact-view .game-cover-wrap .complexity-badge { font-size: 0.6rem; padding: 2px 7px; }
 
 /* compact list: one slim row per game, thumbnail + title + players/time */
@@ -319,8 +313,26 @@
   text-overflow: ellipsis;
   max-width: 100%;
 }
+.games-grid.list-view .game-card-main-info { flex: 0 1 auto; }
+/* tags sit inline, right after the players/time meta */
+.games-grid.list-view .game-card-details-section {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.games-grid.list-view .game-card-categories { display: none; }
+.games-grid.list-view .game-card-tags {
+  flex-wrap: nowrap;
+  gap: 6px;
+  margin-top: 0;
+  overflow: hidden;
+}
+.games-grid.list-view .game-card-tags .skill-tag { white-space: nowrap; flex-shrink: 0; padding: 2px 8px; font-size: 0.7rem; }
+@media (max-width: 640px) {
+  .games-grid.list-view .game-card-details-section { display: none; }
+}
 .games-grid.list-view .game-card-desc,
-.games-grid.list-view .game-card-details-section,
 .games-grid.list-view .game-view-btn { display: none; }
 .games-grid.list-view .game-cover-wrap .complexity-badge { display: none; }
 .game-card {
