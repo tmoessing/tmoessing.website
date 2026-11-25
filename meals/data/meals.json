@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T04:14:22.850Z",
+  "generatedAt": "2026-11-25T04:17:12.123Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -921,6 +921,61 @@
       "slug": "easy-white-homemade-bread",
       "body": "## Ingredients\n- 1/2 cup warm water\n- 2 tbsp yeast\n- 6 cups flour\n- 3 tbsp sugar\n- 1 tbsp salt\n- 1/3 cup oil\n- 2 cups hot water\n\n## Instructions\n1. Dissolve the yeast in the warm water.\n2. Combine the remaining ingredients using **3 cups of the flour** and beat well.\n3. Add the yeast and beat well.\n4. Add the remaining flour to make a soft dough that can still be mixed with a spoon (it will be sticky).\n5. Leave the spoon in and let the dough rest 10 minutes. Stir it down every 10 minutes, 5 times total.\n6. Divide in two. Roll each up like a jelly roll, or make 2 dozen rolls. Place in greased pans.\n7. Let rise until doubled, about 30 minutes.\n8. Bake at 400°F for 30 minutes.\n\n## Notes\nShared by a friend from my mission.",
       "totalTime": 120
+    },
+    {
+      "title": "Egg Breakfast",
+      "description": "Eggs, sausage, tater tots, biscuits, and avocado for a big breakfast.",
+      "prepTime": 5,
+      "cookTime": 30,
+      "servings": 4,
+      "estimatedCost": 11,
+      "categories": [
+        "Breakfast",
+        "Pork",
+        "High Protein",
+        "American",
+        "Comfort Food",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Breakfast for Dinner"
+      ],
+      "walmartList": "https://www.walmart.com/lists/WL/8ec74abe-0818-4797-9f62-cee9d4a3d3ad",
+      "walmart": [
+        {
+          "id": "172844767",
+          "qty": 1,
+          "name": "Great Value Large White Eggs, 18 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "46575468",
+          "qty": 1,
+          "name": "Great Value Original Premium Sausage Roll, 16 oz",
+          "for": "sausage"
+        },
+        {
+          "id": "10534213",
+          "qty": 1,
+          "name": "Great Value Taters, 32 oz (Frozen)",
+          "for": "tater tots"
+        },
+        {
+          "id": "10533862",
+          "qty": 1,
+          "name": "Great Value Jumbo Buttermilk Biscuits, 16 oz, 8 Count",
+          "for": "biscuits"
+        },
+        {
+          "id": "44390949",
+          "qty": 1,
+          "name": "Fresh Hass Avocado, Each",
+          "for": "avocado"
+        }
+      ],
+      "slug": "egg-breakfast",
+      "body": "## Ingredients\n- 8 eggs\n- 1 lb breakfast sausage\n- 1/2 bag (16 oz) frozen tater tots\n- 1 can (16 oz) jumbo buttermilk biscuits\n- 1 avocado, sliced\n- Salt and pepper to taste\n\n## Instructions\n1. Bake the tater tots and biscuits according to their packages, timing them to finish together.\n2. Meanwhile, slice the sausage into patties or crumble it. Cook in a skillet over medium heat until done (160°F). Set aside, leaving a little fat in the pan.\n3. Cook the eggs in the same skillet however you like them. Season with salt and pepper.\n4. Serve everything with the sliced avocado.",
+      "totalTime": 35
     },
     {
       "title": "Foil-Pack Chicken Fajitas",
