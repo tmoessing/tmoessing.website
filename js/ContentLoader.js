@@ -326,6 +326,18 @@ export class ContentLoader {
             gridContainer.appendChild(this.renderer.createProjectCard(project, null, false));
         });
 
+        // Show the project total in the sidebar, matching the pick tags, e.g. "Personal Projects (5)"
+        const projectsLink = document.getElementById('nav-personal-projects');
+        if (projectsLink) {
+            let badge = projectsLink.querySelector('.nav-count');
+            if (!badge) {
+                badge = document.createElement('span');
+                badge.className = 'nav-count';
+                projectsLink.appendChild(badge);
+            }
+            badge.textContent = `(${allProjects.length})`;
+        }
+
         // --- SECTION 2b: Threads posts, also under Creations ---
         this.renderThreadsFeed(projectsSection);
 
