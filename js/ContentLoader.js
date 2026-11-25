@@ -222,11 +222,17 @@ export class ContentLoader {
             });
 
             groupNames.forEach(tagName => {
-                // Add Small Header for Tag with margin top for grouping
+                // Each tag gets its own section so its header only sticks while that section is on screen
+                const groupSection = document.createElement('section');
+                groupSection.className = 'library-group';
+                libraryResultsContainer.appendChild(groupSection);
+
+                // Centered header, coloured to match the tag's chip
                 const tagHeader = document.createElement('h4');
                 tagHeader.className = 'library-tag-header';
+                tagHeader.setAttribute('style', this.renderer.tagChipStyle(this.renderer.tagHues([tagName])[0]));
                 tagHeader.textContent = tagName;
-                libraryResultsContainer.appendChild(tagHeader);
+                groupSection.appendChild(tagHeader);
 
                 // Group items container with NO gap
                 const groupContainer = document.createElement('div');
@@ -240,7 +246,7 @@ export class ContentLoader {
                     else usedIds.add(card.id);
                     groupContainer.appendChild(card);
                 });
-                libraryResultsContainer.appendChild(groupContainer);
+                groupSection.appendChild(groupContainer);
             });
 
             this.styleFilterChips(filterBar, filterTag);
@@ -372,7 +378,10 @@ export class ContentLoader {
         const header = document.querySelector('.sidebar');
         const update = () => {
             const stuck = header && getComputedStyle(header).position === 'sticky';
-            el.style.top = stuck ? `${Math.round(header.getBoundingClientRect().height)}px` : '0px';
+            const top = stuck ? Math.round(header.getBoundingClientRect().height) : 0;
+            el.style.top = `${top}px`;
+            // Section headers stick just under this bar
+            el.parentElement?.style.setProperty('--below-filter-bar', `${top + el.offsetHeight}px`);
         };
         // The picks section can be re-rendered, so drop the previous listeners first
         this.stickyCleanup?.();
@@ -381,6 +390,7 @@ export class ContentLoader {
         if (header && window.ResizeObserver) {
             observer = new ResizeObserver(update);
             observer.observe(header);
+            observer.observe(el); // the bar gets taller when its chips wrap
         }
         requestAnimationFrame(update);
         this.stickyCleanup = () => {

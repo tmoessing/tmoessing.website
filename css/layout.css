@@ -124,15 +124,44 @@
   flex-wrap: wrap;
 }
 
-.library-tag-header {
+/* One wrapper per tag, so its sticky header lets go when the section ends */
+.library-group {
   margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-sm);
-  font-size: 0.7rem;
+}
+
+.library-tag-header {
+  --tag-text: hsl(var(--h, 217) 85% var(--tl, 40%));
+  position: sticky;
+  top: var(--below-filter-bar, 0px);
+  z-index: 30; /* under the filter bar (40) */
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0;
+  padding: var(--spacing-sm) 0;
+  background: var(--bg-secondary);
+  font-size: 0.95rem;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-muted);
-  letter-spacing: 0.5px;
-  border-left: 2px solid var(--border-color);
-  padding-left: var(--spacing-sm);
+  letter-spacing: 1.5px;
+  color: var(--tag-text);
+  text-align: center;
+}
+.library-tag-header::before,
+.library-tag-header::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: hsl(var(--h, 217) 85% 45% / 0.35);
+}
+body.dark-mode .library-tag-header { --tag-text: hsl(var(--h, 217) 90% var(--dl, 72%)); }
+body.dark-mode .library-tag-header::before,
+body.dark-mode .library-tag-header::after { background: hsl(var(--h, 217) 90% 65% / 0.35); }
+@media (prefers-color-scheme: dark) {
+  body:not(.light-mode) .library-tag-header { --tag-text: hsl(var(--h, 217) 90% var(--dl, 72%)); }
+  body:not(.light-mode) .library-tag-header::before,
+  body:not(.light-mode) .library-tag-header::after { background: hsl(var(--h, 217) 90% 65% / 0.35); }
 }
 
 .library-group-container {

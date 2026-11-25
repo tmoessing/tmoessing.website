@@ -438,6 +438,10 @@ export class Renderer {
             card.innerHTML = body + overlayLink;
         }
 
+        // After a mouse/tap click opens the link, drop focus so the card isn't left flipped or highlighted when you come back
+        const anchor = card.querySelector('.card-overlay-link');
+        if (anchor) anchor.addEventListener('click', e => { if (e.detail > 0) anchor.blur(); });
+
         return card;
     }
 
