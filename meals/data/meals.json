@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T04:05:01.069Z",
+  "generatedAt": "2026-11-25T04:14:22.850Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -305,6 +305,62 @@
       "slug": "baked-potato",
       "body": "## Ingredients\n- Potatoes (1 per person)\n- Olive oil\n- Sea or kosher salt\n- 1 can Hormel chili with beans, for topping (optional)\n\n## Instructions\n1. Preheat the oven to 425°F and line a baking sheet with parchment paper.\n2. Scrub the potatoes well and pat dry. Poke each one a few times with a fork.\n3. Place on the baking sheet, rub all over with olive oil, and sprinkle generously with salt.\n4. Bake 45–60 minutes, until the skins are crisp and puffy and a fork slides in easily.\n\n## Tips\n- **Microwave:** Wash the potatoes and poke them with a fork. Microwave 4 minutes, flip, then 4 minutes more.\n- Top with warmed Hormel chili or [Grandma's Chili](#grandmas-chili) for a full meal.",
       "totalTime": 60
+    },
+    {
+      "title": "BBQ Chicken & Asparagus Fettuccine",
+      "description": "Grilled BBQ chicken tenders and asparagus over fettuccine in creamy Alfredo sauce.",
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "estimatedCost": 20,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "Pasta",
+        "Italian",
+        "High Protein",
+        "Grill",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Weeknight"
+      ],
+      "walmartList": "https://www.walmart.com/lists/WL/c7936b36-0a9e-45de-8f6a-9890c1a193c5",
+      "walmart": [
+        {
+          "id": "44390952",
+          "qty": 1,
+          "name": "Fresh Green Whole Asparagus Bunch",
+          "for": "asparagus"
+        },
+        {
+          "id": "13033144",
+          "qty": 1,
+          "name": "Great Value Alfredo Pasta Sauce, 16 oz",
+          "for": "Alfredo sauce"
+        },
+        {
+          "id": "617765768",
+          "qty": 1,
+          "name": "Freshness Guaranteed Chicken Breast Tenderloins, 1.0-4.2 lb Tray",
+          "for": "chicken tenders"
+        },
+        {
+          "id": "10309187",
+          "qty": 1,
+          "name": "Barilla Fettuccine Pasta, 16 oz",
+          "for": "fettuccine"
+        },
+        {
+          "id": "10294615",
+          "qty": 1,
+          "name": "Sweet Baby Ray's Original Barbecue Sauce, 18 oz",
+          "for": "BBQ sauce"
+        }
+      ],
+      "slug": "bbq-chicken-asparagus-fettuccine",
+      "body": "## Ingredients\n- 1 1/2 lb chicken tenders\n- 1 bunch asparagus, woody ends trimmed\n- 12 oz fettuccine\n- 1 jar (16 oz) Alfredo sauce\n- 1/2 cup BBQ sauce\n- 1 tbsp oil\n- Salt and pepper to taste\n\n## Instructions\n1. Heat the grill to medium-high and start a large pot of salted water boiling.\n2. Toss the chicken and asparagus with the oil, salt, and pepper.\n3. Cook the fettuccine according to the package. Save 1/2 cup of the pasta water, then drain.\n4. Grill the chicken 3–4 minutes per side, until done (165°F), brushing with the BBQ sauce for the last 2 minutes. Grill the asparagus 4–6 minutes, turning, until tender-crisp.\n5. Warm the Alfredo sauce over low heat and toss with the fettuccine, loosening with pasta water as needed.\n6. Cut the asparagus into bite-size pieces and slice the chicken. Serve over the pasta.\n\n## Tips\n- No grill? Use a grill pan or skillet over medium-high heat.",
+      "totalTime": 30
     },
     {
       "title": "BYU Mint Brownies",
@@ -631,6 +687,50 @@
       "totalTime": 35
     },
     {
+      "title": "Chicken Sausage Sheet Pan Dinner",
+      "description": "Sausage, sweet potato, and broccoli roasted together on one pan.",
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 4,
+      "estimatedCost": 4,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "Pork",
+        "Healthy",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Weeknight",
+        "Sheet Pan"
+      ],
+      "recipeSource": "https://www.walmart.com/i/recipes/Chicken-sausage-sheet-pan-dinner/846993",
+      "walmartList": "https://www.walmart.com/lists/WL/3215fcc6-da41-46e8-9de0-766df1803eb4",
+      "walmart": [
+        {
+          "id": "129692794",
+          "qty": 1,
+          "name": "Great Value Original Breakfast Pork Sausage Links, 12 oz",
+          "for": "sausage"
+        },
+        {
+          "id": "44390964",
+          "qty": 1,
+          "name": "Fresh Whole Sweet Potato",
+          "for": "sweet potato"
+        },
+        {
+          "id": "735585383",
+          "qty": 1,
+          "name": "Great Value Frozen Broccoli Florets, 12 oz",
+          "for": "broccoli"
+        }
+      ],
+      "slug": "chicken-sausage-sheet-pan-dinner",
+      "body": "## Ingredients\n- 12–15 oz sausage links (breakfast pork links or chicken apple sausage)\n- 1 sweet potato, cut into 1/2-inch cubes\n- 1 bag (12 oz) frozen broccoli florets, or 1 head fresh broccoli\n- 3 tbsp olive oil\n- Salt and pepper to taste\n\n## Instructions\n1. Heat the oven to 425°F and line a sheet pan with parchment paper.\n2. Slice the sausage into 1/2-inch rounds. Cut fresh broccoli, if using, into florets.\n3. Put the sausage, sweet potato, and broccoli on the pan. Toss with the olive oil, salt, and pepper, then spread in a single layer.\n4. Bake 30–40 minutes, tossing halfway through, until everything is browned and the sausage is done (160°F for raw pork).\n\n## Notes\nThe original recipe uses 15 oz of fully cooked chicken apple sausage. The shopping list uses breakfast pork sausage links instead.",
+      "totalTime": 45
+    },
+    {
       "title": "Chocolate Chip Cookies",
       "description": "Classic chewy chocolate chip cookies with dark brown sugar, baked low and slow.",
       "prepTime": 15,
@@ -887,6 +987,55 @@
       "slug": "foil-pack-chicken-fajitas",
       "body": "## Ingredients\n- 1 1/2 cups rice\n- 1 1/2 cups hot water\n- 1 tbsp taco seasoning\n- 4 boneless chicken breast halves (about 1 lb)\n- 1 green and 1 red bell pepper, sliced\n- 1/2 cup salsa\n- 1/2 cup shredded cheese\n\n## Instructions\n1. Heat the oven to 400°F.\n2. Fold up all sides of 4 large sheets of heavy-duty foil to form a 1-inch rim, and spray with cooking spray.\n3. Combine the rice, hot water, and taco seasoning and spoon evenly onto the foil. Top with the remaining ingredients.\n4. Bring up the foil sides and fold to make 4 packets. Place on a rimmed baking sheet.\n5. Bake 30–35 minutes, until the chicken is done (165°F). Cool 5 minutes, then cut slits in the foil to release steam before carefully opening.\n\n## Tips\n- Make the packets ahead and refrigerate up to 1 day, then bake as directed.\n- Add the liquids last so the packets are easier to fold.\n- Go heavier on the taco seasoning.",
       "totalTime": 45
+    },
+    {
+      "title": "French Dip",
+      "description": "Toasted roast beef and Swiss sandwiches on French bread with au jus for dipping.",
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 4,
+      "estimatedCost": 10,
+      "categories": [
+        "Main Course",
+        "Beef",
+        "American",
+        "Comfort Food",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Lunch",
+        "Sandwich"
+      ],
+      "walmartList": "https://www.walmart.com/lists/WL/ce189f62-2351-415e-ac11-84af9455a408",
+      "walmart": [
+        {
+          "id": "46491756",
+          "qty": 1,
+          "name": "Freshness Guaranteed French Bread Loaf, 14 oz",
+          "for": "French bread"
+        },
+        {
+          "id": "15543985",
+          "qty": 1,
+          "name": "Land O'Frost Premium Roast Beef, 10 oz",
+          "for": "roast beef"
+        },
+        {
+          "id": "152351343",
+          "qty": 1,
+          "name": "Great Value Swiss Deli Style Sliced Cheese, 8 oz",
+          "for": "Swiss cheese"
+        },
+        {
+          "id": "814049069",
+          "qty": 1,
+          "name": "Great Value Au Jus Gravy Mix, 1 oz",
+          "for": "au jus mix"
+        }
+      ],
+      "slug": "french-dip",
+      "body": "## Ingredients\n- 1 loaf (14 oz) French bread\n- 10 oz sliced roast beef\n- 8 slices Swiss cheese\n- 1 packet (1 oz) au jus gravy mix, plus the water called for on the packet\n\n## Instructions\n1. Heat the oven to 400°F.\n2. Make the au jus according to the packet and keep it warm.\n3. Cut the bread into 4 pieces and split each one. Place cut side up on a baking sheet and toast 3–4 minutes.\n4. Dip the roast beef in the au jus to warm it, then layer it on the bottom halves and top with the Swiss.\n5. Bake 3–4 minutes, until the cheese melts. Add the tops and serve with the au jus for dipping.",
+      "totalTime": 15
     },
     {
       "title": "Grandma's Chili",
@@ -1222,6 +1371,55 @@
       "totalTime": 20
     },
     {
+      "title": "Lemon Herbed Chicken",
+      "description": "Skillet chicken with caramelized lemon slices and a warm lemon, garlic, and thyme sauce.",
+      "prepTime": 40,
+      "cookTime": 25,
+      "servings": 4,
+      "estimatedCost": 13,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "High Protein",
+        "Low Carb",
+        "Gluten Free",
+        "Healthy"
+      ],
+      "tags": [
+        "Want to Try"
+      ],
+      "recipeSource": "https://www.walmart.com/i/recipes/Lemon-herbed-chicken/1766788",
+      "walmart": [
+        {
+          "id": "50067993",
+          "qty": 1,
+          "name": "Tyson Boneless Skinless Chicken Breasts, 1.0-3.3 lb Tray",
+          "for": "chicken breasts"
+        },
+        {
+          "id": "41752773",
+          "qty": 3,
+          "name": "Fresh Lemon, Each",
+          "for": "lemons"
+        },
+        {
+          "id": "44391100",
+          "qty": 1,
+          "name": "Fresh Garlic Bulb, Each",
+          "for": "garlic"
+        },
+        {
+          "id": "3953481268",
+          "qty": 1,
+          "name": "Fresh Thyme, 0.5 oz",
+          "for": "fresh thyme"
+        }
+      ],
+      "slug": "lemon-herbed-chicken",
+      "body": "## Ingredients\n- 1 lb boneless, skinless chicken breast\n- 3 lemons\n- 3 tbsp olive oil, divided\n- 2 cloves garlic, minced\n- 1 tbsp fresh thyme, chopped, plus more to garnish\n- 1/2 tsp kosher salt\n- 1/2 tsp black pepper\n\n## Instructions\n1. Zest and juice 2 of the lemons. Warm the zest and juice in a small pot with 2 tbsp of the oil, the garlic, thyme, salt, and pepper.\n2. Slice the third lemon into thin rounds.\n3. Heat the last tbsp of oil in a skillet over medium-high heat. Add the chicken and lemon slices and cook about 5 minutes per side, until the chicken is golden and reaches 165°F.\n4. Spoon the warm sauce over the chicken and lemon slices and garnish with more thyme.",
+      "totalTime": 65
+    },
+    {
       "title": "Oatmeal Cookies",
       "description": "A big-batch, old-fashioned cinnamon oatmeal cookie made with buttermilk.",
       "prepTime": 20,
@@ -1289,6 +1487,103 @@
       "slug": "oatmeal-cookies",
       "body": "## Ingredients\n- 4 cups brown sugar\n- 2 cups butter, softened\n- 1 cup buttermilk\n- 2 tsp vanilla\n- 4 cups flour\n- 2 tsp salt\n- 2 tsp baking soda\n- 4 heaping tsp cinnamon\n- 8 cups old-fashioned oats\n\n## Instructions\n1. Preheat the oven to 375°F.\n2. Cream the butter and brown sugar together until smooth, then mix in the buttermilk and vanilla.\n3. In a separate bowl, whisk the flour, salt, baking soda, and cinnamon. Add to the wet mixture and stir until combined.\n4. Stir in the oats.\n5. Drop rounded spoonfuls onto a baking sheet and bake for 10 minutes.\n\n## Notes\nShared by a friend from my mission.\n\nThe original family recipe card lists only the ingredients and \"Bake at 375 for 10 minutes.\" The mixing steps above are the standard method for this kind of cookie.\n\n## Tips\n- This makes a *lot* of cookies. Halve everything for a normal-sized batch.",
       "totalTime": 30
+    },
+    {
+      "title": "One-Pot Mexican Beef and Rice with Cheese",
+      "description": "Ground beef, rice, corn, black beans, and salsa cooked in one pot and topped with melted cheese.",
+      "prepTime": 8,
+      "cookTime": 30,
+      "servings": 6,
+      "estimatedCost": 23,
+      "categories": [
+        "Main Course",
+        "Beef",
+        "Rice",
+        "Mexican",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Want to Try",
+        "One Pot"
+      ],
+      "recipeSource": "https://www.walmart.com/i/recipes/One-pot-mexican-beef-and-rice-with-cheese/845694",
+      "walmart": [
+        {
+          "id": "936536712",
+          "qty": 1,
+          "name": "73% Lean Ground Beef, 1 lb Roll (Frozen)",
+          "for": "ground beef"
+        },
+        {
+          "id": "44391100",
+          "qty": 1,
+          "name": "Fresh Garlic Bulb, Each",
+          "for": "garlic"
+        },
+        {
+          "id": "379517847",
+          "qty": 1,
+          "name": "Great Value Taco Seasoning Mix, 1 oz",
+          "for": "taco seasoning"
+        },
+        {
+          "id": "1959652540",
+          "qty": 1,
+          "name": "Great Value Thick and Chunky Mild Salsa, 16 oz",
+          "for": "salsa"
+        },
+        {
+          "id": "10295082",
+          "qty": 1,
+          "name": "Hunt's Tomato Paste, 6 oz",
+          "for": "tomato paste"
+        },
+        {
+          "id": "38772376",
+          "qty": 1,
+          "name": "Swanson Chicken Broth, 32 oz",
+          "for": "chicken broth"
+        },
+        {
+          "id": "14940615",
+          "qty": 1,
+          "name": "Mahatma Long Grain White Rice, 2 lb",
+          "for": "rice"
+        },
+        {
+          "id": "15544057",
+          "qty": 1,
+          "name": "Great Value Whole Kernel Corn, 29 oz",
+          "for": "corn"
+        },
+        {
+          "id": "10534038",
+          "qty": 1,
+          "name": "Great Value Black Beans, 15 oz",
+          "for": "black beans"
+        },
+        {
+          "id": "51259361",
+          "qty": 1,
+          "name": "Fresh Green Onions, 1 Bunch",
+          "for": "green onions"
+        },
+        {
+          "id": "10452371",
+          "qty": 2,
+          "name": "Great Value Finely Shredded Mozzarella, 8 oz",
+          "for": "mozzarella cheese"
+        },
+        {
+          "id": "160597260",
+          "qty": 1,
+          "name": "Fresh Cilantro, 1 Bunch",
+          "for": "cilantro"
+        }
+      ],
+      "slug": "one-pot-mexican-beef-and-rice",
+      "body": "## Ingredients\n- 2 tbsp olive oil\n- 1 tsp minced garlic\n- 1 lb ground beef\n- 1 tbsp taco seasoning\n- 1 cup salsa\n- 1/2 tbsp tomato paste\n- 2 1/2 cups chicken broth\n- 1 3/4 cups long grain white rice\n- 1 1/3 cups canned corn, drained\n- 1 cup canned black beans, drained and rinsed\n- 1/2 tsp salt\n- 1/4 cup chopped green onions\n- 16 oz shredded mozzarella, divided\n- Chopped fresh cilantro, to taste\n\n## Instructions\n1. Heat the oil in a Dutch oven or deep skillet over medium-high heat. Stir in the garlic for 30 seconds.\n2. Add the beef and cook, breaking it up, until fully browned.\n3. Mix in the taco seasoning, then the salsa and tomato paste.\n4. Stir in the broth, rice, corn, beans, and salt. Cover and cook over medium-low heat 20–25 minutes, until the liquid is absorbed.\n5. Stir in the green onions and half the cheese. Sprinkle the rest on top and cover 2 minutes to melt.\n6. Top with cilantro and serve.",
+      "totalTime": 38
     },
     {
       "title": "Puffed Pancakes",
@@ -1502,6 +1797,61 @@
       ],
       "slug": "tortellini-soup",
       "body": "## Ingredients\n- 1 lb Italian sausage (mild or spicy)\n- 1/8 onion, chopped\n- 1/2 tsp dried oregano\n- 1/2 tsp dried basil\n- 1 tbsp dried parsley\n- 2 cloves garlic (or 2 tsp garlic salt or garlic powder)\n- 1/2 cup carrots, sliced and cooked (unless you're simmering a long time, then they'll cook in the soup)\n- 1 zucchini, grated\n- 1 can (14–15 oz) diced tomatoes (petite diced preferred, regular is fine)\n- 1 small can (8 oz) tomato sauce\n- 1/2 cup apple juice\n- 1/2 cup water\n- 4 cans (14–15 oz each, about 60 oz total) chicken broth\n- 1 lb tortellini (frozen, fresh, or dried)\n\n## Instructions\n1. Brown the sausage in a large soup pot with the onion and spices.\n2. While it browns, slice and cook the carrots and grate the zucchini.\n3. Once the sausage is browned, add everything else to the pot and heat through.\n4. Serve, or keep it on a simmer (or in a crock pot) for hours. If simmering a while, make sure the carrots and any dried tortellini are soft before serving.\n\n## Notes\nWith frozen or fresh tortellini and pre-cooked carrots, this soup is done in about 20 minutes.\n\n## Tips\n- Using dried tortellini? Let it simmer a long time, or cook it before adding.\n\n## Variations\n- Add or swap veggies however you like.\n- Add extra water or broth if you want it brothier.",
+      "totalTime": 30
+    },
+    {
+      "title": "Tyler's Chili",
+      "description": "Easy sausage and bean chili with mixed vegetables, served with honey corn bread.",
+      "prepTime": 5,
+      "cookTime": 25,
+      "servings": 4,
+      "estimatedCost": 7,
+      "categories": [
+        "Main Course",
+        "Pork",
+        "Comfort Food",
+        "Budget Friendly",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Family Recipe",
+        "One Pot"
+      ],
+      "walmartList": "https://www.walmart.com/lists/WL/e958d40b-3ae4-4e32-9bc7-f666aa6f2998",
+      "walmart": [
+        {
+          "id": "46575468",
+          "qty": 1,
+          "name": "Great Value Original Premium Sausage Roll, 16 oz",
+          "for": "sausage"
+        },
+        {
+          "id": "10534044",
+          "qty": 1,
+          "name": "Great Value Chili Beans, 15.5 oz",
+          "for": "chili beans"
+        },
+        {
+          "id": "10450990",
+          "qty": 1,
+          "name": "Great Value Diced Tomatoes, 14.5 oz",
+          "for": "diced tomatoes"
+        },
+        {
+          "id": "817042496",
+          "qty": 1,
+          "name": "Great Value Mixed Vegetables, 12 oz (Frozen)",
+          "for": "frozen mixed vegetables"
+        },
+        {
+          "id": "882608809",
+          "qty": 1,
+          "name": "JIFFY Honey Corn Muffin Mix, 8.5 oz",
+          "for": "corn bread"
+        }
+      ],
+      "slug": "tylers-chili",
+      "body": "## Ingredients\n- 1 lb pork sausage\n- 1 can (15.5 oz) chili beans, undrained\n- 1 can (14.5 oz) diced tomatoes, undrained\n- 1 bag (12 oz) frozen mixed vegetables\n- Salt and pepper to taste\n- 1 box (8.5 oz) honey corn muffin mix, plus the egg and milk called for on the box\n\n## Instructions\n1. Make the corn bread according to the box and put it in the oven.\n2. Brown the sausage in a large pot over medium-high heat, breaking it up, until cooked through. Drain the fat.\n3. Stir in the chili beans, diced tomatoes, and frozen vegetables.\n4. Bring to a boil, then reduce the heat and simmer 10–15 minutes, until the vegetables are tender. Season with salt and pepper.\n5. Serve with the corn bread.",
       "totalTime": 30
     }
   ]
