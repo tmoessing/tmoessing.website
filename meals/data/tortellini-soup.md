@@ -12,6 +12,7 @@ categories:
   - Comfort Food
   - Quick Meals
 tags:
+  - Mission Friend
   - Soup
   - Crock Pot Friendly
 walmart:
@@ -53,6 +54,8 @@ walmart:
 4. Serve, or keep it on a simmer (or in a crock pot) for hours. If simmering a while, make sure the carrots and any dried tortellini are soft before serving.
 
 ## Notes
+Shared by a friend from my mission.
+
 With frozen or fresh tortellini and pre-cooked carrots, this soup is done in about 20 minutes.
 
 ## Tips
