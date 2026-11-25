@@ -14,6 +14,12 @@ categories:
 tags:
   - Family Recipe
   - One Pot
+walmart:
+  - 936536712 | 1 | 73% Lean Ground Beef, 1 lb Roll (Frozen) | ground beef
+  - 10534038 | 1 | Great Value Black Beans, 15 oz | black beans
+  - 10450990 | 1 | Great Value Diced Tomatoes, 14.5 oz | diced tomatoes
+  - 10415487 | 1 | Great Value Tomato Sauce, 8 oz | tomato sauce
+  - 793947882 | 1 | Great Value Minced Onion, 2.35 oz | dehydrated onions (optional)
 ---
 
 ## Ingredients

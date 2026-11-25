@@ -11,6 +11,20 @@ tags:
   - BYU
   - Crowd Pleaser
 recipeSource: https://magazine.byu.edu/article/byu-mint-brownies/
+walmart:
+  - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 110307843 | 1 | Great Value Unsweetened Cocoa Powder, 8 oz | cocoa
+  - 20647992 | 1 | Great Value Honey, 12 oz | honey
+  - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
+  - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
+  - 16627955 | 1 | Great Value Double Acting Baking Powder, 8.1 oz | baking powder
+  - 793429092 | 1 | Great Value Chopped Walnuts, 4 oz | chopped walnuts
+  - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
+  - 10294409 | 1 | Karo Light Corn Syrup, 16 oz | light corn syrup
+  - 10315011 | 1 | Great Value Powdered Sugar, 32 oz | powdered sugar
+  - 10308881 | 1 | McCormick Pure Peppermint Extract, 1 fl oz | mint extract
+  - 24929610 | 1 | Wilton Kelly Green Gel Food Coloring, 1 oz | green food coloring
 ---
 
 ## Ingredients

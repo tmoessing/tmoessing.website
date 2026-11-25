@@ -207,6 +207,39 @@ export function groceryLink(meal, provider = "walmart") {
   return url && /^https?:\/\//i.test(url) ? url : null;
 }
 
+/** Walmart's multi-item cart link: items=ID|QTY,ID|QTY,... */
+const WALMART_CART_URL = "https://affil.walmart.com/cart/addToCart?items=";
+
+/**
+ * Merge the Walmart products of several meals. `entries` is [{ meal, times }];
+ * quantities for the same product are summed across meals (and repeat days).
+ * A product is optional only if every meal using it says "optional".
+ */
+export function walmartItems(entries) {
+  const byId = new Map();
+  for (const { meal, times } of entries) {
+    for (const item of meal.walmart || []) {
+      const qty = (num(item.qty) || 1) * times;
+      const optional = /\boptional\b/i.test(item.for || "");
+      const cur = byId.get(item.id);
+      if (!cur) {
+        byId.set(item.id, { ...item, qty, optional });
+      } else {
+        cur.qty += qty;
+        if (cur.optional && !optional) cur.for = item.for;
+        cur.optional = cur.optional && optional;
+      }
+    }
+  }
+  return [...byId.values()];
+}
+
+/** One link that adds the given products to the Walmart cart, or null if none. */
+export function walmartCartUrl(items) {
+  if (!items.length) return null;
+  return WALMART_CART_URL + items.map((i) => `${encodeURIComponent(i.id)}|${i.qty}`).join(",");
+}
+
 /* ---------- Google Calendar ---------- */
 
 function pad(n) {

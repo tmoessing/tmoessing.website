@@ -12,6 +12,11 @@ categories:
 tags:
   - Blender
   - Dutch Baby
+walmart:
+  - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
+  - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
+  - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
 ---
 
 ## Ingredients

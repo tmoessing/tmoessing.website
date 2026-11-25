@@ -14,6 +14,16 @@ tags:
   - Instant Pot
   - One Pot
   - Weeknight
+walmart:
+  - 10451002 | 1 | Great Value Vegetable Oil, 48 fl oz | oil
+  - 367014931 | 1 | Great Value Minced Garlic in Water, 8 oz | minced garlic
+  - 10449184 | 1 | Freshness Guaranteed Sliced White Mushrooms, 8 oz | mushrooms
+  - 10414680 | 1 | Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen) | chicken breasts
+  - 10314956 | 1 | Great Value Chicken Broth, 14.5 oz | chicken stock
+  - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
+  - 10534084 | 1 | Great Value Penne Pasta, 16 oz | pasta
+  - 10452429 | 1 | Great Value Cream Cheese Brick, 8 oz | cream cheese
+  - 10315402 | 1 | Great Value Grated Parmesan, 8 oz | parmesan cheese
 ---
 
 ## Ingredients

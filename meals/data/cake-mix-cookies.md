@@ -11,6 +11,12 @@ categories:
 tags:
   - Cookies
   - Cake Mix
+walmart:
+  - 3948888871 | 1 | Betty Crocker Super Moist Yellow Cake Mix, 13.25 oz | cake mix
+  - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
+  - 10451002 | 1 | Great Value Vegetable Oil, 48 fl oz | oil
+  - 103020312 | 1 | Great Value White Large Eggs, 12 Count | egg
+  - 932430893 | 1 | Great Value Milk Chocolate Chips, 23 oz | chocolate chips
 ---
 
 ## Ingredients

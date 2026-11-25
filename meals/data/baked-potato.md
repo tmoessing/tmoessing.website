@@ -12,6 +12,10 @@ categories:
 tags:
   - Potatoes
   - Microwave
+walmart:
+  - 44391004 | 4 | Russet Baking Potato, Each | potatoes
+  - 10315102 | 1 | Great Value Extra Virgin Olive Oil, 17 fl oz | olive oil
+  - 10290952 | 1 | Hormel Chili with Beans, 15 oz | chili (optional topping)
 ---
 
 ## Ingredients

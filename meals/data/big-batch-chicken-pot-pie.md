@@ -15,6 +15,12 @@ tags:
   - Bisquick
   - Freezer Friendly
   - Casserole
+walmart:
+  - 42613740 | 2 | Great Value Less Sodium Chunk Chicken Breast, 12.5 oz | cooked chicken
+  - 10321652 | 2 | Campbell's Cream of Chicken Soup, 10.5 oz | cream of chicken soup
+  - 817042496 | 1 | Great Value Mixed Vegetables, 12 oz (Frozen) | frozen vegetables
+  - 17208745 | 1 | Betty Crocker Bisquick Original, 20 oz | Bisquick
+  - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
 ---
 
 ## Ingredients

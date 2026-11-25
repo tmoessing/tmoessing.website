@@ -13,6 +13,14 @@ tags:
   - Pizza
   - Calzones
   - Dough
+walmart:
+  - 453472924 | 1 | Great Value Active Dry Yeast, 0.25 oz, 3 Count | active dry yeast
+  - 10315102 | 1 | Great Value Extra Virgin Olive Oil, 17 fl oz | olive oil
+  - 20647992 | 1 | Great Value Honey, 12 oz | honey
+  - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
+  - 12444468 | 1 | Great Value Pizza Sauce, 14 oz | fillings (pizza sauce)
+  - 10452371 | 1 | Great Value Finely Shredded Mozzarella, 8 oz | fillings (mozzarella)
+  - 40495518 | 1 | Great Value Original Pepperoni Slices, 6 oz | fillings (pepperoni)
 ---
 
 ## Ingredients

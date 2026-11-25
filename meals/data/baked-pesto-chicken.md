@@ -13,6 +13,10 @@ categories:
 tags:
   - Weeknight
   - Easy
+walmart:
+  - 10414680 | 1 | Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen) | chicken breasts
+  - 1416793108 | 1 | Great Value Basil Pesto, 6.7 oz | pesto
+  - 10452371 | 1 | Great Value Finely Shredded Mozzarella, 8 oz | mozzarella cheese
 ---
 
 ## Ingredients

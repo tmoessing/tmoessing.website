@@ -13,6 +13,12 @@ categories:
 tags:
   - Casserole
   - One Pan
+walmart:
+  - 10315395 | 1 | Great Value Long Grain Rice, 5 lb | rice
+  - 51259070 | 1 | Great Value Chicken Breast Tenderloins, 3 lb (Frozen) | chicken tenders
+  - 10321652 | 1 | Campbell's Cream of Chicken Soup, 10.5 oz | cream of chicken soup
+  - 10899013 | 1 | Great Value Chicken Broth, 32 oz | chicken broth
+  - 115324221 | 1 | Great Value Onion Soup & Dip Mix, 2 oz | onion soup mix
 ---
 
 ## Ingredients

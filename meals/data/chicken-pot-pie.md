@@ -14,6 +14,13 @@ tags:
   - Bisquick
   - Weeknight
 recipeSource: https://www.allrecipes.com/recipe/179376/impossibly-easy-chicken-pot-pie/
+walmart:
+  - 817042496 | 1 | Great Value Mixed Vegetables, 12 oz (Frozen) | frozen mixed vegetables
+  - 36267274 | 1 | Great Value Chunk Chicken Breast, 5 oz | cooked chicken
+  - 10321652 | 1 | Campbell's Cream of Chicken Soup, 10.5 oz | cream of chicken soup
+  - 17208745 | 1 | Betty Crocker Bisquick Original, 20 oz | Bisquick
+  - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
+  - 103020312 | 1 | Great Value White Large Eggs, 12 Count | egg
 ---
 
 ## Ingredients

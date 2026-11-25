@@ -3,8 +3,9 @@
  * (Mon–Sun), schedule a grocery shop or pickup, and get:
  *   - a Google Calendar button per planned day (5 PM meal-prep events)
  *   - a grocery-run calendar event carrying the combined shopping list
+ *   - one "Add week to cart" link for the checked Walmart products of all meals
  *   - a step-through "Shop at Walmart" button over each recipe's Walmart list
- *     (Walmart can't merge lists by link, so the cart becomes the combined list)
+ *     for recipes that have a `walmartList`
  *   - one merged ingredient checklist with Copy
  *
  * The plan is saved in localStorage per week, so it survives closing the page
@@ -17,8 +18,10 @@ import {
   calendarEventUrl,
   combineIngredients,
   bulletList,
-  groceryLink
+  groceryLink,
+  walmartItems
 } from "./util.js";
+import { walmartCartHTML, wireWalmartCart } from "./WalmartCart.js";
 import { lockScroll, unlockScroll } from "./MealDetailsModal.js";
 
 const STORE_KEY = "meal-week-plan";
@@ -36,7 +39,7 @@ let plan = null;
 /* ---------- persistence ---------- */
 
 function emptyPlan(weekKey) {
-  return { week: weekKey, days: {}, grocery: { type: "", day: "" }, shopped: [], checked: [] };
+  return { week: weekKey, days: {}, grocery: { type: "", day: "" }, shopped: [], checked: [], cart: {} };
 }
 
 function loadPlan(weekKey) {
@@ -255,10 +258,13 @@ function groceryCalendarUrl(g, day, entries) {
 }
 
 function walmartHTML(entries) {
-  if (!entries.length) return `<p class="planner-note">Plan some meals and their Walmart lists show up here.</p>`;
+  if (!entries.length) return `<p class="planner-note">Plan some meals and their Walmart products show up here.</p>`;
   const withList = entries.filter((e) => groceryLink(e.meal, "walmart"));
-  const without = entries.filter((e) => !groceryLink(e.meal, "walmart"));
+  const cartItems = walmartItems(entries);
+  const without = entries.filter((e) => !groceryLink(e.meal, "walmart") && !(e.meal.walmart || []).length);
   plan.shopped = plan.shopped.filter((s) => withList.some((e) => e.meal.slug === s));
+
+  const cartHTML = cartItems.length ? walmartCartHTML(cartItems, plan.cart) : "";
 
   let main = "";
   if (withList.length) {
@@ -276,9 +282,9 @@ function walmartHTML(entries) {
       .join("")}</ul>`;
   }
   const missing = without.length
-    ? `<p class="planner-note">No Walmart list yet for: ${without.map((e) => esc(e.meal.title)).join(", ")}. Add its link as <code>walmartList:</code> in the recipe file.</p>`
+    ? `<p class="planner-note">No Walmart products yet for: ${without.map((e) => esc(e.meal.title)).join(", ")}. Add them as <code>walmart:</code> in the recipe file.</p>`
     : "";
-  return main + missing;
+  return cartHTML + main + missing;
 }
 
 function ingredientsHTML(entries) {
@@ -334,6 +340,20 @@ function wire(entries) {
       render();
     });
 
+  const cartItems = walmartItems(entries);
+  wireWalmartCart(root, cartItems, {
+    label: "Add week to cart",
+    onChange: (choices) => {
+      // Only remember choices that differ from the default, so an optional
+      // product is ticked again if a newly planned meal requires it.
+      for (const item of cartItems) {
+        if (choices[item.id] === !item.optional) delete plan.cart[item.id];
+        else plan.cart[item.id] = choices[item.id];
+      }
+      savePlan();
+    }
+  });
+
   const next = root.querySelector("#planner-walmart-next");
   if (next)
     next.addEventListener("click", () => {
@@ -350,7 +370,7 @@ function wire(entries) {
       render();
     });
 
-  root.querySelectorAll(".planner-ingredients input[type=checkbox]").forEach((box) =>
+  root.querySelectorAll(".planner-ingredients input[data-item]").forEach((box) =>
     box.addEventListener("change", () => {
       const set = new Set(plan.checked);
       box.checked ? set.add(box.dataset.item) : set.delete(box.dataset.item);

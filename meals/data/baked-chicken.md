@@ -13,6 +13,9 @@ categories:
 tags:
   - Weeknight
   - Easy Cleanup
+walmart:
+  - 10414680 | 1 | Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen) | chicken breasts
+  - 10309038 | 1 | Grill Mates Garlic, Herb & Wine Marinade Mix, 0.87 oz | Grill Mates seasoning
 ---
 
 ## Ingredients

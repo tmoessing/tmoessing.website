@@ -45,20 +45,33 @@ export function createMealCard(meal) {
         <span class="meal-chip" title="Servings">🍽 ${esc(servingsLabel(meal.servings))}</span>
       </div>
       ${cats ? `<div class="meal-cat-chips card-tags">${cats}</div>` : ""}
-      <button class="btn btn-primary btn-sm meal-view-btn" type="button">📖 View Recipe</button>
+      <div class="meal-card-actions">
+        <button class="btn btn-primary btn-sm meal-view-btn" type="button">📖 View Recipe</button>
+        ${meal.walmart && meal.walmart.length ? `<button class="btn btn-secondary btn-sm meal-cart-btn" type="button" aria-label="Add to Walmart cart: ${esc(meal.title)}">🛒 Add to Walmart cart</button>` : ""}
+      </div>
     </div>
   `;
 
-  const open = () => {
-    if (typeof window.__openMealDetails === "function") window.__openMealDetails(meal);
+  const open = (opts) => {
+    if (typeof window.__openMealDetails === "function") window.__openMealDetails(meal, opts);
   };
-  card.addEventListener("click", open);
+  card.addEventListener("click", () => open());
   card.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       open();
     }
   });
+
+  // The cart button opens the recipe with its Walmart checklist showing.
+  const cartBtn = card.querySelector(".meal-cart-btn");
+  if (cartBtn) {
+    cartBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      open({ showCart: true });
+    });
+    cartBtn.addEventListener("keydown", (e) => e.stopPropagation());
+  }
 
   return card;
 }

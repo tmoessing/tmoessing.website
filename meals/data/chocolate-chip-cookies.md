@@ -10,6 +10,15 @@ categories:
 tags:
   - Cookies
   - Family Favorite
+walmart:
+  - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 10447786 | 1 | C&H Pure Cane Dark Brown Sugar, 2 lb | dark brown sugar
+  - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | granulated sugar
+  - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
+  - 21368021 | 1 | Great Value Pure Vanilla Extract, 1 fl oz | vanilla
+  - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
+  - 10315486 | 1 | Great Value Baking Soda, 1 lb | baking soda
+  - 42306176 | 1 | Great Value Semi-Sweet Chocolate Chips, 12 oz | chocolate chips
 ---
 
 ## Ingredients

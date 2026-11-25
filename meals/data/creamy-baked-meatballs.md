@@ -12,6 +12,16 @@ tags:
   - Mission Friend
   - Recipe Card
   - Casserole
+walmart:
+  - 10315355 | 1 | Great Value White Bread, 20 oz | bread
+  - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
+  - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
+  - 793947882 | 1 | Great Value Minced Onion, 2.35 oz | minced onion
+  - 16627955 | 1 | Great Value Double Acting Baking Powder, 8.1 oz | baking powder
+  - 10291600 | 1 | Ac'cent Flavor Enhancer, 4.5 oz | Accent
+  - 936536712 | 2 | 73% Lean Ground Beef, 1 lb Roll (Frozen) | ground beef
+  - 10314960 | 1 | Great Value Cream of Mushroom Soup, 10.5 oz | cream of mushroom soup
+  - 10314959 | 1 | Great Value Cream of Chicken Soup, 10.5 oz | cream of chicken soup
 ---
 
 ## Ingredients

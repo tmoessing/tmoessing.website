@@ -14,6 +14,11 @@ categories:
 tags:
   - One Pan
   - Weeknight
+walmart:
+  - 338508084 | 1 | Freshness Guaranteed Thin-Sliced Chicken Breasts, 0.8-3.5 lb | chicken breasts
+  - 13448693 | 1 | Pace Chunky Medium Salsa, 16 oz | salsa
+  - 10534038 | 1 | Great Value Black Beans, 15 oz | black beans
+  - 10452564 | 1 | Great Value Finely Shredded Colby Jack, 8 oz | shredded cheese
 ---
 
 ## Ingredients
