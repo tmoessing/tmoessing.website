@@ -16,9 +16,9 @@ import {
   playtimeLabel,
   complexityBadge,
   esc
-} from "./filters.js";
-import { icon } from "./icons.js";
-import { pushGame, clearGame, gameLink } from "./urlState.js";
+} from "../filters.js";
+import { icon } from "../icons.js";
+import { pushGame, clearGame, gameLink } from "../urlState.js";
 
 let scrollLocks = 0;
 export function lockScroll() {

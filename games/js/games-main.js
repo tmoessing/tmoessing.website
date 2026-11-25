@@ -7,8 +7,9 @@
  */
 import { GAMES } from "../data/games.js";
 import { LibraryPage } from "./LibraryPage.js";
-import { openGameDetails, closeModal, currentDetailsId } from "./GameDetailsModal.js";
+import { openGameDetails, closeModal, currentDetailsId } from "./components/GameDetailsModal.js";
 import { readUrlState, clearGame } from "./urlState.js";
+import { mountLibraryShell } from "./components/LibraryShell.js";
 
 function initTheme() {
   const body = document.body;
@@ -54,6 +55,7 @@ function syncGameFromUrl() {
   }
 }
 
+mountLibraryShell(document.getElementById("app"));
 initTheme();
 new LibraryPage().init();
 syncGameFromUrl();
