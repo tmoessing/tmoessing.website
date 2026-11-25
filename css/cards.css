@@ -433,7 +433,8 @@ body.dark-mode :is(a, button).skill-tag.tag-chip.is-active { color: #0f172a; }
 
 @media (hover: hover) {
   .card.pick-flip:hover .pick-flip-inner,
-  .card.pick-flip:focus-within .pick-flip-inner { transform: rotateX(180deg); }
+  /* Keyboard focus only: a mouse click leaves the link focused, which kept the card flipped after coming back */
+  .card.pick-flip:has(:focus-visible) .pick-flip-inner { transform: rotateX(180deg); }
 }
 
 /* No hover (phones/tablets): no flip, show the blurb on the front instead. */
