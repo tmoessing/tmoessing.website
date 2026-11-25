@@ -16,11 +16,22 @@ export function PickButton() {
   `;
 }
 
+export function FavoritesToggle() {
+  return `
+    <button type="button" id="favorites-toggle" class="btn btn-secondary btn-icon favorites-toggle"
+            aria-pressed="false" title="Show only personal favorites">
+      ${icon("star", "icon-md")}
+      Favorites
+    </button>
+  `;
+}
+
 export function LibraryToolbar() {
   return `
     <div class="library-toolbar">
       ${SearchBox()}
       <div class="toolbar-controls">
+        ${FavoritesToggle()}
         ${ViewToggle()}
         ${SortSelect()}
         ${PickButton()}

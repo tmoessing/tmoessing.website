@@ -201,3 +201,9 @@ export function placeholderDataURI(title) {
     `dominant-baseline="central">${esc(initials)}</text></svg>`;
   return "data:image/svg+xml," + encodeURIComponent(svg);
 }
+
+/** Gold star shown next to a personal favorite's title ("" for everyone else). */
+export function favoriteStar(game, sizeClass = "") {
+  if (!game.favorite) return "";
+  return `<span class="favorite-star" title="Personal favorite" role="img" aria-label="Personal favorite"><svg class="icon gi ${sizeClass}" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.5l-5.87 3.08 1.12-6.54L2.5 9.41l6.56-.95L12 2.5z"/></svg></span>`;
+}

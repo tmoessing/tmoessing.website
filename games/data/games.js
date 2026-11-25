@@ -19,6 +19,7 @@
  *   bggUrl       BoardGameGeek URL (string)
  *   howToPlay    { goal: string, steps: string[] } short rules summary
  *   howToPlayVideo YouTube 'How to Play' URL (string)
+ *   favorite     true for a personal favorite (optional; shows a star + Favorites filter)
  *
  * Data here is author-controlled static content. If untrusted data is ever
  * added, switch user-facing fields from innerHTML to textContent.
@@ -83,6 +84,7 @@ export const GAMES = [
   },
   {
     id: "catan",
+    favorite: true,
     title: "Catan",
     cover: "../games/images/catan.jpg",
     description: "Players collect and trade resources like lumber, brick, wool, grain, and ore to build roads, settlements, and cities on the modular island of Catan. Includes the 5-6 Player Expansion.",
@@ -335,6 +337,7 @@ export const GAMES = [
   },
   {
     id: "trial-by-trolley",
+    favorite: true,
     title: "Trial by Trolley",
     cover: "../games/images/trial-by-trolley.jpg",
     description: "A dark-humor party game from Cyanide & Happiness where players must argue why the trolley driver should spare their track and run over the other team instead.",
@@ -560,6 +563,7 @@ export const GAMES = [
   },
   {
     id: "we-didnt-playtest-this-at-all",
+    favorite: true,
     "title": "We Didn't Playtest This at All",
     cover: "../games/images/we-didnt-playtest-this-at-all.jpg",
     description: "An intentionally ridiculous and chaotic card game where your sole objective is to win. Includes the Legacies expansion, allowing players to write on cards, apply stickers, and permanently alter the game in search of ridiculous victory.",

@@ -32,6 +32,7 @@ export class LibraryPage {
     this.activeTags = new Set();
     this.selectedSuggestionIndex = 0;
     this.view = readStoredView();
+    this.favoritesOnly = false;
   }
 
   init() {
@@ -59,6 +60,13 @@ export class LibraryPage {
 
     this.sortSel.addEventListener("change", () => this.updateList());
 
+    this.favBtn = document.getElementById("favorites-toggle");
+    this.favBtn.addEventListener("click", () => {
+      this.favoritesOnly = !this.favoritesOnly;
+      this.applyFavoritesButton();
+      this.updateList();
+    });
+
     this.searchBox.addEventListener("click", () => this.searchInput.focus());
     this.searchInput.addEventListener("input", () => {
       this.searchQuery = this.searchInput.value.toLowerCase().trim();
@@ -78,7 +86,9 @@ export class LibraryPage {
 
   /** Restore search text, tags and sort from a shared link. */
   applyUrlState() {
-    const { q, tags, sort } = readUrlState();
+    const { q, tags, sort, fav } = readUrlState();
+    this.favoritesOnly = fav;
+    this.applyFavoritesButton();
     if (q) {
       this.searchInput.value = q;
       this.searchQuery = q.toLowerCase().trim();
@@ -92,6 +102,11 @@ export class LibraryPage {
     const validSort = sort && [...this.sortSel.options].some((o) => o.value === sort);
     this.sortSel.value = validSort ? sort : "alpha";
     this.renderActiveTags();
+  }
+
+  applyFavoritesButton() {
+    this.favBtn.classList.toggle("active", this.favoritesOnly);
+    this.favBtn.setAttribute("aria-pressed", String(this.favoritesOnly));
   }
 
   onSearchKeydown(e) {
@@ -199,6 +214,8 @@ export class LibraryPage {
   getFilteredGames() {
     let filtered = GAMES;
 
+    if (this.favoritesOnly) filtered = filtered.filter((g) => g.favorite);
+
     // Locked tags: a game must have every one (as a tag or a category).
     if (this.activeTags.size > 0) {
       const wanted = Array.from(this.activeTags, (t) => t.toLowerCase());
@@ -226,7 +243,8 @@ export class LibraryPage {
     writeFilters({
       q: this.searchInput.value.trim(),
       tags: Array.from(this.activeTags),
-      sort: this.sortSel.value
+      sort: this.sortSel.value,
+      fav: this.favoritesOnly
     });
     this.render();
   }
@@ -259,7 +277,7 @@ export class LibraryPage {
       empty.className = "picker-empty library-empty";
       empty.innerHTML = `
         <div class="picker-empty-icon">${icon("alert", "icon-hero")}</div>
-        <h3>No games match your search</h3>
+        <h3>${this.favoritesOnly ? "No favorites match your search" : "No games match your search"}</h3>
         <p>Try adjusting your query or keywords</p>
       `;
       this.grid.appendChild(empty);

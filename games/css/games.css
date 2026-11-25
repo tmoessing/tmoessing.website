@@ -866,3 +866,19 @@
   .confetti-piece { animation: none !important; }
   .game-card { transition: none; }
 }
+
+/* ---------- personal favorites ---------- */
+.favorite-star {
+  display: inline-flex;
+  vertical-align: -0.1em;
+  margin-right: 0.3em;
+  color: #f5b301;
+}
+.favorite-star .icon { width: 0.95em; height: 0.95em; fill: currentColor; stroke: none; }
+.favorites-toggle .icon { transition: fill 0.2s ease, color 0.2s ease; }
+.favorites-toggle.active {
+  border-color: #f5b301;
+  background: rgba(245, 179, 1, 0.14);
+  color: var(--text-primary);
+}
+.favorites-toggle.active .icon { color: #f5b301; fill: currentColor; }
