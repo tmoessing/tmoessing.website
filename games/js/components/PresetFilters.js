@@ -14,8 +14,10 @@ export const PRESETS = [
     id: "anywhere",
     label: "Play Anywhere",
     emoji: "🙌",
-    title: "Nothing needed but people: no cards, board, or props",
-    match: (g) => has(g, "No Props Needed")
+    title: "Nothing needed but people, plus maybe paper and pens",
+    // Paper-and-pencil games count only if they aren't a boxed product
+    // (no BGG page), so The Game of Things stays out but Fishbowl is in.
+    match: (g) => has(g, "No Props Needed") || (has(g, "Paper and Pencil") && !g.bggUrl)
   },
   {
     id: "party",
