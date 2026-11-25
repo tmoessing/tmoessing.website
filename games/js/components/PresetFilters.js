@@ -48,6 +48,13 @@ export const PRESETS = [
     match: (g) => g.minPlayers <= 2
   },
   {
+    id: "teams",
+    label: "Teams",
+    emoji: "🤝",
+    title: "Work together with your team against the other team",
+    match: (g) => has(g, "Team Play")
+  },
+  {
     id: "strategy",
     label: "Strategy",
     emoji: "🧠",
