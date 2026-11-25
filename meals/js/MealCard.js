@@ -37,7 +37,7 @@ export function createMealCard(meal) {
            loading="lazy" onerror="this.onerror=null;this.src='${esc(fallback)}';">
     </div>
     <div class="meal-card-body">
-      <h3 class="meal-title">${esc(meal.title)}</h3>
+      <h3 class="meal-title">${esc(meal.title)}${meal.hidden === true ? ` <span class="meal-hidden-badge" title="Hidden: only shown with ?hidden in the address">🙈 Hidden</span>` : ""}</h3>
       <p class="meal-desc">${esc(meal.description || "")}</p>
       <div class="meal-chips">
         <span class="meal-chip" title="Prep time">⏱ ${esc(minutesLabel(meal.prepTime))}</span>

@@ -14,6 +14,8 @@
  *   - fills in `image` automatically from meals/images/<slug>.(jpg|jpeg|png|webp)
  *   - derives `totalTime` (prep + cook) when it isn't set
  *   - skips files starting with "_" (drafts) and README.md
+ *   - keeps `hidden: true` recipes in the JSON, flagged; the page leaves them
+ *     out unless it's opened with ?hidden (see meals/README.md)
  *   - prints warnings for missing required fields, misspelled field names,
  *     unknown categories, missing photos, and missing recipe sections
  *
@@ -25,7 +27,7 @@
  */
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
+import { basename, dirname, join } from "node:path";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(HERE, "data");
@@ -40,7 +42,7 @@ const STRICT = process.argv.includes("--strict");
 const KNOWN_FIELDS = [
   "title", "description", "prepTime", "cookTime", "totalTime", "servings",
   "estimatedCost", "categories", "tags", "image", "walmartList", "walmart", "recipeSource",
-  "prepDuration", "nutrition",
+  "prepDuration", "nutrition", "hidden",
   // reserved for future UI features
   "rating", "timesCooked", "lastCooked", "difficulty", "favorite"
 ];
@@ -49,6 +51,15 @@ const NUMERIC = ["prepTime", "cookTime", "totalTime", "servings", "estimatedCost
 
 // Courses: the quick-filter chips on the library page (must also be in CATEGORIES).
 const COURSES = ["Breakfast", "Main Course", "Dessert"];
+
+// Recipe folders under meals/data/, and the category each one holds.
+const FOLDERS = {
+  breakfast: "Breakfast",
+  main_course: "Main Course",
+  dessert: "Dessert",
+  side_dish: "Side Dish",
+  snack: "Snack"
+};
 
 // Canonical category taxonomy — the single source the picker + validation read.
 const CATEGORIES = [
@@ -199,7 +210,13 @@ function validate(meal, file) {
       problems.push(`category "${c}" isn't in the list${guess ? ` — did you mean "${guess}"?` : ""}`);
     }
   });
-  if (!/^[a-z0-9]+(-[a-z0-9]+)*\.md$/.test(file)) {
+  const folder = dirname(file);
+  if (!FOLDERS[folder]) {
+    problems.push(`should be in one of these folders: ${Object.keys(FOLDERS).join(", ")}`);
+  } else if (!meal.categories.includes(FOLDERS[folder])) {
+    problems.push(`is in ${folder}/ but doesn't have the category "${FOLDERS[folder]}"`);
+  }
+  if (!/^[a-z0-9]+(-[a-z0-9]+)*\.md$/.test(basename(file))) {
     problems.push("file name should be lowercase-with-dashes.md (it becomes the recipe's link)");
   }
   if (!/^##\s+Ingredients/im.test(meal.body)) problems.push("no `## Ingredients` section");
@@ -226,7 +243,7 @@ function parseWalmart(lines) {
 }
 
 function parseMeal(file, text) {
-  const slug = file.replace(/\.md$/i, "");
+  const slug = basename(file).replace(/\.md$/i, "");
   const normalized = text.replace(/\r\n/g, "\n");
   const m = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/.exec(normalized);
   if (!m) {
@@ -275,9 +292,15 @@ function parseMeal(file, text) {
 }
 
 function build() {
-  const files = readdirSync(DATA_DIR).filter(
-    (f) => f.toLowerCase().endsWith(".md") && !f.startsWith("_") && f.toLowerCase() !== "readme.md"
-  );
+  // Paths relative to meals/data, e.g. "dessert/peach-pie.md".
+  const files = readdirSync(DATA_DIR, { recursive: true })
+    .map((f) => f.replaceAll("\\", "/"))
+    .filter((f) => {
+      const name = basename(f);
+      return name.toLowerCase().endsWith(".md") && !name.startsWith("_") && name.toLowerCase() !== "readme.md";
+    })
+    .sort();
+  const seen = new Map(); // slug -> file; the slug is the recipe's link, so it must be unique
   const meals = [];
   let warningCount = 0;
 
@@ -290,6 +313,12 @@ function build() {
       warningCount++;
       continue;
     }
+    if (seen.has(meal.slug)) {
+      console.warn(`  ! ${file}: same file name as ${seen.get(meal.slug)}, skipping`);
+      warningCount++;
+      continue;
+    }
+    seen.set(meal.slug, file);
     const problems = validate(meal, file);
     if (meal._imageMissing) {
       problems.push(`image "${meal._imageMissing}" not found in meals/images/ (using placeholder)`);
@@ -321,7 +350,8 @@ function build() {
   };
   writeFileSync(OUT, JSON.stringify(bundle, null, 2) + "\n", "utf8");
 
-  console.log(`✓ Wrote ${meals.length} meal(s) to ${OUT}`);
+  const hiddenCount = meals.filter((m) => m.hidden === true).length;
+  console.log(`✓ Wrote ${meals.length} meal(s) to ${OUT}${hiddenCount ? ` (${hiddenCount} hidden)` : ""}`);
   if (warningCount) {
     console.warn(`  ${warningCount} warning(s) above. Recipes with warnings are still published.`);
     if (STRICT) process.exit(1);

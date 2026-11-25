@@ -3,8 +3,8 @@
 Drop a cover photo here named after the recipe's file name (its slug):
 
 ```
-meals/data/lasagna.md         →  meals/images/lasagna.jpg
-meals/data/tortellini-soup.md  →  meals/images/tortellini-soup.png
+meals/data/main_course/lasagna.md          →  meals/images/lasagna.jpg
+meals/data/main_course/tortellini-soup.md  →  meals/images/tortellini-soup.png
 ```
 
 The build finds it automatically (`.jpg`, `.jpeg`, `.png`, or `.webp`), so

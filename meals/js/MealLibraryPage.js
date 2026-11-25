@@ -4,6 +4,10 @@
  * "Pick a Meal" and "Plan the Week" buttons, plus course chips (Breakfast /
  * Main Course / Dessert) that narrow the grid to one course. Search covers name, description, ingredients,
  * instructions, categories, and tags (the body text is indexed too).
+ *
+ * Recipes marked `hidden: true` are left out entirely (grid, picker, planner,
+ * deep links) unless the page is opened with ?hidden, e.g.
+ * /meal-library/?hidden — then they show up with a "Hidden" badge.
  */
 import { createMealCard } from "./MealCard.js";
 import { esc, sortMeals } from "./util.js";
@@ -12,6 +16,7 @@ import { openWeekPlanner } from "./WeekPlanner.js";
 
 const VIEW_KEY = "meal-library-view";
 const DATA_URL = "../meals/data/meals.json?v=1";
+const SHOW_HIDDEN = new URLSearchParams(location.search).has("hidden");
 
 export class MealLibraryPage {
   constructor() {
@@ -77,7 +82,8 @@ export class MealLibraryPage {
       const res = await fetch(DATA_URL);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      this.meals = Array.isArray(data.meals) ? data.meals : [];
+      const all = Array.isArray(data.meals) ? data.meals : [];
+      this.meals = SHOW_HIDDEN ? all : all.filter((m) => m.hidden !== true);
       this.categories = Array.isArray(data.categories) ? data.categories : [];
       this.courses = Array.isArray(data.courses) ? data.courses : [];
     } catch (err) {

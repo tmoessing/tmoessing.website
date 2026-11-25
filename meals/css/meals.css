@@ -739,3 +739,16 @@
   .confetti-piece { animation: none !important; }
   .meal-card { transition: none; }
 }
+
+/* Recipes marked `hidden: true`, visible only with ?hidden in the URL. */
+.meal-hidden-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  vertical-align: middle;
+  background: #fde68a;
+  color: #78350f;
+}

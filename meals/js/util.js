@@ -522,7 +522,9 @@ function inline(raw) {
     const text = m[1];
     const url = m[2].trim();
     const safe = /^(https?:|\/|\.\/|\.\.\/|#|mailto:)/i.test(url) ? url : "#";
-    out += `<a href="${esc(safe)}" target="_blank" rel="noopener noreferrer">${boldAndEsc(text)}</a>`;
+    // "#slug" links jump to another recipe on this page; everything else opens a new tab.
+    const attrs = safe.startsWith("#") ? "" : ` target="_blank" rel="noopener noreferrer"`;
+    out += `<a href="${esc(safe)}"${attrs}>${boldAndEsc(text)}</a>`;
     rest = rest.slice(m.index + m[0].length);
   }
   out += boldAndEsc(rest);

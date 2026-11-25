@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T17:04:29.482Z",
+  "generatedAt": "2026-11-25T17:59:11.791Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -83,6 +83,84 @@
       "slug": "one-two-three-chicken",
       "body": "## Ingredients\n- 4 small chicken breasts (or 6–8 chicken tenders)\n- 1 jar (16 oz) salsa\n- 1 can black beans\n- 1 cup shredded cheese\n\n## Instructions\n1. Cook the chicken in a non-stick skillet over medium-high heat, 4 minutes per side.\n2. Add the salsa and beans. Bring to a boil and cover.\n3. Simmer on medium-low for 5 minutes, or until the chicken reaches 165°F.\n4. Top with the cheese and remove from the heat. Let stand, covered, until the cheese melts.\n\n## Tips\n- Serve over potatoes, rice, or chips.",
       "totalTime": 20
+    },
+    {
+      "title": "Adam's Favorite Peanut Butter Cookies",
+      "description": "Sugar-rolled peanut butter cookies with a Hershey's Kiss in the middle.",
+      "prepTime": 20,
+      "cookTime": 8,
+      "servings": 36,
+      "categories": [
+        "Dessert"
+      ],
+      "tags": [
+        "Grandma",
+        "Cookies",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "adams-favorite-peanut-butter-cookies",
+      "body": "## Ingredients\n- 1 batch [Irresistible Peanut Butter Cookies](#irresistible-peanut-butter-cookies) dough\n- Sugar, for rolling\n- Hershey's Kisses (about 36)\n\n## Instructions\n1. Make a batch of Irresistible Peanut Butter Cookie dough.\n2. Roll the dough into balls and roll them in sugar.\n3. Bake as directed. When they come out of the oven, press a Hershey's Kiss into the center of each cookie.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 28
+    },
+    {
+      "title": "Almond Bark",
+      "description": "Almonds and melted white chocolate, broken into bark.",
+      "prepTime": 10,
+      "cookTime": 5,
+      "servings": 12,
+      "categories": [
+        "Dessert",
+        "Snack",
+        "Vegetarian",
+        "Gluten Free"
+      ],
+      "tags": [
+        "Grandma",
+        "Christmas",
+        "Holiday"
+      ],
+      "hidden": true,
+      "slug": "almond-bark",
+      "body": "## Ingredients\n- Almonds\n- Baker's white chocolate, melted\n\n## Instructions\n1. Spread the almonds over a jelly roll pan.\n2. Pour the melted white chocolate over them.\n3. Once cool, break into \"bark.\"\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 15
+    },
+    {
+      "title": "Applesauce",
+      "description": "Open-kettle homemade applesauce, bottled.",
+      "prepTime": 30,
+      "cookTime": 30,
+      "servings": 8,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Vegan",
+        "Gluten Free"
+      ],
+      "tags": [
+        "Grandma",
+        "Canning"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "applesauce",
+      "body": "## Ingredients\n- Apples\n- About ½ cup sugar, to taste\n- Water\n\n## Instructions\n1. Peel and slice the apples and add sugar to taste. Start with ½ cup; that's usually all she used.\n2. Add water so the apples aren't completely covered, and watch so they don't burn. For thick sauce, don't add much water, but you need enough to cook the apples.\n3. Cook until soft.\n4. Pour into bottles and put on new, sterile lids and rings. Never put hot fruit in cold bottles.\n5. Leave on the counter until they seal.\n\n## Notes\nThese are Grandma's own instructions. For current tested canning methods, check the USDA or your local extension office.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 60
     },
     {
       "title": "Baked Chicken",
@@ -363,6 +441,121 @@
       "totalTime": 30
     },
     {
+      "title": "Bean Sprout and Spinach Salad",
+      "description": "Crisp spinach and bean sprouts with water chestnuts and a sesame-soy dressing.",
+      "prepTime": 20,
+      "cookTime": 15,
+      "servings": 4,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Asian",
+        "Healthy"
+      ],
+      "tags": [
+        "Grandma",
+        "Salad"
+      ],
+      "walmart": [
+        {
+          "id": "41752773",
+          "qty": 1,
+          "name": "Fresh Lemon, Each",
+          "for": "lemon juice"
+        },
+        {
+          "id": "51259212",
+          "qty": 1,
+          "name": "Yellow Onion, Each",
+          "for": "onion"
+        }
+      ],
+      "hidden": true,
+      "slug": "bean-sprout-and-spinach-salad",
+      "body": "## Ingredients\n**Salad**\n- 1 cup fresh bean sprouts (or 1 cup canned sprouts, drained)\n- ½ lb fresh young spinach\n- ½ cup thinly sliced water chestnuts\n\n**Dressing**\n- ½ cup sesame seed oil or peanut oil\n- ¼ cup soy sauce\n- 2 tbsp lemon juice\n- 1 ½ tbsp grated onion\n- 1 ½ tbsp sesame seeds, lightly toasted\n- ½ tsp sugar\n- ½ tsp pepper\n\n## Instructions\n1. Toast the sesame seeds in a moderate oven (350°F) for 10–12 minutes.\n2. Make the dressing: combine the oil, soy sauce, lemon juice, onion, sesame seeds, sugar, and pepper. Let it stand 1 hour.\n3. Pour boiling water over the fresh bean sprouts in a saucepan and heat over moderate heat without letting them boil. Drain, then soak in cold water until chilled. Drain and reserve. (Canned sprouts: soak in cold water for several hours and drain thoroughly.)\n4. Wash the spinach in several changes of water. Cut off the stems, dry the leaves thoroughly, and chill.\n5. Arrange the spinach in a salad bowl, top with the sprouts, then the water chestnuts. Pour the dressing over and toss thoroughly.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 35
+    },
+    {
+      "title": "Bok Choy Soup",
+      "description": "10-minute wonton soup with baby bok choy and green onion.",
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Asian",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Grandma",
+        "Soup"
+      ],
+      "walmart": [
+        {
+          "id": "10899013",
+          "qty": 1,
+          "name": "Great Value Chicken Broth, 32 oz",
+          "for": "chicken broth"
+        },
+        {
+          "id": "51259361",
+          "qty": 1,
+          "name": "Fresh Green Onions, 1 Bunch",
+          "for": "green onion"
+        }
+      ],
+      "hidden": true,
+      "slug": "bok-choy-soup",
+      "body": "## Ingredients\n- 1 quart chicken or vegetable broth\n- ¼–½ cup soy sauce\n- 1 package Costco frozen pre-cooked wontons\n- Baby bok choy\n- Green onion\n\n## Instructions\n1. Bring the broth to a boil and add the soy sauce.\n2. Add the wontons and heat for 1–2 minutes.\n3. Add the bok choy and green onion. Cover until the bok choy cooks down.\n4. Season to taste.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 15
+    },
+    {
+      "title": "Bratten's Clam Chowder",
+      "description": "Rich, creamy clam chowder in the style of Bratten's.",
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 6,
+      "categories": [
+        "Main Course",
+        "Seafood",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Grandma",
+        "Soup"
+      ],
+      "walmart": [
+        {
+          "id": "51259212",
+          "qty": 1,
+          "name": "Yellow Onion, Each",
+          "for": "onions"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "brattens-clam-chowder",
+      "body": "## Ingredients\n- 1 cup diced onions\n- 1 cup diced celery\n- ¾ cup butter\n- ¾ cup flour\n- 1 quart half-and-half\n- ½ tsp salt\n- Dash pepper\n- ½ tsp sugar\n- 3 cans (6 ½ oz) clams\n- 2 cans sliced potatoes, diced\n\n## Instructions\n1. Sauté the onions and celery in the butter until tender.\n2. Add the flour. Use some of the half-and-half to make a smooth paste without lumps, then stir in the rest to thicken.\n3. Add the salt, pepper, sugar, clams, and potatoes.\n4. Heat gently, stirring, until hot and thick (don't let it boil hard).\n\n## Notes\nThe original stops after the ingredients go in; step 4 is the usual finish.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 40
+    },
+    {
       "title": "BYU Mint Brownies",
       "description": "The famous BYU campus brownie, with a mint icing layer and a chocolate icing top.",
       "prepTime": 65,
@@ -578,6 +771,201 @@
       "totalTime": 40
     },
     {
+      "title": "Canned Peaches",
+      "description": "Bottled peach halves in light syrup, closed-kettle cold pack.",
+      "prepTime": 45,
+      "cookTime": 20,
+      "servings": 7,
+      "categories": [
+        "Dessert",
+        "Vegetarian",
+        "Gluten Free"
+      ],
+      "tags": [
+        "Grandma",
+        "Canning"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "canned-peaches",
+      "body": "## Ingredients\n- Fresh peaches\n- ¾ cup sugar per batch of syrup\n- 1 ½ cups hot water per batch of syrup\n\n## Instructions\n1. Cut the peaches in half and peel the skins with a knife.\n2. Put them in the bottle with the round side of the peach up and the hollow toward the bottom of the jar.\n3. Dissolve the sugar in the hot water and pour it over the peaches.\n4. Make sure the rim of each bottle is clean, then put on the lid and ring and set it on the rack in the canner.\n5. Fill the canner with water to just below the jar rings (don't cover the bottles).\n6. Bring to a boil on high, then turn to medium and boil 20 minutes.\n7. Turn off the heat, take the lid off the canner, and tighten the rings.\n8. Set the bottles out and say a prayer that they seal.\n\n## Notes\nThese are Grandma's own instructions. For current tested canning times, check the USDA or your local extension office.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 65
+    },
+    {
+      "title": "Canned Tomatoes",
+      "description": "Open-kettle bottled tomatoes or tomato sauce.",
+      "prepTime": 30,
+      "cookTime": 30,
+      "servings": 8,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Vegan",
+        "Gluten Free"
+      ],
+      "tags": [
+        "Grandma",
+        "Canning"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "canned-tomatoes",
+      "body": "## Ingredients\n- Tomatoes (Romas make the best sauce)\n- 1 tsp salt\n- 1 tsp sugar\n\n## Instructions\n1. Put the tomatoes into boiling water for 15 minutes. Let them cool in the pot and water until you can peel them.\n2. Peel, put in another pot, and add the salt and sugar.\n3. Bring to a simmering boil for 30 minutes. For tomato sauce, cook longer until it's thick.\n4. If you see seeds, smooth it with a stick blender.\n\n## Notes\nThese are Grandma's own instructions. For current tested canning methods, check the USDA or your local extension office.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 60
+    },
+    {
+      "title": "Carol's Sugar Cookies",
+      "description": "Soft sour cream rolled sugar cookies.",
+      "prepTime": 25,
+      "cookTime": 6,
+      "servings": 36,
+      "categories": [
+        "Dessert"
+      ],
+      "tags": [
+        "Grandma",
+        "Cookies",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        }
+      ],
+      "hidden": true,
+      "slug": "carols-sugar-cookies",
+      "body": "## Ingredients\n- 3 ¼ cups flour\n- 1 cup sugar\n- 1 egg\n- 1 tsp vanilla\n- ½ tsp salt\n- ½ cup butter\n- ½ cup sour cream\n\n## Instructions\n1. Heat the oven to 400°F.\n2. Beat the sugar, egg, vanilla, butter, and sour cream for 2 minutes.\n3. Add the dry ingredients.\n4. Roll out ¼ inch thick and cut into shapes.\n5. Bake on a buttered cookie sheet 5–6 minutes.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 31
+    },
+    {
+      "title": "Charlene's Whole Wheat Bread",
+      "description": "Honey whole wheat bread: a big batch of 4 loaves.",
+      "prepTime": 30,
+      "cookTime": 30,
+      "servings": 48,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Grandma",
+        "Bread",
+        "Big Batch"
+      ],
+      "walmart": [
+        {
+          "id": "453472924",
+          "qty": 2,
+          "name": "Great Value Active Dry Yeast, 0.25 oz, 3 Count",
+          "for": "yeast"
+        },
+        {
+          "id": "20647992",
+          "qty": 2,
+          "name": "Great Value Honey, 12 oz",
+          "for": "honey"
+        },
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "vegetable oil"
+        },
+        {
+          "id": "10403017",
+          "qty": 2,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "white flour"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "charlenes-whole-wheat-bread",
+      "body": "## Ingredients\n**Sponge**\n- ⅓ cup warm water\n- 1 tsp sugar\n- 2 tbsp + 2 tsp yeast, rounded\n\n**Dough**\n- 5 cups warm water\n- 1 tbsp + 1 tsp salt, rounded\n- 1 cup honey\n- 1 cup vegetable oil\n- 9 ⅔ cups white flour\n- 5 cups whole wheat flour\n\n## Instructions\n1. Mix the warm water, sugar, and yeast and let it stand until foamy.\n2. In a large bowl, mix the warm water, salt, honey, and oil. Add the yeast mixture, then the flours, and knead into a smooth dough.\n3. Let rise until doubled, then divide into 4 greased loaf pans and let rise again, about 1 hour.\n4. Bake at 350°F for 30 minutes.\n\n## Variations\n- Substitute 2 cups rye for part of the 5 cups whole wheat.\n\n## Notes\nThe original card lists the ingredients and \"Bake 350 for 30 min.\" The mixing and rising steps follow Grandma's [Whole Wheat Bread](#whole-wheat-bread).\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 60
+    },
+    {
+      "title": "Cheese Bread",
+      "description": "Pull-apart sourdough stuffed with Swiss and drenched in butter.",
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 8,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Grandma",
+        "Party"
+      ],
+      "walmart": [
+        {
+          "id": "152351343",
+          "qty": 1,
+          "name": "Great Value Swiss Deli Style Sliced Cheese, 8 oz",
+          "for": "Swiss cheese"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        }
+      ],
+      "hidden": true,
+      "slug": "cheese-bread",
+      "body": "## Ingredients\n- 1 sourdough round\n- Swiss cheese slices\n- 1 cup butter\n\n## Instructions\n1. Heat the oven to 375°F.\n2. Cut the top of the loaf into 2-inch squares, almost all the way down.\n3. Put Swiss cheese slices in each slit.\n4. Melt the butter and pour it over the top so it gets into all the little crevices.\n5. Bake 15 minutes, or until the cheese melts.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 25
+    },
+    {
       "title": "Chicken Crescents",
       "description": "Creamy chicken and cream cheese filling wrapped in flaky crescent rolls.",
       "prepTime": 15,
@@ -622,6 +1010,53 @@
       "slug": "chicken-crescents",
       "body": "## Ingredients\n- 1 cup cooked, shredded chicken (drained canned chicken works great)\n- 1 package (8 oz) cream cheese\n- 2 tbsp butter\n- 1 can (8 oz) Pillsbury crescent rolls\n\n## Instructions\n1. Preheat the oven according to the crescent roll package.\n2. Mix together the chicken, cream cheese, and butter.\n3. Open the can and separate the crescents. Spread each one open into a triangle (easier if the dough sits out of the fridge for a few minutes).\n4. Put a spoonful or more of the chicken mixture in the center of each roll.\n5. Roll the long, pointed end over the filling toward the other two ends, then fold the 2 ends toward each other.\n6. Bake as directed on the crescent package.\n\n## Variations\n- Dip them in melted butter, then roll in 1/2 cup crushed Saltines or Ritz crackers before baking.",
       "totalTime": 30
+    },
+    {
+      "title": "Chicken Noodle Soup",
+      "description": "Slow-simmered chicken soup with carrots, celery, and Grandma's homemade noodles.",
+      "prepTime": 30,
+      "cookTime": 150,
+      "servings": 8,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "Comfort Food",
+        "High Protein"
+      ],
+      "tags": [
+        "Grandma",
+        "Soup"
+      ],
+      "walmart": [
+        {
+          "id": "10414680",
+          "qty": 1,
+          "name": "Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen)",
+          "for": "chicken breasts"
+        },
+        {
+          "id": "10451315",
+          "qty": 1,
+          "name": "Baby Peeled Carrots, 1 lb",
+          "for": "carrots"
+        },
+        {
+          "id": "51259212",
+          "qty": 1,
+          "name": "Yellow Onion, Each",
+          "for": "onion"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        }
+      ],
+      "hidden": true,
+      "slug": "chicken-noodle-soup",
+      "body": "## Ingredients\n- 6 chicken breasts (bone-in, skin-on)\n- 3 carrots, diced\n- 3 stalks celery, diced\n- 1 whole onion, diced\n- 1 batch [Homemade Noodles](#homemade-noodles)\n- Flour, for tossing the noodles\n\n**If using boneless, skinless chicken breasts, also add:**\n- 1 tsp salt\n- 2 tsp chicken bouillon\n\n## Instructions\n1. Bring the chicken to a boil in a large pot of water, then simmer for 2 hours, or until the meat falls off the bone.\n2. Remove the chicken. When cool, skin and debone it.\n3. Dice the carrots, celery, and onion and add them to the simmering broth.\n4. Add the chicken back to the pot and bring to a boil if it isn't already.\n5. Toss the homemade noodles with flour and add them to the pot. Cook 5 minutes or less.\n\n## Variations\n- **Boneless, skinless breasts:** boil the breasts with the onion, celery, carrot, salt, and bouillon. When the chicken is cooked, remove and shred it while the veggies keep boiling, then return it to the pot and continue with step 5.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 180
     },
     {
       "title": "Chicken Pot Pie",
@@ -799,6 +1234,128 @@
       "totalTime": 30
     },
     {
+      "title": "Chocolate Pecan Pie",
+      "description": "Pecan pie with melted chocolate, baked low and slow.",
+      "prepTime": 15,
+      "cookTime": 60,
+      "servings": 8,
+      "categories": [
+        "Dessert",
+        "American"
+      ],
+      "tags": [
+        "Grandma",
+        "Pie",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        }
+      ],
+      "hidden": true,
+      "slug": "chocolate-pecan-pie",
+      "body": "## Ingredients\n- ½ cup sugar\n- 1 cup dark corn syrup\n- ¼ tsp salt\n- 1 tbsp all-purpose flour\n- 2 eggs\n- 1 tbsp butter or margarine\n- 2 oz (2 squares) unsweetened chocolate\n- 1 tsp vanilla extract\n- 1 ¼ cups pecan halves\n- Pastry for a 1-crust 9-inch pie, unbaked\n- Vanilla ice cream, for serving\n\n## Instructions\n1. Preheat the oven to 300°F.\n2. Beat together the sugar, syrup, salt, flour, and eggs.\n3. Melt the butter and chocolate together in the microwave. Add it, the vanilla, and the pecans to the first mixture.\n4. Pour into the pastry-lined pie pan.\n5. Bake 50–60 minutes, until the filling is just set. Cool.\n6. Serve with ice cream, or whipped cream if you prefer.\n\n## Tips\n- This pie can be baked a day ahead.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 75
+    },
+    {
+      "title": "Corned Beef",
+      "description": "Boiled corned beef with sauerkraut, potatoes, and carrots.",
+      "prepTime": 10,
+      "cookTime": 180,
+      "servings": 6,
+      "categories": [
+        "Main Course",
+        "Beef",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Grandma",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "44391004",
+          "qty": 4,
+          "name": "Russet Baking Potato, Each",
+          "for": "potatoes"
+        },
+        {
+          "id": "10451315",
+          "qty": 1,
+          "name": "Baby Peeled Carrots, 1 lb",
+          "for": "carrots"
+        }
+      ],
+      "hidden": true,
+      "slug": "corned-beef",
+      "body": "## Ingredients\n- 1 corned beef roast\n- Sauerkraut, boiled potatoes, and carrots, for serving\n\n## Instructions\n1. Boil the corned beef in water according to the package directions.\n2. Remove the fat.\n3. Serve with sauerkraut, boiled potatoes, and carrots.\n\n## Tips\n- Grandma's [Sauerkraut](#sauerkraut) goes great with it.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 190
+    },
+    {
+      "title": "Cornflake Christmas Wreaths",
+      "description": "Green marshmallow cornflake wreaths dotted with red hots.",
+      "prepTime": 20,
+      "cookTime": 5,
+      "servings": 18,
+      "categories": [
+        "Dessert",
+        "Snack",
+        "Vegetarian"
+      ],
+      "tags": [
+        "Grandma",
+        "Christmas",
+        "Kid Friendly",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "24929610",
+          "qty": 1,
+          "name": "Wilton Kelly Green Gel Food Coloring, 1 oz",
+          "for": "green food coloring"
+        }
+      ],
+      "hidden": true,
+      "slug": "cornflake-christmas-wreaths",
+      "body": "## Ingredients\n- 1 cube margarine\n- 1 tsp vanilla\n- 30 large marshmallows (or 3 cups mini marshmallows)\n- 1 ½ tsp green food coloring\n- 4 ½ cups corn flakes\n- Red hot candies, for berries\n\n## Instructions\n1. Melt the margarine and marshmallows over low heat, stirring until smooth.\n2. Stir in the vanilla and green food coloring, then the corn flakes, until coated.\n3. Shape into wreaths on wax paper and add red hots for berries.\n\n## Notes\nThe original lists the ingredients and the shaping step; melting and mixing follow the usual method.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 25
+    },
+    {
       "title": "Creamy Baked Meatballs",
       "description": "An old prize-winning recipe card for tender meatballs baked in a creamy mushroom and chicken sauce.",
       "prepTime": 25,
@@ -873,6 +1430,140 @@
       "slug": "creamy-baked-meatballs",
       "body": "## Ingredients\n- 4 slices bread\n- 1/2 cup milk\n- 2 eggs, beaten\n- 1/4 tsp pepper\n- 2 tbsp minced onion\n- 2 tsp baking powder\n- 1/4 tsp Accent (MSG)\n- 1 1/2 lb ground beef\n- 1 can cream of mushroom soup\n- 1 can cream of chicken soup\n- 1 soup can of milk\n\n## Instructions\n1. Soak the bread for 10 minutes in the milk and egg mixture.\n2. Combine with all the other ingredients except the soups and the soup can of milk.\n3. Shape into 25 meatballs. Brown them in a little fat and place in a baking dish.\n4. Mix the undiluted soups with the can of milk and pour over the meatballs.\n5. Bake at 325°F for 1 hour.\n\n## Notes\nShared by a friend from my mission.\n\nFrom a handwritten recipe card marked \"A prize winning recipe\" (\"very similar to Mother's\"). The card's title is hard to read, and one smudged line under the ground beef couldn't be made out.\n\n## Tips\n- Serve with rice, baked potatoes, or a potato casserole.",
       "totalTime": 85
+    },
+    {
+      "title": "Crème Brûlée French Toast",
+      "description": "Overnight Texas-toast French toast on a caramel base, with maple syrup butter.",
+      "prepTime": 20,
+      "cookTime": 30,
+      "servings": 12,
+      "categories": [
+        "Breakfast",
+        "Vegetarian",
+        "Meal Prep"
+      ],
+      "tags": [
+        "Grandma",
+        "Make Ahead",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 2,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "10315012",
+          "qty": 1,
+          "name": "Great Value Light Brown Sugar, 32 oz",
+          "for": "brown sugar"
+        },
+        {
+          "id": "10294409",
+          "qty": 1,
+          "name": "Karo Light Corn Syrup, 16 oz",
+          "for": "corn syrup"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        }
+      ],
+      "hidden": true,
+      "slug": "creme-brulee-french-toast",
+      "body": "## Ingredients\n**French toast**\n- ½ cup butter\n- 1 cup packed brown sugar\n- 2 tbsp corn syrup\n- 1 loaf Texas toast bread (12 extra-thick slices)\n- 5 eggs\n- 1 ½ cups half-and-half\n- ¼ tsp salt\n- 1 tsp vanilla\n\n**Syrup Butter**\n- 1 ½ cups butter\n- 3 cups maple syrup\n\n## Instructions\n1. In a small saucepan, melt the butter, brown sugar, and corn syrup over medium heat until smooth, stirring occasionally.\n2. Pour onto a large greased jelly roll pan (18x13x1) and spread to cover.\n3. Lay the 12 slices of Texas toast in a single layer over it.\n4. Mix the eggs, half-and-half, salt, and vanilla and spoon over each slice.\n5. Cover and refrigerate overnight.\n6. Bake uncovered at 350°F for about 30 minutes. Remove from the pan and serve. If not serving right away, turn each slice over so it won't stick to the pan.\n7. **Syrup butter:** melt the butter and maple syrup together and serve over the toast.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 50
+    },
+    {
+      "title": "Dumplings",
+      "description": "Fluffy drop dumplings to steam on top of chicken soup or stew.",
+      "prepTime": 5,
+      "cookTime": 20,
+      "servings": 6,
+      "categories": [
+        "Side Dish",
+        "Comfort Food",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Grandma",
+        "Soup"
+      ],
+      "walmart": [
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "16627955",
+          "qty": 1,
+          "name": "Great Value Double Acting Baking Powder, 8.1 oz",
+          "for": "baking powder"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        }
+      ],
+      "hidden": true,
+      "slug": "dumplings",
+      "body": "## Ingredients\n- 1 ½ cups flour, sifted\n- 2 tsp baking powder\n- ¾ tsp salt\n- ¾ cup milk\n\n## Instructions\n1. Stir the flour, baking powder, and salt together.\n2. Stir in the milk only until blended.\n3. Spoon the dough onto simmering chicken soup or stew to make 6–8 dumplings.\n4. Simmer gently, uncovered, for 10 minutes, then cover and cook 10 minutes more. Serve.\n\n## Tips\n- Success secret: the dumplings should rest on the chicken and not settle into the liquid.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 25
+    },
+    {
+      "title": "Easy Costco Tortilla Soup",
+      "description": "Doctored-up Kirkland tortilla soup with rotisserie chicken, corn, and black beans.",
+      "prepTime": 10,
+      "cookTime": 10,
+      "servings": 6,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "Mexican",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Grandma",
+        "Soup"
+      ],
+      "walmart": [
+        {
+          "id": "10315427",
+          "qty": 1,
+          "name": "Great Value Golden Sweet Whole Kernel Corn, 15.25 oz",
+          "for": "corn"
+        },
+        {
+          "id": "10534038",
+          "qty": 1,
+          "name": "Great Value Black Beans, 15 oz",
+          "for": "black beans"
+        },
+        {
+          "id": "10452564",
+          "qty": 1,
+          "name": "Great Value Finely Shredded Colby Jack, 8 oz",
+          "for": "grated cheese"
+        }
+      ],
+      "hidden": true,
+      "slug": "easy-costco-tortilla-soup",
+      "body": "## Ingredients\n- 1 container Kirkland Signature tortilla soup\n- 2 cups Costco rotisserie chicken, shredded\n- 1 can corn, drained (or Costco frozen street corn)\n- 1 can black beans, drained and rinsed\n- Grated cheese, sour cream, and tortilla chips, for serving\n\n## Instructions\n1. Heat all the ingredients on the stove.\n2. Serve with grated cheese, sour cream, and tortilla chips.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 20
     },
     {
       "title": "Easy White Homemade Bread",
@@ -976,6 +1667,65 @@
       "slug": "egg-breakfast",
       "body": "## Ingredients\n- 8 eggs\n- 1 lb breakfast sausage\n- 1/2 bag (16 oz) frozen tater tots\n- 1 can (16 oz) jumbo buttermilk biscuits\n- 1 avocado, sliced\n- Salt and pepper to taste\n\n## Instructions\n1. Bake the tater tots and biscuits according to their packages, timing them to finish together.\n2. Meanwhile, slice the sausage into patties or crumble it. Cook in a skillet over medium heat until done (160°F). Set aside, leaving a little fat in the pan.\n3. Cook the eggs in the same skillet however you like them. Season with salt and pepper.\n4. Serve everything with the sliced avocado.",
       "totalTime": 35
+    },
+    {
+      "title": "Fish and Chips",
+      "description": "Simple light batter for golden fried cod.",
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Seafood",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "16627955",
+          "qty": 1,
+          "name": "Great Value Double Acting Baking Powder, 8.1 oz",
+          "for": "baking powder"
+        },
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "oil"
+        }
+      ],
+      "hidden": true,
+      "slug": "fish-and-chips",
+      "body": "## Ingredients\n- ½ cup water\n- 1 cup flour\n- 1 tsp salt\n- 1 tsp baking powder\n- White fish, like cod\n- Oil, for frying\n\n## Instructions\n1. Whisk the water, flour, salt, and baking powder into a batter.\n2. Pat the fish dry and cut into smaller pieces.\n3. Dip in the batter.\n4. Fry in oil over medium heat (you don't want it to pop) until golden brown.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 30
+    },
+    {
+      "title": "Flank Steak",
+      "description": "Flank steak marinated overnight in Yoshida's and grilled.",
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Beef",
+        "High Protein",
+        "Grill"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "hidden": true,
+      "slug": "flank-steak",
+      "body": "## Ingredients\n- 1 flank steak\n- Mr. Yoshida's sauce, for marinating\n\n## Instructions\n1. Marinate the flank steak in Yoshida's overnight.\n2. BBQ.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 20
     },
     {
       "title": "Foil-Pack Chicken Fajitas",
@@ -1091,6 +1841,142 @@
       "slug": "french-dip",
       "body": "## Ingredients\n- 1 loaf (14 oz) French bread\n- 10 oz sliced roast beef\n- 8 slices Swiss cheese\n- 1 packet (1 oz) au jus gravy mix, plus the water called for on the packet\n\n## Instructions\n1. Heat the oven to 400°F.\n2. Make the au jus according to the packet and keep it warm.\n3. Cut the bread into 4 pieces and split each one. Place cut side up on a baking sheet and toast 3–4 minutes.\n4. Dip the roast beef in the au jus to warm it, then layer it on the bottom halves and top with the Swiss.\n5. Bake 3–4 minutes, until the cheese melts. Add the tops and serve with the au jus for dipping.",
       "totalTime": 15
+    },
+    {
+      "title": "Fresh Peach Ice Cream",
+      "description": "Homemade peach ice cream with citrus, cream, and condensed milk.",
+      "prepTime": 20,
+      "cookTime": 0,
+      "servings": 16,
+      "categories": [
+        "Dessert",
+        "Vegetarian",
+        "Gluten Free"
+      ],
+      "tags": [
+        "Grandma",
+        "Summer"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "41752773",
+          "qty": 3,
+          "name": "Fresh Lemon, Each",
+          "for": "lemons"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        }
+      ],
+      "hidden": true,
+      "slug": "fresh-peach-ice-cream",
+      "body": "## Ingredients\n- 3 cups mashed peaches\n- 3 cups sugar\n- Juice from 2 ½ lemons (6 ¼ tbsp)\n- Juice from 1 orange\n- 1 pint whipping cream\n- 1 quart milk\n- 1 large can condensed milk\n\n## Instructions\n1. Combine the peaches, sugar, lemon juice, and orange juice. Let stand at room temperature for 2–3 hours.\n2. Pour into a 4-quart ice cream freezer and add the whipping cream, canned milk, and milk.\n3. Freeze!\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 20
+    },
+    {
+      "title": "Fruit Cobbler",
+      "description": "A quart of fruit under a soft, biscuit-style cobbler topping.",
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 8,
+      "categories": [
+        "Dessert",
+        "Comfort Food",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "16627955",
+          "qty": 1,
+          "name": "Great Value Double Acting Baking Powder, 8.1 oz",
+          "for": "baking powder"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "fruit-cobbler",
+      "body": "## Ingredients\n**Fruit**\n- 1 quart fruit, with its juice (bottled, or fresh; see step 1)\n\n**Topping**\n- 1 ½ cups flour\n- 1 ½ tsp baking powder\n- ½ cup milk\n- 5 tbsp shortening\n- 1 tsp sugar\n- ¼ tsp salt\n\n## Instructions\n1. If using fresh fruit, cook it in a little water with some sugar first: about 1 cup water to 3 cups fruit, brought to a boil.\n2. Layer the fruit and juice in the bottom of a greased 8x8 pan.\n3. Mix the flour, baking powder, sugar, and salt. Cut in the shortening with a knife or your fingers, then stir in the milk to make a soft dough.\n4. Spoon the cobbler mixture over the fruit.\n5. Bake for 30 minutes at 350°F.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 45
+    },
+    {
+      "title": "Ginger Snaps",
+      "description": "Chewy molasses-spice cookies rolled in sugar.",
+      "prepTime": 15,
+      "cookTime": 10,
+      "servings": 36,
+      "categories": [
+        "Dessert",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Grandma",
+        "Cookies"
+      ],
+      "walmart": [
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315486",
+          "qty": 1,
+          "name": "Great Value Baking Soda, 1 lb",
+          "for": "baking soda"
+        },
+        {
+          "id": "533272737",
+          "qty": 1,
+          "name": "Great Value Ground Cinnamon, 2.5 oz",
+          "for": "cinnamon"
+        }
+      ],
+      "hidden": true,
+      "slug": "ginger-snaps",
+      "body": "## Ingredients\n- ¾ cup shortening\n- 1 egg\n- 1 cup sugar\n- ¼ cup molasses\n- 2 cups flour\n- 1 tsp salt\n- 2 tsp baking soda\n- 1 tsp ginger\n- 1 tsp cloves\n- 1 tsp cinnamon\n\n## Instructions\n1. Heat the oven to 350°F.\n2. Cream the shortening and sugar, then beat in the egg and molasses.\n3. Stir in the flour, salt, baking soda, ginger, cloves, and cinnamon.\n4. Roll into balls and roll in sugar. Bake for 10 minutes.\n\n## Notes\nThe original card says only \"Roll into balls in sugar. Bake 350 F 10 min.\" The mixing steps are the standard method.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 25
     },
     {
       "title": "Grandma's Chili",
@@ -1241,6 +2127,100 @@
       "totalTime": 35
     },
     {
+      "title": "Homemade Noodles",
+      "description": "Thin, rustic egg noodles for chicken noodle soup.",
+      "prepTime": 20,
+      "cookTime": 5,
+      "servings": 4,
+      "categories": [
+        "Side Dish",
+        "Pasta",
+        "Vegetarian",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        }
+      ],
+      "hidden": true,
+      "slug": "homemade-noodles",
+      "body": "## Ingredients\n- 1 beaten egg\n- 2 tbsp milk (in each half of the egg shell)\n- ½ tsp salt\n- About 1 cup flour (enough for a stiff dough)\n\n## Instructions\n1. In a bowl, mix the egg, milk, and salt.\n2. Add flour to make a stiff dough.\n3. Roll out super thin on a floured surface.\n4. Cut into strips with a pizza cutter.\n\n## Tips\n- Her mother Audrey taught her to sprinkle the noodles with flour to help thicken the soup.\n- Use them in Grandma's [Chicken Noodle Soup](#chicken-noodle-soup).\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 25
+    },
+    {
+      "title": "Homemade Tomato Soup",
+      "description": "A big canning batch of garden tomato soup: about 12 quarts.",
+      "prepTime": 90,
+      "cookTime": 180,
+      "servings": 48,
+      "categories": [
+        "Main Course",
+        "Vegetarian",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Grandma",
+        "Canning",
+        "Soup",
+        "Big Batch"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 3,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "44390945",
+          "qty": 6,
+          "name": "Fresh Green Bell Pepper, Each",
+          "for": "green peppers"
+        },
+        {
+          "id": "51259212",
+          "qty": 6,
+          "name": "Yellow Onion, Each",
+          "for": "onions"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "homemade-tomato-soup",
+      "body": "## Ingredients\n- ½ bushel ripe tomatoes (25 lbs)\n- 1 head of celery, leaves and stalks\n- ¼ cup salt (plain, non-iodized)\n- ¾ lb butter\n- 6 green peppers (4 ½ cups)\n- 6 onions (4 ½ cups)\n- 1 cup flour (or ¾ cup)\n- 1 cup sugar (or 1 ½ cups, to taste)\n\n## Instructions\n1. Put the peppers, onions, and celery through a food chopper and cook in a small amount of water until tender.\n2. Cook the tomatoes, then remove the skins and strain.\n3. Add the cooked vegetables to the tomatoes.\n4. Combine the flour and butter, blend with a little hot soup, then add it to the rest of the soup. Stir until well blended.\n5. Add the salt and sugar. Simmer for 2–3 hours, then boil 10–12 minutes and bottle.\n\n## Notes\nKathleen's note: simmer for 2–3 hours before placing in bottles. Makes 12 quarts.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 270
+    },
+    {
       "title": "Instant Pot Creamy Chicken Pasta",
       "description": "Chicken, mushrooms, and pasta pressure-cooked in one pot with a cream cheese sauce.",
       "prepTime": 10,
@@ -1317,6 +2297,219 @@
       "slug": "instant-pot-creamy-chicken-pasta",
       "body": "## Ingredients\n- 2 tbsp oil\n- 2 tsp minced garlic\n- 8 oz mushrooms\n- 2 chicken breasts, cut into 1/2\" pieces\n- 1 can chicken stock\n- 1 cup milk, half & half, or cream\n- 1 lb pasta\n- 8 oz cream cheese\n- Salt and pepper to taste\n- Parmesan cheese, for serving\n\n## Instructions\n1. Turn the Instant Pot to the **Sauté** setting.\n2. Cook the garlic in the oil for 1 minute, then add the mushrooms. Cook about 3 minutes, stirring now and then.\n3. Add the chicken, broth, milk, and pasta. Stir.\n4. Push **Cancel**.\n5. Close and lock the lid, push **Pressure Cook**, and cook on high for 7 minutes.\n6. Release the pressure and remove the lid.\n7. Stir in the cream cheese.\n8. Season with salt and pepper to taste and serve with parmesan.",
       "totalTime": 25
+    },
+    {
+      "title": "Irresistible Peanut Butter Cookies",
+      "description": "Soft peanut butter cookies with the classic fork crisscross.",
+      "prepTime": 15,
+      "cookTime": 8,
+      "servings": 36,
+      "categories": [
+        "Dessert"
+      ],
+      "tags": [
+        "Grandma",
+        "Cookies"
+      ],
+      "walmart": [
+        {
+          "id": "10315012",
+          "qty": 1,
+          "name": "Great Value Light Brown Sugar, 32 oz",
+          "for": "brown sugar"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315486",
+          "qty": 1,
+          "name": "Great Value Baking Soda, 1 lb",
+          "for": "baking soda"
+        }
+      ],
+      "hidden": true,
+      "slug": "irresistible-peanut-butter-cookies",
+      "body": "## Ingredients\n- ¾ cup Jif creamy peanut butter\n- ½ stick Crisco all-vegetable shortening\n- 1 ¼ cups firmly packed brown sugar\n- 3 tbsp milk\n- 1 tbsp vanilla extract\n- 1 large egg\n- 1 ¾ cups all-purpose flour\n- ¾ tsp baking soda\n- ¾ tsp salt\n\n## Instructions\n1. Heat the oven to 375°F.\n2. Combine the peanut butter, shortening, brown sugar, milk, and vanilla in a large bowl. Beat at medium speed until well blended. Add the egg and beat just until blended.\n3. Combine the flour, baking soda, and salt. Add to the creamed mixture at low speed and mix just until blended.\n4. Drop by rounded tablespoonfuls 2 inches apart onto a greased baking sheet. Flatten slightly in a crisscross pattern with the tines of a fork.\n5. Bake one sheet at a time for 7–8 minutes, until set and just beginning to brown. Cool 2 minutes on the sheet, then move to racks.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 23
+    },
+    {
+      "title": "Kathleen's Baklava",
+      "description": "Layers of buttered filo and cinnamon walnuts soaked in lemon syrup.",
+      "prepTime": 60,
+      "cookTime": 35,
+      "servings": 36,
+      "categories": [
+        "Dessert"
+      ],
+      "tags": [
+        "Grandma",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "533272737",
+          "qty": 1,
+          "name": "Great Value Ground Cinnamon, 2.5 oz",
+          "for": "cinnamon"
+        },
+        {
+          "id": "793429092",
+          "qty": 4,
+          "name": "Great Value Chopped Walnuts, 4 oz",
+          "for": "walnuts"
+        },
+        {
+          "id": "10294409",
+          "qty": 1,
+          "name": "Karo Light Corn Syrup, 16 oz",
+          "for": "light corn syrup"
+        },
+        {
+          "id": "41752773",
+          "qty": 1,
+          "name": "Fresh Lemon, Each",
+          "for": "lemon"
+        }
+      ],
+      "hidden": true,
+      "slug": "kathleens-baklava",
+      "body": "## Ingredients\n**Baklava**\n- 1 lb filo\n- 1 lb butter (no substitutes), melted\n- 1 cup sugar\n- 2 tsp cinnamon\n- 16 oz walnuts\n\n**Syrup** (make before starting the baklava)\n- 2 cups sugar\n- 1 cup water\n- ½ cup light Karo syrup\n- Juice from ½ lemon (1 tbsp)\n\n## Instructions\n1. **Syrup first:** bring the sugar, water, Karo, and lemon juice to a boil. Simmer 20–25 minutes, watching so it doesn't burn. Let it cool.\n2. Heat the oven to 350°F. Chop or grind the walnuts very fine and mix with the sugar and cinnamon.\n3. Line the bottom of the pan with 4 filo sheets that have been buttered (2 sheets buttered and doubled over).\n4. Sprinkle with the nut mixture, then repeat the filo and nut layers with as many layers as you have nuts. The top layer should be 3–5 filo sheets, buttered and doubled. Use plenty of butter.\n5. Cut the baklava in diamond shapes, starting from opposite corners.\n6. Bake 35 minutes at 350°F. Pour the COOL syrup over the HOT baklava.\n\n## Notes\nKathleen spelled it \"Baclava.\"\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 95
+    },
+    {
+      "title": "Kathleen's Green Beans",
+      "description": "Fresh green beans sautéed with red pepper flakes, teriyaki, and slivered almonds.",
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 4,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Healthy",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Grandma",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "10315102",
+          "qty": 1,
+          "name": "Great Value Extra Virgin Olive Oil, 17 fl oz",
+          "for": "olive oil"
+        }
+      ],
+      "hidden": true,
+      "slug": "kathleens-green-beans",
+      "body": "## Ingredients\n- 1 lb fresh green beans\n- 1 tbsp olive oil\n- 1 tsp red pepper flakes\n- 1 tbsp teriyaki sauce\n- Salt to taste\n- ¼ cup slivered almonds\n\n## Instructions\n1. Boil the fresh beans until tender.\n2. Sauté them in the olive oil with the red pepper flakes.\n3. Add salt and the teriyaki sauce, and simmer until hot.\n4. Add the slivered almonds and serve.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 20
+    },
+    {
+      "title": "Kathleen's Tortellini Soup",
+      "description": "Tomato-broth soup loaded with vegetables, herbs, and cheese tortellini.",
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 10,
+      "categories": [
+        "Main Course",
+        "Pasta",
+        "Italian",
+        "Vegetarian",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Grandma",
+        "Soup"
+      ],
+      "walmart": [
+        {
+          "id": "10899013",
+          "qty": 2,
+          "name": "Great Value Chicken Broth, 32 oz",
+          "for": "chicken broth"
+        },
+        {
+          "id": "10450990",
+          "qty": 4,
+          "name": "Great Value Diced Tomatoes, 14.5 oz",
+          "for": "tomatoes"
+        },
+        {
+          "id": "10451315",
+          "qty": 1,
+          "name": "Baby Peeled Carrots, 1 lb",
+          "for": "carrots"
+        },
+        {
+          "id": "51259212",
+          "qty": 2,
+          "name": "Yellow Onion, Each",
+          "for": "onions"
+        },
+        {
+          "id": "44391100",
+          "qty": 1,
+          "name": "Fresh Garlic Bulb, Each",
+          "for": "garlic"
+        },
+        {
+          "id": "330313658",
+          "qty": 1,
+          "name": "Great Value Basil Leaves, 0.8 oz",
+          "for": "dried basil"
+        },
+        {
+          "id": "631368530",
+          "qty": 1,
+          "name": "Great Value Oregano Leaves, 0.87 oz",
+          "for": "oregano"
+        },
+        {
+          "id": "20511545",
+          "qty": 2,
+          "name": "Great Value Cheese Tortellini, 19 oz (Frozen)",
+          "for": "tortellini"
+        }
+      ],
+      "hidden": true,
+      "slug": "kathleens-tortellini-soup",
+      "body": "## Ingredients\n- 2 quarts chicken broth\n- 2 quarts tomatoes\n- 3 stalks celery\n- 6 carrots, sliced\n- 2 small onions, chopped\n- 1 clove garlic\n- 1 tbsp dried basil\n- 1 ½ tbsp oregano leaves\n- 2 boxes tortellini\n\n## Instructions\n1. Bring the broth and tomatoes to a boil in a large pot.\n2. Add the celery, carrots, onions, garlic, basil, and oregano. Simmer until the vegetables are tender, about 20 minutes.\n3. Add the tortellini and cook until tender, per the package directions.\n\n## Notes\nThe original card lists only the ingredients; the steps above are the standard method for this kind of soup.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 45
     },
     {
       "title": "Lasagna",
@@ -1426,6 +2619,51 @@
       "totalTime": 20
     },
     {
+      "title": "Lemon Curd",
+      "description": "Silky, tangy stovetop lemon curd.",
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 8,
+      "categories": [
+        "Dessert",
+        "Vegetarian",
+        "Gluten Free"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "41752773",
+          "qty": 4,
+          "name": "Fresh Lemon, Each",
+          "for": "lemons"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg yolks"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        }
+      ],
+      "hidden": true,
+      "slug": "lemon-curd",
+      "body": "## Ingredients\n- 1 cup granulated sugar\n- 2 tbsp lemon zest (zest of 2 lemons)\n- 6 egg yolks\n- ½ cup lemon juice minus 1 tbsp (100 ml)\n- ½ cup unsalted butter, cold and cubed\n\n## Instructions\n1. Strain the egg yolks into a pot and beat lightly with a wire whisk.\n2. Whisk in the sugar and zest and mix well until lighter in color.\n3. Stir in the lemon juice gradually.\n4. Heat on low, stirring constantly with the whisk, until the mixture thickens, just starts to bubble, and coats the back of a wooden spoon.\n5. Remove from the heat, add the cold butter, and mix until melted.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 25
+    },
+    {
       "title": "Lemon Herbed Chicken",
       "description": "Skillet chicken with caramelized lemon slices and a warm lemon, garlic, and thyme sauce.",
       "prepTime": 40,
@@ -1473,6 +2711,110 @@
       "slug": "lemon-herbed-chicken",
       "body": "## Ingredients\n- 1 lb boneless, skinless chicken breast\n- 3 lemons\n- 3 tbsp olive oil, divided\n- 2 cloves garlic, minced\n- 1 tbsp fresh thyme, chopped, plus more to garnish\n- 1/2 tsp kosher salt\n- 1/2 tsp black pepper\n\n## Instructions\n1. Zest and juice 2 of the lemons. Warm the zest and juice in a small pot with 2 tbsp of the oil, the garlic, thyme, salt, and pepper.\n2. Slice the third lemon into thin rounds.\n3. Heat the last tbsp of oil in a skillet over medium-high heat. Add the chicken and lemon slices and cook about 5 minutes per side, until the chicken is golden and reaches 165°F.\n4. Spoon the warm sauce over the chicken and lemon slices and garnish with more thyme.",
       "totalTime": 65
+    },
+    {
+      "title": "Lemon-Caper Chicken",
+      "description": "Chicken breasts simmered in lemon butter with mushrooms and capers.",
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "High Protein",
+        "Low Carb"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "41752773",
+          "qty": 1,
+          "name": "Fresh Lemon, Each",
+          "for": "lemon juice"
+        },
+        {
+          "id": "44391100",
+          "qty": 1,
+          "name": "Fresh Garlic Bulb, Each",
+          "for": "garlic"
+        },
+        {
+          "id": "559839182",
+          "qty": 1,
+          "name": "Great Value Paprika, 2.5 oz",
+          "for": "paprika"
+        },
+        {
+          "id": "10449184",
+          "qty": 1,
+          "name": "Freshness Guaranteed Sliced White Mushrooms, 8 oz",
+          "for": "mushrooms"
+        },
+        {
+          "id": "10414680",
+          "qty": 1,
+          "name": "Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen)",
+          "for": "chicken breasts"
+        }
+      ],
+      "hidden": true,
+      "slug": "lemon-caper-chicken",
+      "body": "## Ingredients\n- ½ cup butter\n- 2 tbsp fresh lemon juice\n- 1 tsp salt\n- 1 garlic clove, minced\n- ⅛ tsp pepper\n- ½ tsp paprika\n- 1 can (6 oz) sliced mushrooms, drained\n- 1 tbsp drained capers\n- 4 chicken breasts\n\n## Instructions\n1. Put all the ingredients except the chicken in a skillet and bring to a boil.\n2. Arrange the chicken in the skillet, bring back to a boil, and cover.\n3. Simmer for 30 minutes, or until the chicken is tender, turning several times.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 45
+    },
+    {
+      "title": "Mother's Yeast Rolls",
+      "description": "Old-fashioned soft dinner rolls.",
+      "prepTime": 30,
+      "cookTime": 15,
+      "servings": 24,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Grandma",
+        "Bread"
+      ],
+      "walmart": [
+        {
+          "id": "453472924",
+          "qty": 1,
+          "name": "Great Value Active Dry Yeast, 0.25 oz, 3 Count",
+          "for": "yeast"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        }
+      ],
+      "hidden": true,
+      "slug": "mothers-yeast-rolls",
+      "body": "## Ingredients\n- 2 yeast cakes (or 2 packets active dry yeast)\n- 2 cups warm water\n- 2 tsp salt\n- ½ cup sugar\n- 2 eggs, beaten\n- ½ cup shortening\n- 4–6 cups flour (for a soft dough)\n\n## Instructions\n1. Dissolve the yeast in the water and add the salt, sugar, eggs, and shortening.\n2. Add the flour a little at a time, mixing well with a spoon.\n3. Knead until it feels spongy. Cover and let rise until double in bulk.\n4. Knead down and shape into rolls.\n5. When doubled in bulk again, bake about 15 minutes at 350°F.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 45
     },
     {
       "title": "Oatmeal Cookies",
@@ -1641,6 +2983,169 @@
       "totalTime": 38
     },
     {
+      "title": "Orange Rolls",
+      "description": "Frozen dinner rolls dipped in orange-sugar butter and glazed.",
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 18,
+      "categories": [
+        "Breakfast",
+        "Side Dish",
+        "Vegetarian"
+      ],
+      "tags": [
+        "Grandma",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "10315011",
+          "qty": 1,
+          "name": "Great Value Powdered Sugar, 32 oz",
+          "for": "powdered sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "orange-rolls",
+      "body": "## Ingredients\n**Rolls**\n- ½ cup butter, melted\n- ½ cup sugar\n- 1 orange peel, grated\n- 18 frozen dinner rolls\n\n**Orange Glaze**\n- 1 cup powdered sugar\n- 2 tbsp butter, softened\n- 2 tbsp orange juice\n\n## Instructions\n1. Combine the melted butter, sugar, and grated orange peel in a bowl.\n2. Dip the rolls in the mixture and place in muffin tins. Let rise for 3 hours.\n3. Bake at 350°F for 10–15 minutes, or until lightly browned.\n4. Mix the glaze ingredients and frost the rolls while still warm.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 30
+    },
+    {
+      "title": "Peach Milkshake",
+      "description": "Vanilla ice cream and fresh peaches, blended.",
+      "prepTime": 5,
+      "cookTime": 0,
+      "servings": 2,
+      "categories": [
+        "Dessert",
+        "Vegetarian",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Grandma",
+        "Summer"
+      ],
+      "hidden": true,
+      "slug": "peach-milkshake",
+      "body": "## Ingredients\n- Vanilla ice cream\n- Fresh peaches\n\n## Instructions\n1. Blend together in a blender and enjoy!\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 5
+    },
+    {
+      "title": "Peach Pie",
+      "description": "Fresh peach pie with a lattice top and turbinado crunch.",
+      "prepTime": 45,
+      "cookTime": 60,
+      "servings": 8,
+      "categories": [
+        "Dessert",
+        "American"
+      ],
+      "tags": [
+        "Grandma",
+        "Pie",
+        "Summer"
+      ],
+      "walmart": [
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "41752773",
+          "qty": 1,
+          "name": "Fresh Lemon, Each",
+          "for": "lemon"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg"
+        }
+      ],
+      "hidden": true,
+      "slug": "peach-pie",
+      "body": "## Ingredients\n- 2 pie crust disks (1 for the bottom, 1 for the lattice top)\n- ⅓ cup all-purpose flour (or 3 tbsp cornstarch), plus more to dust\n- 2 ½ lbs ripe peaches (7–8 peaches, or 6 ½ cups sliced)\n- 1 ½ tbsp fresh lemon juice\n- 1 tsp pure vanilla extract\n- ⅔ cup granulated sugar\n- ¼ tsp ground nutmeg (or cinnamon)\n- ⅛ tsp fine sea salt\n- 1 large egg plus 1 tbsp water, for egg wash\n- 1 tsp coarse turbinado or granulated sugar, for finishing\n\n## Instructions\n1. Preheat the oven to 425°F with racks in the middle and bottom third. Line the bottom rack with foil to catch drips. Fill a large bowl with ice water.\n2. Blanch the peaches: add them to a pot of boiling water for 1 minute to loosen the skins, then move to the ice bath with a slotted spoon.\n3. When cool, halve the peaches, remove the pits, and slide off the skins. Cut into ½-inch slices and put in a large bowl.\n4. Toss with the lemon juice and vanilla, then add the sugar, flour, nutmeg, and salt and gently fold until no dry flour remains.\n5. Pour the filling into the chilled bottom crust. Top with a lattice crust, fold the excess dough under, and flute the edges.\n6. Beat the egg and water with a fork, brush it all over the crust, and sprinkle with the coarse sugar.\n7. Bake at 425°F for 20 minutes, then reduce to 375°F for 35–45 minutes more.\n8. Cool at least 2–4 hours before cutting so the filling can thicken.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 105
+    },
+    {
+      "title": "Pecan Bars",
+      "description": "Pecan-pie filling baked over a buttery shortbread crust.",
+      "prepTime": 20,
+      "cookTime": 48,
+      "servings": 24,
+      "categories": [
+        "Dessert"
+      ],
+      "tags": [
+        "Grandma",
+        "Bars",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        }
+      ],
+      "hidden": true,
+      "slug": "pecan-bars",
+      "body": "## Ingredients\n**Crust**\n- 2 ½ cups flour\n- 1 cup butter\n- ½ cup sugar\n- ½ tsp salt\n\n**Filling**\n- 4 eggs\n- 1 ½ cups sugar\n- 3 tbsp melted butter\n- 1 ½ tsp vanilla\n- 3 cups chopped pecans\n\n## Instructions\n1. Heat the oven to 350°F.\n2. Mix the crust ingredients and press into the bottom of a 9x13 pan sprayed with Pam. Bake 20–23 minutes, until brown.\n3. Beat the eggs, sugar, melted butter, and vanilla until well blended. Stir in the pecans.\n4. Pour over the hot crust. Bake at 350°F for 25 minutes, until firm around the edge and slightly firm in the center.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 68
+    },
+    {
       "title": "Puffed Pancakes",
       "description": "A buttery, oven-puffed blender pancake with just four ingredients.",
       "prepTime": 5,
@@ -1685,6 +3190,260 @@
       "slug": "puffed-pancakes",
       "body": "## Ingredients\n- 1/4 to 1/3 cup salted butter\n- 3–4 eggs\n- 3/4 to 1 cup milk\n- 3/4 to 1 cup flour\n\n## Instructions\n1. Put the butter in the baking pan and set it in a 425°F oven. Mix the batter while the butter melts.\n2. Blend the eggs on high speed for 1 minute.\n3. With the motor running, gradually pour in the milk, then slowly add the flour.\n4. Keep blending for 30 more seconds.\n5. Pour the batter into the hot melted butter. Bake until puffy and brown, 20–25 minutes.\n\n## Notes\nUse the smaller amounts for a smaller pan and the larger amounts for a bigger one.",
       "totalTime": 30
+    },
+    {
+      "title": "Pumpkin Pie",
+      "description": "Old-fashioned spiced pumpkin pie with molasses.",
+      "prepTime": 15,
+      "cookTime": 60,
+      "servings": 8,
+      "categories": [
+        "Dessert",
+        "American"
+      ],
+      "tags": [
+        "Grandma",
+        "Pie",
+        "Holiday",
+        "Thanksgiving"
+      ],
+      "walmart": [
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "whole milk"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "533272737",
+          "qty": 1,
+          "name": "Great Value Ground Cinnamon, 2.5 oz",
+          "for": "cinnamon"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "41752773",
+          "qty": 1,
+          "name": "Fresh Lemon, Each",
+          "for": "lemon juice"
+        }
+      ],
+      "hidden": true,
+      "slug": "pumpkin-pie",
+      "body": "## Ingredients\n- 3 cups mashed pumpkin (1 large can)\n- 1 ½ cups milk (1 cup evaporated milk and ½ cup whole milk)\n- 1 ¾ cups sugar\n- 1 tsp salt\n- 1 ½ tsp ginger\n- 1 tbsp cinnamon\n- 4 tbsp molasses\n- 3 eggs\n- 1 tsp lemon juice\n- 1 unbaked pie shell\n\n## Instructions\n1. Heat the oven to 425°F.\n2. Mix all the filling ingredients together until smooth.\n3. Pour into the unbaked pie shell.\n4. Bake at 425°F for 15 minutes, then at 350°F for 35–50 minutes more.\n5. Serve with whipped cream.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 75
+    },
+    {
+      "title": "Quick Spinach-Sausage Quiche",
+      "description": "Creamed spinach, Italian sausage, mushrooms, and Swiss in a deep-dish crust.",
+      "prepTime": 20,
+      "cookTime": 35,
+      "servings": 6,
+      "categories": [
+        "Breakfast",
+        "Pork",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "10449184",
+          "qty": 1,
+          "name": "Freshness Guaranteed Sliced White Mushrooms, 8 oz",
+          "for": "mushrooms"
+        },
+        {
+          "id": "40711369",
+          "qty": 1,
+          "name": "Marketside Mild Ground Italian Sausage, 1 lb",
+          "for": "Italian sausage"
+        },
+        {
+          "id": "152351343",
+          "qty": 1,
+          "name": "Great Value Swiss Deli Style Sliced Cheese, 8 oz",
+          "for": "Swiss cheese"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        }
+      ],
+      "hidden": true,
+      "slug": "quick-spinach-sausage-quiche",
+      "body": "## Ingredients\n- 1 tbsp butter\n- 1 ¾ cups sliced mushrooms (canned button or fresh)\n- 1 package (12 oz) frozen spinach soufflé (creamed spinach), thawed\n- ½ lb sweet Italian sausage (Jimmy Dean mild), casings removed, cooked and crumbled\n- ¾ cup shredded Swiss cheese\n- 2 eggs, beaten to blend\n- 3 tbsp milk\n- 1 baked 9-inch deep-dish pie crust\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. Melt the butter in a heavy large skillet over medium-high heat. Add the mushrooms and cook until softened, stirring occasionally, about 7 minutes. Remove from the heat.\n3. Mix in the spinach soufflé, sausage, cheese, eggs, and milk. Spoon into the crust.\n4. Bake until a tester inserted in the center comes out clean, 30–35 minutes. Wrap the crust edges in foil if they brown too quickly.\n5. Let stand at room temperature 5–10 minutes to firm before serving.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 55
+    },
+    {
+      "title": "Red Pepper Jelly",
+      "description": "Sweet-hot red bell pepper jelly.",
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 32,
+      "categories": [
+        "Snack",
+        "Vegetarian",
+        "Gluten Free"
+      ],
+      "tags": [
+        "Grandma",
+        "Canning",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "44391581",
+          "qty": 3,
+          "name": "Fresh Red Bell Pepper, Each",
+          "for": "red bell peppers"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        }
+      ],
+      "hidden": true,
+      "slug": "red-pepper-jelly",
+      "body": "## Ingredients\n- 1 ½ lb red bell peppers (about 3), cut into 1-inch pieces (6 cups)\n- 1 tsp dried hot red-pepper flakes\n- 3 tbsp Sure-Jell less- or no-sugar-needed pectin (from a 1 ¾ oz box)\n- 3 ¼ cups sugar, divided\n- 1 cup white-wine vinegar\n- 1 tbsp unsalted butter\n- ¾ tsp salt\n\n## Instructions\n1. Pulse the bell peppers and pepper flakes in a food processor until finely chopped.\n2. Whisk the pectin with ¼ cup of the sugar in a small bowl.\n3. Stir together the pepper mixture, vinegar, butter, salt, and the remaining 3 cups sugar in a 5–6 qt heavy pot.\n4. Bring to a vigorous boil over high heat and keep boiling vigorously, stirring occasionally, for 5 minutes.\n5. Gradually add the pectin mixture, whisking constantly. Return to a vigorous boil, stirring constantly, and boil 1–2 minutes (it will thicken slightly).\n6. Remove from the heat.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 30
+    },
+    {
+      "title": "Rice Krispie Treats",
+      "description": "The classic marshmallow cereal bars.",
+      "prepTime": 10,
+      "cookTime": 5,
+      "servings": 24,
+      "categories": [
+        "Dessert",
+        "Snack",
+        "Vegetarian",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Grandma",
+        "Kid Friendly"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        }
+      ],
+      "hidden": true,
+      "slug": "rice-krispie-treats",
+      "body": "## Ingredients\n- 3 tbsp butter\n- 1 package (10 oz, about 40) Jet-Puffed marshmallows, or 5 ½ cups mini marshmallows\n- 6 cups Kellogg's Rice Krispies cereal\n\n## Instructions\n1. In a large saucepan, melt the butter over low heat. Add the marshmallows and stir until completely melted. Remove from the heat.\n2. Add the cereal and stir until well coated.\n3. Using a buttered spatula or wax paper, press the mixture evenly into a 13x9x2-inch pan coated with cooking spray.\n4. Cool, then cut into 2-inch squares. Best served the same day.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 15
+    },
+    {
+      "title": "Salsa",
+      "description": "Simple fresh tomato salsa.",
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "categories": [
+        "Snack",
+        "Mexican",
+        "Vegan",
+        "Gluten Free",
+        "Healthy"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "51259212",
+          "qty": 1,
+          "name": "Yellow Onion, Each",
+          "for": "onion"
+        },
+        {
+          "id": "44390945",
+          "qty": 1,
+          "name": "Fresh Green Bell Pepper, Each",
+          "for": "green pepper"
+        },
+        {
+          "id": "160597260",
+          "qty": 1,
+          "name": "Fresh Cilantro, 1 Bunch",
+          "for": "cilantro (optional)"
+        }
+      ],
+      "hidden": true,
+      "slug": "salsa",
+      "body": "## Ingredients\n- 3 tomatoes, diced\n- ½ onion, chopped\n- ½ green pepper, chopped\n- Cilantro (optional)\n- 1 tsp lime juice\n- 1 tsp salt\n\n## Instructions\n1. Mix everything together and let it marinate.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 15
+    },
+    {
+      "title": "Sauerkraut",
+      "description": "Rinsed sauerkraut fried with bacon, golden onions, and caraway.",
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 8,
+      "categories": [
+        "Side Dish",
+        "Pork",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "51259212",
+          "qty": 1,
+          "name": "Yellow Onion, Each",
+          "for": "onion"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "sauerkraut",
+      "body": "## Ingredients\n- 1 jar (32 oz) Steinfelder sauerkraut\n- 1 large yellow onion\n- 6 strips bacon\n- ½ tsp caraway seeds\n- 1 ½ tbsp sugar\n\n## Instructions\n1. Press the fluid from the sauerkraut jar using a spoon (or your fist). Refill the jar with clear tap water and press the water out.\n2. Cut the onion into quarters lengthwise, then slice thinly.\n3. In a large frying pan, fry the bacon crisp and remove it from the pan.\n4. Fry the onions in the remaining grease until golden brown.\n5. Add the drained sauerkraut and stir slowly. When hot, add the caraway seed and sugar and simmer for 15 minutes.\n6. Stir in the crumbled bacon before serving.\n\n## Notes\nRecipe from Pepi Edlinger. \"We will be combining all the sauerkraut in crockpots on the serving table.\"\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 40
     },
     {
       "title": "Slow Cooker Tortilla Soup",
@@ -1751,6 +3510,118 @@
       "slug": "slow-cooker-tortilla-soup",
       "body": "## Ingredients\n- 1 can (16 oz) chili beans with juice\n- 2 cans of water (use the chili bean can)\n- 1 can (15 oz) corn with juice\n- 1 can (8 oz) tomato sauce\n- 2 cans (14.5 oz) diced tomatoes\n- 2 cans (4 oz) chopped green chilies\n- 1 package taco seasoning mix\n- 2–3 thawed chicken breasts\n\n## Instructions\n1. Add everything to the crock pot and stir to mix.\n2. Cook on high for 4 hours or low for 8 hours.\n\n## Tips\n- Serve with tortilla chips, cheese, and sour cream.",
       "totalTime": 250
+    },
+    {
+      "title": "Swedish Rolls",
+      "description": "Buttery overnight crescent rolls made with cream and egg yolks.",
+      "prepTime": 45,
+      "cookTime": 12,
+      "servings": 24,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Meal Prep"
+      ],
+      "tags": [
+        "Grandma",
+        "Bread",
+        "Make Ahead",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "453472924",
+          "qty": 1,
+          "name": "Great Value Active Dry Yeast, 0.25 oz, 3 Count",
+          "for": "yeast"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg yolks"
+        }
+      ],
+      "hidden": true,
+      "slug": "swedish-rolls",
+      "body": "## Ingredients\n**Yeast mixture**\n- 1 package yeast\n- ¼ cup warm water\n- 1 tsp sugar\n\n**Dry ingredients**\n- 3 ½ cups flour\n- ¼ cup sugar\n- 1 tsp salt\n- 1 stick butter\n\n**Liquids**\n- 1 cup heavy cream (or evaporated milk)\n- ¼ cup evaporated milk\n- 3 egg yolks\n\n## Instructions\n1. Mix the yeast, warm water, and sugar and let stand.\n2. Cut the butter into the dry ingredients as for pie crust.\n3. Mix the cream, evaporated milk, and egg yolks.\n4. Make a well in the center of the dry ingredients. Pour in the yeast mixture and liquids and stir until moist.\n5. Put in a large bowl, spread butter or Crisco over the top, cover with plastic wrap, and refrigerate overnight.\n6. Two hours before baking, take the dough out and knead to work the butter in.\n7. Cut the dough in half. Roll each half into a big circle no thinner than ¼ inch and cut into about 12 wedges.\n8. Roll up from the fat end to the point, like crescent rolls. Put on a parchment-lined cookie sheet.\n9. Brush with melted butter, cover, and let rise 2 hours.\n10. Bake at 350°F for 12 minutes.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 57
+    },
+    {
+      "title": "Teriyaki Beef",
+      "description": "Tender round steak strips braised in soy sauce with crisp vegetables.",
+      "prepTime": 25,
+      "cookTime": 60,
+      "servings": 6,
+      "categories": [
+        "Main Course",
+        "Beef",
+        "Asian",
+        "High Protein"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "vegetable oil"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "44391100",
+          "qty": 1,
+          "name": "Fresh Garlic Bulb, Each",
+          "for": "garlic"
+        },
+        {
+          "id": "10451315",
+          "qty": 1,
+          "name": "Baby Peeled Carrots, 1 lb",
+          "for": "carrots"
+        },
+        {
+          "id": "44390945",
+          "qty": 2,
+          "name": "Fresh Green Bell Pepper, Each",
+          "for": "green peppers"
+        },
+        {
+          "id": "10449184",
+          "qty": 1,
+          "name": "Freshness Guaranteed Sliced White Mushrooms, 8 oz",
+          "for": "mushrooms"
+        }
+      ],
+      "hidden": true,
+      "slug": "teriyaki-beef",
+      "body": "## Ingredients\n- 2 lbs round steak\n- 2 tbsp salad (vegetable) oil\n- Water\n- ⅓ cup soy sauce\n- 2 tsp sugar\n- ¼ tsp pepper\n- 1 clove garlic, minced\n- 3 carrots, peeled\n- 2 green peppers, cut\n- ½ lb mushrooms\n- 1 can (8 oz) water chestnuts\n- 2 tbsp cornstarch\n- ¼ cup water\n\n## Instructions\n1. Cut the steak into strips ⅛ inch thick. Brown the strips in hot oil.\n2. Pour off the drippings, measure, and add water to make 1 cup. Combine with the soy sauce, sugar, pepper, and garlic and add to the meat.\n3. Cover and cook slowly for 40 minutes.\n4. Meanwhile, cut the carrots lengthwise into thin strips with a vegetable peeler, then cut them in half.\n5. Add the carrots, peppers, mushrooms, and water chestnuts to the meat. Cover and cook 15 minutes more.\n6. Combine the cornstarch and ¼ cup water and stir in to thicken the sauce.\n\n## Notes\nThe original steps also mention scallions, which aren't in the ingredient list. Add a few if you have them.\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 85
     },
     {
       "title": "Tortellini Soup",
@@ -1909,6 +3780,275 @@
       "slug": "tylers-chili",
       "body": "## Ingredients\n- 1 lb pork sausage\n- 1 can (15.5 oz) chili beans, undrained\n- 1 can (14.5 oz) diced tomatoes, undrained\n- 1 bag (12 oz) frozen mixed vegetables\n- Salt and pepper to taste\n- 1 box (8.5 oz) honey corn muffin mix, plus the egg and milk called for on the box\n\n## Instructions\n1. Make the corn bread according to the box and put it in the oven.\n2. Brown the sausage in a large pot over medium-high heat, breaking it up, until cooked through. Drain the fat.\n3. Stir in the chili beans, diced tomatoes, and frozen vegetables.\n4. Bring to a boil, then reduce the heat and simmer 10–15 minutes, until the vegetables are tender. Season with salt and pepper.\n5. Serve with the corn bread.",
       "totalTime": 30
+    },
+    {
+      "title": "Ultimate Chocolate Chip Cookies",
+      "description": "Butter-flavor Crisco chocolate chip cookies with pecans: chewy or crisp, your call.",
+      "prepTime": 15,
+      "cookTime": 10,
+      "servings": 36,
+      "categories": [
+        "Dessert"
+      ],
+      "tags": [
+        "Grandma",
+        "Cookies"
+      ],
+      "walmart": [
+        {
+          "id": "10315012",
+          "qty": 1,
+          "name": "Great Value Light Brown Sugar, 32 oz",
+          "for": "brown sugar"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315486",
+          "qty": 1,
+          "name": "Great Value Baking Soda, 1 lb",
+          "for": "baking soda"
+        },
+        {
+          "id": "42306176",
+          "qty": 1,
+          "name": "Great Value Semi-Sweet Chocolate Chips, 12 oz",
+          "for": "chocolate chips"
+        }
+      ],
+      "hidden": true,
+      "slug": "ultimate-chocolate-chip-cookies",
+      "body": "## Ingredients\n- ¾ stick Crisco butter-flavor shortening\n- 1 ¼ cups firmly packed light brown sugar\n- 2 tbsp milk\n- 1 tbsp vanilla extract\n- 1 large egg\n- 1 ¾ cups all-purpose flour\n- 1 tsp salt\n- ¾ tsp baking soda\n- 1 package (6 oz) semi-sweet chocolate chips (1 cup)\n- 1 cup coarsely chopped pecans (optional)\n\n## Instructions\n1. Heat the oven to 375°F.\n2. Beat the shortening and brown sugar in a large bowl at medium speed until light and fluffy. Beat in the milk, vanilla, and egg.\n3. Stir in the flour, salt, and baking soda. Blend in the chocolate chips and nuts.\n4. Drop by rounded tablespoonfuls 2 inches apart onto ungreased cookie sheets.\n5. Bake 8–10 minutes for chewy cookies or 11–13 minutes for crisp ones. Cool 2 minutes on the sheet, then move to a rack.\n\n## Tips\n- If you leave out the nuts, add another ½ cup semi-sweet chocolate chips.\n\n## Notes\nThe original says \"2 t milk,\" likely 2 tablespoons (Crisco's printed version of this recipe uses 2 tbsp).\n\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 25
+    },
+    {
+      "title": "Virginia's Salad",
+      "description": "Orange Jell-O salad with pineapple, fruit cocktail, whipped cream, and cheddar.",
+      "prepTime": 15,
+      "cookTime": 5,
+      "servings": 8,
+      "categories": [
+        "Side Dish",
+        "Dessert",
+        "Vegetarian"
+      ],
+      "tags": [
+        "Grandma",
+        "Jell-O Salad",
+        "Holiday"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        }
+      ],
+      "hidden": true,
+      "slug": "virginias-salad",
+      "body": "## Ingredients\n- 1 package orange Jell-O\n- 1 cup cold water\n- 1 cup crushed pineapple\n- ¼ cup sugar\n- 1 cup fruit cocktail\n- 1 cup whipped cream\n- ½ cup shredded mild cheddar cheese\n\n## Instructions\n1. Heat the pineapple, sugar, and fruit cocktail to a boil.\n2. Mix with the orange Jell-O, then stir in the cold water.\n3. Let set until it quivers, then add the whipped cream and cheese.\n4. Chill until firm.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 20
+    },
+    {
+      "title": "Walnut Oatmeal Cookies",
+      "description": "Classic chewy oatmeal cookies with cinnamon and walnuts.",
+      "prepTime": 15,
+      "cookTime": 12,
+      "servings": 36,
+      "categories": [
+        "Dessert"
+      ],
+      "tags": [
+        "Grandma",
+        "Cookies"
+      ],
+      "walmart": [
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "10315012",
+          "qty": 1,
+          "name": "Great Value Light Brown Sugar, 32 oz",
+          "for": "brown sugar"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315486",
+          "qty": 1,
+          "name": "Great Value Baking Soda, 1 lb",
+          "for": "baking soda"
+        },
+        {
+          "id": "533272737",
+          "qty": 1,
+          "name": "Great Value Ground Cinnamon, 2.5 oz",
+          "for": "cinnamon"
+        },
+        {
+          "id": "10314925",
+          "qty": 1,
+          "name": "Great Value Old Fashioned Oats, 42 oz",
+          "for": "rolled oats"
+        },
+        {
+          "id": "793429092",
+          "qty": 2,
+          "name": "Great Value Chopped Walnuts, 4 oz",
+          "for": "walnuts"
+        }
+      ],
+      "hidden": true,
+      "slug": "walnut-oatmeal-cookies",
+      "body": "## Ingredients\n- ¾ stick Crisco baking sticks (or ¾ cup Crisco all-vegetable shortening)\n- ¾ cup sugar\n- ¾ cup firmly packed brown sugar\n- 2 large eggs\n- 2 tsp vanilla extract\n- 1 cup all-purpose flour\n- 1 tsp baking soda\n- 1 tsp ground cinnamon\n- ¼ tsp salt\n- 2 ¾ cups rolled oats\n- 1 cup chopped walnuts\n\n## Instructions\n1. Heat the oven to 375°F. Lightly coat baking sheets with cooking spray.\n2. Beat the shortening, sugar, and brown sugar in a large bowl at medium speed until creamy. Beat in the eggs and vanilla.\n3. Combine the flour, baking soda, cinnamon, and salt in a small bowl. Beat into the shortening mixture until blended.\n4. Stir in the oats and walnuts.\n5. Drop by rounded tablespoonfuls about 2 inches apart on the baking sheets.\n6. Bake 10–12 minutes, or until light brown. Cool on the sheets 2 minutes, then move to a rack to cool completely.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 27
+    },
+    {
+      "title": "Whole Wheat Bread",
+      "description": "Grandma's big-batch honey whole wheat bread: 4 large or 8 small loaves.",
+      "prepTime": 30,
+      "cookTime": 30,
+      "servings": 48,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Grandma",
+        "Bread",
+        "Big Batch"
+      ],
+      "walmart": [
+        {
+          "id": "453472924",
+          "qty": 2,
+          "name": "Great Value Active Dry Yeast, 0.25 oz, 3 Count",
+          "for": "yeast"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "20647992",
+          "qty": 2,
+          "name": "Great Value Honey, 12 oz",
+          "for": "honey"
+        },
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "oil"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "10403017",
+          "qty": 2,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "white flour"
+        }
+      ],
+      "hidden": true,
+      "slug": "whole-wheat-bread",
+      "body": "## Ingredients\n**Bowl 1**\n- ⅓ cup warm water\n- 1 tsp sugar\n- 2 tbsp + 2 tsp yeast\n\n**Bowl 2**\n- 5 cups warm water\n- 1 tbsp + 1 tsp salt, rounded\n- 1 cup honey\n- 1 cup oil\n- 1 ½ cups milk\n- 5 cups whole wheat flour\n- 9 ⅔ cups white flour\n\n## Instructions\n1. Mix the ingredients for each bowl separately.\n2. Combine the 2 bowls into one large bowl and let rise until doubled in bulk.\n3. Remove from the bowl and divide into greased pans. Let rise in the pans for another hour.\n4. Bake at 350°F for 30 minutes (add 5–10 minutes for large pans).\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 60
+    },
+    {
+      "title": "Yorkshire Pudding",
+      "description": "Puffy, golden oven pudding baked in butter or roast drippings.",
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 8,
+      "categories": [
+        "Side Dish",
+        "Comfort Food",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Grandma"
+      ],
+      "walmart": [
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        }
+      ],
+      "hidden": true,
+      "slug": "yorkshire-pudding",
+      "body": "## Ingredients\n- 1 cup flour\n- 1 cup milk\n- ½ tsp salt\n- 2 eggs, well beaten\n- ¼ cup butter (or ¼ cup hot roast drippings)\n\n## Instructions\n1. Heat the oven to 400°F. Melt the butter in a 9x13 glass pan in the oven.\n2. Sift the flour and salt together.\n3. Mix the milk and eggs, add to the dry ingredients, and beat with a rotary beater until smooth.\n4. Pour the batter into the hot pan and bake for 30 minutes.\n\n## Tips\n- Making a roast? Use ¼ cup hot drippings instead of the butter.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
+      "totalTime": 40
     }
   ]
 }
