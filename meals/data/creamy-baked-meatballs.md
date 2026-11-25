@@ -10,7 +10,6 @@ categories:
   - Comfort Food
 tags:
   - Mission Friend
-  - Family Recipe
   - Recipe Card
   - Casserole
 ---
