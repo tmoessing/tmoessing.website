@@ -37,8 +37,8 @@ export const PRESETS = [
     id: "big-group",
     label: "Big Group",
     emoji: "👯",
-    title: "Plays 8 or more",
-    match: (g) => g.maxPlayers >= 8
+    title: "Plays 10 or more",
+    match: (g) => g.maxPlayers >= 10
   },
   {
     id: "two-player",
