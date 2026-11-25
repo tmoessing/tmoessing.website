@@ -211,16 +211,41 @@ export function groceryLink(meal, provider = "walmart") {
 const WALMART_CART_URL = "https://affil.walmart.com/cart/addToCart?items=";
 
 /**
+ * Everyday pantry staples most kitchens already have. Matched against an
+ * item's `for` label (lowercased, parenthetical notes dropped); these start
+ * unchecked in the Walmart cart, just like "optional" items.
+ */
+const PANTRY_STAPLES = new Set([
+  // Baking
+  "flour", "sugar", "granulated sugar", "brown sugar", "dark brown sugar",
+  "powdered sugar", "baking powder", "baking soda", "yeast", "active dry yeast",
+  "vanilla", "cocoa",
+  // Oils
+  "oil", "vegetable oil", "olive oil",
+  // Dried spices & herbs
+  "chili powder", "cinnamon", "cumin", "paprika", "dried basil", "dried oregano",
+  "dried parsley", "minced onion", "dehydrated onions", "accent",
+  // Fridge & pantry basics
+  "butter", "egg", "eggs", "milk", "rice", "chicken broth", "chicken stock"
+]);
+
+function isPantryStaple(label) {
+  const key = String(label || "").toLowerCase().replace(/\(.*?\)/g, "").trim();
+  return PANTRY_STAPLES.has(key);
+}
+
+/**
  * Merge the Walmart products of several meals. `entries` is [{ meal, times }];
  * quantities for the same product are summed across meals (and repeat days).
- * A product is optional only if every meal using it says "optional".
+ * A product is optional (starts unchecked) only if every meal using it says
+ * "optional" or lists it as a pantry staple.
  */
 export function walmartItems(entries) {
   const byId = new Map();
   for (const { meal, times } of entries) {
     for (const item of meal.walmart || []) {
       const qty = (num(item.qty) || 1) * times;
-      const optional = /\boptional\b/i.test(item.for || "");
+      const optional = /\boptional\b/i.test(item.for || "") || isPantryStaple(item.for);
       const cur = byId.get(item.id);
       if (!cur) {
         byId.set(item.id, { ...item, qty, optional });
