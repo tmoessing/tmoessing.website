@@ -17,6 +17,8 @@ walmart:
   - 10451315 | 1 | Baby Peeled Carrots, 1 lb | carrots
   - 51259212 | 1 | Yellow Onion, Each | onion
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
+  - 51259411 | 1 | Fresh Celery Stalk, Each | celery
+  - 8558263970 | 1 | Great Value Chicken Bouillon Powder, 3.75 oz | chicken bouillon
 hidden: true
 ---
 ## Ingredients

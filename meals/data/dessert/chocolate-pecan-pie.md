@@ -17,6 +17,11 @@ walmart:
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
   - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
   - 21368021 | 1 | Great Value Pure Vanilla Extract, 1 fl oz | vanilla
+  - 10294408 | 1 | Karo Dark Corn Syrup, 16 fl oz | dark corn syrup
+  - 24183293 | 1 | Baker's Unsweetened Chocolate Baking Bar, 4 oz | unsweetened chocolate
+  - 432520440 | 1 | Great Value Pecan Halves, 8 oz | pecans
+  - 839181576 | 1 | Great Value Deep Dish Pie Crusts, 9 in, 2 Count (Frozen) | pie crust
+  - 20525252 | 1 | Great Value Homestyle Vanilla Ice Cream, 48 fl oz | vanilla ice cream
 hidden: true
 ---
 ## Ingredients

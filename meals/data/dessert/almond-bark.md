@@ -13,6 +13,9 @@ tags:
   - Grandma
   - Christmas
   - Holiday
+walmart:
+  - 10449059 | 1 | Blue Diamond Whole Natural Almonds, 16 oz | almonds
+  - 24183292 | 1 | Baker's White Chocolate Baking Bar, 4 oz | white chocolate
 hidden: true
 ---
 ## Ingredients

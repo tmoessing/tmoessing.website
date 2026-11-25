@@ -16,6 +16,10 @@ walmart:
   - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 51259411 | 1 | Fresh Celery Stalk, Each | celery
+  - 10450338 | 1 | Great Value Half & Half, 32 fl oz | half-and-half
+  - 10294375 | 3 | Snow's Chopped Clams, 6.5 oz | clams
+  - 10451498 | 2 | Great Value Sliced Potatoes, 15 oz | sliced potatoes
 hidden: true
 ---
 ## Ingredients

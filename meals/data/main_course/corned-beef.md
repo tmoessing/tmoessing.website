@@ -14,6 +14,8 @@ tags:
 walmart:
   - 44391004 | 4 | Russet Baking Potato, Each | potatoes
   - 10451315 | 1 | Baby Peeled Carrots, 1 lb | carrots
+  - 44391014 | 1 | Grobbel's Corned Beef Brisket Point, 3-4.2 lb | corned beef
+  - 10292454 | 1 | Steinfeld's Home Style Sauerkraut, 32 oz | sauerkraut
 hidden: true
 ---
 ## Ingredients

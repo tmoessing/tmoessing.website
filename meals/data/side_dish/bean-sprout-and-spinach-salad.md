@@ -15,6 +15,11 @@ tags:
 walmart:
   - 41752773 | 1 | Fresh Lemon, Each | lemon juice
   - 51259212 | 1 | Yellow Onion, Each | onion
+  - 10292194 | 1 | La Choy Bean Sprouts, 14 oz | bean sprouts
+  - 10292196 | 1 | La Choy Sliced Water Chestnuts, 8 oz | water chestnuts
+  - 177236407 | 1 | Kadoya Pure Sesame Oil, 5.5 oz | sesame oil
+  - 10315653 | 1 | Great Value Naturally Brewed Soy Sauce, 15 fl oz | soy sauce
+  - 780477258 | 1 | Spice Islands Sesame Seed, 2.2 oz | sesame seeds
 hidden: true
 ---
 ## Ingredients

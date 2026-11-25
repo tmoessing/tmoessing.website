@@ -16,6 +16,9 @@ tags:
 walmart:
   - 21368021 | 1 | Great Value Pure Vanilla Extract, 1 fl oz | vanilla
   - 24929610 | 1 | Wilton Kelly Green Gel Food Coloring, 1 oz | green food coloring
+  - 10291399 | 1 | Blue Bonnet Vegetable Oil Spread Sticks, 16 oz | margarine
+  - 826143995 | 1 | Jet-Puffed Marshmallows, 12 oz | marshmallows
+  - 730184952 | 1 | Great Value Toasted Corn Flakes, 18 oz | corn flakes
 hidden: true
 ---
 ## Ingredients

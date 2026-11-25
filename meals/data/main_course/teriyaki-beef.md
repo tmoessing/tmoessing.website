@@ -18,6 +18,10 @@ walmart:
   - 10451315 | 1 | Baby Peeled Carrots, 1 lb | carrots
   - 44390945 | 2 | Fresh Green Bell Pepper, Each | green peppers
   - 10449184 | 1 | Freshness Guaranteed Sliced White Mushrooms, 8 oz | mushrooms
+  - 50733168 | 2 | Beef Round Steak Tray, 0.97-2.5 lb | round steak
+  - 10315653 | 1 | Great Value Naturally Brewed Soy Sauce, 15 fl oz | soy sauce
+  - 10292196 | 1 | La Choy Sliced Water Chestnuts, 8 oz | water chestnuts
+  - 664106906 | 1 | Great Value Corn Starch, 16 oz | cornstarch
 hidden: true
 ---
 ## Ingredients

@@ -22,6 +22,7 @@ walmart:
   - 330313658 | 1 | Great Value Basil Leaves, 0.8 oz | dried basil
   - 631368530 | 1 | Great Value Oregano Leaves, 0.87 oz | oregano
   - 20511545 | 2 | Great Value Cheese Tortellini, 19 oz (Frozen) | tortellini
+  - 51259411 | 1 | Fresh Celery Stalk, Each | celery
 hidden: true
 ---
 ## Ingredients

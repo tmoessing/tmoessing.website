@@ -16,6 +16,9 @@ walmart:
   - 44391581 | 3 | Fresh Red Bell Pepper, Each | red bell peppers
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
   - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 217612954 | 1 | Great Value Crushed Red Pepper, 1.75 oz | red pepper flakes
+  - 10292610 | 1 | Sure-Jell Pectin for Less or No Sugar Needed Recipes, 1.75 oz | pectin
+  - 524659395 | 1 | Great Value White Wine Vinegar, 12.7 fl oz | white-wine vinegar
 hidden: true
 ---
 ## Ingredients

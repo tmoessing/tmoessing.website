@@ -14,6 +14,10 @@ tags:
   - Holiday
 walmart:
   - 10315102 | 1 | Great Value Extra Virgin Olive Oil, 17 fl oz | olive oil
+  - 44391023 | 1 | Fresh Green Beans, Bag | green beans
+  - 217612954 | 1 | Great Value Crushed Red Pepper, 1.75 oz | red pepper flakes
+  - 10307414 | 1 | Kikkoman Teriyaki Marinade & Sauce, 10 fl oz | teriyaki sauce
+  - 15841137 | 1 | Great Value Blanched and Slivered Almonds, 10 oz | slivered almonds
 hidden: true
 ---
 ## Ingredients

@@ -14,6 +14,8 @@ tags:
   - Kid Friendly
 walmart:
   - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 826143995 | 1 | Jet-Puffed Marshmallows, 12 oz | marshmallows
+  - 110730802 | 1 | Kellogg's Rice Krispies, 12 oz | Rice Krispies
 hidden: true
 ---
 ## Ingredients

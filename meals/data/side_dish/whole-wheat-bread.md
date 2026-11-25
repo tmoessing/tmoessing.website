@@ -19,6 +19,7 @@ walmart:
   - 10451002 | 1 | Great Value Vegetable Oil, 48 fl oz | oil
   - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
   - 10403017 | 2 | Great Value All-Purpose Flour, 5 lb | white flour
+  - 19352066114 | 1 | Great Value Whole Wheat Flour, 5 lb | whole wheat flour
 hidden: true
 ---
 ## Ingredients

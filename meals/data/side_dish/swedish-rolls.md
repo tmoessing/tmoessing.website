@@ -19,6 +19,8 @@ walmart:
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
   - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | egg yolks
+  - 10450339 | 1 | Great Value Heavy Whipping Cream, 16 oz | heavy cream
+  - 10534163 | 1 | Great Value Evaporated Milk, 12 fl oz | evaporated milk
 hidden: true
 ---
 ## Ingredients

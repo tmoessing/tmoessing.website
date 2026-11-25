@@ -15,6 +15,7 @@ walmart:
   - 16627955 | 1 | Great Value Double Acting Baking Powder, 8.1 oz | baking powder
   - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 867099108 | 1 | Crisco All-Vegetable Shortening, 48 oz | shortening
 hidden: true
 ---
 ## Ingredients

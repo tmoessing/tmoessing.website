@@ -11,6 +11,9 @@ categories:
 tags:
   - Grandma
   - Summer
+walmart:
+  - 20525252 | 1 | Great Value Homestyle Vanilla Ice Cream, 48 fl oz | vanilla ice cream
+  - 216218066 | 2 | Fresh Yellow Peach, Each | peaches
 hidden: true
 ---
 ## Ingredients
