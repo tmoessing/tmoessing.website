@@ -1,15 +1,18 @@
 # Meal Library
 
-Every recipe is one Markdown file in `meals/data/`. The page at
+Every recipe is one Markdown file in a course folder under `meals/data/`
+(`breakfast`, `main_course`, `dessert`, `side_dish`, or `snack`). The page at
 `/meal-library/` reads `meals/data/meals.json`, which is generated from those
 files automatically on every deploy.
 
 ## Add a recipe
 
-1. **Copy** `meals/TEMPLATE.md` to `meals/data/<recipe-name>.md`.
+1. **Copy** `meals/TEMPLATE.md` to `meals/data/<course>/<recipe-name>.md`, in the
+   folder that matches its category (Main Course goes in `main_course/`).
    - Use lowercase-with-dashes: `honey-garlic-salmon.md`.
    - The file name becomes the recipe's link (`/meal-library/#honey-garlic-salmon`),
-     so don't rename it later or old links break.
+     so don't rename it later or old links break. The folder isn't part of the
+     link, so moving a recipe is fine, but two recipes can't share a file name.
 2. **Fill it in.** The top block (between the `---` lines) holds the details;
    below it, write the recipe in plain Markdown under `## Ingredients` and
    `## Instructions` (plus optional `## Notes`, `## Tips`, `## Variations`).

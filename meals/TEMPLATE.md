@@ -1,5 +1,5 @@
 ---
-# ─── COPY THIS FILE to meals/data/<your-recipe-name>.md ───────────────────
+# ─── COPY THIS FILE to meals/data/<course>/<your-recipe-name>.md ───────────────────
 # File name: lowercase-with-dashes.md (e.g. honey-garlic-salmon.md).
 # It becomes the recipe's link, so pick it once and don't rename it.
 # Delete any line you don't need. Lines starting with # are ignored.
