@@ -13,6 +13,8 @@ tags:
 walmart:
   - 51259212 | 1 | Yellow Onion, Each | onion
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 10292454 | 1 | Steinfeld's Home Style Sauerkraut, 32 oz | sauerkraut
+  - 23816525 | 1 | Great Value Hickory Smoked Bacon, 12 oz | bacon
 hidden: true
 ---
 ## Ingredients

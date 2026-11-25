@@ -19,6 +19,7 @@ walmart:
   - 51259212 | 6 | Yellow Onion, Each | onions
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 51259411 | 1 | Fresh Celery Stalk, Each | celery
 hidden: true
 ---
 ## Ingredients

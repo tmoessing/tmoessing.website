@@ -12,6 +12,7 @@ tags:
   - Holiday
 walmart:
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 980244607 | 1 | Hershey's Kisses Milk Chocolate Family Pack, 17.9 oz | Hershey's Kisses
 hidden: true
 ---
 ## Ingredients

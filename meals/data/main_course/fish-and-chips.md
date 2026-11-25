@@ -14,6 +14,7 @@ walmart:
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
   - 16627955 | 1 | Great Value Double Acting Baking Powder, 8.1 oz | baking powder
   - 10451002 | 1 | Great Value Vegetable Oil, 48 fl oz | oil
+  - 129433826 | 1 | Great Value Cod Fillets, 1 lb (Frozen) | white fish
 hidden: true
 ---
 ## Ingredients

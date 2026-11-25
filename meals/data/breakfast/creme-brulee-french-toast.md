@@ -18,6 +18,9 @@ walmart:
   - 10294409 | 1 | Karo Light Corn Syrup, 16 oz | corn syrup
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
   - 21368021 | 1 | Great Value Pure Vanilla Extract, 1 fl oz | vanilla
+  - 185701051 | 1 | Great Value Thick Sliced Texas Toast, 20 oz | Texas toast
+  - 10450338 | 1 | Great Value Half & Half, 32 fl oz | half-and-half
+  - 492758994 | 1 | Great Value Pure Maple Syrup, 32 fl oz | maple syrup
 hidden: true
 ---
 ## Ingredients

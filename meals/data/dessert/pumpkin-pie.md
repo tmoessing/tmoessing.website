@@ -18,6 +18,11 @@ walmart:
   - 533272737 | 1 | Great Value Ground Cinnamon, 2.5 oz | cinnamon
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
   - 41752773 | 1 | Fresh Lemon, Each | lemon juice
+  - 10306751 | 1 | Libby's 100% Pure Pumpkin, 29 oz | pumpkin
+  - 10534163 | 1 | Great Value Evaporated Milk, 12 fl oz | evaporated milk
+  - 165382310 | 1 | Great Value Ground Ginger, 1.5 oz | ground ginger
+  - 15716722 | 1 | Grandma's Original Unsulphured Molasses, 12 fl oz | molasses
+  - 839181576 | 1 | Great Value Deep Dish Pie Crusts, 9 in, 2 Count (Frozen) | pie crust
 hidden: true
 ---
 ## Ingredients

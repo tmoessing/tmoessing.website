@@ -16,6 +16,8 @@ walmart:
   - 10315427 | 1 | Great Value Golden Sweet Whole Kernel Corn, 15.25 oz | corn
   - 10534038 | 1 | Great Value Black Beans, 15 oz | black beans
   - 10452564 | 1 | Great Value Finely Shredded Colby Jack, 8 oz | grated cheese
+  - 12335111 | 1 | Great Value Original Sour Cream, 16 oz | sour cream
+  - 12335104 | 1 | Great Value Restaurant Style Tortilla Chips, 13 oz | tortilla chips
 hidden: true
 ---
 ## Ingredients

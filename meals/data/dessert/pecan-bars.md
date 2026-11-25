@@ -16,6 +16,7 @@ walmart:
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
   - 21368021 | 1 | Great Value Pure Vanilla Extract, 1 fl oz | vanilla
+  - 604801898 | 1 | Great Value Pecan Halves, 16 oz | pecans
 hidden: true
 ---
 ## Ingredients

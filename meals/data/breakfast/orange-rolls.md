@@ -15,6 +15,8 @@ walmart:
   - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
   - 10315011 | 1 | Great Value Powdered Sugar, 32 oz | powdered sugar
+  - 10805116 | 1 | Rhodes Yeast Dinner Rolls, 3 lb, 36 Count (Frozen) | frozen dinner rolls
+  - 162577028 | 1 | Fresh Navel Orange, Each | orange
 hidden: true
 ---
 ## Ingredients

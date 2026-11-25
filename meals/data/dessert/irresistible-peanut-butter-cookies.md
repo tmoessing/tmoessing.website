@@ -16,6 +16,8 @@ walmart:
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | egg
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
   - 10315486 | 1 | Great Value Baking Soda, 1 lb | baking soda
+  - 777839120 | 1 | Jif Creamy Peanut Butter, 16 oz | peanut butter
+  - 867099108 | 1 | Crisco All-Vegetable Shortening, 48 oz | shortening
 hidden: true
 ---
 ## Ingredients

@@ -19,6 +19,7 @@ walmart:
   - 533272737 | 1 | Great Value Ground Cinnamon, 2.5 oz | cinnamon
   - 10314925 | 1 | Great Value Old Fashioned Oats, 42 oz | rolled oats
   - 793429092 | 2 | Great Value Chopped Walnuts, 4 oz | walnuts
+  - 867099108 | 1 | Crisco All-Vegetable Shortening, 48 oz | shortening
 hidden: true
 ---
 ## Ingredients

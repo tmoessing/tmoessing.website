@@ -14,6 +14,8 @@ tags:
 walmart:
   - 10899013 | 1 | Great Value Chicken Broth, 32 oz | chicken broth
   - 51259361 | 1 | Fresh Green Onions, 1 Bunch | green onion
+  - 10315653 | 1 | Great Value Naturally Brewed Soy Sauce, 15 fl oz | soy sauce
+  - 356250509 | 1 | Fresh Baby Bok Choy Shanghai Bundle | baby bok choy
 hidden: true
 ---
 ## Ingredients

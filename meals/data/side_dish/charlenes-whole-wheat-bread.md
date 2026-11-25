@@ -18,6 +18,7 @@ walmart:
   - 10451002 | 1 | Great Value Vegetable Oil, 48 fl oz | vegetable oil
   - 10403017 | 2 | Great Value All-Purpose Flour, 5 lb | white flour
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 19352066114 | 1 | Great Value Whole Wheat Flour, 5 lb | whole wheat flour
 hidden: true
 ---
 ## Ingredients

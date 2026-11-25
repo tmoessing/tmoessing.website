@@ -16,6 +16,7 @@ walmart:
   - 793429092 | 4 | Great Value Chopped Walnuts, 4 oz | walnuts
   - 10294409 | 1 | Karo Light Corn Syrup, 16 oz | light corn syrup
   - 41752773 | 1 | Fresh Lemon, Each | lemon
+  - 10790896 | 1 | Athens Phyllo Dough Pastry Sheets, 16 oz (Frozen) | filo
 hidden: true
 ---
 ## Ingredients

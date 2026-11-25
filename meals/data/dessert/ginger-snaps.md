@@ -16,6 +16,10 @@ walmart:
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
   - 10315486 | 1 | Great Value Baking Soda, 1 lb | baking soda
   - 533272737 | 1 | Great Value Ground Cinnamon, 2.5 oz | cinnamon
+  - 867099108 | 1 | Crisco All-Vegetable Shortening, 48 oz | shortening
+  - 15716722 | 1 | Grandma's Original Unsulphured Molasses, 12 fl oz | molasses
+  - 165382310 | 1 | Great Value Ground Ginger, 1.5 oz | ground ginger
+  - 10535119 | 1 | McCormick Ground Cloves, 0.9 oz | ground cloves
 hidden: true
 ---
 ## Ingredients

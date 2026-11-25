@@ -17,6 +17,9 @@ walmart:
   - 21368021 | 1 | Great Value Pure Vanilla Extract, 1 fl oz | vanilla
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | egg
+  - 839181576 | 1 | Great Value Deep Dish Pie Crusts, 9 in, 2 Count (Frozen) | pie crusts
+  - 216218066 | 8 | Fresh Yellow Peach, Each | peaches
+  - 10535128 | 1 | McCormick Ground Nutmeg, 1.1 oz | ground nutmeg
 hidden: true
 ---
 ## Ingredients

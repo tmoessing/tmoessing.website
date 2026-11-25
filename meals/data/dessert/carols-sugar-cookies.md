@@ -16,6 +16,7 @@ walmart:
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | egg
   - 21368021 | 1 | Great Value Pure Vanilla Extract, 1 fl oz | vanilla
   - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 12335111 | 1 | Great Value Original Sour Cream, 16 oz | sour cream
 hidden: true
 ---
 ## Ingredients

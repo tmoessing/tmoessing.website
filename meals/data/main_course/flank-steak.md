@@ -11,6 +11,8 @@ categories:
   - Grill
 tags:
   - Grandma
+walmart:
+  - 178881423 | 1 | Choice Angus Flank Steak Tray | flank steak
 hidden: true
 ---
 ## Ingredients

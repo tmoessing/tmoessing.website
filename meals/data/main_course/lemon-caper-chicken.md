@@ -18,6 +18,7 @@ walmart:
   - 559839182 | 1 | Great Value Paprika, 2.5 oz | paprika
   - 10449184 | 1 | Freshness Guaranteed Sliced White Mushrooms, 8 oz | mushrooms
   - 10414680 | 1 | Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen) | chicken breasts
+  - 502907592 | 1 | Great Value Non-Pareil Capers, 3.5 fl oz | capers
 hidden: true
 ---
 ## Ingredients

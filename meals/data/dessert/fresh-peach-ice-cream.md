@@ -15,6 +15,10 @@ walmart:
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
   - 41752773 | 3 | Fresh Lemon, Each | lemons
   - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
+  - 216218066 | 6 | Fresh Yellow Peach, Each | peaches
+  - 162577028 | 1 | Fresh Navel Orange, Each | orange juice
+  - 10450339 | 1 | Great Value Heavy Whipping Cream, 16 oz | whipping cream
+  - 10534165 | 1 | Great Value Sweetened Condensed Milk, 14 oz | condensed milk
 hidden: true
 ---
 ## Ingredients

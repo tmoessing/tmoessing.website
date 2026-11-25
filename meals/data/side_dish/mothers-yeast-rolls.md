@@ -16,6 +16,7 @@ walmart:
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
+  - 867099108 | 1 | Crisco All-Vegetable Shortening, 48 oz | shortening
 hidden: true
 ---
 ## Ingredients

@@ -17,6 +17,8 @@ walmart:
   - 152351343 | 1 | Great Value Swiss Deli Style Sliced Cheese, 8 oz | Swiss cheese
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
   - 10450114 | 1 | Great Value Whole Vitamin D Milk, Gallon | milk
+  - 14140837 | 1 | Stouffer's Spinach Souffle, 12 oz (Frozen) | spinach souffle
+  - 839181576 | 1 | Great Value Deep Dish Pie Crusts, 9 in, 2 Count (Frozen) | pie crust
 hidden: true
 ---
 ## Ingredients

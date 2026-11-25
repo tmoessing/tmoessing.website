@@ -17,6 +17,8 @@ walmart:
   - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
   - 10315486 | 1 | Great Value Baking Soda, 1 lb | baking soda
   - 42306176 | 1 | Great Value Semi-Sweet Chocolate Chips, 12 oz | chocolate chips
+  - 426222521 | 1 | Crisco Butter Flavor Shortening, 48 oz | butter-flavor shortening
+  - 432520440 | 1 | Great Value Pecan Halves, 8 oz | pecans (optional)
 hidden: true
 ---
 ## Ingredients

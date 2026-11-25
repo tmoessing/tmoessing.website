@@ -14,6 +14,7 @@ tags:
   - Canning
 walmart:
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 44390991 | 1 | Fresh Granny Smith Apples, 3 lb Bag | apples
 hidden: true
 ---
 ## Ingredients

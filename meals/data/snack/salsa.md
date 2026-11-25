@@ -16,6 +16,8 @@ walmart:
   - 51259212 | 1 | Yellow Onion, Each | onion
   - 44390945 | 1 | Fresh Green Bell Pepper, Each | green pepper
   - 160597260 | 1 | Fresh Cilantro, 1 Bunch | cilantro (optional)
+  - 44390944 | 3 | Fresh Roma Tomato, Each | tomatoes
+  - 44391008 | 1 | Fresh Lime, Each | lime juice
 hidden: true
 ---
 ## Ingredients
