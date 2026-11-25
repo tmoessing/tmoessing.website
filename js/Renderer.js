@@ -305,7 +305,11 @@ export class Renderer {
         return card;
     }
 
-    createProjectCard(project, category = null, showTags = true) {
+    /**
+     * wholeCardLink: make the whole card the link (like the picks) and swap the "View" button
+     * for a slim footer showing where the link goes. Used by Personal > Creations.
+     */
+    createProjectCard(project, category = null, showTags = true, wholeCardLink = false) {
         const card = document.createElement('div');
         const slug = this.parser.slugify(project.title);
         card.className = project.image ? 'card has-image project-card' : 'card project-card';
@@ -334,7 +338,11 @@ export class Renderer {
                 ${project.dates ? `<div class="card-meta">${project.dates}</div>` : ''}
             </div>
             <p class="card-description">${project.description || ''}</p>
-            ${project.link ? `<div class="project-actions">
+            ${project.link && wholeCardLink ? `<div class="project-visit">
+                <span class="project-visit-host">${this.linkHost(project.link)}</span>
+                <svg class="icon icon-stroke project-visit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+            </div>` : ''}
+            ${project.link && !wholeCardLink ? `<div class="project-actions">
                 <a href="${project.link}" target="_blank" class="btn btn-primary btn-sm" data-gc-event="out-project-${project.analytics || slug}">View →</a>
             </div>` : ''}
             ${showTags ? `<div class="card-footer">
@@ -354,9 +362,29 @@ export class Renderer {
         } else {
             card.innerHTML = content;
         }
+
+        if (project.link && wholeCardLink) {
+            card.classList.add('card-linked', 'project-card-linked');
+            const anchor = document.createElement('a');
+            anchor.href = project.link;
+            anchor.target = '_blank';
+            anchor.rel = 'noopener noreferrer';
+            anchor.className = 'card-overlay-link';
+            anchor.setAttribute('aria-label', `Visit ${project.title}`);
+            anchor.dataset.gcEvent = `out-project-${project.analytics || slug}`;
+            // After a mouse/tap click, drop focus so the card isn't left highlighted when you come back
+            anchor.addEventListener('click', e => { if (e.detail > 0) anchor.blur(); });
+            card.appendChild(anchor);
+        }
         
         this.addHoverListeners(card, slug);
         return card;
+    }
+
+    /** "https://www.example.com/a/b" -> "example.com" */
+    linkHost(url) {
+        try { return new URL(url).hostname.replace(/^www\./, ''); }
+        catch { return 'Visit'; }
     }
 
     createSkillCategory(category, skillData) {
