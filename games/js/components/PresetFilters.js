@@ -39,9 +39,9 @@ export const PRESETS = [
     match: (g) => g.maxPlayers >= 8
   },
   {
-    id: "date-night",
-    label: "Date Night",
-    emoji: "💞",
+    id: "two-player",
+    label: "Two Player",
+    emoji: "👥",
     title: "Works with just 2 players",
     match: (g) => g.minPlayers <= 2
   },
