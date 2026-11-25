@@ -17,6 +17,7 @@ walmart:
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
   - 533272737 | 1 | Great Value Ground Cinnamon, 2.5 oz | cinnamon
   - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
+  - 41752773 | 1 | Fresh Lemon, Each | lemon juice
 hidden: true
 ---
 ## Ingredients

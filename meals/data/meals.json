@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T17:42:35.693Z",
+  "generatedAt": "2026-11-25T17:56:11.137Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -3231,6 +3231,12 @@
           "qty": 1,
           "name": "Great Value White Large Eggs, 12 Count",
           "for": "eggs"
+        },
+        {
+          "id": "41752773",
+          "qty": 1,
+          "name": "Fresh Lemon, Each",
+          "for": "lemon juice"
         }
       ],
       "hidden": true,
