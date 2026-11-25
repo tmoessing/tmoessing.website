@@ -38,7 +38,7 @@ explains each one. Don't add `totalTime` or `image`; the build fills those in.
 Categories power the filters, so they must come from this list (the build
 warns about typos and suggests the right spelling):
 
-- **Meals:** Breakfast, Main Course, Snack, Dessert
+- **Meals:** Breakfast, Main Course, Side Dish, Snack, Dessert
 - **Diet:** High Protein, Low Carb, Vegetarian, Vegan, Gluten Free, Healthy
 - **Protein:** Chicken, Beef, Pork, Seafood
 - **Base:** Pasta, Rice
@@ -48,7 +48,7 @@ warns about typos and suggests the right spelling):
 
 **Courses:** Breakfast, Main Course, and Dessert also show up as quick-filter
 chips at the top of the library, so give every recipe one of those three (or
-Snack). Lunch and Dinner were merged into Main Course; the build points out any
+Side Dish / Snack). Lunch and Dinner were merged into Main Course; the build points out any
 leftovers. The chip list lives in `COURSES` in `meals/build.mjs`.
 
 To add a new category, add it to `CATEGORIES` in `meals/build.mjs` (and to the

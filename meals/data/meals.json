@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-11-25T00:40:26.488Z",
+  "generatedAt": "2026-11-25T00:45:31.541Z",
   "categories": [
     "Breakfast",
     "Main Course",
+    "Side Dish",
     "Snack",
     "Dessert",
     "High Protein",
@@ -36,61 +37,213 @@
   ],
   "meals": [
     {
-      "title": "Breakfast Burritos",
-      "description": "Make-ahead egg, sausage, and cheese burritos built for the freezer.",
-      "prepTime": 20,
-      "cookTime": 20,
-      "estimatedCost": 12,
-      "servings": 6,
-      "categories": [
-        "Breakfast",
-        "Meal Prep",
-        "High Protein",
-        "Mexican",
-        "Budget Friendly"
-      ],
-      "tags": [
-        "Freezer Friendly",
-        "Grab and Go"
-      ],
-      "prepDuration": 50,
-      "nutrition": {
-        "calories": 480,
-        "protein": "26g"
-      },
-      "slug": "breakfast-burritos",
-      "body": "## Ingredients\n- 6 large flour tortillas\n- 10 eggs, beaten\n- 1 lb breakfast sausage\n- 1 cup shredded cheddar\n- 1 diced bell pepper\n- 1/2 diced onion\n- Salt and pepper to taste\n- Hot sauce or salsa, optional\n\n## Instructions\n1. Brown the sausage in a skillet, breaking it up. Remove and set aside.\n2. Soften the onion and pepper in the sausage fat, ~4 minutes.\n3. Pour in the beaten eggs and scramble softly. Fold the sausage back in.\n4. Warm the tortillas so they roll without cracking.\n5. Fill each with eggs, sausage, and cheese. Fold in the sides and roll tight.\n6. Serve now, or wrap individually in foil and freeze.\n\n## Notes\nTo reheat from frozen: unwrap, microwave 2–2.5 minutes, flipping halfway.\n\n## Tips\n- Let the filling cool before rolling if you're freezing — less sogginess.\n- A thin layer of cheese against the tortilla acts like glue.\n\n## Variations\n- Swap sausage for chorizo, bacon, or black beans (vegetarian).\n- Add cooked hash-brown shreds for a heartier burrito.",
-      "totalTime": 40
-    },
-    {
-      "title": "Chicken Alfredo",
-      "description": "Creamy homemade fettuccine alfredo with seared chicken.",
-      "prepTime": 15,
-      "cookTime": 20,
-      "estimatedCost": 14,
+      "title": "1, 2, 3 Chicken",
+      "description": "Skillet chicken simmered with salsa and black beans, then smothered in melted cheese.",
+      "prepTime": 5,
+      "cookTime": 15,
       "servings": 4,
       "categories": [
         "Main Course",
-        "Pasta",
         "Chicken",
         "High Protein",
+        "Mexican",
+        "Quick Meals",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "One Pan",
+        "Weeknight"
+      ],
+      "slug": "one-two-three-chicken",
+      "body": "## Ingredients\n- 4 small chicken breasts (or 6–8 chicken tenders)\n- 1 jar (16 oz) salsa\n- 1 can black beans\n- 1 cup shredded cheese\n\n## Instructions\n1. Cook the chicken in a non-stick skillet over medium-high heat, 4 minutes per side.\n2. Add the salsa and beans. Bring to a boil and cover.\n3. Simmer on medium-low for 5 minutes, or until the chicken reaches 165°F.\n4. Top with the cheese and remove from the heat. Let stand, covered, until the cheese melts.\n\n## Tips\n- Serve over potatoes, rice, or chips.",
+      "totalTime": 20
+    },
+    {
+      "title": "Baked Chicken",
+      "description": "Juicy chicken breasts seasoned with a Grill Mates packet and baked in 20 minutes.",
+      "prepTime": 5,
+      "cookTime": 20,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "High Protein",
+        "Low Carb",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Weeknight",
+        "Easy Cleanup"
+      ],
+      "slug": "baked-chicken",
+      "body": "## Ingredients\n- Chicken breasts (1 breast feeds 1–2 people)\n- 1 packet McCormick Grill Mates seasoning\n\n## Instructions\n1. Preheat the oven to 450°F.\n2. Season the chicken with the seasoning.\n3. Line a shallow metal pan with foil (dull side up) for easier cleanup.\n4. Bake 10 minutes, turn the chicken over, and bake 10 minutes more.\n\n## Tips\n- Serve with potatoes, rice, or noodles, in soft tacos, or sliced over a salad.",
+      "totalTime": 25
+    },
+    {
+      "title": "Baked Chicken and Rice",
+      "description": "No-peek chicken and rice casserole baked in broth with cream of chicken soup.",
+      "prepTime": 20,
+      "cookTime": 60,
+      "servings": 5,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "Rice",
         "Comfort Food",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Casserole",
+        "One Pan"
+      ],
+      "slug": "baked-chicken-and-rice",
+      "body": "## Ingredients\n- 2 cups uncooked rice\n- 6 chicken tenders\n- 1 can cream of chicken soup\n- 4 cups chicken broth\n- 1 package onion soup mix (or just salt and pepper)\n\n## Instructions\n1. Preheat the oven to 325°F.\n2. Spray or butter the bottom of a 9x13 glass pan.\n3. Spread the uncooked rice in the pan and add the broth.\n4. Place the raw chicken on top and sprinkle with the soup mix (or salt and pepper).\n5. Spread the cream of chicken soup over the top.\n6. Bake uncovered for 1 hour, or until the broth is absorbed.",
+      "totalTime": 80
+    },
+    {
+      "title": "Baked Italian Chicken Dinner",
+      "description": "Chicken, broccoli, and potatoes baked in one pan with butter and Italian dressing mix.",
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "High Protein",
+        "Italian",
+        "Comfort Food"
+      ],
+      "tags": [
+        "One Pan",
+        "Sheet Pan"
+      ],
+      "slug": "baked-italian-chicken-dinner",
+      "body": "## Ingredients\n- 1 lb skinless, boneless chicken breast, cut into cubes\n- 1 package (10 oz) frozen broccoli\n- 4 potatoes, diced\n- 1/4 cup butter, melted\n- 1 package (0.7 oz) Italian dressing mix\n\n## Instructions\n1. Preheat the oven to 350°F. Spray a 13x9-inch baking dish with cooking spray.\n2. Layer the chicken, broccoli, and potatoes evenly in the dish, in that order.\n3. Drizzle the melted butter over the top and sprinkle with the Italian dressing mix.\n4. Bake until the chicken is cooked through and the potatoes are tender, 45–60 minutes.\n\n## Variations\n- Try adding carrots.",
+      "totalTime": 60
+    },
+    {
+      "title": "Baked Pesto Chicken",
+      "description": "Bite-size chicken baked in pesto and finished with melted mozzarella.",
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "High Protein",
+        "Low Carb",
         "Italian"
       ],
       "tags": [
         "Weeknight",
-        "One Pan Sauce"
+        "Easy"
       ],
-      "prepDuration": 45,
-      "nutrition": {
-        "calories": 650,
-        "protein": "42g",
-        "carbs": "55g",
-        "fat": "28g"
-      },
-      "slug": "chicken-alfredo",
-      "body": "## Ingredients\n- 2 boneless skinless chicken breasts\n- 8 oz fettuccine\n- 2 tbsp butter\n- 3 cloves garlic, minced\n- 1 cup heavy cream\n- 1 cup grated parmesan\n- Salt, pepper, and Italian seasoning to taste\n- Fresh parsley for garnish\n\n## Instructions\n1. Season the chicken with salt, pepper, and Italian seasoning.\n2. Sear in a hot pan with a little oil, ~5–6 minutes per side, until 165°F. Rest, then slice.\n3. Cook the fettuccine in salted water until al dente. Reserve **1/2 cup pasta water** before draining.\n4. In the same pan, melt butter and cook the garlic 30 seconds until fragrant.\n5. Add cream, bring to a gentle simmer, then whisk in the parmesan until smooth.\n6. Loosen the sauce with pasta water as needed, toss in the pasta, and top with sliced chicken.\n\n## Notes\nGrate the parmesan fresh — pre-shredded cheese has anti-caking agents that make the sauce grainy.\n\n## Tips\n- Don't let the cream boil hard or it can split.\n- Add a pinch of nutmeg for a classic alfredo depth.\n\n## Variations\n- Swap chicken for shrimp (cook just 2–3 minutes).\n- Stir in steamed broccoli or peas for a one-bowl meal.",
-      "totalTime": 35
+      "slug": "baked-pesto-chicken",
+      "body": "## Ingredients\n- 2 boneless, skinless chicken breasts, cut into 1-inch pieces\n- 1/4 cup pesto\n- 1/4 cup mozzarella cheese\n- Salt and pepper\n\n## Instructions\n1. Preheat the oven to 375°F.\n2. Spray an 8x8 baking dish with non-stick spray. Spread 1/8 cup pesto over the bottom.\n3. Spread the chicken over the pesto, then spread the remaining pesto over the chicken. (Don't re-dip a spoon that's touched raw chicken into the pesto.)\n4. Cover with foil and bake 25–30 minutes.\n5. Remove the foil, sprinkle the cheese on top, and bake uncovered 5 more minutes until melted.\n\n## Tips\n- Serve with rice, quinoa, or wide noodles, and spoon the pesto from the dish over the top.\n- For a dairy-free portion, pull some chicken out before adding the cheese.",
+      "totalTime": 40
+    },
+    {
+      "title": "Baked Potato",
+      "description": "Crispy-skinned oven baked potatoes, plus a quick microwave method.",
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 4,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Gluten Free",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Potatoes",
+        "Microwave"
+      ],
+      "slug": "baked-potato",
+      "body": "## Ingredients\n- Potatoes (1 per person)\n- Olive oil\n- Sea or kosher salt\n\n## Instructions\n1. Preheat the oven to 425°F and line a baking sheet with parchment paper.\n2. Scrub the potatoes well and pat dry. Poke each one a few times with a fork.\n3. Place on the baking sheet, rub all over with olive oil, and sprinkle generously with salt.\n4. Bake 45–60 minutes, until the skins are crisp and puffy and a fork slides in easily.\n\n## Tips\n- **Microwave:** Wash the potatoes and poke them with a fork. Microwave 4 minutes, flip, then 4 minutes more.\n- Top with [Grandma's Chili](#grandmas-chili) for a full meal.",
+      "totalTime": 60
+    },
+    {
+      "title": "Big-Batch Chicken Pot Pie",
+      "description": "A 9x13 Bisquick chicken pot pie, easy to split in two and freeze half for later.",
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 6,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "Comfort Food",
+        "Meal Prep",
+        "Budget Friendly",
+        "American"
+      ],
+      "tags": [
+        "Bisquick",
+        "Freezer Friendly",
+        "Casserole"
+      ],
+      "slug": "big-batch-chicken-pot-pie",
+      "body": "## Ingredients\n- 2–3 cans cooked chicken\n- 2 cans cream of chicken soup\n- 1 package frozen vegetables\n- 2 cups Bisquick\n- 1 1/2 cups milk\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. Mix the chicken, soup, and vegetables in an ungreased 9x13 glass dish.\n3. Stir the Bisquick and milk until blended, then pour over the chicken mixture.\n4. Bake 40–45 minutes, until a knife comes out clean and the top is a little golden.\n\n## Tips\n- Split it between two 8x8 baking dishes and freeze one for later.",
+      "totalTime": 60
+    },
+    {
+      "title": "Cake Mix Cookies",
+      "description": "Chocolate chip cookies from any flavor of cake mix, in about 20 minutes.",
+      "prepTime": 10,
+      "cookTime": 10,
+      "servings": 24,
+      "categories": [
+        "Dessert",
+        "Quick Meals",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Cookies",
+        "Cake Mix"
+      ],
+      "slug": "cake-mix-cookies",
+      "body": "## Ingredients\n- 1 box cake mix (any flavor)\n- 1/4 cup flour or oatmeal\n- 1/4 cup water\n- 1/2 cup oil\n- 1 egg\n- 1/2 bag chocolate chips\n\n## Instructions\n1. Preheat the oven to 350°F.\n2. Mix all the ingredients together.\n3. Roll into golf-ball-sized balls and place on a baking sheet.\n4. Bake for 10 minutes.",
+      "totalTime": 20
+    },
+    {
+      "title": "Calzone or Pizza Dough",
+      "description": "Honey-sweetened homemade dough for four calzones or one large pizza.",
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Vegetarian",
+        "Italian",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Pizza",
+        "Calzones",
+        "Dough"
+      ],
+      "slug": "calzone-or-pizza-dough",
+      "body": "## Ingredients\n- 1/2 cup lukewarm water\n- 1 package (0.25 oz) active dry yeast\n- 1/2 cup water\n- 2 tbsp olive oil\n- 2 tbsp honey\n- 1/2 tsp salt\n- 3 cups all-purpose flour, plus more for dusting\n- Your favorite fillings or toppings\n\n## Instructions\n1. Mix the 1/2 cup lukewarm water and the yeast in a small bowl. Let stand until foamy, about 5 minutes.\n2. In a large bowl, combine the other 1/2 cup water, olive oil, honey, and salt. Add 1 cup flour and mix well.\n3. Mix in the yeast mixture, then add the remaining flour 1 cup at a time until the dough is well combined.\n4. Knead on a floured surface until soft, smooth, and elastic, about 8 minutes.\n5. Roll into 4 calzones or 1 large pizza.\n6. Preheat the oven to 400°F. Fill or top the dough, then bake until the crust is lightly browned, 15–20 minutes.\n\n## Tips\n- Brush the crust with olive oil and sprinkle with garlic powder.",
+      "totalTime": 40
+    },
+    {
+      "title": "Chicken Crescents",
+      "description": "Creamy chicken and cream cheese filling wrapped in flaky crescent rolls.",
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 3,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "Comfort Food",
+        "Quick Meals"
+      ],
+      "tags": [
+        "Crescent Rolls",
+        "Kid Friendly"
+      ],
+      "slug": "chicken-crescents",
+      "body": "## Ingredients\n- 1 cup cooked, shredded chicken (drained canned chicken works great)\n- 1 package (8 oz) cream cheese\n- 2 tbsp butter\n- 1 can (8 oz) Pillsbury crescent rolls\n\n## Instructions\n1. Preheat the oven according to the crescent roll package.\n2. Mix together the chicken, cream cheese, and butter.\n3. Open the can and separate the crescents. Spread each one open into a triangle (easier if the dough sits out of the fridge for a few minutes).\n4. Put a spoonful or more of the chicken mixture in the center of each roll.\n5. Roll the long, pointed end over the filling toward the other two ends, then fold the 2 ends toward each other.\n6. Bake as directed on the crescent package.\n\n## Variations\n- Dip them in melted butter, then roll in 1/2 cup crushed Saltines or Ritz crackers before baking.",
+      "totalTime": 30
     },
     {
       "title": "Chicken Pot Pie",
@@ -109,8 +262,9 @@
         "Bisquick",
         "Weeknight"
       ],
+      "recipeSource": "https://www.allrecipes.com/recipe/179376/impossibly-easy-chicken-pot-pie/",
       "slug": "chicken-pot-pie",
-      "body": "## Ingredients\n- 1 bag frozen mixed vegetables, thawed\n- 1 cup cut-up cooked chicken\n- 1 can (10.75 oz) condensed cream of chicken soup\n- 1 cup Original Bisquick mix\n- 1/2 cup milk\n- 1 egg\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. In an ungreased 9-inch glass pie plate, stir together the vegetables, chicken, and soup.\n3. In a small bowl, stir the Bisquick, milk, and egg with a fork until blended. Pour over the chicken mixture.\n4. Bake about 30 minutes, until golden brown.\n\n## Notes\nThe original card's directions were accidentally copied from the enchilada recipe, so these steps follow the classic Bisquick pot pie method that matches its ingredients.",
+      "body": "## Ingredients\n- 1 bag frozen mixed vegetables, thawed\n- 1 cup cut-up cooked chicken\n- 1 can (10.75 oz) condensed cream of chicken soup\n- 1 cup Original Bisquick mix\n- 1/2 cup milk\n- 1 egg\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. In an ungreased 9-inch glass pie plate, stir together the vegetables, chicken, and soup.\n3. In a small bowl, stir the Bisquick, milk, and egg with a fork until blended. Pour over the chicken mixture.\n4. Bake about 30 minutes, until golden brown.\n\n## Notes\nThe original card's directions were accidentally copied from the enchilada recipe, so these steps follow the Allrecipes \"Impossibly Easy Chicken Pot Pie\" the card links to. For a bigger, freezer-friendly batch, see the Big-Batch Chicken Pot Pie recipe.",
       "totalTime": 35
     },
     {
@@ -130,6 +284,69 @@
       "slug": "chocolate-chip-cookies",
       "body": "## Ingredients\n- 2 sticks butter, softened to room temperature\n- 1 cup dark brown sugar\n- 3/4 cup granulated sugar\n- 2 eggs\n- 1 tsp vanilla\n- 3 cups flour\n- 1 tsp baking soda\n- 1/2 tsp salt\n- 2 cups chocolate chips\n\n## Instructions\n1. Preheat the oven to 300°F.\n2. With a mixer, beat the butter, dark brown sugar, and granulated sugar until well mixed.\n3. Mix in the eggs and vanilla.\n4. Add the flour, baking soda, and salt and mix.\n5. Stir in the chocolate chips.\n6. Bake about 15 minutes, until the cookies are light brown.\n7. Let them sit on the cookie sheet a few extra minutes before moving them to a cooling rack.\n\n## Tips\n- Cookies turn out better if each batch goes onto a somewhat cool cookie sheet.",
       "totalTime": 30
+    },
+    {
+      "title": "Creamy Baked Meatballs",
+      "description": "An old prize-winning recipe card for tender meatballs baked in a creamy mushroom and chicken sauce.",
+      "prepTime": 25,
+      "cookTime": 60,
+      "servings": 5,
+      "categories": [
+        "Main Course",
+        "Beef",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Family Recipe",
+        "Recipe Card",
+        "Casserole"
+      ],
+      "slug": "creamy-baked-meatballs",
+      "body": "## Ingredients\n- 4 slices bread\n- 1/2 cup milk\n- 2 eggs, beaten\n- 1/4 tsp pepper\n- 2 tbsp minced onion\n- 2 tsp baking powder\n- 1/4 tsp Accent (MSG)\n- 1 1/2 lb ground beef\n- 1 can cream of mushroom soup\n- 1 can cream of chicken soup\n- 1 soup can of milk\n\n## Instructions\n1. Soak the bread for 10 minutes in the milk and egg mixture.\n2. Combine with all the other ingredients except the soups and the soup can of milk.\n3. Shape into 25 meatballs. Brown them in a little fat and place in a baking dish.\n4. Mix the undiluted soups with the can of milk and pour over the meatballs.\n5. Bake at 325°F for 1 hour.\n\n## Notes\nFrom a handwritten recipe card marked \"A prize winning recipe\" (\"very similar to Mother's\"). The card's title is hard to read, and one smudged line under the ground beef couldn't be made out.\n\n## Tips\n- Serve with rice, baked potatoes, or a potato casserole.",
+      "totalTime": 85
+    },
+    {
+      "title": "Easy White Homemade Bread",
+      "description": "Soft homemade white bread that makes two loaves or two dozen rolls, stirred with a spoon instead of kneaded.",
+      "prepTime": 90,
+      "cookTime": 30,
+      "servings": 24,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "Budget Friendly"
+      ],
+      "tags": [
+        "Bread",
+        "Rolls",
+        "No Knead",
+        "Recipe Card"
+      ],
+      "slug": "easy-white-homemade-bread",
+      "body": "## Ingredients\n- 1/2 cup warm water\n- 2 tbsp yeast\n- 6 cups flour\n- 3 tbsp sugar\n- 1 tbsp salt\n- 1/3 cup oil\n- 2 cups hot water\n\n## Instructions\n1. Dissolve the yeast in the warm water.\n2. Combine the remaining ingredients using **3 cups of the flour** and beat well.\n3. Add the yeast and beat well.\n4. Add the remaining flour to make a soft dough that can still be mixed with a spoon (it will be sticky).\n5. Leave the spoon in and let the dough rest 10 minutes. Stir it down every 10 minutes, 5 times total.\n6. Divide in two. Roll each up like a jelly roll, or make 2 dozen rolls. Place in greased pans.\n7. Let rise until doubled, about 30 minutes.\n8. Bake at 400°F for 30 minutes.",
+      "totalTime": 120
+    },
+    {
+      "title": "Foil-Pack Chicken Fajitas",
+      "description": "Seasoned rice, chicken, peppers, salsa, and cheese baked in individual foil packets.",
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 4,
+      "categories": [
+        "Main Course",
+        "Chicken",
+        "Rice",
+        "Mexican",
+        "High Protein",
+        "Meal Prep"
+      ],
+      "tags": [
+        "Foil Packet",
+        "Make Ahead"
+      ],
+      "slug": "foil-pack-chicken-fajitas",
+      "body": "## Ingredients\n- 1 1/2 cups rice\n- 1 1/2 cups hot water\n- 1 tbsp taco seasoning\n- 4 boneless chicken breast halves (about 1 lb)\n- 1 green and 1 red bell pepper, sliced\n- 1/2 cup salsa\n- 1/2 cup shredded cheese\n\n## Instructions\n1. Heat the oven to 400°F.\n2. Fold up all sides of 4 large sheets of heavy-duty foil to form a 1-inch rim, and spray with cooking spray.\n3. Combine the rice, hot water, and taco seasoning and spoon evenly onto the foil. Top with the remaining ingredients.\n4. Bring up the foil sides and fold to make 4 packets. Place on a rimmed baking sheet.\n5. Bake 30–35 minutes, until the chicken is done (165°F). Cool 5 minutes, then cut slits in the foil to release steam before carefully opening.\n\n## Tips\n- Make the packets ahead and refrigerate up to 1 day, then bake as directed.\n- Add the liquids last so the packets are easier to fold.\n- Go heavier on the taco seasoning.",
+      "totalTime": 45
     },
     {
       "title": "Grandma's Chili",
@@ -172,34 +389,6 @@
       "slug": "ground-beef-enchiladas",
       "body": "## Ingredients\n- 1 lb ground beef\n- 1/2 onion, chopped\n- 1/2 tsp salt\n- 1/2 tsp pepper\n- 1 cup salsa\n- 1 tbsp chili powder\n- 1 tsp paprika\n- 1 tsp cumin\n- 2 cans (10 oz) enchilada sauce (red or green)\n- Corn tortillas\n- Shredded cheese\n\n## Instructions\n1. Preheat the oven to 350°F.\n2. In a large skillet, brown the ground beef with the onion. Season with salt, pepper, chili powder, paprika, and cumin. Stir in the salsa.\n3. Simmer over low heat for about 10 minutes so the flavors combine.\n4. Pour a little enchilada sauce over the bottom of a 9x13 baking pan.\n5. Warm the rest of the sauce in a saucepan, then dip each tortilla in it.\n6. Spoon meat mixture into each tortilla, roll it up, and place seam-side down in the pan. Repeat until the meat is gone.\n7. Pour the remaining sauce over the enchiladas and top with cheese.\n8. Bake for 10 minutes, until heated through.",
       "totalTime": 35
-    },
-    {
-      "title": "Ground Beef Tacos",
-      "description": "Weeknight beef tacos with a quick homemade seasoning blend.",
-      "prepTime": 10,
-      "cookTime": 15,
-      "estimatedCost": 11,
-      "servings": 4,
-      "categories": [
-        "Main Course",
-        "Beef",
-        "Mexican",
-        "Quick Meals",
-        "Budget Friendly",
-        "American"
-      ],
-      "tags": [
-        "Family Favorite",
-        "30 Minutes"
-      ],
-      "prepDuration": 30,
-      "nutrition": {
-        "calories": 520,
-        "protein": "30g"
-      },
-      "slug": "tacos",
-      "body": "## Ingredients\n- 1 lb ground beef\n- 8 taco shells or small tortillas\n- 1 tbsp chili powder\n- 1 tsp cumin\n- 1/2 tsp garlic powder\n- 1/2 tsp paprika\n- 1/2 tsp salt\n- 1/4 cup water\n- Toppings: lettuce, tomato, cheese, sour cream, salsa\n\n## Instructions\n1. Brown the ground beef over medium-high heat, breaking it into crumbles. Drain excess fat.\n2. Stir in chili powder, cumin, garlic powder, paprika, and salt.\n3. Add the water and simmer 3–4 minutes until it thickens into a glaze.\n4. Warm the shells while the beef finishes.\n5. Fill shells with beef and pile on toppings.\n\n## Notes\nThe splash of water is the trick — it lets the spices bloom and coat the meat evenly.\n\n## Tips\n- Toast dry taco shells in a 350°F oven for 3 minutes for extra crunch.\n- Double the seasoning batch and jar it for next time.\n\n## Variations\n- Use ground turkey or plant-based crumbles.\n- Turn leftovers into a taco salad or quesadilla.",
-      "totalTime": 25
     },
     {
       "title": "Instant Pot Creamy Chicken Pasta",
@@ -285,63 +474,46 @@
       "totalTime": 30
     },
     {
-      "title": "Peanut Butter Overnight Oats",
-      "description": "No-cook, make-ahead oats with peanut butter and banana.",
+      "title": "Puffed Pancakes",
+      "description": "A buttery, oven-puffed blender pancake with just four ingredients.",
       "prepTime": 5,
-      "cookTime": 0,
-      "estimatedCost": 6,
-      "servings": 2,
+      "cookTime": 25,
+      "servings": 4,
       "categories": [
         "Breakfast",
         "Vegetarian",
-        "Meal Prep",
         "Budget Friendly",
-        "Quick Meals",
-        "Healthy"
+        "Quick Meals"
       ],
       "tags": [
-        "No Cook",
-        "High Fiber"
+        "Blender",
+        "Dutch Baby"
       ],
-      "prepDuration": 10,
-      "nutrition": {
-        "calories": 380,
-        "protein": "15g",
-        "fiber": "8g"
-      },
-      "slug": "overnight-oats",
-      "body": "## Ingredients\n- 1 cup rolled oats\n- 1 cup milk of choice\n- 1/2 cup plain Greek yogurt\n- 2 tbsp peanut butter\n- 1 tbsp maple syrup or honey\n- 1/2 tsp vanilla\n- 1 banana, sliced\n\n## Instructions\n1. Stir the oats, milk, yogurt, peanut butter, syrup, and vanilla together in a jar.\n2. Fold in half the banana slices.\n3. Seal and refrigerate **overnight** (at least 4 hours).\n4. In the morning, top with the remaining banana and eat cold.\n\n## Notes\nDivide between two jars before chilling for grab-and-go portions.\n\n## Tips\n- Too thick? Splash in more milk. Too thin? Add a spoon of oats.\n- Warm it 60 seconds in the microwave if you prefer it hot.\n\n## Variations\n- Swap peanut butter for almond butter and banana for berries.\n- Add chia seeds for extra thickness and omega-3s.",
-      "totalTime": 5
+      "slug": "puffed-pancakes",
+      "body": "## Ingredients\n- 1/4 to 1/3 cup salted butter\n- 3–4 eggs\n- 3/4 to 1 cup milk\n- 3/4 to 1 cup flour\n\n## Instructions\n1. Put the butter in the baking pan and set it in a 425°F oven. Mix the batter while the butter melts.\n2. Blend the eggs on high speed for 1 minute.\n3. With the motor running, gradually pour in the milk, then slowly add the flour.\n4. Keep blending for 30 more seconds.\n5. Pour the batter into the hot melted butter. Bake until puffy and brown, 20–25 minutes.\n\n## Notes\nUse the smaller amounts for a smaller pan and the larger amounts for a bigger one.",
+      "totalTime": 30
     },
     {
-      "title": "Teriyaki Chicken Bowl",
-      "description": "Sticky teriyaki chicken over rice with steamed veggies — great for meal prep.",
-      "prepTime": 15,
-      "cookTime": 20,
-      "estimatedCost": 13,
-      "servings": 4,
+      "title": "Slow Cooker Tortilla Soup",
+      "description": "Dump-and-go chicken tortilla soup with beans, corn, tomatoes, and green chilies.",
+      "prepTime": 10,
+      "cookTime": 240,
+      "servings": 6,
       "categories": [
         "Main Course",
         "Chicken",
-        "Rice",
-        "Asian",
-        "High Protein",
-        "Meal Prep",
-        "Healthy"
+        "Mexican",
+        "Slow Cooker",
+        "Comfort Food",
+        "Budget Friendly"
       ],
       "tags": [
-        "Batch Cook",
-        "Balanced"
+        "Soup",
+        "Dump and Go"
       ],
-      "prepDuration": 45,
-      "nutrition": {
-        "calories": 560,
-        "protein": "40g",
-        "carbs": "62g"
-      },
-      "slug": "teriyaki-chicken-bowl",
-      "body": "## Ingredients\n- 1.5 lb boneless chicken thighs, cubed\n- 2 cups cooked white or brown rice\n- 2 cups broccoli florets\n- 1/3 cup soy sauce\n- 3 tbsp honey\n- 2 tbsp rice vinegar\n- 1 tbsp grated ginger\n- 2 cloves garlic, minced\n- 1 tsp cornstarch + 1 tbsp water (slurry)\n- Sesame seeds and green onion to garnish\n\n## Instructions\n1. Whisk soy sauce, honey, vinegar, ginger, and garlic to make the teriyaki sauce.\n2. Sear the chicken in a hot pan until browned and cooked through, ~8–10 minutes.\n3. Pour in the sauce and simmer 2 minutes.\n4. Stir in the cornstarch slurry and cook 1 minute until glossy and thick.\n5. Steam the broccoli until crisp-tender.\n6. Build bowls: rice, chicken, broccoli. Garnish with sesame seeds and green onion.\n\n## Notes\nThighs stay juicier than breasts for meal prep, but either works.\n\n## Tips\n- Portion into 4 containers; keeps 4 days in the fridge.\n- Keep sauce slightly loose — it thickens as it cools.\n\n## Variations\n- Add edamame, carrots, or snap peas.\n- Swap chicken for tofu or salmon.",
-      "totalTime": 35
+      "slug": "slow-cooker-tortilla-soup",
+      "body": "## Ingredients\n- 1 can (16 oz) chili beans with juice\n- 2 cans of water (use the chili bean can)\n- 1 can (15 oz) corn with juice\n- 1 can (8 oz) tomato sauce\n- 2 cans (14.5 oz) diced tomatoes\n- 2 cans (4 oz) chopped green chilies\n- 1 package taco seasoning mix\n- 2–3 thawed chicken breasts\n\n## Instructions\n1. Add everything to the crock pot and stir to mix.\n2. Cook on high for 4 hours or low for 8 hours.\n\n## Tips\n- Serve with tortilla chips, cheese, and sour cream.",
+      "totalTime": 250
     },
     {
       "title": "Tortellini Soup",

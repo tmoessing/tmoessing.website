@@ -52,7 +52,7 @@ const COURSES = ["Breakfast", "Main Course", "Dessert"];
 
 // Canonical category taxonomy — the single source the picker + validation read.
 const CATEGORIES = [
-  "Breakfast", "Main Course", "Snack", "Dessert",
+  "Breakfast", "Main Course", "Side Dish", "Snack", "Dessert",
   "High Protein", "Low Carb", "Vegetarian", "Vegan", "Gluten Free",
   "Chicken", "Beef", "Pork", "Seafood",
   "Pasta", "Rice",

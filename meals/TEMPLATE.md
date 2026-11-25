@@ -12,7 +12,7 @@ servings: 4         # required
 estimatedCost: 15   # dollars for the whole recipe, number only
 
 # Pick from this list (spelling matters; the build warns about typos):
-#   Meals:    Breakfast, Main Course, Snack, Dessert
+#   Meals:    Breakfast, Main Course, Side Dish, Snack, Dessert
 #   Diet:     High Protein, Low Carb, Vegetarian, Vegan, Gluten Free, Healthy
 #   Protein:  Chicken, Beef, Pork, Seafood
 #   Base:     Pasta, Rice
