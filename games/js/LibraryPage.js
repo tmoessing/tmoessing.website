@@ -5,15 +5,16 @@
  * filtered view can be shared.
  */
 import { GAMES, CATEGORIES } from "../data/games.js";
-import { createGameCard } from "./GameCard.js";
+import { createGameCard } from "./components/GameCard.js";
 import { sortGames, esc } from "./filters.js";
-import { openPicker } from "./PickerModal.js";
+import { openPicker } from "./components/PickerModal.js";
 import { icon } from "./icons.js";
 import { readUrlState, writeFilters } from "./urlState.js";
+import { SEARCH_PLACEHOLDER } from "./components/SearchBox.js";
+import { VIEW_OPTIONS } from "./components/ViewToggle.js";
 
 const VIEW_KEY = "library-view";
-const VIEWS = ["grid", "compact", "list"];
-const SEARCH_PLACEHOLDER = "Search games...";
+const VIEWS = VIEW_OPTIONS.map((o) => o.view);
 
 function readStoredView() {
   try {

@@ -3,7 +3,7 @@
  * (build element, set innerHTML, return). The whole card and its button
  * both route to the shared game-details modal.
  */
-import { CORE_CATEGORIES } from "../data/games.js";
+import { CORE_CATEGORIES } from "../../data/games.js";
 import {
   tagPill,
   placeholderDataURI,
@@ -11,8 +11,8 @@ import {
   playtimeLabel,
   complexityBadge,
   esc
-} from "./filters.js";
-import { icon } from "./icons.js";
+} from "../filters.js";
+import { icon } from "../icons.js";
 
 export function createGameCard(game) {
   const card = document.createElement("div");

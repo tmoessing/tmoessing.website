@@ -11,9 +11,9 @@
  * Filter state persists across views so "Back" preserves the user's choices.
  * Respects prefers-reduced-motion (skips reel + confetti).
  */
-import { GAMES, CATEGORIES, CORE_CATEGORIES } from "../data/games.js";
-import { matchGame, sortGames, shuffle, tagPill, placeholderDataURI, esc } from "./filters.js";
-import { icon } from "./icons.js";
+import { GAMES, CATEGORIES, CORE_CATEGORIES } from "../../data/games.js";
+import { matchGame, sortGames, shuffle, tagPill, placeholderDataURI, esc } from "../filters.js";
+import { icon } from "../icons.js";
 import { createGameCard } from "./GameCard.js";
 import { lockScroll, unlockScroll, openGameDetails } from "./GameDetailsModal.js";
 
