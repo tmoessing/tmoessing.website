@@ -9,6 +9,7 @@ categories:
   - Vegetarian
   - Budget Friendly
 tags:
+  - Mission Friend
   - Bread
   - Rolls
   - No Knead
@@ -33,3 +34,6 @@ tags:
 6. Divide in two. Roll each up like a jelly roll, or make 2 dozen rolls. Place in greased pans.
 7. Let rise until doubled, about 30 minutes.
 8. Bake at 400°F for 30 minutes.
+
+## Notes
+Shared by a friend from my mission.

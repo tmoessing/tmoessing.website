@@ -9,6 +9,7 @@ categories:
   - Quick Meals
   - Budget Friendly
 tags:
+  - Mission Friend
   - Cookies
   - Cake Mix
   - Freezer Friendly
@@ -31,6 +32,8 @@ tags:
 6. Cool on the pan for a couple of minutes, then transfer to a cooling rack.
 
 ## Notes
+Shared by a friend from my mission.
+
 Bursting with fresh lemon flavor, and they look great in a holiday cookie box.
 
 ## Tips

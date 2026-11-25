@@ -9,6 +9,7 @@ categories:
   - Beef
   - Comfort Food
 tags:
+  - Mission Friend
   - Family Recipe
   - Recipe Card
   - Casserole
@@ -35,6 +36,8 @@ tags:
 5. Bake at 325°F for 1 hour.
 
 ## Notes
+Shared by a friend from my mission.
+
 From a handwritten recipe card marked "A prize winning recipe" ("very similar to Mother's"). The card's title is hard to read, and one smudged line under the ground beef couldn't be made out.
 
 ## Tips
