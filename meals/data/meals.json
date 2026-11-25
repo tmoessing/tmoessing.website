@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T04:02:04.508Z",
+  "generatedAt": "2026-11-25T04:05:01.069Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -299,66 +299,11 @@
           "id": "10290952",
           "qty": 1,
           "name": "Hormel Chili with Beans, 15 oz",
-          "for": "chili (optional topping)"
+          "for": "chili topping"
         }
       ],
       "slug": "baked-potato",
-      "body": "## Ingredients\n- Potatoes (1 per person)\n- Olive oil\n- Sea or kosher salt\n\n## Instructions\n1. Preheat the oven to 425°F and line a baking sheet with parchment paper.\n2. Scrub the potatoes well and pat dry. Poke each one a few times with a fork.\n3. Place on the baking sheet, rub all over with olive oil, and sprinkle generously with salt.\n4. Bake 45–60 minutes, until the skins are crisp and puffy and a fork slides in easily.\n\n## Tips\n- **Microwave:** Wash the potatoes and poke them with a fork. Microwave 4 minutes, flip, then 4 minutes more.\n- Top with [Grandma's Chili](#grandmas-chili) for a full meal.",
-      "totalTime": 60
-    },
-    {
-      "title": "Big-Batch Chicken Pot Pie",
-      "description": "A 9x13 Bisquick chicken pot pie, easy to split in two and freeze half for later.",
-      "prepTime": 15,
-      "cookTime": 45,
-      "servings": 6,
-      "categories": [
-        "Main Course",
-        "Chicken",
-        "Comfort Food",
-        "Meal Prep",
-        "Budget Friendly",
-        "American"
-      ],
-      "tags": [
-        "Bisquick",
-        "Freezer Friendly",
-        "Casserole"
-      ],
-      "walmart": [
-        {
-          "id": "42613740",
-          "qty": 2,
-          "name": "Great Value Less Sodium Chunk Chicken Breast, 12.5 oz",
-          "for": "cooked chicken"
-        },
-        {
-          "id": "10321652",
-          "qty": 2,
-          "name": "Campbell's Cream of Chicken Soup, 10.5 oz",
-          "for": "cream of chicken soup"
-        },
-        {
-          "id": "817042496",
-          "qty": 1,
-          "name": "Great Value Mixed Vegetables, 12 oz (Frozen)",
-          "for": "frozen vegetables"
-        },
-        {
-          "id": "17208745",
-          "qty": 1,
-          "name": "Betty Crocker Bisquick Original, 20 oz",
-          "for": "Bisquick"
-        },
-        {
-          "id": "10450114",
-          "qty": 1,
-          "name": "Great Value Whole Vitamin D Milk, Gallon",
-          "for": "milk"
-        }
-      ],
-      "slug": "big-batch-chicken-pot-pie",
-      "body": "## Ingredients\n- 2–3 cans cooked chicken\n- 2 cans cream of chicken soup\n- 1 package frozen vegetables\n- 2 cups Bisquick\n- 1 1/2 cups milk\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. Mix the chicken, soup, and vegetables in an ungreased 9x13 glass dish.\n3. Stir the Bisquick and milk until blended, then pour over the chicken mixture.\n4. Bake 40–45 minutes, until a knife comes out clean and the top is a little golden.\n\n## Tips\n- Split it between two 8x8 baking dishes and freeze one for later.",
+      "body": "## Ingredients\n- Potatoes (1 per person)\n- Olive oil\n- Sea or kosher salt\n- 1 can Hormel chili with beans, for topping (optional)\n\n## Instructions\n1. Preheat the oven to 425°F and line a baking sheet with parchment paper.\n2. Scrub the potatoes well and pat dry. Poke each one a few times with a fork.\n3. Place on the baking sheet, rub all over with olive oil, and sprinkle generously with salt.\n4. Bake 45–60 minutes, until the skins are crisp and puffy and a fork slides in easily.\n\n## Tips\n- **Microwave:** Wash the potatoes and poke them with a fork. Microwave 4 minutes, flip, then 4 minutes more.\n- Top with warmed Hormel chili or [Grandma's Chili](#grandmas-chili) for a full meal.",
       "totalTime": 60
     },
     {
@@ -624,7 +569,7 @@
     },
     {
       "title": "Chicken Pot Pie",
-      "description": "Easy Bisquick chicken pot pie with mixed veggies and a golden crust.",
+      "description": "Easy Bisquick chicken pot pie with mixed veggies and a golden crust, plus a 9x13 big batch to freeze.",
       "prepTime": 5,
       "cookTime": 30,
       "servings": 6,
@@ -632,12 +577,15 @@
         "Main Course",
         "Chicken",
         "Comfort Food",
+        "Meal Prep",
         "Budget Friendly",
         "American"
       ],
       "tags": [
         "Bisquick",
-        "Weeknight"
+        "Weeknight",
+        "Freezer Friendly",
+        "Casserole"
       ],
       "recipeSource": "https://www.allrecipes.com/recipe/179376/impossibly-easy-chicken-pot-pie/",
       "walmart": [
@@ -648,9 +596,9 @@
           "for": "frozen mixed vegetables"
         },
         {
-          "id": "36267274",
+          "id": "42613740",
           "qty": 1,
-          "name": "Great Value Chunk Chicken Breast, 5 oz",
+          "name": "Great Value Less Sodium Chunk Chicken Breast, 12.5 oz",
           "for": "cooked chicken"
         },
         {
@@ -679,7 +627,7 @@
         }
       ],
       "slug": "chicken-pot-pie",
-      "body": "## Ingredients\n- 1 bag frozen mixed vegetables, thawed\n- 1 cup cut-up cooked chicken\n- 1 can (10.75 oz) condensed cream of chicken soup\n- 1 cup Original Bisquick mix\n- 1/2 cup milk\n- 1 egg\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. In an ungreased 9-inch glass pie plate, stir together the vegetables, chicken, and soup.\n3. In a small bowl, stir the Bisquick, milk, and egg with a fork until blended. Pour over the chicken mixture.\n4. Bake about 30 minutes, until golden brown.\n\n## Notes\nThe original card's directions were accidentally copied from the enchilada recipe, so these steps follow the Allrecipes \"Impossibly Easy Chicken Pot Pie\" the card links to. For a bigger, freezer-friendly batch, see the Big-Batch Chicken Pot Pie recipe.",
+      "body": "## Ingredients\n- 1 bag frozen mixed vegetables, thawed\n- 1 cup cut-up cooked chicken\n- 1 can (10.75 oz) condensed cream of chicken soup\n- 1 cup Original Bisquick mix\n- 1/2 cup milk\n- 1 egg\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. In an ungreased 9-inch glass pie plate, stir together the vegetables, chicken, and soup.\n3. In a small bowl, stir the Bisquick, milk, and egg with a fork until blended. Pour over the chicken mixture.\n4. Bake about 30 minutes, until golden brown.\n\n## Variations\n- **Big batch (9x13), ingredients:** 2–3 cans cooked chicken, 2 cans cream of chicken soup, 1 package frozen vegetables, 2 cups Bisquick, and 1 1/2 cups milk (no egg).\n- **Big batch, directions:** Mix the chicken, soup, and vegetables in an ungreased 9x13 glass dish. Stir the Bisquick and milk until blended and pour over the top. Bake at 400°F for 40–45 minutes, until a knife comes out clean and the top is a little golden. For the cart, add 1 or 2 more cans of chicken and 1 more can of soup.\n- **Freeze half:** Split the big batch between two 8x8 baking dishes and freeze one for later.\n\n## Notes\nThe original card's directions were accidentally copied from the enchilada recipe, so these steps follow the Allrecipes \"Impossibly Easy Chicken Pot Pie\" the card links to.",
       "totalTime": 35
     },
     {

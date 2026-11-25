@@ -15,13 +15,14 @@ tags:
 walmart:
   - 44391004 | 4 | Russet Baking Potato, Each | potatoes
   - 10315102 | 1 | Great Value Extra Virgin Olive Oil, 17 fl oz | olive oil
-  - 10290952 | 1 | Hormel Chili with Beans, 15 oz | chili (optional topping)
+  - 10290952 | 1 | Hormel Chili with Beans, 15 oz | chili topping
 ---
 
 ## Ingredients
 - Potatoes (1 per person)
 - Olive oil
 - Sea or kosher salt
+- 1 can Hormel chili with beans, for topping (optional)
 
 ## Instructions
 1. Preheat the oven to 425°F and line a baking sheet with parchment paper.
@@ -31,4 +32,4 @@ walmart:
 
 ## Tips
 - **Microwave:** Wash the potatoes and poke them with a fork. Microwave 4 minutes, flip, then 4 minutes more.
-- Top with [Grandma's Chili](#grandmas-chili) for a full meal.
+- Top with warmed Hormel chili or [Grandma's Chili](#grandmas-chili) for a full meal.
