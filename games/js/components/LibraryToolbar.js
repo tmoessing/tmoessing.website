@@ -1,11 +1,12 @@
 /**
  * The row under the hero: search on the left, view / sort / Pick a Game on
- * the right.
+ * the right, and the preset filter chips underneath.
  */
 import { icon } from "../icons.js";
 import { SearchBox } from "./SearchBox.js";
 import { ViewToggle } from "./ViewToggle.js";
 import { SortSelect } from "./SortSelect.js";
+import { PresetFilters } from "./PresetFilters.js";
 
 export function PickButton() {
   return `
@@ -36,6 +37,7 @@ export function LibraryToolbar() {
         ${SortSelect()}
         ${PickButton()}
       </div>
+      ${PresetFilters()}
     </div>
   `;
 }

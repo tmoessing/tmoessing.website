@@ -12,6 +12,7 @@ import { icon } from "./icons.js";
 import { readUrlState, writeFilters } from "./urlState.js";
 import { SEARCH_PLACEHOLDER } from "./components/SearchBox.js";
 import { VIEW_OPTIONS } from "./components/ViewToggle.js";
+import { PRESETS } from "./components/PresetFilters.js";
 
 const VIEW_KEY = "library-view";
 const VIEWS = VIEW_OPTIONS.map((o) => o.view);
@@ -33,6 +34,7 @@ export class LibraryPage {
     this.selectedSuggestionIndex = 0;
     this.view = readStoredView();
     this.favoritesOnly = false;
+    this.activePresets = new Set();
   }
 
   init() {
@@ -60,6 +62,16 @@ export class LibraryPage {
 
     this.sortSel.addEventListener("change", () => this.updateList());
 
+    this.presetBtns = Array.from(document.querySelectorAll(".preset-chip[data-preset]"));
+    this.presetBtns.forEach((b) =>
+      b.addEventListener("click", () => {
+        const id = b.dataset.preset;
+        this.activePresets.has(id) ? this.activePresets.delete(id) : this.activePresets.add(id);
+        this.applyPresetButtons();
+        this.updateList();
+      })
+    );
+
     this.favBtn = document.getElementById("favorites-toggle");
     this.favBtn.addEventListener("click", () => {
       this.favoritesOnly = !this.favoritesOnly;
@@ -86,7 +98,9 @@ export class LibraryPage {
 
   /** Restore search text, tags and sort from a shared link. */
   applyUrlState() {
-    const { q, tags, sort, fav } = readUrlState();
+    const { q, tags, sort, fav, presets } = readUrlState();
+    presets.forEach((id) => PRESETS.some((p) => p.id === id) && this.activePresets.add(id));
+    this.applyPresetButtons();
     this.favoritesOnly = fav;
     this.applyFavoritesButton();
     if (q) {
@@ -102,6 +116,14 @@ export class LibraryPage {
     const validSort = sort && [...this.sortSel.options].some((o) => o.value === sort);
     this.sortSel.value = validSort ? sort : "alpha";
     this.renderActiveTags();
+  }
+
+  applyPresetButtons() {
+    this.presetBtns.forEach((b) => {
+      const on = this.activePresets.has(b.dataset.preset);
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
   }
 
   applyFavoritesButton() {
@@ -216,6 +238,10 @@ export class LibraryPage {
 
     if (this.favoritesOnly) filtered = filtered.filter((g) => g.favorite);
 
+    // Preset chips: a game must pass every active preset.
+    const presets = PRESETS.filter((p) => this.activePresets.has(p.id));
+    if (presets.length) filtered = filtered.filter((g) => presets.every((p) => p.match(g)));
+
     // Locked tags: a game must have every one (as a tag or a category).
     if (this.activeTags.size > 0) {
       const wanted = Array.from(this.activeTags, (t) => t.toLowerCase());
@@ -244,7 +270,8 @@ export class LibraryPage {
       q: this.searchInput.value.trim(),
       tags: Array.from(this.activeTags),
       sort: this.sortSel.value,
-      fav: this.favoritesOnly
+      fav: this.favoritesOnly,
+      presets: Array.from(this.activePresets)
     });
     this.render();
   }

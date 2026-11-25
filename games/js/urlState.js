@@ -6,6 +6,7 @@
  *   ?tags=Party,Memory  locked tag/category filters
  *   ?sort=playtime      sort order (omitted for the default A–Z)
  *   ?fav=1              personal favorites only
+ *   ?preset=party,quick active preset filters
  *
  * Filters are written with replaceState (no history spam while typing).
  * Opening a game pushes a history entry so Back closes the details modal.
@@ -30,16 +31,18 @@ export function readUrlState() {
       .map((t) => t.trim())
       .filter(Boolean),
     sort: p.get("sort") || "",
-    fav: p.get("fav") === "1"
+    fav: p.get("fav") === "1",
+    presets: (p.get("preset") || "").split(",").map((t) => t.trim()).filter(Boolean)
   };
 }
 
-export function writeFilters({ q, tags, sort, fav }) {
+export function writeFilters({ q, tags, sort, fav, presets = [] }) {
   const p = params();
   q ? p.set("q", q) : p.delete("q");
   tags.length ? p.set("tags", tags.join(",")) : p.delete("tags");
   sort && sort !== "alpha" ? p.set("sort", sort) : p.delete("sort");
   fav ? p.set("fav", "1") : p.delete("fav");
+  presets.length ? p.set("preset", presets.join(",")) : p.delete("preset");
   history.replaceState(history.state, "", urlWith(p));
 }
 

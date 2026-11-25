@@ -882,3 +882,41 @@
   color: var(--text-primary);
 }
 .favorites-toggle.active .icon { color: #f5b301; fill: currentColor; }
+
+/* ---------- preset filter chips ---------- */
+.preset-filters {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+.preset-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.preset-chip:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
+.preset-chip:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: 2px; }
+.preset-chip.active { background: var(--primary-blue); border-color: var(--primary-blue); color: #fff; }
+.preset-emoji { font-size: 0.95rem; line-height: 1; }
+.preset-count {
+  min-width: 1.4em;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.preset-chip.active .preset-count { background: rgba(255, 255, 255, 0.22); color: #fff; }

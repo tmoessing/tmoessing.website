@@ -1024,7 +1024,7 @@ export const GAMES = [
     categories: ["Party", "Competitive"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["No Equipment", "Physical", "Balance", "Player Elimination", "Last One Standing"],
+    tags: ["No Props Needed", "Physical", "Balance", "Player Elimination", "Last One Standing"],
     bggUrl: "",
     howToPlay: {
       goal: "Be the last player still standing.",
