@@ -5,7 +5,7 @@ prepTime: 10
 cookTime: 15
 servings: 6
 categories:
-  - Dinner
+  - Main Course
   - Chicken
   - Pasta
   - Comfort Food

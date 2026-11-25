@@ -5,7 +5,7 @@ prepTime: 10
 cookTime: 20
 servings: 8
 categories:
-  - Dinner
+  - Main Course
   - Pork
   - Pasta
   - Italian

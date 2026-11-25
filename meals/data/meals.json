@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-11-25T00:33:11.834Z",
+  "generatedAt": "2026-11-25T00:40:26.488Z",
   "categories": [
     "Breakfast",
-    "Lunch",
-    "Dinner",
+    "Main Course",
     "Snack",
     "Dessert",
     "High Protein",
@@ -29,6 +28,11 @@
     "Meal Prep",
     "Budget Friendly",
     "Quick Meals"
+  ],
+  "courses": [
+    "Breakfast",
+    "Main Course",
+    "Dessert"
   ],
   "meals": [
     {
@@ -66,7 +70,7 @@
       "estimatedCost": 14,
       "servings": 4,
       "categories": [
-        "Dinner",
+        "Main Course",
         "Pasta",
         "Chicken",
         "High Protein",
@@ -95,7 +99,7 @@
       "cookTime": 30,
       "servings": 6,
       "categories": [
-        "Dinner",
+        "Main Course",
         "Chicken",
         "Comfort Food",
         "Budget Friendly",
@@ -134,7 +138,7 @@
       "cookTime": 20,
       "servings": 4,
       "categories": [
-        "Dinner",
+        "Main Course",
         "Beef",
         "High Protein",
         "Comfort Food",
@@ -156,7 +160,7 @@
       "cookTime": 20,
       "servings": 6,
       "categories": [
-        "Dinner",
+        "Main Course",
         "Beef",
         "Mexican",
         "Comfort Food"
@@ -177,7 +181,7 @@
       "estimatedCost": 11,
       "servings": 4,
       "categories": [
-        "Dinner",
+        "Main Course",
         "Beef",
         "Mexican",
         "Quick Meals",
@@ -204,7 +208,7 @@
       "cookTime": 15,
       "servings": 6,
       "categories": [
-        "Dinner",
+        "Main Course",
         "Chicken",
         "Pasta",
         "Comfort Food",
@@ -226,7 +230,7 @@
       "cookTime": 55,
       "servings": 6,
       "categories": [
-        "Dinner",
+        "Main Course",
         "Beef",
         "Pasta",
         "Italian",
@@ -317,8 +321,7 @@
       "estimatedCost": 13,
       "servings": 4,
       "categories": [
-        "Dinner",
-        "Lunch",
+        "Main Course",
         "Chicken",
         "Rice",
         "Asian",
@@ -347,7 +350,7 @@
       "cookTime": 20,
       "servings": 8,
       "categories": [
-        "Dinner",
+        "Main Course",
         "Pork",
         "Pasta",
         "Italian",

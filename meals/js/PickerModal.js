@@ -51,8 +51,8 @@ const SERVINGS = [
 ];
 const CORE_CATEGORIES = [
   "Breakfast",
-  "Lunch",
-  "Dinner",
+  "Main Course",
+  "Dessert",
   "High Protein",
   "Vegetarian",
   "Quick Meals"

@@ -6,7 +6,7 @@ cookTime: 15
 estimatedCost: 11
 servings: 4
 categories:
-  - Dinner
+  - Main Course
   - Beef
   - Mexican
   - Quick Meals

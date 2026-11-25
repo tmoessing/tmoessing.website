@@ -47,9 +47,12 @@ const KNOWN_FIELDS = [
 const REQUIRED = ["title", "description", "prepTime", "cookTime", "servings"];
 const NUMERIC = ["prepTime", "cookTime", "totalTime", "servings", "estimatedCost", "prepDuration"];
 
+// Courses: the quick-filter chips on the library page (must also be in CATEGORIES).
+const COURSES = ["Breakfast", "Main Course", "Dessert"];
+
 // Canonical category taxonomy — the single source the picker + validation read.
 const CATEGORIES = [
-  "Breakfast", "Lunch", "Dinner", "Snack", "Dessert",
+  "Breakfast", "Main Course", "Snack", "Dessert",
   "High Protein", "Low Carb", "Vegetarian", "Vegan", "Gluten Free",
   "Chicken", "Beef", "Pork", "Seafood",
   "Pasta", "Rice",
@@ -191,7 +194,8 @@ function validate(meal, file) {
   if (!meal.categories.length) problems.push("no categories (it won't show up in category filters)");
   meal.categories.forEach((c) => {
     if (!CATEGORIES.includes(c)) {
-      const guess = closest(c, CATEGORIES);
+      // Lunch and Dinner were merged into Main Course.
+      const guess = ["lunch", "dinner"].includes(String(c).toLowerCase()) ? "Main Course" : closest(c, CATEGORIES);
       problems.push(`category "${c}" isn't in the list${guess ? ` — did you mean "${guess}"?` : ""}`);
     }
   });
@@ -283,6 +287,7 @@ function build() {
   const bundle = {
     generatedAt: new Date().toISOString(),
     categories: CATEGORIES,
+    courses: COURSES,
     meals
   };
   writeFileSync(OUT, JSON.stringify(bundle, null, 2) + "\n", "utf8");

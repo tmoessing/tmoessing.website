@@ -6,7 +6,7 @@ cookTime: 20
 estimatedCost: 14
 servings: 4
 categories:
-  - Dinner
+  - Main Course
   - Pasta
   - Chicken
   - High Protein

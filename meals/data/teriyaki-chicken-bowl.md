@@ -6,8 +6,7 @@ cookTime: 20
 estimatedCost: 13
 servings: 4
 categories:
-  - Dinner
-  - Lunch
+  - Main Course
   - Chicken
   - Rice
   - Asian

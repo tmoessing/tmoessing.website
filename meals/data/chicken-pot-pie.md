@@ -5,7 +5,7 @@ prepTime: 5
 cookTime: 30
 servings: 6
 categories:
-  - Dinner
+  - Main Course
   - Chicken
   - Comfort Food
   - Budget Friendly
