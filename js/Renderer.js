@@ -306,10 +306,10 @@ export class Renderer {
     }
 
     /**
-     * wholeCardLink: make the whole card the link (like the picks) instead of showing a
-     * "View" button. Used by Personal > Creations.
+     * Projects with a link make the whole card the link (like the picks), marked by a small
+     * arrow after the title.
      */
-    createProjectCard(project, category = null, showTags = true, wholeCardLink = false) {
+    createProjectCard(project, category = null, showTags = true) {
         const card = document.createElement('div');
         const slug = this.parser.slugify(project.title);
         card.className = project.image ? 'card has-image project-card' : 'card project-card';
@@ -331,16 +331,13 @@ export class Renderer {
         const content = `
             <div class="card-header">
                 <div class="card-title-container">
-                    <h3 class="card-title">${project.title}${project.link && wholeCardLink ? `<svg class="icon icon-stroke project-link-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>` : ''}</h3>
+                    <h3 class="card-title">${project.title}${project.link ? `<svg class="icon icon-stroke project-link-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>` : ''}</h3>
                     ${categoryTag}
                     ${statusHTML}
                 </div>
                 ${project.dates ? `<div class="card-meta">${project.dates}</div>` : ''}
             </div>
             <p class="card-description">${project.description || ''}</p>
-            ${project.link && !wholeCardLink ? `<div class="project-actions">
-                <a href="${project.link}" target="_blank" class="btn btn-primary btn-sm" data-gc-event="out-project-${project.analytics || slug}">View →</a>
-            </div>` : ''}
             ${showTags ? `<div class="card-footer">
                 ${this.renderTags(project.tags)}
             </div>` : ''}
@@ -359,7 +356,7 @@ export class Renderer {
             card.innerHTML = content;
         }
 
-        if (project.link && wholeCardLink) {
+        if (project.link) {
             card.classList.add('card-linked', 'project-card-linked');
             const anchor = document.createElement('a');
             anchor.href = project.link;

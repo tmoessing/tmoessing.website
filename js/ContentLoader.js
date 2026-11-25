@@ -329,7 +329,7 @@ export class ContentLoader {
         allProjects.sort((a, b) => this.parser.parseDateRange(b.dates).end - this.parser.parseDateRange(a.dates).end);
         
         allProjects.forEach(project => {
-            gridContainer.appendChild(this.renderer.createProjectCard(project, null, false, true));
+            gridContainer.appendChild(this.renderer.createProjectCard(project, null, false));
         });
 
         // Show the project total in the sidebar, matching the pick tags, e.g. "Personal Projects (5)"
