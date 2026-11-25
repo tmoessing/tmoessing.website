@@ -14,6 +14,8 @@
  *   - fills in `image` automatically from meals/images/<slug>.(jpg|jpeg|png|webp)
  *   - derives `totalTime` (prep + cook) when it isn't set
  *   - skips files starting with "_" (drafts) and README.md
+ *   - keeps `hidden: true` recipes in the JSON, flagged; the page leaves them
+ *     out unless it's opened with ?hidden (see meals/README.md)
  *   - prints warnings for missing required fields, misspelled field names,
  *     unknown categories, missing photos, and missing recipe sections
  *
@@ -40,7 +42,7 @@ const STRICT = process.argv.includes("--strict");
 const KNOWN_FIELDS = [
   "title", "description", "prepTime", "cookTime", "totalTime", "servings",
   "estimatedCost", "categories", "tags", "image", "walmartList", "walmart", "recipeSource",
-  "prepDuration", "nutrition",
+  "prepDuration", "nutrition", "hidden",
   // reserved for future UI features
   "rating", "timesCooked", "lastCooked", "difficulty", "favorite"
 ];
@@ -321,7 +323,8 @@ function build() {
   };
   writeFileSync(OUT, JSON.stringify(bundle, null, 2) + "\n", "utf8");
 
-  console.log(`✓ Wrote ${meals.length} meal(s) to ${OUT}`);
+  const hiddenCount = meals.filter((m) => m.hidden === true).length;
+  console.log(`✓ Wrote ${meals.length} meal(s) to ${OUT}${hiddenCount ? ` (${hiddenCount} hidden)` : ""}`);
   if (warningCount) {
     console.warn(`  ${warningCount} warning(s) above. Recipes with warnings are still published.`);
     if (STRICT) process.exit(1);

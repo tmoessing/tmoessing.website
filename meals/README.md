@@ -30,7 +30,7 @@ You can do all of this from the GitHub website or app. No local setup needed.
 | `servings` | `4` | |
 
 Everything else (`estimatedCost`, `categories`, `tags`, `recipeSource`,
-`walmartList`, `walmart`, `prepDuration`, `nutrition`) is optional; `TEMPLATE.md`
+`walmartList`, `walmart`, `prepDuration`, `nutrition`, `hidden`) is optional; `TEMPLATE.md`
 explains each one. Don't add `totalTime` or `image`; the build fills those in.
 
 ## Categories
@@ -73,6 +73,16 @@ node meals/build.mjs --strict  # same, but exit with an error if anything's off
 
 Start a file name with `_` (e.g. `_lasagna.md`) to keep it out of the library
 while you work on it. Rename it to drop the `_` when it's ready.
+
+## Hidden recipes
+
+Add `hidden: true` to a recipe's top block to keep it off the library, the
+picker, and the week planner (handy for recipes you haven't tried yet). To see
+them anyway, open **`/meal-library/?hidden`**; hidden ones get a 🙈 badge.
+Delete the line (or set it to `false`) to publish it.
+
+Hidden isn't private: the recipe is still in `meals.json`, so anyone who knows
+the trick can see it. Use a `_` draft if it shouldn't be online at all.
 
 ## Formatting gotchas
 

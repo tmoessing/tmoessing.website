@@ -46,6 +46,10 @@ nutrition:
   calories: 450
   protein: 35g
 
+# Optional: set to true to keep the recipe off the page (e.g. untested ones).
+# It then only shows up at /meal-library/?hidden.
+hidden:
+
 # You do NOT need these; the build fills them in for you:
 #   totalTime  = prepTime + cookTime
 #   image      = meals/images/<file-name>.jpg (or .png/.webp) if you add one
