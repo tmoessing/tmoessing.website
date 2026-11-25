@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T01:37:05.151Z",
+  "generatedAt": "2026-11-25T04:02:04.508Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -1058,6 +1058,24 @@
           "qty": 1,
           "name": "Great Value White Corn Tortillas, 30 Count",
           "for": "corn tortillas"
+        },
+        {
+          "id": "10309357",
+          "qty": 1,
+          "name": "Mission Super Soft Flour Tortillas, Soft Taco Size, 10 Count",
+          "for": "flour tortillas"
+        },
+        {
+          "id": "10534038",
+          "qty": 1,
+          "name": "Great Value Black Beans, 15 oz",
+          "for": "black beans"
+        },
+        {
+          "id": "44391581",
+          "qty": 1,
+          "name": "Fresh Red Bell Pepper, Each",
+          "for": "red bell pepper"
         },
         {
           "id": "10452562",
