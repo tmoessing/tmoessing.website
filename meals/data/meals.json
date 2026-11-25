@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T00:45:31.541Z",
+  "generatedAt": "2026-11-25T00:48:10.241Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -184,6 +184,25 @@
       "slug": "big-batch-chicken-pot-pie",
       "body": "## Ingredients\n- 2–3 cans cooked chicken\n- 2 cans cream of chicken soup\n- 1 package frozen vegetables\n- 2 cups Bisquick\n- 1 1/2 cups milk\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. Mix the chicken, soup, and vegetables in an ungreased 9x13 glass dish.\n3. Stir the Bisquick and milk until blended, then pour over the chicken mixture.\n4. Bake 40–45 minutes, until a knife comes out clean and the top is a little golden.\n\n## Tips\n- Split it between two 8x8 baking dishes and freeze one for later.",
       "totalTime": 60
+    },
+    {
+      "title": "BYU Mint Brownies",
+      "description": "The famous BYU campus brownie, with a mint icing layer and a chocolate icing top.",
+      "prepTime": 65,
+      "cookTime": 25,
+      "servings": 24,
+      "categories": [
+        "Dessert"
+      ],
+      "tags": [
+        "Brownies",
+        "BYU",
+        "Crowd Pleaser"
+      ],
+      "recipeSource": "https://magazine.byu.edu/article/byu-mint-brownies/",
+      "slug": "byu-mint-brownies",
+      "body": "## Ingredients\n**Brownies**\n- 1 cup butter or margarine\n- 1/2 cup cocoa\n- 2 tbsp honey\n- 4 eggs\n- 2 cups sugar\n- 1 3/4 cups flour\n- 1/2 tbsp baking powder\n- 1/2 tsp salt\n- 1 cup chopped walnuts\n\n**Mint Icing**\n- 5 tbsp butter or margarine\n- Dash of salt\n- 3 tbsp milk\n- 1 tbsp light corn syrup\n- 2 1/3 cups powdered sugar\n- 1/2 tsp mint extract\n- 1–2 drops green food coloring\n\n**Chocolate Icing**\n- 5 tbsp butter or margarine\n- Dash of salt\n- 3 tbsp milk\n- 1 tbsp light corn syrup\n- 2 1/3 cups powdered sugar\n- 1/3 cup cocoa powder, sifted to remove clumps\n\n## Instructions\n1. **Brownies:** Melt the butter and mix in the cocoa. Let cool.\n2. Add the honey, eggs, sugar, flour, baking powder, and salt. Mix well, then stir in the nuts.\n3. Pour into a greased 9x13 pan and bake at 350°F for 25 minutes. Cool completely.\n4. **Mint icing:** Soften the butter. Add the salt, corn syrup, and powdered sugar and beat until smooth and fluffy. Mix in the mint extract and food coloring. Add the milk gradually until it's a little thinner than cake frosting.\n5. **Chocolate icing:** Soften the butter. Add the salt, corn syrup, powdered sugar, and cocoa and beat until smooth and fluffy. Add the milk gradually until it's a little thinner than cake frosting.\n6. Spread the mint icing over the cooled brownies. Pop the pan in the freezer for a short time to firm up the icing.\n7. Carefully spread the chocolate icing over the top. Enjoy!\n\n## Notes\nFrom BYU Magazine (Fall 2003), the recipe from Sugar-n-Spice in the Cougareat food court. Makes one 9x13 pan. Allow about 1 hour to cool before icing.\n\n## Tips\n- Skip the walnuts if you want them nut-free; the icing layers are the star anyway.",
+      "totalTime": 90
     },
     {
       "title": "Cake Mix Cookies",
