@@ -598,28 +598,7 @@ body.dark-mode :is(a, button).skill-tag.tag-chip.is-active { color: #0f172a; }
 .publication-card .project-actions { margin-bottom: var(--spacing-md); justify-content: flex-start; }
 .publication-card .project-actions .btn { white-space: normal; word-break: break-all; text-align: left; }
 
-/* Creations: linked project cards. The whole card is the link (see .card-linked);
-   this footer just shows where it goes. */
-.project-visit {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  align-self: flex-start;
-  margin-top: auto;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--primary-blue) 10%, transparent);
-  color: var(--primary-blue);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  transition: background 0.2s ease, gap 0.2s ease;
-}
-.project-visit-icon { width: 14px; height: 14px; }
-.project-card-linked:hover .project-visit,
-.project-card-linked:has(:focus-visible) .project-visit {
-  background: var(--primary-blue);
-  color: #fff;
-  gap: 9px;
-}
-.project-card-linked:hover .card-title { color: var(--primary-blue); }
+/* Creations: linked project cards. The whole card is the link (see .card-linked). */
 .project-card-linked .card-title { transition: color 0.2s ease; }
+.project-card-linked:hover .card-title,
+.project-card-linked:has(:focus-visible) .card-title { color: var(--primary-blue); }
