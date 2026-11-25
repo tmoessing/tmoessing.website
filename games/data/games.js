@@ -1011,5 +1011,30 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/watch?v=IzGRFHWCGhA"
+  },
+  {
+    id: "swedish-twister",
+    title: "Swedish Twister",
+    cover: "",
+    description: "A no-equipment balance game, like Ninja for your feet. Everyone's feet stay linked in a circle while you take turns stretching to tag someone else's foot. Wobble, fall, or touch the floor and you're out.",
+    minPlayers: 4,
+    maxPlayers: 15,
+    playtimeMin: 5,
+    playtimeMax: 15,
+    categories: ["Party", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Equipment", "Physical", "Balance", "Player Elimination", "Last One Standing"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the last player still standing.",
+      steps: [
+        "Stand in a tight circle, shoulder to shoulder, with each foot touching your neighbors' feet.",
+        "The first player moves one foot to touch any other player's foot. That player must then move the foot that was touched to tag someone else, and so on.",
+        "Once a foot is placed it stays put: no pivoting, sliding, or readjusting. You can lean on each other with your hands for balance.",
+        "If you fall, can't reach, or touch the floor with anything but your feet, you're out. Rules vary by group, so agree on house rules first."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=swedish+twister+party+game+feet+circle"
   }
 ];
