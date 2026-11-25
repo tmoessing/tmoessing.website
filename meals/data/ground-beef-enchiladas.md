@@ -12,6 +12,19 @@ categories:
 tags:
   - Family Favorite
   - Casserole
+walmart:
+  - 936536712 | 1 | 73% Lean Ground Beef, 1 lb Roll (Frozen) | ground beef
+  - 51259212 | 1 | Yellow Onion, Each | onion
+  - 13448693 | 1 | Pace Chunky Medium Salsa, 16 oz | salsa
+  - 157643393 | 1 | Great Value Chili Powder, 3 oz | chili powder
+  - 559839182 | 1 | Great Value Paprika, 2.5 oz | paprika
+  - 985501095 | 1 | Great Value Ground Cumin, 2.5 oz | cumin
+  - 5049188348 | 2 | Great Value Green Chile Enchilada Sauce, 10 oz | enchilada sauce
+  - 361076448 | 1 | Great Value White Corn Tortillas, 30 Count | corn tortillas
+  - 10309357 | 1 | Mission Super Soft Flour Tortillas, Soft Taco Size, 10 Count | flour tortillas
+  - 10534038 | 1 | Great Value Black Beans, 15 oz | black beans
+  - 44391581 | 1 | Fresh Red Bell Pepper, Each | red bell pepper
+  - 10452562 | 1 | Great Value Finely Shredded Fiesta Blend, 8 oz | shredded cheese
 ---
 
 ## Ingredients

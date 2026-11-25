@@ -243,13 +243,13 @@
   white-space: nowrap;
 }
 .meal-cat-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
-.meal-view-btn { margin-top: auto; align-self: flex-start; }
+.meal-card-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
 
 /* narrow cards: stack cover on top */
 @media (max-width: 460px) {
   .meal-card { flex-direction: column; }
   .meal-cover-wrap { flex-basis: auto; aspect-ratio: 16 / 9; }
-  .meal-view-btn { align-self: stretch; justify-content: center; }
+  .meal-card-actions .btn { flex: 1 1 auto; justify-content: center; }
 }
 
 /* ---------- list view: one wide card per row ---------- */
@@ -479,7 +479,12 @@
 .planner-note { font-size: 0.85rem; color: var(--text-muted); margin-top: var(--spacing-sm); }
 .planner-note code { font-size: 0.8rem; }
 .planner-done { font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-sm); }
-#planner-walmart-next { text-decoration: none; }
+#planner-walmart-next, .walmart-add { text-decoration: none; }
+.walmart-cart .walmart-items input:checked + .planner-item-text { text-decoration: none; color: inherit; }
+.walmart-cart .walmart-items input:not(:checked) + .planner-item-text { color: var(--text-muted); }
+.walmart-add[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.walmart-cart .planner-note { margin: 0 0 var(--spacing-sm); }
+.walmart-cart-actions { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); }
 .planner-shoplist { list-style: none; margin: var(--spacing-sm) 0 0; padding: 0; color: var(--text-secondary); font-size: 0.9rem; }
 .planner-shoplist li { padding: 2px 0; }
 .planner-shoplist li.done { color: var(--text-muted); text-decoration: line-through; }

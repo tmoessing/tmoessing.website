@@ -39,7 +39,7 @@ const STRICT = process.argv.includes("--strict");
 // in case they're a typo like `prepTme`.
 const KNOWN_FIELDS = [
   "title", "description", "prepTime", "cookTime", "totalTime", "servings",
-  "estimatedCost", "categories", "tags", "image", "walmartList", "recipeSource",
+  "estimatedCost", "categories", "tags", "image", "walmartList", "walmart", "recipeSource",
   "prepDuration", "nutrition",
   // reserved for future UI features
   "rating", "timesCooked", "lastCooked", "difficulty", "favorite"
@@ -207,6 +207,24 @@ function validate(meal, file) {
   return problems;
 }
 
+/**
+ * `walmart:` lines ("ID | qty | product name | ingredient") -> objects for the
+ * add-to-cart buttons. Unusable lines are collected in `bad` for a warning.
+ */
+function parseWalmart(lines) {
+  const items = [];
+  const bad = [];
+  for (const line of Array.isArray(lines) ? lines : [lines]) {
+    const [id, qty, name, forWhat] = String(line).split("|").map((s) => s.trim());
+    if (/^\d+$/.test(id) && /^[1-9]\d*$/.test(qty || "")) {
+      items.push({ id, qty: parseInt(qty, 10), name: name || "", for: forWhat || "" });
+    } else {
+      bad.push(line);
+    }
+  }
+  return { items, bad };
+}
+
 function parseMeal(file, text) {
   const slug = file.replace(/\.md$/i, "");
   const normalized = text.replace(/\r\n/g, "\n");
@@ -230,6 +248,13 @@ function parseMeal(file, text) {
   // hides those buttons and the JSON stays clean
   for (const [k, v] of Object.entries(meal)) {
     if (v === null || v === "") delete meal[k];
+  }
+
+  if (meal.walmart !== undefined) {
+    const { items, bad } = parseWalmart(meal.walmart);
+    if (items.length) meal.walmart = items;
+    else delete meal.walmart;
+    if (bad.length) meal._walmartBad = bad;
   }
 
   // Photo: an explicit `image:` wins; otherwise use images/<slug>.* if present.
@@ -269,6 +294,10 @@ function build() {
     if (meal._imageMissing) {
       problems.push(`image "${meal._imageMissing}" not found in meals/images/ (using placeholder)`);
       delete meal._imageMissing;
+    }
+    if (meal._walmartBad) {
+      meal._walmartBad.forEach((l) => problems.push(`walmart line "${l}" should look like \`ID | qty | product name | ingredient\``));
+      delete meal._walmartBad;
     }
     if (problems.length) {
       warningCount += problems.length;

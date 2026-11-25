@@ -13,6 +13,12 @@ categories:
 tags:
   - One Pan
   - Sheet Pan
+walmart:
+  - 338508084 | 1 | Freshness Guaranteed Thin-Sliced Chicken Breasts, 0.8-3.5 lb | chicken breast
+  - 735585383 | 1 | Great Value Broccoli Florets, 12 oz (Frozen) | frozen broccoli
+  - 44391004 | 4 | Russet Baking Potato, Each | potatoes
+  - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 221818463 | 1 | Great Value Italian Dressing Mix, 0.7 oz | Italian dressing mix
 ---
 
 ## Ingredients

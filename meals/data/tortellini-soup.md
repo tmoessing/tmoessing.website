@@ -14,6 +14,20 @@ categories:
 tags:
   - Soup
   - Crock Pot Friendly
+walmart:
+  - 40711369 | 1 | Marketside Mild Ground Italian Sausage, 1 lb | Italian sausage
+  - 51259212 | 1 | Yellow Onion, Each | onion
+  - 631368530 | 1 | Great Value Oregano Leaves, 0.87 oz | dried oregano
+  - 330313658 | 1 | Great Value Basil Leaves, 0.8 oz | dried basil
+  - 861014617 | 1 | Great Value Parsley Flakes, 0.4 oz | dried parsley
+  - 44391100 | 1 | Fresh Garlic Bulb, Each | garlic
+  - 10451315 | 1 | Baby Peeled Carrots, 1 lb | carrots
+  - 44390947 | 1 | Fresh Zucchini, Each | zucchini
+  - 10416105 | 1 | Great Value Petite Diced Tomatoes, 14.5 oz | diced tomatoes
+  - 10415487 | 1 | Great Value Tomato Sauce, 8 oz | tomato sauce
+  - 16935731 | 1 | Great Value 100% Apple Juice, 64 fl oz | apple juice
+  - 10314956 | 4 | Great Value Chicken Broth, 14.5 oz | chicken broth
+  - 20511545 | 1 | Great Value Cheese Tortellini, 19 oz (Frozen) | tortellini
 ---
 
 ## Ingredients

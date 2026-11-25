@@ -30,7 +30,7 @@ You can do all of this from the GitHub website or app. No local setup needed.
 | `servings` | `4` | |
 
 Everything else (`estimatedCost`, `categories`, `tags`, `recipeSource`,
-`walmartList`, `prepDuration`, `nutrition`) is optional; `TEMPLATE.md`
+`walmartList`, `walmart`, `prepDuration`, `nutrition`) is optional; `TEMPLATE.md`
 explains each one. Don't add `totalTime` or `image`; the build fills those in.
 
 ## Categories

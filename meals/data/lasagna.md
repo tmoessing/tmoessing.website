@@ -13,6 +13,12 @@ categories:
 tags:
   - No-Boil Noodles
   - Casserole
+walmart:
+  - 936536712 | 1 | 73% Lean Ground Beef, 1 lb Roll (Frozen) | ground beef
+  - 14123535 | 1 | Prego Roasted Garlic & Herb Sauce, 24 oz | spaghetti sauce
+  - 10534111 | 1 | Great Value Oven Ready Lasagna, 12 oz | lasagna noodles
+  - 10315022 | 1 | Great Value 4% Small Curd Cottage Cheese, 24 oz | cottage cheese
+  - 10452371 | 1 | Great Value Finely Shredded Mozzarella, 8 oz | mozzarella cheese
 ---
 
 ## Ingredients

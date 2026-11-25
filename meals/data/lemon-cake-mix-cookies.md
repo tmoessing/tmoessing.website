@@ -14,6 +14,12 @@ tags:
   - Cake Mix
   - Freezer Friendly
   - Holiday Baking
+walmart:
+  - 704543727 | 1 | Pillsbury Moist Supreme Lemon Cake Mix, 15.25 oz | lemon cake mix
+  - 10451002 | 1 | Great Value Vegetable Oil, 48 fl oz | vegetable oil
+  - 103020312 | 1 | Great Value White Large Eggs, 12 Count | eggs
+  - 41752773 | 1 | Fresh Lemon, Each | lemon
+  - 10315011 | 1 | Great Value Powdered Sugar, 32 oz | powdered sugar
 ---
 
 ## Ingredients

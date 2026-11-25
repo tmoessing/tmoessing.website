@@ -14,6 +14,11 @@ tags:
   - Rolls
   - No Knead
   - Recipe Card
+walmart:
+  - 453472924 | 1 | Great Value Active Dry Yeast, 0.25 oz, 3 Count | yeast
+  - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
+  - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
+  - 10451002 | 1 | Great Value Vegetable Oil, 48 fl oz | oil
 ---
 
 ## Ingredients

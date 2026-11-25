@@ -14,6 +14,14 @@ categories:
 tags:
   - Soup
   - Dump and Go
+walmart:
+  - 10534044 | 1 | Great Value Chili Beans, 15.5 oz | chili beans
+  - 10315427 | 1 | Great Value Golden Sweet Whole Kernel Corn, 15.25 oz | corn
+  - 10415487 | 1 | Great Value Tomato Sauce, 8 oz | tomato sauce
+  - 10450990 | 2 | Great Value Diced Tomatoes, 14.5 oz | diced tomatoes
+  - 10415222 | 2 | Great Value Medium Diced Green Chiles, 4 oz | green chilies
+  - 379517847 | 1 | Great Value Taco Seasoning Mix, 1 oz | taco seasoning
+  - 10414680 | 1 | Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen) | chicken breasts
 ---
 
 ## Ingredients

@@ -11,6 +11,15 @@ tags:
   - Mission Friend
   - Cookies
   - Big Batch
+walmart:
+  - 10315012 | 1 | Great Value Light Brown Sugar, 32 oz | brown sugar
+  - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 1536376961 | 1 | Meadow Gold 1% Lowfat Buttermilk, Quart | buttermilk
+  - 21368021 | 1 | Great Value Pure Vanilla Extract, 1 fl oz | vanilla
+  - 10403017 | 1 | Great Value All-Purpose Flour, 5 lb | flour
+  - 10315486 | 1 | Great Value Baking Soda, 1 lb | baking soda
+  - 533272737 | 1 | Great Value Ground Cinnamon, 2.5 oz | cinnamon
+  - 10314925 | 1 | Great Value Old Fashioned Oats, 42 oz | old-fashioned oats
 ---
 
 ## Ingredients

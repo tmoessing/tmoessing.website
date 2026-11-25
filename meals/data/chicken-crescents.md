@@ -12,6 +12,11 @@ categories:
 tags:
   - Crescent Rolls
   - Kid Friendly
+walmart:
+  - 42613740 | 1 | Great Value Less Sodium Chunk Chicken Breast, 12.5 oz | cooked chicken
+  - 10452429 | 1 | Great Value Cream Cheese Brick, 8 oz | cream cheese
+  - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 10319375 | 1 | Pillsbury Original Crescent Rolls, 8 oz | crescent rolls
 ---
 
 ## Ingredients

@@ -19,9 +19,11 @@ import {
   servingsLabel,
   totalMinutes,
   groceryLink,
+  walmartItems,
   googleCalendarUrl,
   upcomingWeek
 } from "./util.js";
+import { walmartCartHTML, wireWalmartCart } from "./WalmartCart.js";
 
 let scrollLocks = 0;
 export function lockScroll() {
@@ -111,6 +113,7 @@ function detailsHTML(meal) {
     .join("");
 
   const walmart = groceryLink(meal, "walmart");
+  const cartItems = walmartItems([{ meal, times: 1 }]);
   const source = meal.recipeSource && /^https?:\/\//i.test(meal.recipeSource) ? meal.recipeSource : null;
   // "Plan Meal Prep" reveals next week's Monday–Sunday; each day is a link that
   // opens Google Calendar with a 5 PM prep event on that date.
@@ -127,10 +130,12 @@ function detailsHTML(meal) {
   const actions = `
     <div class="meal-details-actions">
       <button type="button" class="btn btn-primary btn-sm" id="meal-view-recipe">📖 View Recipe</button>
+      ${cartItems.length ? `<button type="button" class="btn btn-secondary btn-sm" id="meal-cart-btn" aria-expanded="false" aria-controls="meal-cart-panel">🛒 Add to Walmart cart</button>` : ""}
       ${walmart ? `<a href="${esc(walmart)}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">🛒 Walmart Grocery List</a>` : ""}
       <button type="button" class="btn btn-secondary btn-sm" id="meal-plan-btn" aria-expanded="false" aria-controls="meal-plan-days">📅 Plan Meal Prep</button>
       ${source ? `<a href="${esc(source)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">🌐 Original Recipe</a>` : ""}
     </div>
+    ${cartItems.length ? `<div class="meal-plan-days" id="meal-cart-panel" hidden>${walmartCartHTML(cartItems)}</div>` : ""}
     <div class="meal-plan-days" id="meal-plan-days" hidden>
       <p class="meal-plan-prompt">Plan for next week: pick a day and it opens Google Calendar with a 5:00 PM prep event and the ingredient list in the notes.</p>
       <div class="plan-day-row">${dayLinks}</div>
@@ -159,6 +164,7 @@ function detailsHTML(meal) {
  * Open the details modal for a meal.
  * @param {object} opts.fromHash - true when triggered by hash navigation, so we
  *   don't push another hash entry (avoids a sync loop).
+ * @param {object} opts.showCart - true to open with the Walmart checklist showing.
  */
 export function openMealDetails(meal, opts = {}) {
   if (!meal) return;
@@ -171,6 +177,19 @@ export function openMealDetails(meal, opts = {}) {
       const body = overlay.querySelector("#meal-recipe-body");
       if (body) body.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+  }
+
+  const cartBtn = overlay.querySelector("#meal-cart-btn");
+  const cartPanel = overlay.querySelector("#meal-cart-panel");
+  if (cartBtn && cartPanel) {
+    wireWalmartCart(cartPanel, walmartItems([{ meal, times: 1 }]), { label: "Add to cart" });
+    const toggleCart = (open) => {
+      cartPanel.hidden = !open;
+      cartBtn.setAttribute("aria-expanded", String(open));
+      if (open) cartPanel.querySelector("input").focus();
+    };
+    cartBtn.addEventListener("click", () => toggleCart(cartPanel.hidden));
+    if (opts.showCart) toggleCart(true);
   }
 
   const planBtn = overlay.querySelector("#meal-plan-btn");

@@ -31,6 +31,12 @@ tags:
 recipeSource:       # where the recipe came from (URL)
 walmartList:        # a Walmart grocery-list URL
 
+# Optional: products for the "Add to Walmart cart" button, one per line:
+#   ID | quantity | product name | which ingredient it's for
+# ID = the number at the end of a walmart.com/ip/... product link.
+walmart:
+  - 20647992 | 1 | Great Value Honey, 12 oz | honey
+
 # Optional: how long to block off for meal prep in the "Add to calendar"
 # button, in minutes. Defaults to prepTime + cookTime.
 prepDuration:

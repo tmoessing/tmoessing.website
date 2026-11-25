@@ -14,6 +14,14 @@ categories:
 tags:
   - Foil Packet
   - Make Ahead
+walmart:
+  - 10315395 | 1 | Great Value Long Grain Rice, 5 lb | rice
+  - 379517847 | 1 | Great Value Taco Seasoning Mix, 1 oz | taco seasoning
+  - 338508084 | 1 | Freshness Guaranteed Thin-Sliced Chicken Breasts, 0.8-3.5 lb | chicken breasts
+  - 44390945 | 1 | Fresh Green Bell Pepper, Each | green bell pepper
+  - 44391581 | 1 | Fresh Red Bell Pepper, Each | red bell pepper
+  - 3562572626 | 1 | Great Value Thick and Chunky Medium Salsa, 16 oz | salsa
+  - 10452562 | 1 | Great Value Finely Shredded Fiesta Blend, 8 oz | shredded cheese
 ---
 
 ## Ingredients

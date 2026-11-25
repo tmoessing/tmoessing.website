@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T00:48:44.385Z",
+  "generatedAt": "2026-11-25T04:05:01.069Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -54,6 +54,32 @@
         "One Pan",
         "Weeknight"
       ],
+      "walmart": [
+        {
+          "id": "338508084",
+          "qty": 1,
+          "name": "Freshness Guaranteed Thin-Sliced Chicken Breasts, 0.8-3.5 lb",
+          "for": "chicken breasts"
+        },
+        {
+          "id": "13448693",
+          "qty": 1,
+          "name": "Pace Chunky Medium Salsa, 16 oz",
+          "for": "salsa"
+        },
+        {
+          "id": "10534038",
+          "qty": 1,
+          "name": "Great Value Black Beans, 15 oz",
+          "for": "black beans"
+        },
+        {
+          "id": "10452564",
+          "qty": 1,
+          "name": "Great Value Finely Shredded Colby Jack, 8 oz",
+          "for": "shredded cheese"
+        }
+      ],
       "slug": "one-two-three-chicken",
       "body": "## Ingredients\n- 4 small chicken breasts (or 6–8 chicken tenders)\n- 1 jar (16 oz) salsa\n- 1 can black beans\n- 1 cup shredded cheese\n\n## Instructions\n1. Cook the chicken in a non-stick skillet over medium-high heat, 4 minutes per side.\n2. Add the salsa and beans. Bring to a boil and cover.\n3. Simmer on medium-low for 5 minutes, or until the chicken reaches 165°F.\n4. Top with the cheese and remove from the heat. Let stand, covered, until the cheese melts.\n\n## Tips\n- Serve over potatoes, rice, or chips.",
       "totalTime": 20
@@ -74,6 +100,20 @@
       "tags": [
         "Weeknight",
         "Easy Cleanup"
+      ],
+      "walmart": [
+        {
+          "id": "10414680",
+          "qty": 1,
+          "name": "Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen)",
+          "for": "chicken breasts"
+        },
+        {
+          "id": "10309038",
+          "qty": 1,
+          "name": "Grill Mates Garlic, Herb & Wine Marinade Mix, 0.87 oz",
+          "for": "Grill Mates seasoning"
+        }
       ],
       "slug": "baked-chicken",
       "body": "## Ingredients\n- Chicken breasts (1 breast feeds 1–2 people)\n- 1 packet McCormick Grill Mates seasoning\n\n## Instructions\n1. Preheat the oven to 450°F.\n2. Season the chicken with the seasoning.\n3. Line a shallow metal pan with foil (dull side up) for easier cleanup.\n4. Bake 10 minutes, turn the chicken over, and bake 10 minutes more.\n\n## Tips\n- Serve with potatoes, rice, or noodles, in soft tacos, or sliced over a salad.",
@@ -96,6 +136,38 @@
         "Casserole",
         "One Pan"
       ],
+      "walmart": [
+        {
+          "id": "10315395",
+          "qty": 1,
+          "name": "Great Value Long Grain Rice, 5 lb",
+          "for": "rice"
+        },
+        {
+          "id": "51259070",
+          "qty": 1,
+          "name": "Great Value Chicken Breast Tenderloins, 3 lb (Frozen)",
+          "for": "chicken tenders"
+        },
+        {
+          "id": "10321652",
+          "qty": 1,
+          "name": "Campbell's Cream of Chicken Soup, 10.5 oz",
+          "for": "cream of chicken soup"
+        },
+        {
+          "id": "10899013",
+          "qty": 1,
+          "name": "Great Value Chicken Broth, 32 oz",
+          "for": "chicken broth"
+        },
+        {
+          "id": "115324221",
+          "qty": 1,
+          "name": "Great Value Onion Soup & Dip Mix, 2 oz",
+          "for": "onion soup mix"
+        }
+      ],
       "slug": "baked-chicken-and-rice",
       "body": "## Ingredients\n- 2 cups uncooked rice\n- 6 chicken tenders\n- 1 can cream of chicken soup\n- 4 cups chicken broth\n- 1 package onion soup mix (or just salt and pepper)\n\n## Instructions\n1. Preheat the oven to 325°F.\n2. Spray or butter the bottom of a 9x13 glass pan.\n3. Spread the uncooked rice in the pan and add the broth.\n4. Place the raw chicken on top and sprinkle with the soup mix (or salt and pepper).\n5. Spread the cream of chicken soup over the top.\n6. Bake uncovered for 1 hour, or until the broth is absorbed.",
       "totalTime": 80
@@ -116,6 +188,38 @@
       "tags": [
         "One Pan",
         "Sheet Pan"
+      ],
+      "walmart": [
+        {
+          "id": "338508084",
+          "qty": 1,
+          "name": "Freshness Guaranteed Thin-Sliced Chicken Breasts, 0.8-3.5 lb",
+          "for": "chicken breast"
+        },
+        {
+          "id": "735585383",
+          "qty": 1,
+          "name": "Great Value Broccoli Florets, 12 oz (Frozen)",
+          "for": "frozen broccoli"
+        },
+        {
+          "id": "44391004",
+          "qty": 4,
+          "name": "Russet Baking Potato, Each",
+          "for": "potatoes"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "221818463",
+          "qty": 1,
+          "name": "Great Value Italian Dressing Mix, 0.7 oz",
+          "for": "Italian dressing mix"
+        }
       ],
       "slug": "baked-italian-chicken-dinner",
       "body": "## Ingredients\n- 1 lb skinless, boneless chicken breast, cut into cubes\n- 1 package (10 oz) frozen broccoli\n- 4 potatoes, diced\n- 1/4 cup butter, melted\n- 1 package (0.7 oz) Italian dressing mix\n\n## Instructions\n1. Preheat the oven to 350°F. Spray a 13x9-inch baking dish with cooking spray.\n2. Layer the chicken, broccoli, and potatoes evenly in the dish, in that order.\n3. Drizzle the melted butter over the top and sprinkle with the Italian dressing mix.\n4. Bake until the chicken is cooked through and the potatoes are tender, 45–60 minutes.\n\n## Variations\n- Try adding carrots.",
@@ -138,6 +242,26 @@
         "Weeknight",
         "Easy"
       ],
+      "walmart": [
+        {
+          "id": "10414680",
+          "qty": 1,
+          "name": "Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen)",
+          "for": "chicken breasts"
+        },
+        {
+          "id": "1416793108",
+          "qty": 1,
+          "name": "Great Value Basil Pesto, 6.7 oz",
+          "for": "pesto"
+        },
+        {
+          "id": "10452371",
+          "qty": 1,
+          "name": "Great Value Finely Shredded Mozzarella, 8 oz",
+          "for": "mozzarella cheese"
+        }
+      ],
       "slug": "baked-pesto-chicken",
       "body": "## Ingredients\n- 2 boneless, skinless chicken breasts, cut into 1-inch pieces\n- 1/4 cup pesto\n- 1/4 cup mozzarella cheese\n- Salt and pepper\n\n## Instructions\n1. Preheat the oven to 375°F.\n2. Spray an 8x8 baking dish with non-stick spray. Spread 1/8 cup pesto over the bottom.\n3. Spread the chicken over the pesto, then spread the remaining pesto over the chicken. (Don't re-dip a spoon that's touched raw chicken into the pesto.)\n4. Cover with foil and bake 25–30 minutes.\n5. Remove the foil, sprinkle the cheese on top, and bake uncovered 5 more minutes until melted.\n\n## Tips\n- Serve with rice, quinoa, or wide noodles, and spoon the pesto from the dish over the top.\n- For a dairy-free portion, pull some chicken out before adding the cheese.",
       "totalTime": 40
@@ -158,31 +282,28 @@
         "Potatoes",
         "Microwave"
       ],
+      "walmart": [
+        {
+          "id": "44391004",
+          "qty": 4,
+          "name": "Russet Baking Potato, Each",
+          "for": "potatoes"
+        },
+        {
+          "id": "10315102",
+          "qty": 1,
+          "name": "Great Value Extra Virgin Olive Oil, 17 fl oz",
+          "for": "olive oil"
+        },
+        {
+          "id": "10290952",
+          "qty": 1,
+          "name": "Hormel Chili with Beans, 15 oz",
+          "for": "chili topping"
+        }
+      ],
       "slug": "baked-potato",
-      "body": "## Ingredients\n- Potatoes (1 per person)\n- Olive oil\n- Sea or kosher salt\n\n## Instructions\n1. Preheat the oven to 425°F and line a baking sheet with parchment paper.\n2. Scrub the potatoes well and pat dry. Poke each one a few times with a fork.\n3. Place on the baking sheet, rub all over with olive oil, and sprinkle generously with salt.\n4. Bake 45–60 minutes, until the skins are crisp and puffy and a fork slides in easily.\n\n## Tips\n- **Microwave:** Wash the potatoes and poke them with a fork. Microwave 4 minutes, flip, then 4 minutes more.\n- Top with [Grandma's Chili](#grandmas-chili) for a full meal.",
-      "totalTime": 60
-    },
-    {
-      "title": "Big-Batch Chicken Pot Pie",
-      "description": "A 9x13 Bisquick chicken pot pie, easy to split in two and freeze half for later.",
-      "prepTime": 15,
-      "cookTime": 45,
-      "servings": 6,
-      "categories": [
-        "Main Course",
-        "Chicken",
-        "Comfort Food",
-        "Meal Prep",
-        "Budget Friendly",
-        "American"
-      ],
-      "tags": [
-        "Bisquick",
-        "Freezer Friendly",
-        "Casserole"
-      ],
-      "slug": "big-batch-chicken-pot-pie",
-      "body": "## Ingredients\n- 2–3 cans cooked chicken\n- 2 cans cream of chicken soup\n- 1 package frozen vegetables\n- 2 cups Bisquick\n- 1 1/2 cups milk\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. Mix the chicken, soup, and vegetables in an ungreased 9x13 glass dish.\n3. Stir the Bisquick and milk until blended, then pour over the chicken mixture.\n4. Bake 40–45 minutes, until a knife comes out clean and the top is a little golden.\n\n## Tips\n- Split it between two 8x8 baking dishes and freeze one for later.",
+      "body": "## Ingredients\n- Potatoes (1 per person)\n- Olive oil\n- Sea or kosher salt\n- 1 can Hormel chili with beans, for topping (optional)\n\n## Instructions\n1. Preheat the oven to 425°F and line a baking sheet with parchment paper.\n2. Scrub the potatoes well and pat dry. Poke each one a few times with a fork.\n3. Place on the baking sheet, rub all over with olive oil, and sprinkle generously with salt.\n4. Bake 45–60 minutes, until the skins are crisp and puffy and a fork slides in easily.\n\n## Tips\n- **Microwave:** Wash the potatoes and poke them with a fork. Microwave 4 minutes, flip, then 4 minutes more.\n- Top with warmed Hormel chili or [Grandma's Chili](#grandmas-chili) for a full meal.",
       "totalTime": 60
     },
     {
@@ -200,6 +321,86 @@
         "Crowd Pleaser"
       ],
       "recipeSource": "https://magazine.byu.edu/article/byu-mint-brownies/",
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "110307843",
+          "qty": 1,
+          "name": "Great Value Unsweetened Cocoa Powder, 8 oz",
+          "for": "cocoa"
+        },
+        {
+          "id": "20647992",
+          "qty": 1,
+          "name": "Great Value Honey, 12 oz",
+          "for": "honey"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "16627955",
+          "qty": 1,
+          "name": "Great Value Double Acting Baking Powder, 8.1 oz",
+          "for": "baking powder"
+        },
+        {
+          "id": "793429092",
+          "qty": 1,
+          "name": "Great Value Chopped Walnuts, 4 oz",
+          "for": "chopped walnuts"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "10294409",
+          "qty": 1,
+          "name": "Karo Light Corn Syrup, 16 oz",
+          "for": "light corn syrup"
+        },
+        {
+          "id": "10315011",
+          "qty": 1,
+          "name": "Great Value Powdered Sugar, 32 oz",
+          "for": "powdered sugar"
+        },
+        {
+          "id": "10308881",
+          "qty": 1,
+          "name": "McCormick Pure Peppermint Extract, 1 fl oz",
+          "for": "mint extract"
+        },
+        {
+          "id": "24929610",
+          "qty": 1,
+          "name": "Wilton Kelly Green Gel Food Coloring, 1 oz",
+          "for": "green food coloring"
+        }
+      ],
       "slug": "byu-mint-brownies",
       "body": "## Ingredients\n**Brownies**\n- 1 cup butter or margarine\n- 1/2 cup cocoa\n- 2 tbsp honey\n- 4 eggs\n- 2 cups sugar\n- 1 3/4 cups flour\n- 1/2 tbsp baking powder\n- 1/2 tsp salt\n- 1 cup chopped walnuts\n\n**Mint Icing**\n- 5 tbsp butter or margarine\n- Dash of salt\n- 3 tbsp milk\n- 1 tbsp light corn syrup\n- 2 1/3 cups powdered sugar\n- 1/2 tsp mint extract\n- 1–2 drops green food coloring\n\n**Chocolate Icing**\n- 5 tbsp butter or margarine\n- Dash of salt\n- 3 tbsp milk\n- 1 tbsp light corn syrup\n- 2 1/3 cups powdered sugar\n- 1/3 cup cocoa powder, sifted to remove clumps\n\n## Instructions\n1. **Brownies:** Melt the butter and mix in the cocoa. Let cool.\n2. Add the honey, eggs, sugar, flour, baking powder, and salt. Mix well, then stir in the nuts.\n3. Pour into a greased 9x13 pan and bake at 350°F for 25 minutes. Cool completely.\n4. **Mint icing:** Soften the butter. Add the salt, corn syrup, and powdered sugar and beat until smooth and fluffy. Mix in the mint extract and food coloring. Add the milk gradually until it's a little thinner than cake frosting.\n5. **Chocolate icing:** Soften the butter. Add the salt, corn syrup, powdered sugar, and cocoa and beat until smooth and fluffy. Add the milk gradually until it's a little thinner than cake frosting.\n6. Spread the mint icing over the cooled brownies. Pop the pan in the freezer for a short time to firm up the icing.\n7. Carefully spread the chocolate icing over the top. Enjoy!\n\n## Notes\nFrom BYU Magazine (Fall 2003), the recipe from Sugar-n-Spice in the Cougareat food court. Makes one 9x13 pan. Allow about 1 hour to cool before icing.\n\n## Tips\n- Skip the walnuts if you want them nut-free; the icing layers are the star anyway.",
       "totalTime": 90
@@ -218,6 +419,38 @@
       "tags": [
         "Cookies",
         "Cake Mix"
+      ],
+      "walmart": [
+        {
+          "id": "3948888871",
+          "qty": 1,
+          "name": "Betty Crocker Super Moist Yellow Cake Mix, 13.25 oz",
+          "for": "cake mix"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "oil"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg"
+        },
+        {
+          "id": "932430893",
+          "qty": 1,
+          "name": "Great Value Milk Chocolate Chips, 23 oz",
+          "for": "chocolate chips"
+        }
       ],
       "slug": "cake-mix-cookies",
       "body": "## Ingredients\n- 1 box cake mix (any flavor)\n- 1/4 cup flour or oatmeal\n- 1/4 cup water\n- 1/2 cup oil\n- 1 egg\n- 1/2 bag chocolate chips\n\n## Instructions\n1. Preheat the oven to 350°F.\n2. Mix all the ingredients together.\n3. Roll into golf-ball-sized balls and place on a baking sheet.\n4. Bake for 10 minutes.",
@@ -240,6 +473,50 @@
         "Calzones",
         "Dough"
       ],
+      "walmart": [
+        {
+          "id": "453472924",
+          "qty": 1,
+          "name": "Great Value Active Dry Yeast, 0.25 oz, 3 Count",
+          "for": "active dry yeast"
+        },
+        {
+          "id": "10315102",
+          "qty": 1,
+          "name": "Great Value Extra Virgin Olive Oil, 17 fl oz",
+          "for": "olive oil"
+        },
+        {
+          "id": "20647992",
+          "qty": 1,
+          "name": "Great Value Honey, 12 oz",
+          "for": "honey"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "12444468",
+          "qty": 1,
+          "name": "Great Value Pizza Sauce, 14 oz",
+          "for": "fillings (pizza sauce)"
+        },
+        {
+          "id": "10452371",
+          "qty": 1,
+          "name": "Great Value Finely Shredded Mozzarella, 8 oz",
+          "for": "fillings (mozzarella)"
+        },
+        {
+          "id": "40495518",
+          "qty": 1,
+          "name": "Great Value Original Pepperoni Slices, 6 oz",
+          "for": "fillings (pepperoni)"
+        }
+      ],
       "slug": "calzone-or-pizza-dough",
       "body": "## Ingredients\n- 1/2 cup lukewarm water\n- 1 package (0.25 oz) active dry yeast\n- 1/2 cup water\n- 2 tbsp olive oil\n- 2 tbsp honey\n- 1/2 tsp salt\n- 3 cups all-purpose flour, plus more for dusting\n- Your favorite fillings or toppings\n\n## Instructions\n1. Mix the 1/2 cup lukewarm water and the yeast in a small bowl. Let stand until foamy, about 5 minutes.\n2. In a large bowl, combine the other 1/2 cup water, olive oil, honey, and salt. Add 1 cup flour and mix well.\n3. Mix in the yeast mixture, then add the remaining flour 1 cup at a time until the dough is well combined.\n4. Knead on a floured surface until soft, smooth, and elastic, about 8 minutes.\n5. Roll into 4 calzones or 1 large pizza.\n6. Preheat the oven to 400°F. Fill or top the dough, then bake until the crust is lightly browned, 15–20 minutes.\n\n## Tips\n- Brush the crust with olive oil and sprinkle with garlic powder.",
       "totalTime": 40
@@ -260,13 +537,39 @@
         "Crescent Rolls",
         "Kid Friendly"
       ],
+      "walmart": [
+        {
+          "id": "42613740",
+          "qty": 1,
+          "name": "Great Value Less Sodium Chunk Chicken Breast, 12.5 oz",
+          "for": "cooked chicken"
+        },
+        {
+          "id": "10452429",
+          "qty": 1,
+          "name": "Great Value Cream Cheese Brick, 8 oz",
+          "for": "cream cheese"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "10319375",
+          "qty": 1,
+          "name": "Pillsbury Original Crescent Rolls, 8 oz",
+          "for": "crescent rolls"
+        }
+      ],
       "slug": "chicken-crescents",
       "body": "## Ingredients\n- 1 cup cooked, shredded chicken (drained canned chicken works great)\n- 1 package (8 oz) cream cheese\n- 2 tbsp butter\n- 1 can (8 oz) Pillsbury crescent rolls\n\n## Instructions\n1. Preheat the oven according to the crescent roll package.\n2. Mix together the chicken, cream cheese, and butter.\n3. Open the can and separate the crescents. Spread each one open into a triangle (easier if the dough sits out of the fridge for a few minutes).\n4. Put a spoonful or more of the chicken mixture in the center of each roll.\n5. Roll the long, pointed end over the filling toward the other two ends, then fold the 2 ends toward each other.\n6. Bake as directed on the crescent package.\n\n## Variations\n- Dip them in melted butter, then roll in 1/2 cup crushed Saltines or Ritz crackers before baking.",
       "totalTime": 30
     },
     {
       "title": "Chicken Pot Pie",
-      "description": "Easy Bisquick chicken pot pie with mixed veggies and a golden crust.",
+      "description": "Easy Bisquick chicken pot pie with mixed veggies and a golden crust, plus a 9x13 big batch to freeze.",
       "prepTime": 5,
       "cookTime": 30,
       "servings": 6,
@@ -274,16 +577,57 @@
         "Main Course",
         "Chicken",
         "Comfort Food",
+        "Meal Prep",
         "Budget Friendly",
         "American"
       ],
       "tags": [
         "Bisquick",
-        "Weeknight"
+        "Weeknight",
+        "Freezer Friendly",
+        "Casserole"
       ],
       "recipeSource": "https://www.allrecipes.com/recipe/179376/impossibly-easy-chicken-pot-pie/",
+      "walmart": [
+        {
+          "id": "817042496",
+          "qty": 1,
+          "name": "Great Value Mixed Vegetables, 12 oz (Frozen)",
+          "for": "frozen mixed vegetables"
+        },
+        {
+          "id": "42613740",
+          "qty": 1,
+          "name": "Great Value Less Sodium Chunk Chicken Breast, 12.5 oz",
+          "for": "cooked chicken"
+        },
+        {
+          "id": "10321652",
+          "qty": 1,
+          "name": "Campbell's Cream of Chicken Soup, 10.5 oz",
+          "for": "cream of chicken soup"
+        },
+        {
+          "id": "17208745",
+          "qty": 1,
+          "name": "Betty Crocker Bisquick Original, 20 oz",
+          "for": "Bisquick"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "egg"
+        }
+      ],
       "slug": "chicken-pot-pie",
-      "body": "## Ingredients\n- 1 bag frozen mixed vegetables, thawed\n- 1 cup cut-up cooked chicken\n- 1 can (10.75 oz) condensed cream of chicken soup\n- 1 cup Original Bisquick mix\n- 1/2 cup milk\n- 1 egg\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. In an ungreased 9-inch glass pie plate, stir together the vegetables, chicken, and soup.\n3. In a small bowl, stir the Bisquick, milk, and egg with a fork until blended. Pour over the chicken mixture.\n4. Bake about 30 minutes, until golden brown.\n\n## Notes\nThe original card's directions were accidentally copied from the enchilada recipe, so these steps follow the Allrecipes \"Impossibly Easy Chicken Pot Pie\" the card links to. For a bigger, freezer-friendly batch, see the Big-Batch Chicken Pot Pie recipe.",
+      "body": "## Ingredients\n- 1 bag frozen mixed vegetables, thawed\n- 1 cup cut-up cooked chicken\n- 1 can (10.75 oz) condensed cream of chicken soup\n- 1 cup Original Bisquick mix\n- 1/2 cup milk\n- 1 egg\n\n## Instructions\n1. Preheat the oven to 400°F.\n2. In an ungreased 9-inch glass pie plate, stir together the vegetables, chicken, and soup.\n3. In a small bowl, stir the Bisquick, milk, and egg with a fork until blended. Pour over the chicken mixture.\n4. Bake about 30 minutes, until golden brown.\n\n## Variations\n- **Big batch (9x13), ingredients:** 2–3 cans cooked chicken, 2 cans cream of chicken soup, 1 package frozen vegetables, 2 cups Bisquick, and 1 1/2 cups milk (no egg).\n- **Big batch, directions:** Mix the chicken, soup, and vegetables in an ungreased 9x13 glass dish. Stir the Bisquick and milk until blended and pour over the top. Bake at 400°F for 40–45 minutes, until a knife comes out clean and the top is a little golden. For the cart, add 1 or 2 more cans of chicken and 1 more can of soup.\n- **Freeze half:** Split the big batch between two 8x8 baking dishes and freeze one for later.\n\n## Notes\nThe original card's directions were accidentally copied from the enchilada recipe, so these steps follow the Allrecipes \"Impossibly Easy Chicken Pot Pie\" the card links to.",
       "totalTime": 35
     },
     {
@@ -299,6 +643,56 @@
       "tags": [
         "Cookies",
         "Family Favorite"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "10447786",
+          "qty": 1,
+          "name": "C&H Pure Cane Dark Brown Sugar, 2 lb",
+          "for": "dark brown sugar"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "granulated sugar"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315486",
+          "qty": 1,
+          "name": "Great Value Baking Soda, 1 lb",
+          "for": "baking soda"
+        },
+        {
+          "id": "42306176",
+          "qty": 1,
+          "name": "Great Value Semi-Sweet Chocolate Chips, 12 oz",
+          "for": "chocolate chips"
+        }
       ],
       "slug": "chocolate-chip-cookies",
       "body": "## Ingredients\n- 2 sticks butter, softened to room temperature\n- 1 cup dark brown sugar\n- 3/4 cup granulated sugar\n- 2 eggs\n- 1 tsp vanilla\n- 3 cups flour\n- 1 tsp baking soda\n- 1/2 tsp salt\n- 2 cups chocolate chips\n\n## Instructions\n1. Preheat the oven to 300°F.\n2. With a mixer, beat the butter, dark brown sugar, and granulated sugar until well mixed.\n3. Mix in the eggs and vanilla.\n4. Add the flour, baking soda, and salt and mix.\n5. Stir in the chocolate chips.\n6. Bake about 15 minutes, until the cookies are light brown.\n7. Let them sit on the cookie sheet a few extra minutes before moving them to a cooling rack.\n\n## Tips\n- Cookies turn out better if each batch goes onto a somewhat cool cookie sheet.",
@@ -319,6 +713,62 @@
         "Mission Friend",
         "Recipe Card",
         "Casserole"
+      ],
+      "walmart": [
+        {
+          "id": "10315355",
+          "qty": 1,
+          "name": "Great Value White Bread, 20 oz",
+          "for": "bread"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "793947882",
+          "qty": 1,
+          "name": "Great Value Minced Onion, 2.35 oz",
+          "for": "minced onion"
+        },
+        {
+          "id": "16627955",
+          "qty": 1,
+          "name": "Great Value Double Acting Baking Powder, 8.1 oz",
+          "for": "baking powder"
+        },
+        {
+          "id": "10291600",
+          "qty": 1,
+          "name": "Ac'cent Flavor Enhancer, 4.5 oz",
+          "for": "Accent"
+        },
+        {
+          "id": "936536712",
+          "qty": 2,
+          "name": "73% Lean Ground Beef, 1 lb Roll (Frozen)",
+          "for": "ground beef"
+        },
+        {
+          "id": "10314960",
+          "qty": 1,
+          "name": "Great Value Cream of Mushroom Soup, 10.5 oz",
+          "for": "cream of mushroom soup"
+        },
+        {
+          "id": "10314959",
+          "qty": 1,
+          "name": "Great Value Cream of Chicken Soup, 10.5 oz",
+          "for": "cream of chicken soup"
+        }
       ],
       "slug": "creamy-baked-meatballs",
       "body": "## Ingredients\n- 4 slices bread\n- 1/2 cup milk\n- 2 eggs, beaten\n- 1/4 tsp pepper\n- 2 tbsp minced onion\n- 2 tsp baking powder\n- 1/4 tsp Accent (MSG)\n- 1 1/2 lb ground beef\n- 1 can cream of mushroom soup\n- 1 can cream of chicken soup\n- 1 soup can of milk\n\n## Instructions\n1. Soak the bread for 10 minutes in the milk and egg mixture.\n2. Combine with all the other ingredients except the soups and the soup can of milk.\n3. Shape into 25 meatballs. Brown them in a little fat and place in a baking dish.\n4. Mix the undiluted soups with the can of milk and pour over the meatballs.\n5. Bake at 325°F for 1 hour.\n\n## Notes\nShared by a friend from my mission.\n\nFrom a handwritten recipe card marked \"A prize winning recipe\" (\"very similar to Mother's\"). The card's title is hard to read, and one smudged line under the ground beef couldn't be made out.\n\n## Tips\n- Serve with rice, baked potatoes, or a potato casserole.",
@@ -342,6 +792,32 @@
         "No Knead",
         "Recipe Card"
       ],
+      "walmart": [
+        {
+          "id": "453472924",
+          "qty": 1,
+          "name": "Great Value Active Dry Yeast, 0.25 oz, 3 Count",
+          "for": "yeast"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "oil"
+        }
+      ],
       "slug": "easy-white-homemade-bread",
       "body": "## Ingredients\n- 1/2 cup warm water\n- 2 tbsp yeast\n- 6 cups flour\n- 3 tbsp sugar\n- 1 tbsp salt\n- 1/3 cup oil\n- 2 cups hot water\n\n## Instructions\n1. Dissolve the yeast in the warm water.\n2. Combine the remaining ingredients using **3 cups of the flour** and beat well.\n3. Add the yeast and beat well.\n4. Add the remaining flour to make a soft dough that can still be mixed with a spoon (it will be sticky).\n5. Leave the spoon in and let the dough rest 10 minutes. Stir it down every 10 minutes, 5 times total.\n6. Divide in two. Roll each up like a jelly roll, or make 2 dozen rolls. Place in greased pans.\n7. Let rise until doubled, about 30 minutes.\n8. Bake at 400°F for 30 minutes.\n\n## Notes\nShared by a friend from my mission.",
       "totalTime": 120
@@ -363,6 +839,50 @@
       "tags": [
         "Foil Packet",
         "Make Ahead"
+      ],
+      "walmart": [
+        {
+          "id": "10315395",
+          "qty": 1,
+          "name": "Great Value Long Grain Rice, 5 lb",
+          "for": "rice"
+        },
+        {
+          "id": "379517847",
+          "qty": 1,
+          "name": "Great Value Taco Seasoning Mix, 1 oz",
+          "for": "taco seasoning"
+        },
+        {
+          "id": "338508084",
+          "qty": 1,
+          "name": "Freshness Guaranteed Thin-Sliced Chicken Breasts, 0.8-3.5 lb",
+          "for": "chicken breasts"
+        },
+        {
+          "id": "44390945",
+          "qty": 1,
+          "name": "Fresh Green Bell Pepper, Each",
+          "for": "green bell pepper"
+        },
+        {
+          "id": "44391581",
+          "qty": 1,
+          "name": "Fresh Red Bell Pepper, Each",
+          "for": "red bell pepper"
+        },
+        {
+          "id": "3562572626",
+          "qty": 1,
+          "name": "Great Value Thick and Chunky Medium Salsa, 16 oz",
+          "for": "salsa"
+        },
+        {
+          "id": "10452562",
+          "qty": 1,
+          "name": "Great Value Finely Shredded Fiesta Blend, 8 oz",
+          "for": "shredded cheese"
+        }
       ],
       "slug": "foil-pack-chicken-fajitas",
       "body": "## Ingredients\n- 1 1/2 cups rice\n- 1 1/2 cups hot water\n- 1 tbsp taco seasoning\n- 4 boneless chicken breast halves (about 1 lb)\n- 1 green and 1 red bell pepper, sliced\n- 1/2 cup salsa\n- 1/2 cup shredded cheese\n\n## Instructions\n1. Heat the oven to 400°F.\n2. Fold up all sides of 4 large sheets of heavy-duty foil to form a 1-inch rim, and spray with cooking spray.\n3. Combine the rice, hot water, and taco seasoning and spoon evenly onto the foil. Top with the remaining ingredients.\n4. Bring up the foil sides and fold to make 4 packets. Place on a rimmed baking sheet.\n5. Bake 30–35 minutes, until the chicken is done (165°F). Cool 5 minutes, then cut slits in the foil to release steam before carefully opening.\n\n## Tips\n- Make the packets ahead and refrigerate up to 1 day, then bake as directed.\n- Add the liquids last so the packets are easier to fold.\n- Go heavier on the taco seasoning.",
@@ -386,6 +906,38 @@
         "Family Recipe",
         "One Pot"
       ],
+      "walmart": [
+        {
+          "id": "936536712",
+          "qty": 1,
+          "name": "73% Lean Ground Beef, 1 lb Roll (Frozen)",
+          "for": "ground beef"
+        },
+        {
+          "id": "10534038",
+          "qty": 1,
+          "name": "Great Value Black Beans, 15 oz",
+          "for": "black beans"
+        },
+        {
+          "id": "10450990",
+          "qty": 1,
+          "name": "Great Value Diced Tomatoes, 14.5 oz",
+          "for": "diced tomatoes"
+        },
+        {
+          "id": "10415487",
+          "qty": 1,
+          "name": "Great Value Tomato Sauce, 8 oz",
+          "for": "tomato sauce"
+        },
+        {
+          "id": "793947882",
+          "qty": 1,
+          "name": "Great Value Minced Onion, 2.35 oz",
+          "for": "dehydrated onions (optional)"
+        }
+      ],
       "slug": "grandmas-chili",
       "body": "## Ingredients\n- 1 lb ground beef or ground turkey\n- 1 can black beans (or kidney beans)\n- 1 can diced tomatoes\n- 1 can tomato sauce\n- 1–2 tbsp dehydrated onions (optional)\n- Salt and pepper to taste\n\n## Instructions\n1. Cook the beef in a skillet over medium-high heat until browned.\n2. Add the remaining ingredients and heat until bubbling.\n3. Serve right away, or cover, reduce the heat, and simmer for up to 1 hour.\n\n## Tips\n- Serve in bowls, on baked potatoes, on a bed of lettuce, or over tortilla chips.\n- Top with cheese, sour cream, lettuce, tomato, and more.",
       "totalTime": 30
@@ -405,6 +957,80 @@
       "tags": [
         "Family Favorite",
         "Casserole"
+      ],
+      "walmart": [
+        {
+          "id": "936536712",
+          "qty": 1,
+          "name": "73% Lean Ground Beef, 1 lb Roll (Frozen)",
+          "for": "ground beef"
+        },
+        {
+          "id": "51259212",
+          "qty": 1,
+          "name": "Yellow Onion, Each",
+          "for": "onion"
+        },
+        {
+          "id": "13448693",
+          "qty": 1,
+          "name": "Pace Chunky Medium Salsa, 16 oz",
+          "for": "salsa"
+        },
+        {
+          "id": "157643393",
+          "qty": 1,
+          "name": "Great Value Chili Powder, 3 oz",
+          "for": "chili powder"
+        },
+        {
+          "id": "559839182",
+          "qty": 1,
+          "name": "Great Value Paprika, 2.5 oz",
+          "for": "paprika"
+        },
+        {
+          "id": "985501095",
+          "qty": 1,
+          "name": "Great Value Ground Cumin, 2.5 oz",
+          "for": "cumin"
+        },
+        {
+          "id": "5049188348",
+          "qty": 2,
+          "name": "Great Value Green Chile Enchilada Sauce, 10 oz",
+          "for": "enchilada sauce"
+        },
+        {
+          "id": "361076448",
+          "qty": 1,
+          "name": "Great Value White Corn Tortillas, 30 Count",
+          "for": "corn tortillas"
+        },
+        {
+          "id": "10309357",
+          "qty": 1,
+          "name": "Mission Super Soft Flour Tortillas, Soft Taco Size, 10 Count",
+          "for": "flour tortillas"
+        },
+        {
+          "id": "10534038",
+          "qty": 1,
+          "name": "Great Value Black Beans, 15 oz",
+          "for": "black beans"
+        },
+        {
+          "id": "44391581",
+          "qty": 1,
+          "name": "Fresh Red Bell Pepper, Each",
+          "for": "red bell pepper"
+        },
+        {
+          "id": "10452562",
+          "qty": 1,
+          "name": "Great Value Finely Shredded Fiesta Blend, 8 oz",
+          "for": "shredded cheese"
+        }
       ],
       "slug": "ground-beef-enchiladas",
       "body": "## Ingredients\n- 1 lb ground beef\n- 1/2 onion, chopped\n- 1/2 tsp salt\n- 1/2 tsp pepper\n- 1 cup salsa\n- 1 tbsp chili powder\n- 1 tsp paprika\n- 1 tsp cumin\n- 2 cans (10 oz) enchilada sauce (red or green)\n- Corn tortillas\n- Shredded cheese\n\n## Instructions\n1. Preheat the oven to 350°F.\n2. In a large skillet, brown the ground beef with the onion. Season with salt, pepper, chili powder, paprika, and cumin. Stir in the salsa.\n3. Simmer over low heat for about 10 minutes so the flavors combine.\n4. Pour a little enchilada sauce over the bottom of a 9x13 baking pan.\n5. Warm the rest of the sauce in a saucepan, then dip each tortilla in it.\n6. Spoon meat mixture into each tortilla, roll it up, and place seam-side down in the pan. Repeat until the meat is gone.\n7. Pour the remaining sauce over the enchiladas and top with cheese.\n8. Bake for 10 minutes, until heated through.",
@@ -428,6 +1054,62 @@
         "One Pot",
         "Weeknight"
       ],
+      "walmart": [
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "oil"
+        },
+        {
+          "id": "367014931",
+          "qty": 1,
+          "name": "Great Value Minced Garlic in Water, 8 oz",
+          "for": "minced garlic"
+        },
+        {
+          "id": "10449184",
+          "qty": 1,
+          "name": "Freshness Guaranteed Sliced White Mushrooms, 8 oz",
+          "for": "mushrooms"
+        },
+        {
+          "id": "10414680",
+          "qty": 1,
+          "name": "Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen)",
+          "for": "chicken breasts"
+        },
+        {
+          "id": "10314956",
+          "qty": 1,
+          "name": "Great Value Chicken Broth, 14.5 oz",
+          "for": "chicken stock"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "10534084",
+          "qty": 1,
+          "name": "Great Value Penne Pasta, 16 oz",
+          "for": "pasta"
+        },
+        {
+          "id": "10452429",
+          "qty": 1,
+          "name": "Great Value Cream Cheese Brick, 8 oz",
+          "for": "cream cheese"
+        },
+        {
+          "id": "10315402",
+          "qty": 1,
+          "name": "Great Value Grated Parmesan, 8 oz",
+          "for": "parmesan cheese"
+        }
+      ],
       "slug": "instant-pot-creamy-chicken-pasta",
       "body": "## Ingredients\n- 2 tbsp oil\n- 2 tsp minced garlic\n- 8 oz mushrooms\n- 2 chicken breasts, cut into 1/2\" pieces\n- 1 can chicken stock\n- 1 cup milk, half & half, or cream\n- 1 lb pasta\n- 8 oz cream cheese\n- Salt and pepper to taste\n- Parmesan cheese, for serving\n\n## Instructions\n1. Turn the Instant Pot to the **Sauté** setting.\n2. Cook the garlic in the oil for 1 minute, then add the mushrooms. Cook about 3 minutes, stirring now and then.\n3. Add the chicken, broth, milk, and pasta. Stir.\n4. Push **Cancel**.\n5. Close and lock the lid, push **Pressure Cook**, and cook on high for 7 minutes.\n6. Release the pressure and remove the lid.\n7. Stir in the cream cheese.\n8. Season with salt and pepper to taste and serve with parmesan.",
       "totalTime": 25
@@ -448,6 +1130,38 @@
       "tags": [
         "No-Boil Noodles",
         "Casserole"
+      ],
+      "walmart": [
+        {
+          "id": "936536712",
+          "qty": 1,
+          "name": "73% Lean Ground Beef, 1 lb Roll (Frozen)",
+          "for": "ground beef"
+        },
+        {
+          "id": "14123535",
+          "qty": 1,
+          "name": "Prego Roasted Garlic & Herb Sauce, 24 oz",
+          "for": "spaghetti sauce"
+        },
+        {
+          "id": "10534111",
+          "qty": 1,
+          "name": "Great Value Oven Ready Lasagna, 12 oz",
+          "for": "lasagna noodles"
+        },
+        {
+          "id": "10315022",
+          "qty": 1,
+          "name": "Great Value 4% Small Curd Cottage Cheese, 24 oz",
+          "for": "cottage cheese"
+        },
+        {
+          "id": "10452371",
+          "qty": 1,
+          "name": "Great Value Finely Shredded Mozzarella, 8 oz",
+          "for": "mozzarella cheese"
+        }
       ],
       "slug": "lasagna",
       "body": "## Ingredients\n- 1 lb ground beef\n- 3 cups spaghetti sauce\n- 6 dry lasagna noodles (no need to boil)\n- Cottage cheese\n- 2 cups mozzarella cheese\n- 1/4 cup water\n\n## Instructions\n1. Preheat the oven to 375°F.\n2. Brown the beef and drain the grease. Stir in the spaghetti sauce.\n3. In a rectangular dish, layer noodles, beef and sauce, then cheese. Make two layers, ending with cheese on top.\n4. Slowly pour the water around the edge of the dish.\n5. Cover and bake for 45 minutes. Uncover and bake 10 more minutes.\n6. Let stand 10 minutes before serving.\n\n## Notes\nThe water cooks the dry noodles right in the oven, so there's no boiling step.",
@@ -471,6 +1185,38 @@
         "Freezer Friendly",
         "Holiday Baking"
       ],
+      "walmart": [
+        {
+          "id": "704543727",
+          "qty": 1,
+          "name": "Pillsbury Moist Supreme Lemon Cake Mix, 15.25 oz",
+          "for": "lemon cake mix"
+        },
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "vegetable oil"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "41752773",
+          "qty": 1,
+          "name": "Fresh Lemon, Each",
+          "for": "lemon"
+        },
+        {
+          "id": "10315011",
+          "qty": 1,
+          "name": "Great Value Powdered Sugar, 32 oz",
+          "for": "powdered sugar"
+        }
+      ],
       "slug": "lemon-cake-mix-cookies",
       "body": "## Ingredients\n- 1 box (15.25 oz) lemon cake mix\n- 1/2 cup vegetable oil\n- 2 large eggs\n- 1 lemon, zested and juiced\n- 1/4 cup powdered sugar\n\n## Instructions\n1. Preheat the oven to 350°F. Line a baking sheet with parchment paper and set aside.\n2. Combine the cake mix, oil, and eggs in a large bowl. Add **1 tablespoon fresh lemon juice** and **1 tablespoon lemon zest**.\n3. Stir together just until combined. If you have time, refrigerate the dough for 15–20 minutes (it's sticky, and chilling makes it easier to work with).\n4. Use a medium scoop or spoon to portion the dough, roll each ball in the powdered sugar, and place on the prepared baking sheet.\n5. Bake 9–11 minutes, until the cookies are set. You don't want them to brown.\n6. Cool on the pan for a couple of minutes, then transfer to a cooling rack.\n\n## Notes\nShared by a friend from my mission.\n\nBursting with fresh lemon flavor, and they look great in a holiday cookie box.\n\n## Tips\n- **To freeze:** Let the cookies cool, then freeze on a cookie sheet for 30 minutes. Once hard, stack in a freezer container or zip-top bag for up to 3 months. Take them out of the freezer 2 hours before serving.",
       "totalTime": 20
@@ -489,6 +1235,56 @@
         "Mission Friend",
         "Cookies",
         "Big Batch"
+      ],
+      "walmart": [
+        {
+          "id": "10315012",
+          "qty": 1,
+          "name": "Great Value Light Brown Sugar, 32 oz",
+          "for": "brown sugar"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "1536376961",
+          "qty": 1,
+          "name": "Meadow Gold 1% Lowfat Buttermilk, Quart",
+          "for": "buttermilk"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "10315486",
+          "qty": 1,
+          "name": "Great Value Baking Soda, 1 lb",
+          "for": "baking soda"
+        },
+        {
+          "id": "533272737",
+          "qty": 1,
+          "name": "Great Value Ground Cinnamon, 2.5 oz",
+          "for": "cinnamon"
+        },
+        {
+          "id": "10314925",
+          "qty": 1,
+          "name": "Great Value Old Fashioned Oats, 42 oz",
+          "for": "old-fashioned oats"
+        }
       ],
       "slug": "oatmeal-cookies",
       "body": "## Ingredients\n- 4 cups brown sugar\n- 2 cups butter, softened\n- 1 cup buttermilk\n- 2 tsp vanilla\n- 4 cups flour\n- 2 tsp salt\n- 2 tsp baking soda\n- 4 heaping tsp cinnamon\n- 8 cups old-fashioned oats\n\n## Instructions\n1. Preheat the oven to 375°F.\n2. Cream the butter and brown sugar together until smooth, then mix in the buttermilk and vanilla.\n3. In a separate bowl, whisk the flour, salt, baking soda, and cinnamon. Add to the wet mixture and stir until combined.\n4. Stir in the oats.\n5. Drop rounded spoonfuls onto a baking sheet and bake for 10 minutes.\n\n## Notes\nShared by a friend from my mission.\n\nThe original family recipe card lists only the ingredients and \"Bake at 375 for 10 minutes.\" The mixing steps above are the standard method for this kind of cookie.\n\n## Tips\n- This makes a *lot* of cookies. Halve everything for a normal-sized batch.",
@@ -509,6 +1305,32 @@
       "tags": [
         "Blender",
         "Dutch Baby"
+      ],
+      "walmart": [
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        }
       ],
       "slug": "puffed-pancakes",
       "body": "## Ingredients\n- 1/4 to 1/3 cup salted butter\n- 3–4 eggs\n- 3/4 to 1 cup milk\n- 3/4 to 1 cup flour\n\n## Instructions\n1. Put the butter in the baking pan and set it in a 425°F oven. Mix the batter while the butter melts.\n2. Blend the eggs on high speed for 1 minute.\n3. With the motor running, gradually pour in the milk, then slowly add the flour.\n4. Keep blending for 30 more seconds.\n5. Pour the batter into the hot melted butter. Bake until puffy and brown, 20–25 minutes.\n\n## Notes\nUse the smaller amounts for a smaller pan and the larger amounts for a bigger one.",
@@ -532,6 +1354,50 @@
         "Soup",
         "Dump and Go"
       ],
+      "walmart": [
+        {
+          "id": "10534044",
+          "qty": 1,
+          "name": "Great Value Chili Beans, 15.5 oz",
+          "for": "chili beans"
+        },
+        {
+          "id": "10315427",
+          "qty": 1,
+          "name": "Great Value Golden Sweet Whole Kernel Corn, 15.25 oz",
+          "for": "corn"
+        },
+        {
+          "id": "10415487",
+          "qty": 1,
+          "name": "Great Value Tomato Sauce, 8 oz",
+          "for": "tomato sauce"
+        },
+        {
+          "id": "10450990",
+          "qty": 2,
+          "name": "Great Value Diced Tomatoes, 14.5 oz",
+          "for": "diced tomatoes"
+        },
+        {
+          "id": "10415222",
+          "qty": 2,
+          "name": "Great Value Medium Diced Green Chiles, 4 oz",
+          "for": "green chilies"
+        },
+        {
+          "id": "379517847",
+          "qty": 1,
+          "name": "Great Value Taco Seasoning Mix, 1 oz",
+          "for": "taco seasoning"
+        },
+        {
+          "id": "10414680",
+          "qty": 1,
+          "name": "Great Value Boneless Skinless Chicken Breasts, 3 lb (Frozen)",
+          "for": "chicken breasts"
+        }
+      ],
       "slug": "slow-cooker-tortilla-soup",
       "body": "## Ingredients\n- 1 can (16 oz) chili beans with juice\n- 2 cans of water (use the chili bean can)\n- 1 can (15 oz) corn with juice\n- 1 can (8 oz) tomato sauce\n- 2 cans (14.5 oz) diced tomatoes\n- 2 cans (4 oz) chopped green chilies\n- 1 package taco seasoning mix\n- 2–3 thawed chicken breasts\n\n## Instructions\n1. Add everything to the crock pot and stir to mix.\n2. Cook on high for 4 hours or low for 8 hours.\n\n## Tips\n- Serve with tortilla chips, cheese, and sour cream.",
       "totalTime": 250
@@ -553,6 +1419,86 @@
       "tags": [
         "Soup",
         "Crock Pot Friendly"
+      ],
+      "walmart": [
+        {
+          "id": "40711369",
+          "qty": 1,
+          "name": "Marketside Mild Ground Italian Sausage, 1 lb",
+          "for": "Italian sausage"
+        },
+        {
+          "id": "51259212",
+          "qty": 1,
+          "name": "Yellow Onion, Each",
+          "for": "onion"
+        },
+        {
+          "id": "631368530",
+          "qty": 1,
+          "name": "Great Value Oregano Leaves, 0.87 oz",
+          "for": "dried oregano"
+        },
+        {
+          "id": "330313658",
+          "qty": 1,
+          "name": "Great Value Basil Leaves, 0.8 oz",
+          "for": "dried basil"
+        },
+        {
+          "id": "861014617",
+          "qty": 1,
+          "name": "Great Value Parsley Flakes, 0.4 oz",
+          "for": "dried parsley"
+        },
+        {
+          "id": "44391100",
+          "qty": 1,
+          "name": "Fresh Garlic Bulb, Each",
+          "for": "garlic"
+        },
+        {
+          "id": "10451315",
+          "qty": 1,
+          "name": "Baby Peeled Carrots, 1 lb",
+          "for": "carrots"
+        },
+        {
+          "id": "44390947",
+          "qty": 1,
+          "name": "Fresh Zucchini, Each",
+          "for": "zucchini"
+        },
+        {
+          "id": "10416105",
+          "qty": 1,
+          "name": "Great Value Petite Diced Tomatoes, 14.5 oz",
+          "for": "diced tomatoes"
+        },
+        {
+          "id": "10415487",
+          "qty": 1,
+          "name": "Great Value Tomato Sauce, 8 oz",
+          "for": "tomato sauce"
+        },
+        {
+          "id": "16935731",
+          "qty": 1,
+          "name": "Great Value 100% Apple Juice, 64 fl oz",
+          "for": "apple juice"
+        },
+        {
+          "id": "10314956",
+          "qty": 4,
+          "name": "Great Value Chicken Broth, 14.5 oz",
+          "for": "chicken broth"
+        },
+        {
+          "id": "20511545",
+          "qty": 1,
+          "name": "Great Value Cheese Tortellini, 19 oz (Frozen)",
+          "for": "tortellini"
+        }
       ],
       "slug": "tortellini-soup",
       "body": "## Ingredients\n- 1 lb Italian sausage (mild or spicy)\n- 1/8 onion, chopped\n- 1/2 tsp dried oregano\n- 1/2 tsp dried basil\n- 1 tbsp dried parsley\n- 2 cloves garlic (or 2 tsp garlic salt or garlic powder)\n- 1/2 cup carrots, sliced and cooked (unless you're simmering a long time, then they'll cook in the soup)\n- 1 zucchini, grated\n- 1 can (14–15 oz) diced tomatoes (petite diced preferred, regular is fine)\n- 1 small can (8 oz) tomato sauce\n- 1/2 cup apple juice\n- 1/2 cup water\n- 4 cans (14–15 oz each, about 60 oz total) chicken broth\n- 1 lb tortellini (frozen, fresh, or dried)\n\n## Instructions\n1. Brown the sausage in a large soup pot with the onion and spices.\n2. While it browns, slice and cook the carrots and grate the zucchini.\n3. Once the sausage is browned, add everything else to the pot and heat through.\n4. Serve, or keep it on a simmer (or in a crock pot) for hours. If simmering a while, make sure the carrots and any dried tortellini are soft before serving.\n\n## Notes\nWith frozen or fresh tortellini and pre-cooked carrots, this soup is done in about 20 minutes.\n\n## Tips\n- Using dried tortellini? Let it simmer a long time, or cook it before adding.\n\n## Variations\n- Add or swap veggies however you like.\n- Add extra water or broth if you want it brothier.",
