@@ -305,6 +305,10 @@ export class Renderer {
         return card;
     }
 
+    /**
+     * Projects with a link make the whole card the link (like the picks), marked by a small
+     * arrow after the title.
+     */
     createProjectCard(project, category = null, showTags = true) {
         const card = document.createElement('div');
         const slug = this.parser.slugify(project.title);
@@ -327,16 +331,13 @@ export class Renderer {
         const content = `
             <div class="card-header">
                 <div class="card-title-container">
-                    <h3 class="card-title">${project.title}</h3>
+                    <h3 class="card-title">${project.title}${project.link ? `<svg class="icon icon-stroke project-link-arrow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>` : ''}</h3>
                     ${categoryTag}
                     ${statusHTML}
                 </div>
                 ${project.dates ? `<div class="card-meta">${project.dates}</div>` : ''}
             </div>
             <p class="card-description">${project.description || ''}</p>
-            ${project.link ? `<div class="project-actions">
-                <a href="${project.link}" target="_blank" class="btn btn-primary btn-sm" data-gc-event="out-project-${project.analytics || slug}">View →</a>
-            </div>` : ''}
             ${showTags ? `<div class="card-footer">
                 ${this.renderTags(project.tags)}
             </div>` : ''}
@@ -353,6 +354,20 @@ export class Renderer {
             `;
         } else {
             card.innerHTML = content;
+        }
+
+        if (project.link) {
+            card.classList.add('card-linked', 'project-card-linked');
+            const anchor = document.createElement('a');
+            anchor.href = project.link;
+            anchor.target = '_blank';
+            anchor.rel = 'noopener noreferrer';
+            anchor.className = 'card-overlay-link';
+            anchor.setAttribute('aria-label', `Visit ${project.title}`);
+            anchor.dataset.gcEvent = `out-project-${project.analytics || slug}`;
+            // After a mouse/tap click, drop focus so the card isn't left highlighted when you come back
+            anchor.addEventListener('click', e => { if (e.detail > 0) anchor.blur(); });
+            card.appendChild(anchor);
         }
         
         this.addHoverListeners(card, slug);
