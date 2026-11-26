@@ -113,12 +113,12 @@ export function sortGames(games, key) {
         (a, b) =>
           COMPLEXITY_RANK[a.complexity] - COMPLEXITY_RANK[b.complexity] ||
           (a.bggWeight ?? 0) - (b.bggWeight ?? 0) ||
-          a.title.localeCompare(b.title)
+          a.title.localeCompare(b.title, undefined, { numeric: true })
       );
       break;
     case "alpha":
     default:
-      arr.sort((a, b) => a.title.localeCompare(b.title));
+      arr.sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true }));
       break;
   }
   return arr;
