@@ -7,7 +7,7 @@
  *   window.__openMealDetails for cards to call. It also keeps the URL hash in
  *   sync (meal-library/#slug) so recipes are shareable and deep-linkable.
  * - lockScroll() / unlockScroll(): ref-counted body scroll lock, shared with
- *   the picker so stacked modals don't unlock the page prematurely.
+ *   the week planner so stacked modals don't unlock the page prematurely.
  */
 import {
   esc,
