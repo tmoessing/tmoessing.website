@@ -55,6 +55,13 @@ export const PRESETS = [
     match: (g) => has(g, "Team Play")
   },
   {
+    id: "social-deduction",
+    label: "Social Deduction",
+    emoji: "🕵️",
+    title: "Secret roles, bluffing, and figuring out who's lying",
+    match: (g) => has(g, "Social Deduction")
+  },
+  {
     id: "strategy",
     label: "Strategy",
     emoji: "🧠",
