@@ -1167,5 +1167,109 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+kemps+card+game"
+  },
+  {
+    id: "spoons",
+    title: "Spoons",
+    cover: "",
+    description: "Pass cards around the circle as fast as you can, hunting for four of a kind. There's one fewer spoon than players in the middle, and the moment someone grabs one, it's a free-for-all. Whoever ends up empty-handed takes a letter.",
+    minPlayers: 3,
+    maxPlayers: 13,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Set Collection", "Grab", "Elimination"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Don't be the one left without a spoon. Avoid spelling S-P-O-O-N.",
+      steps: [
+        "Put spoons in the middle, one fewer than the number of players. Deal 4 cards to each player and give the rest of the deck to the dealer.",
+        "The dealer draws a card and passes one card face down to the left. Everyone keeps passing one card left at the same time, always holding 4. The last player discards into a pile.",
+        "When you have four of a kind, grab a spoon. You can grab it quietly to see how long it takes the others to notice.",
+        "As soon as anyone takes a spoon, everyone else can grab one too. The player left without a spoon gets a letter: S, then P, and so on.",
+        "Spell SPOON and you're out. Remove a spoon each round, and the last player standing wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+spoons+card+game"
+  },
+  {
+    id: "nertz",
+    title: "Nertz",
+    cover: "",
+    description: "Competitive solitaire with no turns. Everyone plays their own deck at the same time, racing to build shared foundation piles in the middle and empty their Nertz pile. It's frantic, loud, and one of the best games you can play with a stack of standard decks.",
+    minPlayers: 2,
+    maxPlayers: 8,
+    playtimeMin: 20,
+    playtimeMax: 45,
+    categories: ["Card Game", "Competitive"],
+    complexity: "medium",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Solitaire", "One Deck Per Player", "Pounce"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Empty your Nertz pile first while getting as many cards as possible into the center. First to 100 points wins.",
+      steps: [
+        "Each player needs their own deck with a different back. Deal yourself a 13-card Nertz pile (top card face up) and 4 face-up cards in a row as your work piles. The rest of your deck is your stock.",
+        "On \"go,\" everyone plays at once. Any ace goes to the middle to start a shared foundation, which anyone can build up in suit from ace to king.",
+        "On your work piles, build down in alternating colors, solitaire style. You can move cards from your Nertz pile, your waste pile, or other work piles there.",
+        "Flip your stock three cards at a time onto a waste pile, and play the top card wherever it fits.",
+        "When your Nertz pile is empty, yell \"Nertz!\" and the hand ends. Score +1 for each of your cards in the center and -2 for each card left in your Nertz pile."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+nertz+card+game"
+  },
+  {
+    id: "egyptian-ratscrew",
+    title: "Egyptian Ratscrew",
+    cover: "",
+    description: "A slapping game of reflexes and nerve. Players flip cards into the middle one at a time, and the first to slap a double or sandwich takes the pile. Face cards start a challenge that can swing the whole game, so keep your eyes up and your hands ready.",
+    minPlayers: 2,
+    maxPlayers: 6,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Slapping", "Real-Time", "Reflexes"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Win every card in the deck.",
+      steps: [
+        "Deal out the whole deck face down. Don't look at your cards.",
+        "Going around, each player flips the top card of their pile face up onto the center pile.",
+        "When someone flips a face card or ace, the next player has a set number of chances to flip a face card or ace of their own: 4 for an ace, 3 for a king, 2 for a queen, 1 for a jack. If they fail, the player who started the challenge takes the pile. If they succeed, the challenge passes to the next player.",
+        "Anyone can slap the pile on a double (two of the same rank in a row) or a sandwich (same rank with one card between). The first hand down takes the whole pile. A wrong slap costs you a card, which goes under the pile.",
+        "If you run out of cards, you can still slap your way back in. Whoever ends up with every card wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+egyptian+ratscrew"
+  },
+  {
+    id: "bs",
+    title: "BS",
+    cover: "",
+    description: "A bluffing game also known as Cheat or I Doubt It. Play cards face down and say what they are, truthfully or not. Anyone can call \"BS!\" If you're caught lying, you take the whole pile, but call it wrong and the pile is yours.",
+    minPlayers: 3,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Card Game", "Bluffing", "Party", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Bluffing", "Shedding", "Lying", "Cheat"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to get rid of all your cards.",
+      steps: [
+        "Deal out the whole deck. With more than 6 players, shuffle in a second deck.",
+        "The first player plays one or more cards face down and says they're aces. The next player plays and says they're 2s, then 3s, and so on up to kings, then back to aces.",
+        "You must play at least one card on your turn, whether or not you have the right rank. Lie if you need to.",
+        "Anyone can call \"BS!\" right after a play. Flip the cards: if the player lied, they take the whole pile. If they told the truth, the caller takes it.",
+        "The first player to empty their hand, and survive the BS calls on their last play, wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+bs+card+game"
   }
 ];
