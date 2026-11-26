@@ -1297,5 +1297,57 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+ninja+hand+slap+party+game"
+  },
+  {
+    id: "signs",
+    title: "Signs",
+    cover: "../games/images/signs.jpg",
+    description: "A sneaky circle game. Everyone picks a secret hand sign, and the sign gets passed around the circle by flashing your own sign and then someone else's. One player stands in the middle trying to catch the pass. Get caught and you're it.",
+    minPlayers: 6,
+    maxPlayers: 20,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Party", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Secret Signals", "Observation", "Sneaky", "Large Group"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pass the sign without getting caught by the player in the middle.",
+      steps: [
+        "Sit in a circle. Everyone picks a simple, unique hand sign, like tugging an ear, a salute, or a thumbs up, and shows it to the group.",
+        "One player goes in the middle as \"it\" and closes their eyes while someone starts the game.",
+        "To pass, do your own sign and then someone else's sign. That person must quickly do their own sign, then pass it to someone else the same way.",
+        "Everyone else keeps doing small fake motions to cover the passes.",
+        "If the player in the middle catches someone doing a sign, they swap places and the caught player becomes it."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=signs+game+circle+party+game+how+to+play"
+  },
+  {
+    id: "triggers",
+    title: "Triggers",
+    cover: "../games/images/triggers.jpg",
+    description: "A hilarious hidden-reaction game. Everyone secretly gets a trigger, like \"every time Jenny smiles, you sneeze,\" and has to react whenever it happens. Hang out, chat, and watch the chaos unfold while you try to crack everyone else's trigger.",
+    minPlayers: 5,
+    maxPlayers: 15,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Acting", "Guessing", "Observation", "Humor"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Figure out everyone else's secret trigger while reacting to your own.",
+      steps: [
+        "Sit in a circle. Each player secretly tells the person on their right a trigger: something that happens and how they must react. For example, \"Every time someone says 'okay,' you clap.\"",
+        "Keep triggers secret from everyone else. Start chatting normally, or play another simple game while you hang out.",
+        "Whenever your trigger happens, you must react, every single time.",
+        "When you think you've figured out someone's trigger, call it out. If you're right, they reveal it.",
+        "Keep going until every trigger is cracked. The best triggers are subtle enough to be tricky but happen often enough to be fun."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=triggers+party+game+secret+reaction"
   }
 ];
