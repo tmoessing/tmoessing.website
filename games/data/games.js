@@ -1090,5 +1090,56 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+oh+hell+card+game"
+  },
+  {
+    id: "speed",
+    title: "Speed",
+    cover: "",
+    description: "A head-to-head race with a standard deck and zero turns. Both players slam cards onto the two center piles at the same time, one rank higher or lower, and the first to get rid of every card wins. Fast hands beat big brains here.",
+    minPlayers: 2,
+    maxPlayers: 2,
+    playtimeMin: 5,
+    playtimeMax: 10,
+    categories: ["Card Game", "Competitive", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Speed", "Shedding", "Two Player"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to play every one of your cards.",
+      steps: [
+        "Deal 20 cards to each player: 15 face down as your draw pile, plus 5 in your hand. Put two face-down piles of 5 off to the side and two face-down cards in the center.",
+        "Both players flip a center card at the same time, and then it's on. There are no turns.",
+        "Play a card from your hand onto either center pile if it's one rank higher or lower than the top card. Aces wrap both ways, so King-Ace-2 works.",
+        "Draw from your pile to keep 5 cards in your hand. If neither player can move, both flip a card from the side piles onto the center piles together. When the side piles run out, shuffle the center piles to make new ones.",
+        "When your hand and draw pile are empty, you win."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+speed+card+game"
+  },
+  {
+    id: "james-bond",
+    title: "James Bond",
+    cover: "",
+    description: "A chaotic real-time matching game. Everyone races at once, swapping cards with the four in the middle to turn each of their 4-card piles into four of a kind. The catch is you can only hold one pile at a time, so you'd better remember what's in the others.",
+    minPlayers: 2,
+    maxPlayers: 4,
+    playtimeMin: 5,
+    playtimeMax: 15,
+    categories: ["Card Game", "Competitive", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Speed", "Set Collection", "Memory"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to turn every one of your piles into four of a kind and shout \"James Bond!\"",
+      steps: [
+        "Deal 4 cards face up in the middle. Split the rest into face-down piles of 4: 6 piles each with 2 players, 4 with 3 players, or 3 with 4 players.",
+        "On \"go,\" everyone plays at once. Pick up one of your piles and swap cards with the middle, one for one.",
+        "You can only hold one pile at a time. Set it down face down before picking up another.",
+        "Once every pile you have is four of a kind, yell \"James Bond!\" and flip them all face up to prove it. If you're wrong, you're out of that round."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+james+bond+card+game"
   }
 ];
