@@ -1036,5 +1036,31 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=swedish+twister+party+game+feet+circle"
+  },
+  {
+    id: "dtr",
+    title: "DTR (Determine the Relationship)",
+    cover: "",
+    description: "An improv guessing game. Two players leave the room while everyone else comes up with two secret relationships, like teacher and student or cop and speeder. The pair acts out a scene together, each guessing who they're playing and who the other person is.",
+    minPlayers: 4,
+    maxPlayers: 20,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Improv", "Roleplay", "Acting", "Guessing", "No Props Needed", "Humor"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Act out the scene and figure out the relationship: your role and your partner's.",
+      steps: [
+        "Two players leave the room.",
+        "Everyone else comes up with two relationships, like teacher and student, parent and child, or police officer and speeder.",
+        "Bring one player back in and tell them both relationships. They pick one and secretly choose which role they'll play.",
+        "Bring the second player back. The two act out a scene together, staying in character.",
+        "Each player tries to guess the relationship and who the other person is playing. Then swap in a new pair."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=determine+the+relationship+improv+game"
   }
 ];
