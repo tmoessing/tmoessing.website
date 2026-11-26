@@ -1349,5 +1349,265 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=triggers+party+game+secret+reaction"
+  },
+  {
+    id: "jackbox-party-pack-1",
+    title: "The Jackbox Party Pack",
+    cover: "../games/images/jackbox-party-pack-1.jpg",
+    description: "Five party games in one (2014): You Don't Know Jack 2015, Fibbage XL, Drawful, Word Spud, and Lie Swatter. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. The one that started it all, with trivia, bluffing and drawing. Lie Swatter even supports up to 100 players.",
+    minPlayers: 1,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia", "Word Game"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: You Don't Know Jack 2015, Fibbage XL, Drawful, Word Spud, Lie Swatter.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+1+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-2",
+    title: "The Jackbox Party Pack 2",
+    cover: "../games/images/jackbox-party-pack-2.jpg",
+    description: "Five party games in one (2015): Fibbage 2, Quiplash XL, Earwax, Bidiots, and Bomb Corp.. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Includes Quiplash XL, the battle of funny answers, and Earwax, where you match sound effects to absurd prompts.",
+    minPlayers: 1,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Word Game"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Fibbage 2, Quiplash XL, Earwax, Bidiots, Bomb Corp..",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+2+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-3",
+    title: "The Jackbox Party Pack 3",
+    cover: "../games/images/jackbox-party-pack-3.jpg",
+    description: "Five party games in one (2016): Quiplash 2, Trivia Murder Party, Guesspionage, Tee K.O., and Fakin' It. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. A fan favorite. Trivia Murder Party turns wrong answers into deadly mini-games, and in Tee K.O. you design T-shirts and battle them out.",
+    minPlayers: 1,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia", "Bluffing"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Quiplash 2, Trivia Murder Party, Guesspionage, Tee K.O., Fakin' It.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+3+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-4",
+    title: "The Jackbox Party Pack 4",
+    cover: "../games/images/jackbox-party-pack-4.jpg",
+    description: "Five party games in one (2017): Fibbage 3, Survive the Internet, Monster Seeking Monster, Bracketeering, and Civic Doodle. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Survive the Internet twists your friends' words out of context, and Bracketeering plays with up to 16.",
+    minPlayers: 2,
+    maxPlayers: 16,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Bluffing"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Fibbage 3, Survive the Internet, Monster Seeking Monster, Bracketeering, Civic Doodle.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+4+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-5",
+    title: "The Jackbox Party Pack 5",
+    cover: "../games/images/jackbox-party-pack-5.jpg",
+    description: "Five party games in one (2018): You Don't Know Jack: Full Stream, Split the Room, Mad Verse City, Zeeple Dome, and Patently Stupid. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Rap battles with robots in Mad Verse City, ridiculous inventions in Patently Stupid, and divisive hypotheticals in Split the Room.",
+    minPlayers: 1,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: You Don't Know Jack: Full Stream, Split the Room, Mad Verse City, Zeeple Dome, Patently Stupid.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+5+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-6",
+    title: "The Jackbox Party Pack 6",
+    cover: "../games/images/jackbox-party-pack-6.jpg",
+    description: "Five party games in one (2019): Trivia Murder Party 2, Push the Button, Role Models, Joke Boat, and Dictionarium. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Push the Button is a social-deduction game about finding the aliens aboard your spaceship, and Trivia Murder Party is back for round two.",
+    minPlayers: 1,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia", "Social Deduction"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Trivia Murder Party 2, Push the Button, Role Models, Joke Boat, Dictionarium.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+6+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-7",
+    title: "The Jackbox Party Pack 7",
+    cover: "../games/images/jackbox-party-pack-7.jpg",
+    description: "Five party games in one (2020): Quiplash 3, The Devils and the Details, Champ'd Up, Talking Points, and Blather 'Round. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. The Devils and the Details is a chaotic co-op game about surviving suburban chores, and Talking Points makes you improvise a presentation on slides you've never seen.",
+    minPlayers: 2,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Cooperative", "Word Game"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Quiplash 3, The Devils and the Details, Champ'd Up, Talking Points, Blather 'Round.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+7+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-8",
+    title: "The Jackbox Party Pack 8",
+    cover: "../games/images/jackbox-party-pack-8.jpg",
+    description: "Five party games in one (2021): Drawful Animate, The Wheel of Enormous Proportions, Job Job, The Poll Mine, and Weapons Drawn. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Weapons Drawn is a drawing-based murder mystery, Job Job builds interview answers from other players' words, and Drawful now animates.",
+    minPlayers: 2,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Social Deduction", "Trivia"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Drawful Animate, The Wheel of Enormous Proportions, Job Job, The Poll Mine, Weapons Drawn.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+8+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-9",
+    title: "The Jackbox Party Pack 9",
+    cover: "../games/images/jackbox-party-pack-9.jpg",
+    description: "Five party games in one (2022): Fibbage 4, Quixort, Junktopia, Nonsensory, and Roomerang. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Roomerang is a reality-show elimination game, Quixort is team-based trivia sorting, and Fibbage 4 brings back the bluffing.",
+    minPlayers: 1,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Fibbage 4, Quixort, Junktopia, Nonsensory, Roomerang.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+9+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-10",
+    title: "The Jackbox Party Pack 10",
+    cover: "../games/images/jackbox-party-pack-10.jpg",
+    description: "Five party games in one (2023): Tee K.O. 2, Fixy Text, Timejinx, Hypnotorious, and Dodo Re Mi. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Dodo Re Mi is a rhythm game where you play in a band, Hypnotorious is a hidden-identity game, and Fixy Text has everyone co-writing the same text at once.",
+    minPlayers: 1,
+    maxPlayers: 9,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Social Deduction", "Trivia"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Tee K.O. 2, Fixy Text, Timejinx, Hypnotorious, Dodo Re Mi.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+10+all+games+explained"
   }
 ];
