@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T18:06:11.767Z",
+  "generatedAt": "2026-11-26T00:41:48.173Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -1873,6 +1873,28 @@
       "slug": "egg-breakfast",
       "body": "## Ingredients\n- 8 eggs\n- 1 lb breakfast sausage\n- 1/2 bag (16 oz) frozen tater tots\n- 1 can (16 oz) jumbo buttermilk biscuits\n- 1 avocado, sliced\n- Salt and pepper to taste\n\n## Instructions\n1. Bake the tater tots and biscuits according to their packages, timing them to finish together.\n2. Meanwhile, slice the sausage into patties or crumble it. Cook in a skillet over medium heat until done (160°F). Set aside, leaving a little fat in the pan.\n3. Cook the eggs in the same skillet however you like them. Season with salt and pepper.\n4. Serve everything with the sliced avocado.",
       "totalTime": 35
+    },
+    {
+      "title": "Egg Roll in a Bowl",
+      "description": "All the flavor of an egg roll without the wrapper. Ground turkey and coleslaw mix stir-fried in a sweet, spicy sauce.",
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 2,
+      "categories": [
+        "Main Course",
+        "Low Carb",
+        "High Protein",
+        "Asian",
+        "Quick Meals",
+        "Healthy"
+      ],
+      "tags": [
+        "Ground Turkey",
+        "One Pan"
+      ],
+      "slug": "egg-roll-in-a-bowl",
+      "body": "## Ingredients\n- 1 tbsp avocado oil\n- 1 lb ground turkey (or ground beef or pork)\n- 1 (16 oz) bag coleslaw mix\n- 4 tbsp coconut aminos or soy sauce\n- 2 tbsp sriracha, plus more to serve\n- 1 tbsp sugar-free honey (or regular honey)\n- 1 tsp sesame oil\n- 1 tsp onion powder\n- 1 tsp garlic powder\n- 1 tsp ground ginger\n- 1/2 tsp chili flakes\n- Pinch of salt and pepper\n- Green onions and sesame seeds, to top\n\n## Instructions\n1. Heat the avocado oil in a large skillet and cook the ground turkey until golden brown. Season with the onion powder, garlic powder, ginger, chili flakes, salt, and pepper.\n2. Add the coleslaw mix and let it cook down for 1–2 minutes.\n3. Stir in the coconut aminos (or soy sauce), sesame oil, sriracha, and honey.\n4. Top with green onions, sesame seeds, and extra sriracha if you like.\n\n## Notes\nUse coconut aminos instead of soy sauce to keep it gluten free.",
+      "totalTime": 20
     },
     {
       "title": "Fish and Chips",
