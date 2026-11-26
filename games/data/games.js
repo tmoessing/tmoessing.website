@@ -19,6 +19,7 @@
  *   bggUrl       BoardGameGeek URL (string)
  *   howToPlay    { goal: string, steps: string[] } short rules summary
  *   howToPlayVideo YouTube 'How to Play' URL (string)
+ *   favorite     true for a personal favorite (optional; shows a star + Favorites filter)
  *
  * Data here is author-controlled static content. If untrusted data is ever
  * added, switch user-facing fields from innerHTML to textContent.
@@ -83,6 +84,7 @@ export const GAMES = [
   },
   {
     id: "catan",
+    favorite: true,
     title: "Catan",
     cover: "../games/images/catan.jpg",
     description: "Players collect and trade resources like lumber, brick, wool, grain, and ore to build roads, settlements, and cities on the modular island of Catan. Includes the 5-6 Player Expansion.",
@@ -335,6 +337,7 @@ export const GAMES = [
   },
   {
     id: "trial-by-trolley",
+    favorite: true,
     title: "Trial by Trolley",
     cover: "../games/images/trial-by-trolley.jpg",
     description: "A dark-humor party game from Cyanide & Happiness where players must argue why the trolley driver should spare their track and run over the other team instead.",
@@ -560,6 +563,7 @@ export const GAMES = [
   },
   {
     id: "we-didnt-playtest-this-at-all",
+    favorite: true,
     "title": "We Didn't Playtest This at All",
     cover: "../games/images/we-didnt-playtest-this-at-all.jpg",
     description: "An intentionally ridiculous and chaotic card game where your sole objective is to win. Includes the Legacies expansion, allowing players to write on cards, apply stickers, and permanently alter the game in search of ridiculous victory.",
@@ -882,5 +886,155 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+name+game+party+game"
+  },
+  {
+    id: "azul",
+    title: "Azul",
+    cover: "../games/images/azul.jpg",
+    description: "A gorgeous tile-drafting game where players compete as artisans decorating a Portuguese palace wall, grabbing colorful tiles from shared factories and arranging them into scoring patterns.",
+    minPlayers: 2,
+    maxPlayers: 4,
+    playtimeMin: 30,
+    playtimeMax: 45,
+    categories: ["Strategy", "Board Game", "Family", "Competitive"],
+    complexity: "medium",
+    bggWeight: 1.77,
+    tags: ["Tile Drafting", "Pattern Building", "Set Collection", "Abstract", "Hate Drafting"],
+    bggUrl: "https://boardgamegeek.com/boardgame/230802/azul",
+    howToPlay: {
+      goal: "Score the most points by completing rows, columns, and color sets on your wall.",
+      steps: [
+        "On your turn, take all tiles of one color from a factory display (the rest slide to the center) or all of one color from the center pile.",
+        "Place the tiles into one of your five pattern lines. Each line holds only one color, and any tiles that don't fit fall to your floor line as penalties.",
+        "When every tile has been taken, completed pattern lines move one tile to your wall and score points for each tile it touches in a row or column.",
+        "The game ends after a round in which someone finishes a full horizontal row. Add bonuses for complete rows, columns, and colors; highest score wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=dXuucWGrFMQ"
+  },
+  {
+    id: "here-to-slay",
+    title: "Here to Slay",
+    cover: "../games/images/here-to-slay.jpg",
+    description: "A fantasy card game from the creators of Unstable Unicorns where you build a party of heroes, roll dice to slay monsters, and sabotage your friends along the way.",
+    minPlayers: 2,
+    maxPlayers: 6,
+    playtimeMin: 30,
+    playtimeMax: 60,
+    categories: ["Card Game", "Strategy", "Dice", "Competitive"],
+    complexity: "medium",
+    bggWeight: 1.69,
+    tags: ["Fantasy", "Dice Rolling", "Take That", "Hand Management", "Variable Player Powers"],
+    bggUrl: "https://boardgamegeek.com/boardgame/299252/here-to-slay",
+    howToPlay: {
+      goal: "Be the first to slay 3 monsters, or to build a party with 6 different hero classes.",
+      steps: [
+        "Everyone starts with a Party Leader card that sets their class and gives a special power.",
+        "On your turn you get 3 action points. Spend them to draw a card, play a Hero or Item, roll to use a Hero's ability, or spend all 3 to attack a monster.",
+        "Most actions involve rolling 2 dice against a target number. Other players can play Modifier cards to boost or wreck your roll, or Challenge cards to block a card you're playing.",
+        "Slaying a monster requires the right heroes in your party plus a successful roll. The first player to hit either win condition wins immediately."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=gsPZoEJyYMM"
+  },
+  {
+    id: "5-second-rule",
+    title: "5 Second Rule",
+    cover: "../games/images/5-second-rule.jpg",
+    description: "A fast, frantic party game where you have to name three things in a category before the twisty timer runs out. Sounds easy... until the pressure hits and your brain goes blank.",
+    minPlayers: 3,
+    maxPlayers: 6,
+    playtimeMin: 20,
+    playtimeMax: 30,
+    categories: ["Party", "Family", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: 1.1,
+    tags: ["Timer", "Rapid Fire", "Name Three", "Real-Time", "Under Pressure"],
+    bggUrl: "https://boardgamegeek.com/boardgame/86073/5-second-rule",
+    howToPlay: {
+      goal: "Be the first player to move your pawn to the finish by answering prompts under pressure.",
+      steps: [
+        "The player to your left reads a card aloud, like “Name 3 types of cheese,” and flips the 5-second timer.",
+        "Shout out three valid answers before the timer runs out. Answers already given this turn don't count.",
+        "Get all three in time and move forward. Fail, and the next player gets the same prompt, but they can't repeat any of your answers.",
+        "Special cards like Pass and Switch let you dodge or redirect a tough prompt. First to the finish wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=XUvK5lE4Mj4"
+  },
+  {
+    id: "buzzword",
+    title: "Buzzword",
+    cover: "../games/images/buzzword.jpg",
+    description: "A team party game where every clue on a card secretly contains the same hidden word. Race the timer to shout out the full answers and crack the buzzword.",
+    minPlayers: 4,
+    maxPlayers: 12,
+    playtimeMin: 45,
+    playtimeMax: 45,
+    categories: ["Party", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: 1.17,
+    tags: ["Team Play", "Clue Giving", "Timer", "Guessing", "Wordplay"],
+    bggUrl: "https://boardgamegeek.com/boardgame/8690/buzzword",
+    howToPlay: {
+      goal: "Score the most points for your team by guessing answers that all contain the round's buzzword.",
+      steps: [
+        "Split into two teams. The reader draws a card and announces the buzzword, like “Fire,” but keeps the clues secret.",
+        "Flip the 45-second timer. The reader gives clues one at a time; the team shouts the full answer, which always includes the buzzword (e.g. “A truck that puts out fires” → Fire Truck).",
+        "Each correct answer scores points. Pass if you're stuck and move to the next clue.",
+        "When time runs out, the other team can steal any unanswered clues. Play alternates; highest score at the end wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=ulAXZhCd2YI"
+  },
+  {
+    id: "why-are-you-like-this",
+    title: "Why Are You Like This?",
+    cover: "../games/images/why-are-you-like-this.jpg",
+    description: "An Exploding Kittens party game where teammates talk, draw, or act out secret words, but each round's challenge card throws in a ridiculous twist that makes it way harder.",
+    minPlayers: 2,
+    maxPlayers: 99,
+    playtimeMin: 15,
+    playtimeMax: 15,
+    categories: ["Party", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Team Play", "Charades", "Drawing", "Clue Giving", "Timer", "Humor"],
+    bggUrl: "https://boardgamegeek.com/boardgame/425079/why-are-you-like-this",
+    howToPlay: {
+      goal: "Get your team to guess as many secret words as possible before time runs out.",
+      steps: [
+        "Split into teams. On your turn, draw a challenge card; it sets how you must give clues, plus a silly twist or restriction.",
+        "Start the timer and work through word cards, talking, drawing, or gesturing as the challenge allows.",
+        "Every word your team guesses before time is up scores a point. Break the challenge's rule and that word doesn't count.",
+        "Pass to the next team and keep rotating. Playing as a couple? Use the two-player Date Night mode."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=IzGRFHWCGhA"
+  },
+  {
+    id: "swedish-twister",
+    title: "Swedish Twister",
+    cover: "",
+    description: "A no-equipment balance game, like Ninja for your feet. Everyone's feet stay linked in a circle while you take turns stretching to tag someone else's foot. Wobble, fall, or touch the floor and you're out.",
+    minPlayers: 4,
+    maxPlayers: 15,
+    playtimeMin: 5,
+    playtimeMax: 15,
+    categories: ["Party", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Physical", "Balance", "Player Elimination", "Last One Standing"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the last player still standing.",
+      steps: [
+        "Stand in a tight circle, shoulder to shoulder, with each foot touching your neighbors' feet.",
+        "The first player moves one foot to touch any other player's foot. That player must then move the foot that was touched to tag someone else, and so on.",
+        "Once a foot is placed it stays put: no pivoting, sliding, or readjusting. You can lean on each other with your hands for balance.",
+        "If you fall, can't reach, or touch the floor with anything but your feet, you're out. Rules vary by group, so agree on house rules first."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=swedish+twister+party+game+feet+circle"
   }
 ];

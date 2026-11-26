@@ -866,3 +866,57 @@
   .confetti-piece { animation: none !important; }
   .game-card { transition: none; }
 }
+
+/* ---------- personal favorites ---------- */
+.favorite-star {
+  display: inline-flex;
+  vertical-align: -0.1em;
+  margin-right: 0.3em;
+  color: #f5b301;
+}
+.favorite-star .icon { width: 0.95em; height: 0.95em; fill: currentColor; stroke: none; }
+.favorites-toggle .icon { transition: fill 0.2s ease, color 0.2s ease; }
+.favorites-toggle.active {
+  border-color: #f5b301;
+  background: rgba(245, 179, 1, 0.14);
+  color: var(--text-primary);
+}
+.favorites-toggle.active .icon { color: #f5b301; fill: currentColor; }
+
+/* ---------- preset filter chips ---------- */
+.preset-filters {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+.preset-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.preset-chip:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
+.preset-chip:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: 2px; }
+.preset-chip.active { background: var(--primary-blue); border-color: var(--primary-blue); color: #fff; }
+.preset-emoji { font-size: 0.95rem; line-height: 1; }
+.preset-count {
+  min-width: 1.4em;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.preset-chip.active .preset-count { background: rgba(255, 255, 255, 0.22); color: #fff; }

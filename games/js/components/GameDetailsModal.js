@@ -15,6 +15,7 @@ import {
   playersLabel,
   playtimeLabel,
   complexityBadge,
+  favoriteStar,
   esc
 } from "../filters.js";
 import { icon } from "../icons.js";
@@ -152,7 +153,7 @@ function detailsHTML(game) {
       </div>
       <div class="game-details-info">
         <div class="game-details-head">
-          <h2 class="game-details-title">${esc(game.title)}</h2>
+          <h2 class="game-details-title">${favoriteStar(game, "icon-lg")}${esc(game.title)}</h2>
           ${complexityBadge(game)}
         </div>
         <div class="game-meta-row">
