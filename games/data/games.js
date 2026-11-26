@@ -1068,7 +1068,7 @@ export const GAMES = [
     id: "moessing-bridge",
     title: "Moessing Bridge",
     aka: "Oh H*ll",
-    cover: "",
+    cover: "../games/images/moessing-bridge.jpg",
     description: "The family's take on Oh H*ll, a classic trick-taking game with the exact same rules. Every round you bid exactly how many tricks you'll win, and you only score if you nail it. The hand size climbs and falls each round, and the dealer can't let the bids add up to an even split, so somebody always gets burned.",
     minPlayers: 3,
     maxPlayers: 7,
@@ -1094,7 +1094,7 @@ export const GAMES = [
   {
     id: "speed",
     title: "Speed",
-    cover: "",
+    cover: "../games/images/speed.jpg",
     description: "A head-to-head race with a standard deck and zero turns. Both players slam cards onto the two center piles at the same time, one rank higher or lower, and the first to get rid of every card wins. Fast hands beat big brains here.",
     minPlayers: 2,
     maxPlayers: 2,
@@ -1120,7 +1120,7 @@ export const GAMES = [
   {
     id: "james-bond",
     title: "James Bond",
-    cover: "",
+    cover: "../games/images/james-bond.jpg",
     description: "A chaotic real-time matching game. Everyone races at once, swapping cards with the four in the middle to turn each of their 4-card piles into four of a kind. The catch is you can only hold one pile at a time, so you'd better remember what's in the others.",
     minPlayers: 2,
     maxPlayers: 4,
@@ -1145,7 +1145,7 @@ export const GAMES = [
   {
     id: "kemps",
     title: "Kemps",
-    cover: "",
+    cover: "../games/images/kemps.jpg",
     description: "A team card game built on secret signals. You and your partner agree on a sneaky sign, then everyone races to swap cards for four of a kind. When you've got it, flash the signal so your partner can yell \"Kemps!\" before the other team catches on and calls you out.",
     minPlayers: 4,
     maxPlayers: 8,
@@ -1171,7 +1171,7 @@ export const GAMES = [
   {
     id: "spoons",
     title: "Spoons",
-    cover: "",
+    cover: "../games/images/spoons.jpg",
     description: "Pass cards around the circle as fast as you can, hunting for four of a kind. There's one fewer spoon than players in the middle, and the moment someone grabs one, it's a free-for-all. Whoever ends up empty-handed takes a letter.",
     minPlayers: 3,
     maxPlayers: 13,
@@ -1197,7 +1197,7 @@ export const GAMES = [
   {
     id: "nertz",
     title: "Nertz",
-    cover: "",
+    cover: "../games/images/nertz.jpg",
     description: "Competitive solitaire with no turns. Everyone plays their own deck at the same time, racing to build shared foundation piles in the middle and empty their Nertz pile. It's frantic, loud, and one of the best games you can play with a stack of standard decks.",
     minPlayers: 2,
     maxPlayers: 8,
@@ -1223,7 +1223,7 @@ export const GAMES = [
   {
     id: "egyptian-ratscrew",
     title: "Egyptian Ratscrew",
-    cover: "",
+    cover: "../games/images/egyptian-ratscrew.jpg",
     description: "A slapping game of reflexes and nerve. Players flip cards into the middle one at a time, and the first to slap a double or sandwich takes the pile. Face cards start a challenge that can swing the whole game, so keep your eyes up and your hands ready.",
     minPlayers: 2,
     maxPlayers: 6,
@@ -1249,7 +1249,7 @@ export const GAMES = [
   {
     id: "bs",
     title: "BS",
-    cover: "",
+    cover: "../games/images/bs.jpg",
     description: "A bluffing game also known as Cheat or I Doubt It. Play cards face down and say what they are, truthfully or not. Anyone can call \"BS!\" If you're caught lying, you take the whole pile, but call it wrong and the pile is yours.",
     minPlayers: 3,
     maxPlayers: 10,
@@ -1275,7 +1275,7 @@ export const GAMES = [
   {
     id: "ninja",
     title: "Ninja",
-    cover: "",
+    cover: "../games/images/ninja.jpg",
     description: "A no-equipment reflex game. Everyone stands in a circle striking ninja poses, then takes turns making one swift move to slap someone else's hand. Get hit on a hand and you lose it. Lose both and you're out. Last ninja standing wins.",
     minPlayers: 3,
     maxPlayers: 15,
