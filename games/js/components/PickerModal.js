@@ -1,18 +1,20 @@
 /**
- * "Pick a Game" decision helper.
+ * Library modals that share one overlay:
  *
- * A stateful modal with four views that swap inside one overlay:
- *   filters  -> choose players / duration / categories / complexity (live count)
- *   result   -> a random pick revealed via a shuffle-reel + confetti,
- *               with the other matching games listed below it
- *   matching -> the full grid of games that match, sortable + shuffleable
- *   empty    -> friendly message + broaden suggestions + Clear Filters
+ *   openFilters(initial, base, onApply)
+ *     One window with every section (players, game length, categories,
+ *     complexity), each defaulting to "Any", and a live count over `base` (the library after search / presets). "Show N
+ *     games" hands the filter state back so the library list narrows to it.
  *
- * Filter state persists across views so "Back" preserves the user's choices.
+ *   openPick(games)
+ *     Picks a random game from `games` (whatever the library list currently
+ *     shows), revealed via a shuffle-reel + confetti, with the other options
+ *     listed below and a Pick Again button.
+ *
  * Respects prefers-reduced-motion (skips reel + confetti).
  */
-import { GAMES, CATEGORIES, CORE_CATEGORIES } from "../../data/games.js";
-import { matchGame, sortGames, shuffle, tagPill, placeholderDataURI, esc } from "../filters.js";
+import { CATEGORIES, CORE_CATEGORIES } from "../../data/games.js";
+import { matchGame, sortGames, tagPill, placeholderDataURI, esc } from "../filters.js";
 import { icon } from "../icons.js";
 import { createGameCard } from "./GameCard.js";
 import { lockScroll, unlockScroll, openGameDetails } from "./GameDetailsModal.js";
@@ -56,10 +58,12 @@ const CONFETTI_COLORS = [
 let overlay = null;
 let state = null;
 let returnFocusTo = null;
+let baseGames = [];      // filters mode: games the live count runs over
+let applyFilters = null; // filters mode: callback with the chosen state
+let pool = [];           // pick mode: games to pick from
 
-function defaultState() {
+export function defaultState() {
   return {
-    step: 1,
     playerMode: "any",
     playerCount: 4,
     playerMin: 4,
@@ -70,9 +74,24 @@ function defaultState() {
     customHi: 90,
     categories: new Set(),
     categoriesExpanded: false,
-    complexity: "any",
-    matchSort: "alpha"
+    complexity: "any"
   };
+}
+
+/** Deep-ish copy so the modal can edit freely until the user applies. */
+function cloneState(s) {
+  return { ...s, categories: new Set(s.categories), playerRangePending: false };
+}
+
+/** How many of the four filter groups are narrowing the list (for badges). */
+export function activeFilterCount(s) {
+  if (!s) return 0;
+  return (
+    (s.playerMode !== "any" ? 1 : 0) +
+    (s.duration !== "any" ? 1 : 0) +
+    (s.categories.size > 0 ? 1 : 0) +
+    (s.complexity !== "any" ? 1 : 0)
+  );
 }
 
 const reduceMotion = () =>
@@ -83,14 +102,30 @@ function content() {
 }
 
 function currentMatches() {
-  return GAMES.filter((g) => matchGame(g, state));
+  return baseGames.filter((g) => matchGame(g, state));
 }
 
 /* ---------- open / close ---------- */
 
-export function openPicker() {
+export function openFilters(initial, base, onApply) {
   if (overlay) return;
-  state = defaultState();
+  state = cloneState(initial || defaultState());
+  baseGames = base;
+  applyFilters = onApply;
+  mountOverlay();
+  renderFilters();
+  overlay.querySelector(".game-modal-close").focus();
+}
+
+export function openPick(games) {
+  if (overlay) return;
+  pool = games;
+  mountOverlay();
+  overlay.querySelector(".game-modal-close").focus();
+  pickRandom();
+}
+
+function mountOverlay() {
   returnFocusTo = document.activeElement;
 
   overlay = document.createElement("div");
@@ -109,9 +144,6 @@ export function openPicker() {
   });
   overlay.querySelector(".game-modal-close").addEventListener("click", closePicker);
   document.addEventListener("keydown", onEsc);
-
-  renderFilters();
-  overlay.querySelector(".game-modal-close").focus();
 }
 
 function onEsc(e) {
@@ -145,151 +177,109 @@ function updateCount() {
   const n = currentMatches().length;
   const countEl = overlay.querySelector("#picker-count");
   if (countEl) countEl.textContent = `${n} game${n === 1 ? "" : "s"} match`;
-  const pickBtn = overlay.querySelector("#picker-pick-btn");
-  const viewBtn = overlay.querySelector("#picker-view-btn");
-  [pickBtn, viewBtn].forEach((b) => {
-    if (b) b.disabled = n === 0;
-  });
+  const applyBtn = overlay.querySelector("#picker-apply-btn");
+  if (applyBtn) {
+    applyBtn.textContent = `Show ${n} Game${n === 1 ? "" : "s"}`;
+    applyBtn.disabled = n === 0;
+  }
 }
 
-const DEFAULT_SUB = "Let's find the perfect game for your group.";
+const DEFAULT_SUB = "Narrow the library down to games that fit your group.";
 
 function pickerHeading(sub) {
   return `
-      <h2 class="picker-title">${icon("dice", "icon-xl")} Pick a Game</h2>
+      <h2 class="picker-title">${icon("filter", "icon-xl")} Filters</h2>
       <p class="picker-sub">${esc(sub)}</p>`;
 }
 
 /* ---------- view: filters ---------- */
 
-function renderFilters() {
-  const showCustom = state.duration === "custom";
+function isPlayerPillActive(val) {
+  if (val === "any") return state.playerMode === "any";
+  if (val === "other") return state.playerMode === "exact" && (state.playerCount < 1 || state.playerCount > 10);
+  const num = parseInt(val, 10);
+  if (state.playerMode === "exact") return state.playerCount === num;
+  if (state.playerMode === "range") return num >= state.playerMin && num <= state.playerMax;
+  return false;
+}
 
-  const isPillActive = (val) => {
-    if (val === "any") return state.playerMode === "any";
-    if (val === "other") return state.playerMode === "exact" && (state.playerCount < 1 || state.playerCount > 10);
-
-    const num = parseInt(val, 10);
-    if (state.playerMode === "exact") return state.playerCount === num;
-    if (state.playerMode === "range") return num >= state.playerMin && num <= state.playerMax;
-    return false;
-  };
-
+function playersHTML() {
   const showCustomInput = state.playerMode === "exact" && (state.playerCount < 1 || state.playerCount > 10);
+  const hint = state.playerRangePending
+    ? "Click a second number to make it a range."
+    : "Click one number, or two to pick a range.";
+  return `
+    <div class="picker-section-head">
+      <div class="picker-section-title">Players</div>
+      <span class="picker-section-hint">${esc(hint)}</span>
+    </div>
+    <div class="pill-row" id="picker-players">
+      ${PLAYER_NUMBERS.map(([val, label]) =>
+        `<button type="button" class="picker-pill${isPlayerPillActive(val) ? " active" : ""}" data-val="${esc(val)}">${esc(label)}</button>`
+      ).join("")}
+    </div>
+    <div class="picker-inline"${showCustomInput ? "" : " hidden"}>
+      <label>Enter player count:
+        <div class="picker-number-stepper">
+          <button type="button" class="picker-pill stepper-btn" id="picker-stepper-minus">−</button>
+          <input type="number" min="1" max="100" class="picker-number picker-number-compact" id="picker-player-count" value="${esc(state.playerCount)}">
+          <button type="button" class="picker-pill stepper-btn" id="picker-stepper-plus">+</button>
+        </div>
+      </label>
+    </div>`;
+}
 
-  const subText = state.playerRangePending
-    ? "Click a second number to define a range of players."
-    : "Let's find the perfect game for your group (click two numbers to select a range).";
+function categoriesHTML() {
+  const visible = state.categoriesExpanded ? CATEGORIES : CORE_CATEGORIES;
+  // Keep any selected category visible even when the list is collapsed.
+  const shown = [...visible, ...[...state.categories].filter((c) => !visible.includes(c))];
+  return `
+    <div class="picker-section-head">
+      <div class="picker-section-title">Categories</div>
+      <span class="picker-section-hint">Pick any. A game needs just one of them.</span>
+    </div>
+    <div class="pill-row" id="picker-categories">
+      <button type="button" class="picker-pill${state.categories.size === 0 ? " active" : ""}" data-cat="">Any</button>
+      ${shown.map(
+        (c) => `<button type="button" class="picker-pill${state.categories.has(c) ? " active" : ""}" data-cat="${esc(c)}">${esc(c)}</button>`
+      ).join("")}
+      <button type="button" class="picker-pill picker-expand-btn" id="picker-toggle-categories">
+        ${state.categoriesExpanded ? "– Show Less" : "+ Show More"}
+      </button>
+    </div>`;
+}
 
-  const headerHtml = `
-    <div class="picker-steps-header">
-      <div class="step-indicator ${state.step === 1 ? "active" : "completed"}">
-        <span class="step-num">1</span>
-        <span class="step-text">Players</span>
-      </div>
-      <div class="step-line ${state.step > 1 ? "completed" : ""}"></div>
-      <div class="step-indicator ${state.step === 2 ? "active" : state.step > 2 ? "completed" : ""}">
-        <span class="step-num">2</span>
-        <span class="step-text">Duration</span>
-      </div>
-      <div class="step-line ${state.step > 2 ? "completed" : ""}"></div>
-      <div class="step-indicator ${state.step === 3 ? "active" : ""}">
-        <span class="step-num">3</span>
-        <span class="step-text">Categories</span>
-      </div>
+function renderFilters() {
+  content().innerHTML = `
+    ${pickerHeading(DEFAULT_SUB)}
+
+    <div class="picker-step-card picker-filter-sections">
+      <section class="picker-section" id="picker-players-section">${playersHTML()}</section>
+
+      <section class="picker-section">
+        <div class="picker-section-head"><div class="picker-section-title">Game Length</div></div>
+        <div class="pill-row" id="picker-duration">${pillRow(DURATIONS, state.duration)}</div>
+        <div class="picker-inline picker-custom" id="picker-custom-wrap"${state.duration === "custom" ? "" : " hidden"}>
+          <label>From <input type="number" min="0" class="picker-number" id="picker-custom-lo" value="${esc(state.customLo)}"></label>
+          <label>to <input type="number" min="0" class="picker-number" id="picker-custom-hi" value="${esc(state.customHi)}"></label>
+          <span class="picker-unit">min</span>
+        </div>
+      </section>
+
+      <section class="picker-section" id="picker-categories-section">${categoriesHTML()}</section>
+
+      <section class="picker-section">
+        <div class="picker-section-head"><div class="picker-section-title">Complexity</div></div>
+        <div class="pill-row" id="picker-complexity">${pillRow(COMPLEXITIES, state.complexity)}</div>
+      </section>
+    </div>
+
+    <div class="picker-footer">
+      <button type="button" class="btn btn-outline" id="picker-clear-btn">Clear All</button>
+      <span class="picker-count" id="picker-count"></span>
+      <button type="button" class="btn btn-primary" id="picker-apply-btn">Show Games</button>
     </div>
   `;
-
-  if (state.step === 1) {
-    content().innerHTML = `
-      ${pickerHeading(subText)}
-
-      ${headerHtml}
-
-      <div class="picker-step-card">
-        <div class="picker-section">
-          <div class="picker-section-title">Players</div>
-          <div class="pill-row" id="picker-players">
-            ${PLAYER_NUMBERS.map(([val, label]) => 
-              `<button type="button" class="picker-pill ${isPillActive(val) ? "active" : ""}" data-val="${esc(val)}">${esc(label)}</button>`
-            ).join("")}
-          </div>
-          <div class="picker-inline" id="picker-count-wrap"${showCustomInput ? "" : " hidden"}>
-            <label>Enter player count:
-              <div class="picker-number-stepper">
-                <button type="button" class="picker-pill stepper-btn" id="picker-stepper-minus">−</button>
-                <input type="number" min="1" max="100" class="picker-number picker-number-compact" id="picker-player-count" value="${esc(state.playerCount)}">
-                <button type="button" class="picker-pill stepper-btn" id="picker-stepper-plus">+</button>
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="picker-footer">
-        <span class="picker-count" id="picker-count"></span>
-        <button type="button" class="btn btn-primary" id="picker-next-btn">Next: Duration</button>
-      </div>
-    `;
-  } else if (state.step === 2) {
-    content().innerHTML = `
-      ${pickerHeading(DEFAULT_SUB)}
-
-      ${headerHtml}
-
-      <div class="picker-step-card">
-        <div class="picker-section">
-          <div class="picker-section-title">Duration</div>
-          <div class="pill-row" id="picker-duration">${pillRow(DURATIONS, state.duration)}</div>
-          <div class="picker-inline picker-custom" id="picker-custom-wrap"${showCustom ? "" : " hidden"}>
-            <label>From <input type="number" min="0" class="picker-number" id="picker-custom-lo" value="${esc(state.customLo)}"></label>
-            <label>to <input type="number" min="0" class="picker-number" id="picker-custom-hi" value="${esc(state.customHi)}"></label>
-            <span class="picker-unit">min</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="picker-footer">
-        <button type="button" class="btn btn-outline" id="picker-prev-btn">← Back</button>
-        <span class="picker-count" id="picker-count"></span>
-        <button type="button" class="btn btn-primary" id="picker-next-btn">Next: Categories</button>
-      </div>
-    `;
-  } else {
-    const visibleCategories = state.categoriesExpanded ? CATEGORIES : CORE_CATEGORIES;
-
-    content().innerHTML = `
-      ${pickerHeading(DEFAULT_SUB)}
-
-      ${headerHtml}
-
-      <div class="picker-step-card">
-        <div class="picker-section">
-          <div class="picker-section-title">Categories</div>
-          <div class="pill-row" id="picker-categories">
-            ${visibleCategories.map(
-              (c) =>
-                `<button type="button" class="picker-pill${state.categories.has(c) ? " active" : ""}" data-cat="${esc(c)}">${esc(c)}</button>`
-            ).join("")}
-            <button type="button" class="picker-pill picker-expand-btn" id="picker-toggle-categories">
-              ${state.categoriesExpanded ? "– Show Less" : "+ Show More"}
-            </button>
-          </div>
-        </div>
-        <div class="picker-section picker-section-spaced">
-          <div class="picker-section-title">Complexity</div>
-          <div class="pill-row" id="picker-complexity">${pillRow(COMPLEXITIES, state.complexity)}</div>
-        </div>
-      </div>
-
-      <div class="picker-footer">
-        <button type="button" class="btn btn-outline" id="picker-prev-btn">← Back</button>
-        <span class="picker-count" id="picker-count"></span>
-        <button type="button" class="btn btn-secondary" id="picker-view-btn">View Matching</button>
-        <button type="button" class="btn btn-primary" id="picker-pick-btn">Pick Random Game</button>
-      </div>
-    `;
-  }
 
   wireFilters();
   updateCount();
@@ -301,140 +291,127 @@ function activate(container, val) {
   );
 }
 
-function wireFilters() {
-  if (state.step === 1) {
-    const players = content().querySelector("#picker-players");
-    players.addEventListener("click", (e) => {
-      const btn = e.target.closest(".picker-pill");
-      if (!btn) return;
-      const val = btn.dataset.val;
+/** Re-render just one section (keeps the modal's scroll position). */
+function refreshSection(id, html, wire) {
+  const el = content().querySelector(id);
+  el.innerHTML = html();
+  wire();
+  updateCount();
+}
 
-      if (val === "any") {
-        state.playerMode = "any";
-        state.playerRangePending = false;
-        renderFilters();
-      } else if (val === "other") {
-        state.playerMode = "exact";
-        state.playerRangePending = false;
-        if (state.playerCount >= 1 && state.playerCount <= 10) {
-          state.playerCount = 12;
-        }
-        renderFilters();
-      } else {
-        const num = parseInt(val, 10);
-        if (!state.playerRangePending) {
-          state.playerMode = "range";
-          state.playerMin = num;
-          state.playerMax = num;
-          state.playerCount = num;
-          state.playerRangePending = true;
-        } else {
-          if (num < state.playerMin) {
-            state.playerMax = state.playerMin;
-            state.playerMin = num;
-          } else {
-            state.playerMax = num;
-          }
-          state.playerRangePending = false;
-        }
-        renderFilters();
-      }
-      updateCount();
-    });
-
-    const inputEl = content().querySelector("#picker-player-count");
-    if (inputEl) {
-      content().querySelector("#picker-stepper-minus").addEventListener("click", () => {
-        let val = parseInt(inputEl.value, 10) || 1;
-        if (val > 1) {
-          val -= 1;
-          inputEl.value = val;
-          state.playerCount = val;
-          updateCount();
-        }
-      });
-
-      content().querySelector("#picker-stepper-plus").addEventListener("click", () => {
-        let val = parseInt(inputEl.value, 10) || 1;
-        val += 1;
-        inputEl.value = val;
-        state.playerCount = val;
-        updateCount();
-      });
-
-      inputEl.addEventListener("input", (e) => {
-        state.playerCount = parseInt(e.target.value, 10) || 0;
-        updateCount();
-      });
-    }
-
-    content().querySelector("#picker-next-btn").addEventListener("click", () => {
+function wirePlayers() {
+  content().querySelector("#picker-players").addEventListener("click", (e) => {
+    const btn = e.target.closest(".picker-pill");
+    if (!btn) return;
+    const val = btn.dataset.val;
+    if (val === "any") {
+      state.playerMode = "any";
       state.playerRangePending = false;
-      state.step = 2;
-      renderFilters();
-    });
-  } else if (state.step === 2) {
-    const duration = content().querySelector("#picker-duration");
-    duration.addEventListener("click", (e) => {
-      const btn = e.target.closest(".picker-pill");
-      if (!btn) return;
-      state.duration = btn.dataset.val;
-      activate(duration, state.duration);
-      content().querySelector("#picker-custom-wrap").hidden = state.duration !== "custom";
-      updateCount();
-    });
-    content().querySelector("#picker-custom-lo").addEventListener("input", (e) => {
-      state.customLo = parseInt(e.target.value, 10) || 0;
-      updateCount();
-    });
-    content().querySelector("#picker-custom-hi").addEventListener("input", (e) => {
-      state.customHi = parseInt(e.target.value, 10) || 0;
-      updateCount();
-    });
-    content().querySelector("#picker-prev-btn").addEventListener("click", () => {
-      state.step = 1;
-      renderFilters();
-    });
-    content().querySelector("#picker-next-btn").addEventListener("click", () => {
-      state.step = 3;
-      renderFilters();
-    });
-  } else if (state.step === 3) {
-    const cats = content().querySelector("#picker-categories");
-    cats.addEventListener("click", (e) => {
-      const btn = e.target.closest(".picker-pill");
-      if (!btn || btn.id === "picker-toggle-categories") return;
-      const c = btn.dataset.cat;
-      if (state.categories.has(c)) state.categories.delete(c);
-      else state.categories.add(c);
-      btn.classList.toggle("active");
-      updateCount();
-    });
-    const cx = content().querySelector("#picker-complexity");
-    cx.addEventListener("click", (e) => {
-      const btn = e.target.closest(".picker-pill");
-      if (!btn) return;
-      state.complexity = btn.dataset.val;
-      activate(cx, state.complexity);
-      updateCount();
-    });
-    content().querySelector("#picker-toggle-categories").addEventListener("click", () => {
+    } else if (val === "other") {
+      state.playerMode = "exact";
+      state.playerRangePending = false;
+      if (state.playerCount >= 1 && state.playerCount <= 10) state.playerCount = 12;
+    } else {
+      const num = parseInt(val, 10);
+      if (!state.playerRangePending) {
+        state.playerMode = "range";
+        state.playerMin = state.playerMax = state.playerCount = num;
+        state.playerRangePending = true;
+      } else {
+        if (num < state.playerMin) {
+          state.playerMax = state.playerMin;
+          state.playerMin = num;
+        } else {
+          state.playerMax = num;
+        }
+        state.playerRangePending = false;
+      }
+    }
+    refreshSection("#picker-players-section", playersHTML, wirePlayers);
+  });
+
+  const inputEl = content().querySelector("#picker-player-count");
+  const setCount = (v) => {
+    state.playerCount = v;
+    inputEl.value = v;
+    updateCount();
+  };
+  content().querySelector("#picker-stepper-minus").addEventListener("click", () => {
+    const v = parseInt(inputEl.value, 10) || 1;
+    if (v > 1) setCount(v - 1);
+  });
+  content().querySelector("#picker-stepper-plus").addEventListener("click", () => {
+    setCount((parseInt(inputEl.value, 10) || 1) + 1);
+  });
+  inputEl.addEventListener("input", (e) => {
+    state.playerCount = parseInt(e.target.value, 10) || 0;
+    updateCount();
+  });
+}
+
+function wireCategories() {
+  content().querySelector("#picker-categories").addEventListener("click", (e) => {
+    const btn = e.target.closest(".picker-pill");
+    if (!btn) return;
+    if (btn.id === "picker-toggle-categories") {
       state.categoriesExpanded = !state.categoriesExpanded;
-      renderFilters();
-    });
-    content().querySelector("#picker-prev-btn").addEventListener("click", () => {
-      state.step = 2;
-      renderFilters();
-    });
-    content().querySelector("#picker-pick-btn").addEventListener("click", pickRandom);
-    content().querySelector("#picker-view-btn").addEventListener("click", renderMatching);
-  }
+    } else if (!btn.dataset.cat) {
+      state.categories.clear();
+    } else {
+      const c = btn.dataset.cat;
+      state.categories.has(c) ? state.categories.delete(c) : state.categories.add(c);
+    }
+    refreshSection("#picker-categories-section", categoriesHTML, wireCategories);
+  });
+}
+
+function wireFilters() {
+  content().querySelector("#picker-apply-btn").addEventListener("click", () => {
+    const chosen = state;
+    const cb = applyFilters;
+    closePicker();
+    cb && cb(chosen);
+  });
+  content().querySelector("#picker-clear-btn").addEventListener("click", () => {
+    state = defaultState();
+    renderFilters();
+  });
+
+  wirePlayers();
+  wireCategories();
+
+  const duration = content().querySelector("#picker-duration");
+  duration.addEventListener("click", (e) => {
+    const btn = e.target.closest(".picker-pill");
+    if (!btn) return;
+    state.duration = btn.dataset.val;
+    activate(duration, state.duration);
+    content().querySelector("#picker-custom-wrap").hidden = state.duration !== "custom";
+    updateCount();
+  });
+  content().querySelector("#picker-custom-lo").addEventListener("input", (e) => {
+    state.customLo = parseInt(e.target.value, 10) || 0;
+    updateCount();
+  });
+  content().querySelector("#picker-custom-hi").addEventListener("input", (e) => {
+    state.customHi = parseInt(e.target.value, 10) || 0;
+    updateCount();
+  });
+
+  const cx = content().querySelector("#picker-complexity");
+  cx.addEventListener("click", (e) => {
+    const btn = e.target.closest(".picker-pill");
+    if (!btn) return;
+    state.complexity = btn.dataset.val;
+    activate(cx, state.complexity);
+    updateCount();
+  });
 }
 
 /* ---------- view: random pick (reel + reveal) ---------- */
 
 function pickRandom() {
-  const matches = currentMatches();
+  const matches = pool;
   if (matches.length === 0) {
     renderEmpty();
     return;
@@ -487,14 +464,14 @@ function runReel(matches, chosen) {
 
 function renderResult(game, matches) {
   const singleMatch = matches.length === 1;
-  const others = sortGames(matches.filter((g) => g.id !== game.id), state.matchSort);
+  const others = sortGames(matches.filter((g) => g.id !== game.id), "alpha");
   const cover = game.cover || placeholderDataURI(game.title);
   const fallback = placeholderDataURI(game.title);
   const tags = (game.tags || []).map(tagPill).join("");
 
   content().innerHTML = `
     <div class="picker-result">
-      ${singleMatch ? `<p class="picker-note">Only one game matches — it was meant to be.</p>` : ""}
+      ${singleMatch ? `<p class="picker-note">Only one game in your list. It was meant to be.</p>` : ""}
       <img class="picker-result-cover" src="${esc(cover)}" alt="${esc(game.title)} cover"
            onerror="this.onerror=null;this.src='${esc(fallback)}';">
       <h2 class="picker-result-title">${esc(game.title)}</h2>
@@ -509,7 +486,7 @@ function renderResult(game, matches) {
           ${icon("refresh", "icon-md")}
           Pick Again
         </button>
-        <button type="button" class="btn btn-outline" id="picker-back">Back to Filters</button>
+        <button type="button" class="btn btn-outline" id="picker-close">Close</button>
       </div>
     </div>
     ${others.length ? `
@@ -527,7 +504,7 @@ function renderResult(game, matches) {
 
   content().querySelector("#picker-play-now").addEventListener("click", () => openGameDetails(game));
   content().querySelector("#picker-again").addEventListener("click", pickRandom);
-  content().querySelector("#picker-back").addEventListener("click", renderFilters);
+  content().querySelector("#picker-close").addEventListener("click", closePicker);
 
   if (!reduceMotion()) spawnConfetti();
 }
@@ -550,92 +527,20 @@ function spawnConfetti() {
   document.body.appendChild(frag);
 }
 
-/* ---------- view: matching grid ---------- */
-
-function renderMatching() {
-  const matches = sortGames(currentMatches(), state.matchSort);
-  if (matches.length === 0) {
-    renderEmpty();
-    return;
-  }
-
-  content().innerHTML = `
-    <div class="picker-matching-head">
-      <div>
-        <button type="button" class="btn btn-outline btn-sm" id="picker-match-back">← Filters</button>
-        <span class="picker-match-count">${matches.length} game${matches.length === 1 ? "" : "s"} found</span>
-      </div>
-      <div class="picker-match-controls">
-        <label>Sort
-          <select id="picker-match-sort">
-            <option value="alpha">Title (A–Z)</option>
-            <option value="playtime">Playtime</option>
-            <option value="players">Players</option>
-            <option value="complexity">Complexity</option>
-          </select>
-        </label>
-        <button type="button" class="btn btn-secondary btn-sm btn-icon" id="picker-match-shuffle">
-          ${icon("shuffle")}
-          Shuffle
-        </button>
-      </div>
-    </div>
-    <div class="games-grid picker-grid" id="picker-match-grid"></div>`;
-
-  const sel = content().querySelector("#picker-match-sort");
-  sel.value = state.matchSort;
-
-  const fill = (list) => {
-    const grid = content().querySelector("#picker-match-grid");
-    grid.innerHTML = "";
-    const frag = document.createDocumentFragment();
-    list.forEach((g) => frag.appendChild(createGameCard(g)));
-    grid.appendChild(frag);
-  };
-  fill(matches);
-
-  content().querySelector("#picker-match-back").addEventListener("click", renderFilters);
-  sel.addEventListener("change", () => {
-    state.matchSort = sel.value;
-    fill(sortGames(currentMatches(), state.matchSort));
-  });
-  content().querySelector("#picker-match-shuffle").addEventListener("click", () => {
-    fill(shuffle(currentMatches()));
-  });
-}
-
 /* ---------- view: empty state ---------- */
 
 function renderEmpty() {
-  const suggestions = [];
-  if (state.playerMode !== "any")
-    suggestions.push("Loosen the player count (try “Any”).");
-  if (state.duration !== "any")
-    suggestions.push("Widen the play time.");
-  if (state.categories.size > 0)
-    suggestions.push("Remove a category or two.");
-  if (state.complexity !== "any")
-    suggestions.push("Set complexity back to “Any”.");
-  if (suggestions.length === 0)
-    suggestions.push("Add some games to the library!");
-
   content().innerHTML = `
     <div class="picker-empty">
       <div class="picker-empty-icon">
         ${icon("alert", "icon-hero")}
       </div>
-      <h3>No games match those filters</h3>
-      <p>Nothing in the collection fits every constraint. Try broadening:</p>
-      <ul>${suggestions.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>
+      <h3>Nothing to pick from</h3>
+      <p>Your current search and filters hide every game. Loosen them up, then roll again.</p>
       <div class="picker-result-actions">
-        <button type="button" class="btn btn-outline" id="picker-empty-back">Back to Filters</button>
-        <button type="button" class="btn btn-primary" id="picker-empty-clear">Clear Filters</button>
+        <button type="button" class="btn btn-primary" id="picker-empty-close">Got It</button>
       </div>
     </div>`;
 
-  content().querySelector("#picker-empty-back").addEventListener("click", renderFilters);
-  content().querySelector("#picker-empty-clear").addEventListener("click", () => {
-    state = defaultState();
-    renderFilters();
-  });
+  content().querySelector("#picker-empty-close").addEventListener("click", closePicker);
 }
