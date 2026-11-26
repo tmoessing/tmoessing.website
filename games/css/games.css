@@ -883,6 +883,24 @@
 }
 .favorites-toggle.active .icon { color: #f5b301; fill: currentColor; }
 
+/* ---------- filters button ---------- */
+.filters-btn.active {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+.filters-badge {
+  min-width: 1.4em;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  background: var(--primary-blue);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+.filters-badge[hidden] { display: none; }
+
 /* ---------- preset filter chips ---------- */
 .preset-filters {
   flex-basis: 100%;

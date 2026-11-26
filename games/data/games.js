@@ -1015,7 +1015,7 @@ export const GAMES = [
   {
     id: "swedish-twister",
     title: "Swedish Twister",
-    cover: "",
+    cover: "../games/images/swedish-twister.jpg",
     description: "A no-equipment balance game, like Ninja for your feet. Everyone's feet stay linked in a circle while you take turns stretching to tag someone else's foot. Wobble, fall, or touch the floor and you're out.",
     minPlayers: 4,
     maxPlayers: 15,
@@ -1040,7 +1040,7 @@ export const GAMES = [
   {
     id: "dtr",
     title: "DTR (Determine the Relationship)",
-    cover: "",
+    cover: "../games/images/dtr.jpg",
     description: "An improv guessing game. Two players leave the room while everyone else comes up with two secret relationships, like teacher and student or cop and speeder. The pair acts out a scene together, each guessing who they're playing and who the other person is.",
     minPlayers: 4,
     maxPlayers: 20,
