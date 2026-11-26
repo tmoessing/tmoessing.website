@@ -1,20 +1,29 @@
 /**
  * The /meal-library grid page: loads meals.json once, renders every meal, and
- * wires the toolbar — instant search, sort, shuffle, grid/list view — plus the
- * "Pick a Meal" and "Plan the Week" buttons, plus course chips (Breakfast /
+ * wires the toolbar — instant search, sort, large-card / small-card / list view — plus the
+ * "Plan the Week" button, plus course chips (Breakfast /
  * Main Course / Dessert) that narrow the grid to one course. Search covers name, description, ingredients,
  * instructions, categories, and tags (the body text is indexed too).
  *
- * Recipes marked `hidden: true` are left out entirely (grid, picker, planner,
+ * Recipes marked `hidden: true` are left out entirely (grid, planner,
  * deep links) unless the page is opened with ?hidden, e.g.
  * /meal-library/?hidden — then they show up with a "Hidden" badge.
  */
 import { createMealCard } from "./MealCard.js";
 import { esc, sortMeals } from "./util.js";
-import { openPicker } from "./PickerModal.js";
 import { openWeekPlanner } from "./WeekPlanner.js";
 
 const VIEW_KEY = "meal-library-view";
+const VIEWS = ["grid", "compact", "list"];
+
+function readStoredView() {
+  try {
+    const v = localStorage.getItem(VIEW_KEY);
+    return VIEWS.includes(v) ? v : "grid";
+  } catch {
+    return "grid";
+  }
+}
 const DATA_URL = "../meals/data/meals.json?v=1";
 const SHOW_HIDDEN = new URLSearchParams(location.search).has("hidden");
 
@@ -26,7 +35,7 @@ export class MealLibraryPage {
     this.course = null; // selected course chip, or null for "All"
     this.query = "";
     this.sortKey = "alpha";
-    this.view = localStorage.getItem(VIEW_KEY) === "list" ? "list" : "grid";
+    this.view = readStoredView();
     this.bySlug = {};
   }
 
@@ -35,28 +44,14 @@ export class MealLibraryPage {
     this.countEl = document.getElementById("meals-count");
     this.searchInput = document.getElementById("meal-search");
     this.sortSel = document.getElementById("meal-sort");
-    this.gridBtn = document.getElementById("view-grid");
-    this.listBtn = document.getElementById("view-list");
+    this.viewBtns = Array.from(document.querySelectorAll(".view-btn[data-view]"));
     this.courseEl = document.getElementById("course-filter");
 
-    if (this.gridBtn) this.gridBtn.addEventListener("click", () => this.setView("grid"));
-    if (this.listBtn) this.listBtn.addEventListener("click", () => this.setView("list"));
+    this.viewBtns.forEach((b) => b.addEventListener("click", () => this.setView(b.dataset.view)));
     this.applyView();
-
-    const pickBtn = document.getElementById("pick-a-meal-btn");
-    if (pickBtn) pickBtn.addEventListener("click", () => openPicker(this.meals, this.categories));
 
     const planBtn = document.getElementById("plan-week-btn");
     if (planBtn) planBtn.addEventListener("click", () => openWeekPlanner(this.meals));
-
-    const shuffleBtn = document.getElementById("meal-shuffle");
-    if (shuffleBtn) {
-      shuffleBtn.addEventListener("click", () => {
-        this.sortKey = "random";
-        if (this.sortSel) this.sortSel.value = "alpha";
-        this.render();
-      });
-    }
 
     if (this.sortSel) {
       this.sortSel.addEventListener("change", () => {
@@ -167,23 +162,26 @@ export class MealLibraryPage {
   }
 
   setView(view) {
-    if (this.view === view) return;
+    if (this.view === view || !VIEWS.includes(view)) return;
     this.view = view;
-    localStorage.setItem(VIEW_KEY, view);
+    try {
+      localStorage.setItem(VIEW_KEY, view);
+    } catch {
+      /* storage unavailable (private mode): view just won't persist */
+    }
     this.applyView();
   }
 
   applyView() {
-    const isList = this.view === "list";
-    if (this.grid) this.grid.classList.toggle("list-view", isList);
-    if (this.gridBtn) {
-      this.gridBtn.classList.toggle("active", !isList);
-      this.gridBtn.setAttribute("aria-pressed", String(!isList));
+    if (this.grid) {
+      this.grid.classList.toggle("compact-view", this.view === "compact");
+      this.grid.classList.toggle("list-view", this.view === "list");
     }
-    if (this.listBtn) {
-      this.listBtn.classList.toggle("active", isList);
-      this.listBtn.setAttribute("aria-pressed", String(isList));
-    }
+    this.viewBtns.forEach((b) => {
+      const on = b.dataset.view === this.view;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
   }
 
   render() {
