@@ -4,6 +4,7 @@
  * Each GAMES entry:
  *   id           unique slug (string)
  *   title        display name (string)
+ *   aka          alternate name shown under the title, e.g. "Oh H*ll" (optional; searchable)
  *   cover        image path (e.g. "../games/images/catan.jpg"); "" => generated placeholder
  *   description  short blurb (string)
  *   minPlayers   number
@@ -1062,5 +1063,291 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=determine+the+relationship+improv+game"
+  },
+  {
+    id: "moessing-bridge",
+    title: "Moessing Bridge",
+    aka: "Oh H*ll",
+    cover: "../games/images/moessing-bridge.jpg",
+    description: "The family's take on Oh H*ll, a classic trick-taking game with the exact same rules. Every round you bid exactly how many tricks you'll win, and you only score if you nail it. The hand size climbs and falls each round, and the dealer can't let the bids add up to an even split, so somebody always gets burned.",
+    minPlayers: 3,
+    maxPlayers: 7,
+    playtimeMin: 45,
+    playtimeMax: 90,
+    categories: ["Card Game", "Competitive", "Strategy", "Family"],
+    complexity: "medium",
+    bggWeight: 1.73,
+    tags: ["Classic Deck", "Trick-Taking", "Bidding", "Trump Suit", "Oh H*ll"],
+    bggUrl: "https://boardgamegeek.com/boardgame/1115/oh-hell",
+    howToPlay: {
+      goal: "Score the most points by winning exactly the number of tricks you bid each round.",
+      steps: [
+        "Use a standard 52-card deck, aces high. Round one deals 1 card each; add a card every round up to the max (or as many as the deck allows), then count back down to 1.",
+        "After dealing, flip the next card face up. Its suit is trump for the round. If no cards are left, play the round with no trump.",
+        "Starting left of the dealer, each player bids how many tricks they'll take. The dealer bids last and can't make the total bids equal the number of tricks.",
+        "The player left of the dealer leads. Follow suit if you can; if you can't, play any card, including a trump. The highest trump wins the trick, or the highest card of the led suit if no trump was played. The winner leads next.",
+        "Hit your bid exactly and score 10 plus 1 per trick (common house scoring). Miss by any amount, over or under, and score nothing. Highest total after the last round wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+oh+hell+card+game"
+  },
+  {
+    id: "speed",
+    title: "Speed",
+    cover: "../games/images/speed.jpg",
+    description: "A head-to-head race with a standard deck and zero turns. Both players slam cards onto the two center piles at the same time, one rank higher or lower, and the first to get rid of every card wins. Fast hands beat big brains here.",
+    minPlayers: 2,
+    maxPlayers: 2,
+    playtimeMin: 5,
+    playtimeMax: 10,
+    categories: ["Card Game", "Competitive", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Speed", "Shedding", "Two Player"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to play every one of your cards.",
+      steps: [
+        "Deal 20 cards to each player: 15 face down as your draw pile, plus 5 in your hand. Put two face-down piles of 5 off to the side and two face-down cards in the center.",
+        "Both players flip a center card at the same time, and then it's on. There are no turns.",
+        "Play a card from your hand onto either center pile if it's one rank higher or lower than the top card. Aces wrap both ways, so King-Ace-2 works.",
+        "Draw from your pile to keep 5 cards in your hand. If neither player can move, both flip a card from the side piles onto the center piles together. When the side piles run out, shuffle the center piles to make new ones.",
+        "When your hand and draw pile are empty, you win."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+speed+card+game"
+  },
+  {
+    id: "james-bond",
+    title: "James Bond",
+    cover: "../games/images/james-bond.jpg",
+    description: "A chaotic real-time matching game. Everyone races at once, swapping cards with the four in the middle to turn each of their 4-card piles into four of a kind. The catch is you can only hold one pile at a time, so you'd better remember what's in the others.",
+    minPlayers: 2,
+    maxPlayers: 4,
+    playtimeMin: 5,
+    playtimeMax: 15,
+    categories: ["Card Game", "Competitive", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Speed", "Set Collection", "Memory"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to turn every one of your piles into four of a kind and shout \"James Bond!\"",
+      steps: [
+        "Deal 4 cards face up in the middle. Split the rest into face-down piles of 4: 6 piles each with 2 players, 4 with 3 players, or 3 with 4 players.",
+        "On \"go,\" everyone plays at once. Pick up one of your piles and swap cards with the middle, one for one.",
+        "You can only hold one pile at a time. Set it down face down before picking up another.",
+        "Once every pile you have is four of a kind, yell \"James Bond!\" and flip them all face up to prove it. If you're wrong, you're out of that round."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+james+bond+card+game"
+  },
+  {
+    id: "kemps",
+    title: "Kemps",
+    cover: "../games/images/kemps.jpg",
+    description: "A team card game built on secret signals. You and your partner agree on a sneaky sign, then everyone races to swap cards for four of a kind. When you've got it, flash the signal so your partner can yell \"Kemps!\" before the other team catches on and calls you out.",
+    minPlayers: 4,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Bluffing", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Teams", "Secret Signals", "Real-Time", "Set Collection"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Signal your partner when you have four of a kind so they can call \"Kemps!\" without the other team catching your signal first.",
+      steps: [
+        "Split into teams of two, with partners sitting across from each other. Each team picks a secret signal (a wink, a cough, a scratch) away from everyone else.",
+        "Deal 4 cards to each player and 4 face up in the middle. On \"go,\" everyone swaps with the middle at once, one card for one, always keeping 4 in hand.",
+        "When nobody wants the middle cards, the dealer clears them and deals 4 fresh ones.",
+        "Got four of a kind? Give your signal. If your partner sees it, they yell \"Kemps!\" and point at you. If you really have it, your team scores; if not, you lose a point.",
+        "If you catch the other team's signal, yell \"Stop Kemps!\" (or \"Counter-Kemps!\") at the player with four of a kind. Call it right and your team scores instead. Play to an agreed score, and fake signals are fair game."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+kemps+card+game"
+  },
+  {
+    id: "spoons",
+    title: "Spoons",
+    cover: "../games/images/spoons.jpg",
+    description: "Pass cards around the circle as fast as you can, hunting for four of a kind. There's one fewer spoon than players in the middle, and the moment someone grabs one, it's a free-for-all. Whoever ends up empty-handed takes a letter.",
+    minPlayers: 3,
+    maxPlayers: 13,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Set Collection", "Grab", "Elimination"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Don't be the one left without a spoon. Avoid spelling S-P-O-O-N.",
+      steps: [
+        "Put spoons in the middle, one fewer than the number of players. Deal 4 cards to each player and give the rest of the deck to the dealer.",
+        "The dealer draws a card and passes one card face down to the left. Everyone keeps passing one card left at the same time, always holding 4. The last player discards into a pile.",
+        "When you have four of a kind, grab a spoon. You can grab it quietly to see how long it takes the others to notice.",
+        "As soon as anyone takes a spoon, everyone else can grab one too. The player left without a spoon gets a letter: S, then P, and so on.",
+        "Spell SPOON and you're out. Remove a spoon each round, and the last player standing wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+spoons+card+game"
+  },
+  {
+    id: "nertz",
+    title: "Nertz",
+    cover: "../games/images/nertz.jpg",
+    description: "Competitive solitaire with no turns. Everyone plays their own deck at the same time, racing to build shared foundation piles in the middle and empty their Nertz pile. It's frantic, loud, and one of the best games you can play with a stack of standard decks.",
+    minPlayers: 2,
+    maxPlayers: 8,
+    playtimeMin: 20,
+    playtimeMax: 45,
+    categories: ["Card Game", "Competitive"],
+    complexity: "medium",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Solitaire", "One Deck Per Player", "Pounce"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Empty your Nertz pile first while getting as many cards as possible into the center. First to 100 points wins.",
+      steps: [
+        "Each player needs their own deck with a different back. Deal yourself a 13-card Nertz pile (top card face up) and 4 face-up cards in a row as your work piles. The rest of your deck is your stock.",
+        "On \"go,\" everyone plays at once. Any ace goes to the middle to start a shared foundation, which anyone can build up in suit from ace to king.",
+        "On your work piles, build down in alternating colors, solitaire style. You can move cards from your Nertz pile, your waste pile, or other work piles there.",
+        "Flip your stock three cards at a time onto a waste pile, and play the top card wherever it fits.",
+        "When your Nertz pile is empty, yell \"Nertz!\" and the hand ends. Score +1 for each of your cards in the center and -2 for each card left in your Nertz pile."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+nertz+card+game"
+  },
+  {
+    id: "egyptian-ratscrew",
+    title: "Egyptian Ratscrew",
+    cover: "../games/images/egyptian-ratscrew.jpg",
+    description: "A slapping game of reflexes and nerve. Players flip cards into the middle one at a time, and the first to slap a double or sandwich takes the pile. Face cards start a challenge that can swing the whole game, so keep your eyes up and your hands ready.",
+    minPlayers: 2,
+    maxPlayers: 6,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Slapping", "Real-Time", "Reflexes"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Win every card in the deck.",
+      steps: [
+        "Deal out the whole deck face down. Don't look at your cards.",
+        "Going around, each player flips the top card of their pile face up onto the center pile.",
+        "When someone flips a face card or ace, the next player has a set number of chances to flip a face card or ace of their own: 4 for an ace, 3 for a king, 2 for a queen, 1 for a jack. If they fail, the player who started the challenge takes the pile. If they succeed, the challenge passes to the next player.",
+        "Anyone can slap the pile on a double (two of the same rank in a row) or a sandwich (same rank with one card between). The first hand down takes the whole pile. A wrong slap costs you a card, which goes under the pile.",
+        "If you run out of cards, you can still slap your way back in. Whoever ends up with every card wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+egyptian+ratscrew"
+  },
+  {
+    id: "bs",
+    title: "BS",
+    cover: "../games/images/bs.jpg",
+    description: "A bluffing game also known as Cheat or I Doubt It. Play cards face down and say what they are, truthfully or not. Anyone can call \"BS!\" If you're caught lying, you take the whole pile, but call it wrong and the pile is yours.",
+    minPlayers: 3,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Card Game", "Bluffing", "Party", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Bluffing", "Shedding", "Lying", "Cheat"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to get rid of all your cards.",
+      steps: [
+        "Deal out the whole deck. With more than 6 players, shuffle in a second deck.",
+        "The first player plays one or more cards face down and says they're aces. The next player plays and says they're 2s, then 3s, and so on up to kings, then back to aces.",
+        "You must play at least one card on your turn, whether or not you have the right rank. Lie if you need to.",
+        "Anyone can call \"BS!\" right after a play. Flip the cards: if the player lied, they take the whole pile. If they told the truth, the caller takes it.",
+        "The first player to empty their hand, and survive the BS calls on their last play, wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+bs+card+game"
+  },
+  {
+    id: "ninja",
+    title: "Ninja",
+    cover: "../games/images/ninja.jpg",
+    description: "A no-equipment reflex game. Everyone stands in a circle striking ninja poses, then takes turns making one swift move to slap someone else's hand. Get hit on a hand and you lose it. Lose both and you're out. Last ninja standing wins.",
+    minPlayers: 3,
+    maxPlayers: 15,
+    playtimeMin: 5,
+    playtimeMax: 20,
+    categories: ["Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Physical", "Active", "Reflexes", "Elimination"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the last ninja with a hand left.",
+      steps: [
+        "Stand in a circle. On the count of three, everyone shouts \"Ninja!\" and jumps into a pose. Freeze there.",
+        "Going around the circle, each player gets one quick, single motion to try to slap another player's hand. Wherever you end up, freeze there.",
+        "The player being attacked can make one motion to dodge. It must happen during the attack, not after.",
+        "If your hand gets slapped, that hand is out. Put it behind your back. Lose both and you're out of the game.",
+        "Keep going until only one ninja is left. Moving when it isn't your turn (other than dodging) costs you a hand."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+ninja+hand+slap+party+game"
+  },
+  {
+    id: "signs",
+    title: "Signs",
+    cover: "../games/images/signs.jpg",
+    description: "A sneaky circle game. Everyone picks a secret hand sign, and the sign gets passed around the circle by flashing your own sign and then someone else's. One player stands in the middle trying to catch the pass. Get caught and you're it.",
+    minPlayers: 6,
+    maxPlayers: 20,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Party", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Secret Signals", "Observation", "Sneaky", "Large Group"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pass the sign without getting caught by the player in the middle.",
+      steps: [
+        "Sit in a circle. Everyone picks a simple, unique hand sign, like tugging an ear, a salute, or a thumbs up, and shows it to the group.",
+        "One player goes in the middle as \"it\" and closes their eyes while someone starts the game.",
+        "To pass, do your own sign and then someone else's sign. That person must quickly do their own sign, then pass it to someone else the same way.",
+        "Everyone else keeps doing small fake motions to cover the passes.",
+        "If the player in the middle catches someone doing a sign, they swap places and the caught player becomes it."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=signs+game+circle+party+game+how+to+play"
+  },
+  {
+    id: "triggers",
+    title: "Triggers",
+    cover: "../games/images/triggers.jpg",
+    description: "A hilarious hidden-reaction game. Everyone secretly gets a trigger, like \"every time Jenny smiles, you sneeze,\" and has to react whenever it happens. Hang out, chat, and watch the chaos unfold while you try to crack everyone else's trigger.",
+    minPlayers: 5,
+    maxPlayers: 15,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Acting", "Guessing", "Observation", "Humor"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Figure out everyone else's secret trigger while reacting to your own.",
+      steps: [
+        "Sit in a circle. Each player secretly tells the person on their right a trigger: something that happens and how they must react. For example, \"Every time someone says 'okay,' you clap.\"",
+        "Keep triggers secret from everyone else. Start chatting normally, or play another simple game while you hang out.",
+        "Whenever your trigger happens, you must react, every single time.",
+        "When you think you've figured out someone's trigger, call it out. If you're right, they reveal it.",
+        "Keep going until every trigger is cracked. The best triggers are subtle enough to be tricky but happen often enough to be fun."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=triggers+party+game+secret+reaction"
   }
 ];

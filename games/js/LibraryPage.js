@@ -278,7 +278,7 @@ export class LibraryPage {
     if (this.searchQuery) {
       const q = this.searchQuery;
       filtered = filtered.filter((g) =>
-        [g.title, g.description || "", ...(g.tags || []), ...(g.categories || [])].some((s) =>
+        [g.title, g.aka || "", g.description || "", ...(g.tags || []), ...(g.categories || [])].some((s) =>
           s.toLowerCase().includes(q)
         )
       );
