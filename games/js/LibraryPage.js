@@ -14,7 +14,7 @@ import { icon } from "./icons.js";
 import { readUrlState, writeFilters } from "./urlState.js";
 import { SEARCH_PLACEHOLDER } from "./components/SearchBox.js";
 import { VIEW_OPTIONS } from "./components/ViewToggle.js";
-import { PRESETS } from "./components/PresetFilters.js";
+import { PRESETS, isDigital } from "./components/PresetFilters.js";
 
 const VIEW_KEY = "library-view";
 const VIEWS = VIEW_OPTIONS.map((o) => o.view);
@@ -264,6 +264,11 @@ export class LibraryPage {
     // Preset chips: a game must pass every active preset.
     const presets = PRESETS.filter((p) => this.activePresets.has(p.id));
     if (presets.length) filtered = filtered.filter((g) => presets.every((p) => p.match(g)));
+
+    // Digital games stay hidden unless a revealing preset is on or the user
+    // is searching / filtering by tag (so searching "jackbox" still works).
+    const reveal = presets.some((p) => p.reveal) || this.searchQuery || this.activeTags.size > 0;
+    if (!reveal) filtered = filtered.filter((g) => !isDigital(g));
 
     // Locked tags: a game must have every one (as a tag or a category).
     if (this.activeTags.size > 0) {

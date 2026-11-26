@@ -122,7 +122,7 @@ export const GAMES = [
     categories: ["Party", "Word Game", "Family", "Competitive"],
     complexity: "easy",
     bggWeight: 1.25,
-    tags: ["Team Play", "Clue Giving", "Word Association", "Deduction"],
+    tags: ["Team Play", "Clue Giving", "Word Association", "Deduction", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/178900/codenames",
     howToPlay: {
       goal: "Be the first team to find all of your agents on the 5×5 grid of words.",
@@ -323,7 +323,7 @@ export const GAMES = [
     categories: ["Party", "Word Game", "Competitive", "Family"],
     complexity: "easy",
     bggWeight: 1.2,
-    tags: ["Team Play", "Clue Giving", "Real-Time", "Communication"],
+    tags: ["Team Play", "Clue Giving", "Real-Time", "Communication", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/1111/taboo",
     howToPlay: {
       goal: "Score more points than the other team by getting your teammates to guess words.",
@@ -449,7 +449,7 @@ export const GAMES = [
     categories: ["Party", "Bluffing", "Competitive"],
     complexity: "easy",
     bggWeight: 1.2,
-    tags: ["Humor", "Writing", "Guessing", "Deduction", "Paper and Pencil"],
+    tags: ["Humor", "Writing", "Guessing", "Deduction", "Paper and Pencil", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/10934/the-game-of-things",
     howToPlay: {
       goal: "Score points by guessing who wrote which answer, and by staying hidden.",
@@ -700,7 +700,7 @@ export const GAMES = [
     categories: ["Social Deduction", "Bluffing", "Party"],
     complexity: "medium",
     bggWeight: 1.38,
-    tags: ["Hidden Roles", "Player Elimination", "Team Play", "Deduction", "Narrator Needed", "No Props Needed", "Classic"],
+    tags: ["Hidden Roles", "Player Elimination", "Team Play", "Deduction", "Narrator Needed", "No Props Needed", "Classic", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/925/werewolf",
     howToPlay: {
       goal: "Citizens win by eliminating all the Mafia. The Mafia wins once they equal or outnumber the citizens.",
@@ -750,7 +750,7 @@ export const GAMES = [
     categories: ["Party", "Social Deduction"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Deduction", "Roleplay", "Observation", "No Props Needed", "Icebreaker"],
+    tags: ["Deduction", "Roleplay", "Observation", "No Props Needed", "Icebreaker", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "As the Psychiatrist, figure out the “condition” the whole group secretly shares.",
@@ -775,7 +775,7 @@ export const GAMES = [
     categories: ["Party", "Word Game"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Word Guessing", "Deduction", "No Props Needed", "Icebreaker", "Communication"],
+    tags: ["Word Guessing", "Deduction", "No Props Needed", "Icebreaker", "Communication", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Figure out the secret verb the group chose.",
@@ -850,7 +850,7 @@ export const GAMES = [
     categories: ["Party", "Word Game", "Competitive"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Team Play", "Charades", "Clue Giving", "Real-Time", "Memory", "Paper and Pencil"],
+    tags: ["Team Play", "Charades", "Clue Giving", "Real-Time", "Memory", "Paper and Pencil", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Score the most points for your team across three rounds.",
@@ -875,7 +875,7 @@ export const GAMES = [
     categories: ["Party", "Competitive"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker"],
+    tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Recruit everyone onto your team by figuring out who wrote which name.",
@@ -950,7 +950,7 @@ export const GAMES = [
     categories: ["Party", "Family", "Word Game", "Competitive"],
     complexity: "easy",
     bggWeight: 1.1,
-    tags: ["Timer", "Rapid Fire", "Name Three", "Real-Time", "Under Pressure"],
+    tags: ["Timer", "Rapid Fire", "Name Three", "Real-Time", "Under Pressure", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/86073/5-second-rule",
     howToPlay: {
       goal: "Be the first player to move your pawn to the finish by answering prompts under pressure.",
@@ -975,7 +975,7 @@ export const GAMES = [
     categories: ["Party", "Word Game", "Competitive"],
     complexity: "easy",
     bggWeight: 1.17,
-    tags: ["Team Play", "Clue Giving", "Timer", "Guessing", "Wordplay"],
+    tags: ["Team Play", "Clue Giving", "Timer", "Guessing", "Wordplay", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/8690/buzzword",
     howToPlay: {
       goal: "Score the most points for your team by guessing answers that all contain the round's buzzword.",
@@ -1050,7 +1050,7 @@ export const GAMES = [
     categories: ["Party"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Improv", "Roleplay", "Acting", "Guessing", "No Props Needed", "Humor"],
+    tags: ["Improv", "Roleplay", "Acting", "Guessing", "No Props Needed", "Humor", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Act out the scene and figure out the relationship: your role and your partner's.",
@@ -1336,7 +1336,7 @@ export const GAMES = [
     categories: ["Party"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["No Props Needed", "Acting", "Guessing", "Observation", "Humor"],
+    tags: ["No Props Needed", "Acting", "Guessing", "Observation", "Humor", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Figure out everyone else's secret trigger while reacting to your own.",
@@ -1362,7 +1362,7 @@ export const GAMES = [
     categories: ["Party", "Trivia", "Word Game"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1388,7 +1388,7 @@ export const GAMES = [
     categories: ["Party", "Word Game"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1414,7 +1414,7 @@ export const GAMES = [
     categories: ["Party", "Trivia", "Bluffing"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1440,7 +1440,7 @@ export const GAMES = [
     categories: ["Party", "Bluffing"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1466,7 +1466,7 @@ export const GAMES = [
     categories: ["Party", "Trivia"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1492,7 +1492,7 @@ export const GAMES = [
     categories: ["Party", "Trivia", "Social Deduction"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1518,7 +1518,7 @@ export const GAMES = [
     categories: ["Party", "Cooperative", "Word Game"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1544,7 +1544,7 @@ export const GAMES = [
     categories: ["Party", "Social Deduction", "Trivia"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1570,7 +1570,7 @@ export const GAMES = [
     categories: ["Party", "Trivia"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1596,7 +1596,7 @@ export const GAMES = [
     categories: ["Party", "Social Deduction", "Trivia"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode"],
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
@@ -1609,5 +1609,57 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+10+all+games+explained"
+  },
+  {
+    id: "among-us",
+    title: "Among Us",
+    cover: "../games/images/among-us.jpg",
+    description: "The online social-deduction hit. A crew of players runs tasks around a spaceship while one or more secret impostors sabotage the ship and pick people off. Call emergency meetings, argue about who's sus, and vote someone out before the impostors win.",
+    minPlayers: 4,
+    maxPlayers: 15,
+    playtimeMin: 15,
+    playtimeMax: 60,
+    categories: ["Social Deduction", "Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Video Game", "Play Online", "Hidden Roles", "Cross-Platform", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Crewmates win by finishing every task or voting out all the impostors. Impostors win by eliminating enough of the crew or sabotaging the ship.",
+      steps: [
+        "Everyone installs Among Us on a phone, PC, or console and joins the same lobby with a room code.",
+        "The game secretly picks one or more impostors. Everyone else is a crewmate.",
+        "Crewmates walk the ship finishing tasks. Impostors fake tasks, sneak through vents, sabotage systems, and eliminate crewmates.",
+        "Find a body or hit the emergency button to call a meeting. Discuss, accuse, and vote someone off the ship, or skip.",
+        "Keep going until one side wins. On a video call, mute during rounds and talk only in meetings."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+among+us+beginners"
+  },
+  {
+    id: "spaceteam",
+    title: "Spaceteam",
+    cover: "../games/images/spaceteam.jpg",
+    description: "A cooperative shouting game for phones. Everyone's screen shows a different panel of absurd controls, but the instructions show up on someone else's screen. Yell commands across the room fast enough to keep your falling-apart spaceship flying.",
+    minPlayers: 2,
+    maxPlayers: 8,
+    playtimeMin: 5,
+    playtimeMax: 20,
+    categories: ["Cooperative", "Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Video Game", "Phones as Controllers", "Shouting", "Real-Time", "Same Room"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Work together to survive as many sectors of space as possible before your ship falls apart.",
+      steps: [
+        "Everyone installs the free Spaceteam app and connects in the same room over the same Wi-Fi or Bluetooth.",
+        "Each player gets a control panel full of weirdly named buttons, sliders, and dials.",
+        "An instruction with a timer appears on your screen, like \"Set Gelatinous Darkbucket to 3,\" but it's usually on someone else's panel. Shout it out!",
+        "If you have the matching control, do it fast. Missed instructions damage the ship.",
+        "Survive a sector to warp to the next, which gets faster and weirder. Watch out for asteroids and wormholes, which make you shake or flip your phone."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=spaceteam+app+gameplay"
   }
 ];
