@@ -17,7 +17,7 @@ files automatically on every deploy.
    below it, write the recipe in plain Markdown under `## Ingredients` and
    `## Instructions` (plus optional `## Notes`, `## Tips`, `## Variations`).
 3. **Optional photo:** add `meals/images/<recipe-name>.jpg` (or `.png`/`.webp`).
-   It's picked up automatically. No photo? A colored placeholder is shown.
+   It's picked up automatically. No photo? An illustration for its course is shown.
 4. **Commit to `main`.** The deploy rebuilds `meals.json` and publishes. That's it.
 
 You can do all of this from the GitHub website or app. No local setup needed.

@@ -99,8 +99,8 @@ function nutritionRow(meal) {
 }
 
 function detailsHTML(meal) {
-  const cover = meal.image || placeholderDataURI(meal.title);
-  const fallback = placeholderDataURI(meal.title);
+  const cover = meal.image || placeholderDataURI(meal);
+  const fallback = placeholderDataURI(meal);
 
   const cats = (meal.categories || [])
     .map((c) => `<span class="skill-tag category-tag">${esc(c)}</span>`)

@@ -390,7 +390,7 @@ function runReel(matches, chosen) {
   const tick = () => {
     if (!overlay) return; // closed mid-animation
     const m = matches[Math.floor(Math.random() * matches.length)];
-    img.src = m.image || placeholderDataURI(m.title);
+    img.src = m.image || placeholderDataURI(m);
     title.textContent = m.title;
     reel.classList.remove("cycle");
     void reel.offsetWidth; // restart animation
@@ -408,8 +408,8 @@ function runReel(matches, chosen) {
 }
 
 function renderResult(meal, singleMatch) {
-  const cover = meal.image || placeholderDataURI(meal.title);
-  const fallback = placeholderDataURI(meal.title);
+  const cover = meal.image || placeholderDataURI(meal);
+  const fallback = placeholderDataURI(meal);
   const chips = `
     <span class="meal-chip">⏱ ${esc(minutesLabel(meal.prepTime))}</span>
     <span class="meal-chip">💲 ${esc(money(meal.estimatedCost))}</span>

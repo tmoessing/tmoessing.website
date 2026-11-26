@@ -5,6 +5,7 @@
  * (next-week day chooser, ingredient extraction, 5 PM event links).
  * No DOM state, no data imports — safe to reuse anywhere.
  */
+import { illustratedCoverSVG } from "./placeholders.js";
 
 /** Escape a string for safe use inside an HTML attribute or text node. */
 export function esc(str) {
@@ -62,33 +63,14 @@ export function getTagStyle(tagName) {
 }
 
 /**
- * Generate an inline SVG data-URI cover from a meal's title, so the grid and
- * reveal look complete with zero image files. Real photos drop in later by
- * setting `image` on the data — no code change needed.
+ * Inline SVG data-URI cover for a meal with no photo: an illustration for its
+ * course (see placeholders.js), tinted per title. Real photos drop in later by
+ * setting `image` on the data — no code change needed. Accepts a meal object,
+ * or a bare title string (treated as a Main Course).
  */
-export function placeholderDataURI(title) {
-  const t = title || "Meal";
-  let hash = 0;
-  for (let i = 0; i < t.length; i++) hash = t.charCodeAt(i) + ((hash << 5) - hash);
-  const hue = Math.abs(hash) % 360;
-  const initials = t
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-  const svg =
-    `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">` +
-    `<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">` +
-    `<stop offset="0" stop-color="hsl(${hue},58%,52%)"/>` +
-    `<stop offset="1" stop-color="hsl(${(hue + 45) % 360},58%,38%)"/>` +
-    `</linearGradient></defs>` +
-    `<rect width="400" height="400" fill="url(#g)"/>` +
-    `<text x="50%" y="50%" font-family="Segoe UI, system-ui, sans-serif" font-size="150" ` +
-    `font-weight="700" fill="rgba(255,255,255,0.92)" text-anchor="middle" ` +
-    `dominant-baseline="central">${esc(initials)}</text></svg>`;
-  return "data:image/svg+xml," + encodeURIComponent(svg);
+export function placeholderDataURI(meal) {
+  const m = typeof meal === "string" ? { title: meal } : meal || {};
+  return "data:image/svg+xml," + encodeURIComponent(illustratedCoverSVG(m));
 }
 
 /* ---------- shuffle ---------- */

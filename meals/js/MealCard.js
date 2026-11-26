@@ -20,8 +20,8 @@ export function createMealCard(meal) {
   card.setAttribute("role", "button");
   card.setAttribute("aria-label", `View recipe for ${meal.title}`);
 
-  const cover = meal.image || placeholderDataURI(meal.title);
-  const fallback = placeholderDataURI(meal.title);
+  const cover = meal.image || placeholderDataURI(meal);
+  const fallback = placeholderDataURI(meal);
 
   const cats = (meal.categories || [])
     .slice(0, 3)
