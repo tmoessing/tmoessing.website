@@ -20,6 +20,13 @@ export const PRESETS = [
     match: (g) => has(g, "No Props Needed") || (has(g, "Paper and Pencil") && !g.bggUrl)
   },
   {
+    id: "deck",
+    label: "Just Need a Deck",
+    emoji: "🃏",
+    title: "Playable with a standard 52-card deck",
+    match: (g) => has(g, "Classic Deck")
+  },
+  {
     id: "party",
     label: "Party",
     emoji: "🎉",
