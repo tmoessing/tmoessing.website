@@ -1141,5 +1141,31 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+james+bond+card+game"
+  },
+  {
+    id: "kemps",
+    title: "Kemps",
+    cover: "",
+    description: "A team card game built on secret signals. You and your partner agree on a sneaky sign, then everyone races to swap cards for four of a kind. When you've got it, flash the signal so your partner can yell \"Kemps!\" before the other team catches on and calls you out.",
+    minPlayers: 4,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Bluffing", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Teams", "Secret Signals", "Real-Time", "Set Collection"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Signal your partner when you have four of a kind so they can call \"Kemps!\" without the other team catching your signal first.",
+      steps: [
+        "Split into teams of two, with partners sitting across from each other. Each team picks a secret signal (a wink, a cough, a scratch) away from everyone else.",
+        "Deal 4 cards to each player and 4 face up in the middle. On \"go,\" everyone swaps with the middle at once, one card for one, always keeping 4 in hand.",
+        "When nobody wants the middle cards, the dealer clears them and deals 4 fresh ones.",
+        "Got four of a kind? Give your signal. If your partner sees it, they yell \"Kemps!\" and point at you. If you really have it, your team scores; if not, you lose a point.",
+        "If you catch the other team's signal, yell \"Stop Kemps!\" (or \"Counter-Kemps!\") at the player with four of a kind. Call it right and your team scores instead. Play to an agreed score, and fake signals are fair game."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+kemps+card+game"
   }
 ];
