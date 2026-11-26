@@ -1271,5 +1271,31 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+bs+card+game"
+  },
+  {
+    id: "ninja",
+    title: "Ninja",
+    cover: "",
+    description: "A no-equipment reflex game. Everyone stands in a circle striking ninja poses, then takes turns making one swift move to slap someone else's hand. Get hit on a hand and you lose it. Lose both and you're out. Last ninja standing wins.",
+    minPlayers: 3,
+    maxPlayers: 15,
+    playtimeMin: 5,
+    playtimeMax: 20,
+    categories: ["Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Physical", "Active", "Reflexes", "Elimination"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the last ninja with a hand left.",
+      steps: [
+        "Stand in a circle. On the count of three, everyone shouts \"Ninja!\" and jumps into a pose. Freeze there.",
+        "Going around the circle, each player gets one quick, single motion to try to slap another player's hand. Wherever you end up, freeze there.",
+        "The player being attacked can make one motion to dodge. It must happen during the attack, not after.",
+        "If your hand gets slapped, that hand is out. Put it behind your back. Lose both and you're out of the game.",
+        "Keep going until only one ninja is left. Moving when it isn't your turn (other than dodging) costs you a hand."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+ninja+hand+slap+party+game"
   }
 ];
