@@ -2,8 +2,8 @@
  * Library modals that share one overlay:
  *
  *   openFilters(initial, base, onApply)
- *     A 3-step wizard (players -> duration -> categories / complexity) with a
- *     live count over `base` (the library after search / presets). "Show N
+ *     One window with every section (players, game length, categories,
+ *     complexity), each defaulting to "Any", and a live count over `base` (the library after search / presets). "Show N
  *     games" hands the filter state back so the library list narrows to it.
  *
  *   openPick(games)
@@ -64,7 +64,6 @@ let pool = [];           // pick mode: games to pick from
 
 export function defaultState() {
   return {
-    step: 1,
     playerMode: "any",
     playerCount: 4,
     playerMin: 4,
@@ -81,7 +80,7 @@ export function defaultState() {
 
 /** Deep-ish copy so the modal can edit freely until the user applies. */
 function cloneState(s) {
-  return { ...s, categories: new Set(s.categories), step: 1, playerRangePending: false };
+  return { ...s, categories: new Set(s.categories), playerRangePending: false };
 }
 
 /** How many of the four filter groups are narrowing the list (for badges). */
@@ -195,137 +194,92 @@ function pickerHeading(sub) {
 
 /* ---------- view: filters ---------- */
 
-function renderFilters() {
-  const showCustom = state.duration === "custom";
+function isPlayerPillActive(val) {
+  if (val === "any") return state.playerMode === "any";
+  if (val === "other") return state.playerMode === "exact" && (state.playerCount < 1 || state.playerCount > 10);
+  const num = parseInt(val, 10);
+  if (state.playerMode === "exact") return state.playerCount === num;
+  if (state.playerMode === "range") return num >= state.playerMin && num <= state.playerMax;
+  return false;
+}
 
-  const isPillActive = (val) => {
-    if (val === "any") return state.playerMode === "any";
-    if (val === "other") return state.playerMode === "exact" && (state.playerCount < 1 || state.playerCount > 10);
-
-    const num = parseInt(val, 10);
-    if (state.playerMode === "exact") return state.playerCount === num;
-    if (state.playerMode === "range") return num >= state.playerMin && num <= state.playerMax;
-    return false;
-  };
-
+function playersHTML() {
   const showCustomInput = state.playerMode === "exact" && (state.playerCount < 1 || state.playerCount > 10);
+  const hint = state.playerRangePending
+    ? "Click a second number to make it a range."
+    : "Click one number, or two to pick a range.";
+  return `
+    <div class="picker-section-head">
+      <div class="picker-section-title">Players</div>
+      <span class="picker-section-hint">${esc(hint)}</span>
+    </div>
+    <div class="pill-row" id="picker-players">
+      ${PLAYER_NUMBERS.map(([val, label]) =>
+        `<button type="button" class="picker-pill${isPlayerPillActive(val) ? " active" : ""}" data-val="${esc(val)}">${esc(label)}</button>`
+      ).join("")}
+    </div>
+    <div class="picker-inline"${showCustomInput ? "" : " hidden"}>
+      <label>Enter player count:
+        <div class="picker-number-stepper">
+          <button type="button" class="picker-pill stepper-btn" id="picker-stepper-minus">−</button>
+          <input type="number" min="1" max="100" class="picker-number picker-number-compact" id="picker-player-count" value="${esc(state.playerCount)}">
+          <button type="button" class="picker-pill stepper-btn" id="picker-stepper-plus">+</button>
+        </div>
+      </label>
+    </div>`;
+}
 
-  const subText = state.playerRangePending
-    ? "Click a second number to define a range of players."
-    : "Narrow the library down to games that fit your group (click two numbers to select a range).";
+function categoriesHTML() {
+  const visible = state.categoriesExpanded ? CATEGORIES : CORE_CATEGORIES;
+  // Keep any selected category visible even when the list is collapsed.
+  const shown = [...visible, ...[...state.categories].filter((c) => !visible.includes(c))];
+  return `
+    <div class="picker-section-head">
+      <div class="picker-section-title">Categories</div>
+      <span class="picker-section-hint">Pick any. A game needs just one of them.</span>
+    </div>
+    <div class="pill-row" id="picker-categories">
+      <button type="button" class="picker-pill${state.categories.size === 0 ? " active" : ""}" data-cat="">Any</button>
+      ${shown.map(
+        (c) => `<button type="button" class="picker-pill${state.categories.has(c) ? " active" : ""}" data-cat="${esc(c)}">${esc(c)}</button>`
+      ).join("")}
+      <button type="button" class="picker-pill picker-expand-btn" id="picker-toggle-categories">
+        ${state.categoriesExpanded ? "– Show Less" : "+ Show More"}
+      </button>
+    </div>`;
+}
 
-  const headerHtml = `
-    <div class="picker-steps-header">
-      <div class="step-indicator ${state.step === 1 ? "active" : "completed"}">
-        <span class="step-num">1</span>
-        <span class="step-text">Players</span>
-      </div>
-      <div class="step-line ${state.step > 1 ? "completed" : ""}"></div>
-      <div class="step-indicator ${state.step === 2 ? "active" : state.step > 2 ? "completed" : ""}">
-        <span class="step-num">2</span>
-        <span class="step-text">Duration</span>
-      </div>
-      <div class="step-line ${state.step > 2 ? "completed" : ""}"></div>
-      <div class="step-indicator ${state.step === 3 ? "active" : ""}">
-        <span class="step-num">3</span>
-        <span class="step-text">Categories</span>
-      </div>
+function renderFilters() {
+  content().innerHTML = `
+    ${pickerHeading(DEFAULT_SUB)}
+
+    <div class="picker-step-card picker-filter-sections">
+      <section class="picker-section" id="picker-players-section">${playersHTML()}</section>
+
+      <section class="picker-section">
+        <div class="picker-section-head"><div class="picker-section-title">Game Length</div></div>
+        <div class="pill-row" id="picker-duration">${pillRow(DURATIONS, state.duration)}</div>
+        <div class="picker-inline picker-custom" id="picker-custom-wrap"${state.duration === "custom" ? "" : " hidden"}>
+          <label>From <input type="number" min="0" class="picker-number" id="picker-custom-lo" value="${esc(state.customLo)}"></label>
+          <label>to <input type="number" min="0" class="picker-number" id="picker-custom-hi" value="${esc(state.customHi)}"></label>
+          <span class="picker-unit">min</span>
+        </div>
+      </section>
+
+      <section class="picker-section" id="picker-categories-section">${categoriesHTML()}</section>
+
+      <section class="picker-section">
+        <div class="picker-section-head"><div class="picker-section-title">Complexity</div></div>
+        <div class="pill-row" id="picker-complexity">${pillRow(COMPLEXITIES, state.complexity)}</div>
+      </section>
+    </div>
+
+    <div class="picker-footer">
+      <button type="button" class="btn btn-outline" id="picker-clear-btn">Clear All</button>
+      <span class="picker-count" id="picker-count"></span>
+      <button type="button" class="btn btn-primary" id="picker-apply-btn">Show Games</button>
     </div>
   `;
-
-  if (state.step === 1) {
-    content().innerHTML = `
-      ${pickerHeading(subText)}
-
-      ${headerHtml}
-
-      <div class="picker-step-card">
-        <div class="picker-section">
-          <div class="picker-section-title">Players</div>
-          <div class="pill-row" id="picker-players">
-            ${PLAYER_NUMBERS.map(([val, label]) => 
-              `<button type="button" class="picker-pill ${isPillActive(val) ? "active" : ""}" data-val="${esc(val)}">${esc(label)}</button>`
-            ).join("")}
-          </div>
-          <div class="picker-inline" id="picker-count-wrap"${showCustomInput ? "" : " hidden"}>
-            <label>Enter player count:
-              <div class="picker-number-stepper">
-                <button type="button" class="picker-pill stepper-btn" id="picker-stepper-minus">−</button>
-                <input type="number" min="1" max="100" class="picker-number picker-number-compact" id="picker-player-count" value="${esc(state.playerCount)}">
-                <button type="button" class="picker-pill stepper-btn" id="picker-stepper-plus">+</button>
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="picker-footer">
-        <button type="button" class="btn btn-outline" id="picker-clear-btn">Clear</button>
-        <span class="picker-count" id="picker-count"></span>
-        <button type="button" class="btn btn-secondary" id="picker-apply-btn">Show Games</button>
-        <button type="button" class="btn btn-primary" id="picker-next-btn">Next: Duration</button>
-      </div>
-    `;
-  } else if (state.step === 2) {
-    content().innerHTML = `
-      ${pickerHeading(DEFAULT_SUB)}
-
-      ${headerHtml}
-
-      <div class="picker-step-card">
-        <div class="picker-section">
-          <div class="picker-section-title">Duration</div>
-          <div class="pill-row" id="picker-duration">${pillRow(DURATIONS, state.duration)}</div>
-          <div class="picker-inline picker-custom" id="picker-custom-wrap"${showCustom ? "" : " hidden"}>
-            <label>From <input type="number" min="0" class="picker-number" id="picker-custom-lo" value="${esc(state.customLo)}"></label>
-            <label>to <input type="number" min="0" class="picker-number" id="picker-custom-hi" value="${esc(state.customHi)}"></label>
-            <span class="picker-unit">min</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="picker-footer">
-        <button type="button" class="btn btn-outline" id="picker-prev-btn">← Back</button>
-        <span class="picker-count" id="picker-count"></span>
-        <button type="button" class="btn btn-secondary" id="picker-apply-btn">Show Games</button>
-        <button type="button" class="btn btn-primary" id="picker-next-btn">Next: Categories</button>
-      </div>
-    `;
-  } else {
-    const visibleCategories = state.categoriesExpanded ? CATEGORIES : CORE_CATEGORIES;
-
-    content().innerHTML = `
-      ${pickerHeading(DEFAULT_SUB)}
-
-      ${headerHtml}
-
-      <div class="picker-step-card">
-        <div class="picker-section">
-          <div class="picker-section-title">Categories</div>
-          <div class="pill-row" id="picker-categories">
-            ${visibleCategories.map(
-              (c) =>
-                `<button type="button" class="picker-pill${state.categories.has(c) ? " active" : ""}" data-cat="${esc(c)}">${esc(c)}</button>`
-            ).join("")}
-            <button type="button" class="picker-pill picker-expand-btn" id="picker-toggle-categories">
-              ${state.categoriesExpanded ? "– Show Less" : "+ Show More"}
-            </button>
-          </div>
-        </div>
-        <div class="picker-section picker-section-spaced">
-          <div class="picker-section-title">Complexity</div>
-          <div class="pill-row" id="picker-complexity">${pillRow(COMPLEXITIES, state.complexity)}</div>
-        </div>
-      </div>
-
-      <div class="picker-footer">
-        <button type="button" class="btn btn-outline" id="picker-prev-btn">← Back</button>
-        <button type="button" class="btn btn-outline" id="picker-clear-btn">Clear</button>
-        <span class="picker-count" id="picker-count"></span>
-        <button type="button" class="btn btn-primary" id="picker-apply-btn">Show Games</button>
-      </div>
-    `;
-  }
 
   wireFilters();
   updateCount();
@@ -337,6 +291,80 @@ function activate(container, val) {
   );
 }
 
+/** Re-render just one section (keeps the modal's scroll position). */
+function refreshSection(id, html, wire) {
+  const el = content().querySelector(id);
+  el.innerHTML = html();
+  wire();
+  updateCount();
+}
+
+function wirePlayers() {
+  content().querySelector("#picker-players").addEventListener("click", (e) => {
+    const btn = e.target.closest(".picker-pill");
+    if (!btn) return;
+    const val = btn.dataset.val;
+    if (val === "any") {
+      state.playerMode = "any";
+      state.playerRangePending = false;
+    } else if (val === "other") {
+      state.playerMode = "exact";
+      state.playerRangePending = false;
+      if (state.playerCount >= 1 && state.playerCount <= 10) state.playerCount = 12;
+    } else {
+      const num = parseInt(val, 10);
+      if (!state.playerRangePending) {
+        state.playerMode = "range";
+        state.playerMin = state.playerMax = state.playerCount = num;
+        state.playerRangePending = true;
+      } else {
+        if (num < state.playerMin) {
+          state.playerMax = state.playerMin;
+          state.playerMin = num;
+        } else {
+          state.playerMax = num;
+        }
+        state.playerRangePending = false;
+      }
+    }
+    refreshSection("#picker-players-section", playersHTML, wirePlayers);
+  });
+
+  const inputEl = content().querySelector("#picker-player-count");
+  const setCount = (v) => {
+    state.playerCount = v;
+    inputEl.value = v;
+    updateCount();
+  };
+  content().querySelector("#picker-stepper-minus").addEventListener("click", () => {
+    const v = parseInt(inputEl.value, 10) || 1;
+    if (v > 1) setCount(v - 1);
+  });
+  content().querySelector("#picker-stepper-plus").addEventListener("click", () => {
+    setCount((parseInt(inputEl.value, 10) || 1) + 1);
+  });
+  inputEl.addEventListener("input", (e) => {
+    state.playerCount = parseInt(e.target.value, 10) || 0;
+    updateCount();
+  });
+}
+
+function wireCategories() {
+  content().querySelector("#picker-categories").addEventListener("click", (e) => {
+    const btn = e.target.closest(".picker-pill");
+    if (!btn) return;
+    if (btn.id === "picker-toggle-categories") {
+      state.categoriesExpanded = !state.categoriesExpanded;
+    } else if (!btn.dataset.cat) {
+      state.categories.clear();
+    } else {
+      const c = btn.dataset.cat;
+      state.categories.has(c) ? state.categories.delete(c) : state.categories.add(c);
+    }
+    refreshSection("#picker-categories-section", categoriesHTML, wireCategories);
+  });
+}
+
 function wireFilters() {
   content().querySelector("#picker-apply-btn").addEventListener("click", () => {
     const chosen = state;
@@ -344,139 +372,40 @@ function wireFilters() {
     closePicker();
     cb && cb(chosen);
   });
-  const clearBtn = content().querySelector("#picker-clear-btn");
-  if (clearBtn) {
-    clearBtn.addEventListener("click", () => {
-      state = defaultState();
-      renderFilters();
-    });
-  }
+  content().querySelector("#picker-clear-btn").addEventListener("click", () => {
+    state = defaultState();
+    renderFilters();
+  });
 
-  if (state.step === 1) {
-    const players = content().querySelector("#picker-players");
-    players.addEventListener("click", (e) => {
-      const btn = e.target.closest(".picker-pill");
-      if (!btn) return;
-      const val = btn.dataset.val;
+  wirePlayers();
+  wireCategories();
 
-      if (val === "any") {
-        state.playerMode = "any";
-        state.playerRangePending = false;
-        renderFilters();
-      } else if (val === "other") {
-        state.playerMode = "exact";
-        state.playerRangePending = false;
-        if (state.playerCount >= 1 && state.playerCount <= 10) {
-          state.playerCount = 12;
-        }
-        renderFilters();
-      } else {
-        const num = parseInt(val, 10);
-        if (!state.playerRangePending) {
-          state.playerMode = "range";
-          state.playerMin = num;
-          state.playerMax = num;
-          state.playerCount = num;
-          state.playerRangePending = true;
-        } else {
-          if (num < state.playerMin) {
-            state.playerMax = state.playerMin;
-            state.playerMin = num;
-          } else {
-            state.playerMax = num;
-          }
-          state.playerRangePending = false;
-        }
-        renderFilters();
-      }
-      updateCount();
-    });
+  const duration = content().querySelector("#picker-duration");
+  duration.addEventListener("click", (e) => {
+    const btn = e.target.closest(".picker-pill");
+    if (!btn) return;
+    state.duration = btn.dataset.val;
+    activate(duration, state.duration);
+    content().querySelector("#picker-custom-wrap").hidden = state.duration !== "custom";
+    updateCount();
+  });
+  content().querySelector("#picker-custom-lo").addEventListener("input", (e) => {
+    state.customLo = parseInt(e.target.value, 10) || 0;
+    updateCount();
+  });
+  content().querySelector("#picker-custom-hi").addEventListener("input", (e) => {
+    state.customHi = parseInt(e.target.value, 10) || 0;
+    updateCount();
+  });
 
-    const inputEl = content().querySelector("#picker-player-count");
-    if (inputEl) {
-      content().querySelector("#picker-stepper-minus").addEventListener("click", () => {
-        let val = parseInt(inputEl.value, 10) || 1;
-        if (val > 1) {
-          val -= 1;
-          inputEl.value = val;
-          state.playerCount = val;
-          updateCount();
-        }
-      });
-
-      content().querySelector("#picker-stepper-plus").addEventListener("click", () => {
-        let val = parseInt(inputEl.value, 10) || 1;
-        val += 1;
-        inputEl.value = val;
-        state.playerCount = val;
-        updateCount();
-      });
-
-      inputEl.addEventListener("input", (e) => {
-        state.playerCount = parseInt(e.target.value, 10) || 0;
-        updateCount();
-      });
-    }
-
-    content().querySelector("#picker-next-btn").addEventListener("click", () => {
-      state.playerRangePending = false;
-      state.step = 2;
-      renderFilters();
-    });
-  } else if (state.step === 2) {
-    const duration = content().querySelector("#picker-duration");
-    duration.addEventListener("click", (e) => {
-      const btn = e.target.closest(".picker-pill");
-      if (!btn) return;
-      state.duration = btn.dataset.val;
-      activate(duration, state.duration);
-      content().querySelector("#picker-custom-wrap").hidden = state.duration !== "custom";
-      updateCount();
-    });
-    content().querySelector("#picker-custom-lo").addEventListener("input", (e) => {
-      state.customLo = parseInt(e.target.value, 10) || 0;
-      updateCount();
-    });
-    content().querySelector("#picker-custom-hi").addEventListener("input", (e) => {
-      state.customHi = parseInt(e.target.value, 10) || 0;
-      updateCount();
-    });
-    content().querySelector("#picker-prev-btn").addEventListener("click", () => {
-      state.step = 1;
-      renderFilters();
-    });
-    content().querySelector("#picker-next-btn").addEventListener("click", () => {
-      state.step = 3;
-      renderFilters();
-    });
-  } else if (state.step === 3) {
-    const cats = content().querySelector("#picker-categories");
-    cats.addEventListener("click", (e) => {
-      const btn = e.target.closest(".picker-pill");
-      if (!btn || btn.id === "picker-toggle-categories") return;
-      const c = btn.dataset.cat;
-      if (state.categories.has(c)) state.categories.delete(c);
-      else state.categories.add(c);
-      btn.classList.toggle("active");
-      updateCount();
-    });
-    const cx = content().querySelector("#picker-complexity");
-    cx.addEventListener("click", (e) => {
-      const btn = e.target.closest(".picker-pill");
-      if (!btn) return;
-      state.complexity = btn.dataset.val;
-      activate(cx, state.complexity);
-      updateCount();
-    });
-    content().querySelector("#picker-toggle-categories").addEventListener("click", () => {
-      state.categoriesExpanded = !state.categoriesExpanded;
-      renderFilters();
-    });
-    content().querySelector("#picker-prev-btn").addEventListener("click", () => {
-      state.step = 2;
-      renderFilters();
-    });
-  }
+  const cx = content().querySelector("#picker-complexity");
+  cx.addEventListener("click", (e) => {
+    const btn = e.target.closest(".picker-pill");
+    if (!btn) return;
+    state.complexity = btn.dataset.val;
+    activate(cx, state.complexity);
+    updateCount();
+  });
 }
 
 /* ---------- view: random pick (reel + reveal) ---------- */

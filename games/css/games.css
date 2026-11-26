@@ -432,70 +432,6 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
 }
 
-/* ---------- step wizard UI ---------- */
-.picker-steps-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--spacing-xl);
-  padding: var(--spacing-md) 0 var(--spacing-xl);
-  border-bottom: 1px solid var(--border-color-light);
-}
-.step-indicator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-xs);
-  flex: 1;
-}
-.step-num {
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-full);
-  background: var(--bg-tertiary);
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.9rem;
-  border: 2px solid var(--border-color);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.step-text {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  transition: all 0.3s ease;
-}
-.step-line {
-  height: 2px;
-  background: var(--border-color);
-  flex: 1.5;
-  margin: 0 var(--spacing-xs);
-  margin-top: -24px;
-  transition: all 0.3s ease;
-}
-.step-indicator.active .step-num {
-  background: var(--primary-blue);
-  color: #fff;
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 12px rgba(0, 102, 255, 0.35);
-}
-.step-indicator.active .step-text {
-  color: var(--text-primary);
-}
-.step-indicator.completed .step-num {
-  background: #10b981;
-  color: #fff;
-  border-color: #10b981;
-}
-.step-indicator.completed .step-text {
-  color: var(--text-secondary);
-}
-.step-line.completed {
-  background: #10b981;
-}
 .picker-step-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -657,8 +593,20 @@
   color: var(--text-primary);
 }
 .picker-sub { color: var(--text-muted); margin-bottom: 24px; }
-.picker-step-card .picker-section { margin-bottom: 0; }
-.picker-step-card .picker-section-spaced { margin-top: var(--spacing-xl); }
+.picker-filter-sections { display: flex; flex-direction: column; gap: var(--spacing-xl); }
+.picker-filter-sections .picker-section { margin-bottom: 0; }
+.picker-filter-sections .picker-section + .picker-section {
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-color);
+}
+.picker-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+.picker-section-hint { font-size: 0.8rem; color: var(--text-muted); }
 .picker-number-stepper { display: inline-flex; align-items: center; gap: 8px; }
 .picker-pill.stepper-btn {
   padding: 4px 12px;
