@@ -1,13 +1,15 @@
 /**
  * The game library grid page: renders every game and wires the toolbar
- * (search with tag autocomplete, sort, large-card / small-card / list view) and the
- * Pick-a-Game button. Search, tags and sort are mirrored into the URL so a
- * filtered view can be shared.
+ * (search with tag autocomplete, sort, large-card / small-card / list view),
+ * the Filters wizard (players / duration / category / complexity) and the
+ * Pick-a-Game button, which picks at random from whatever the list shows.
+ * Search, tags and sort are mirrored into the URL so a filtered view can be
+ * shared.
  */
 import { GAMES, CATEGORIES } from "../data/games.js";
 import { createGameCard } from "./components/GameCard.js";
-import { sortGames, esc } from "./filters.js";
-import { openPicker } from "./components/PickerModal.js";
+import { sortGames, matchGame, esc } from "./filters.js";
+import { openFilters, openPick, activeFilterCount } from "./components/PickerModal.js";
 import { icon } from "./icons.js";
 import { readUrlState, writeFilters } from "./urlState.js";
 import { SEARCH_PLACEHOLDER } from "./components/SearchBox.js";
@@ -35,6 +37,7 @@ export class LibraryPage {
     this.view = readStoredView();
     this.favoritesOnly = false;
     this.activePresets = new Set();
+    this.advFilters = null; // state from the Filters wizard, or null
   }
 
   init() {
@@ -58,7 +61,17 @@ export class LibraryPage {
     this.viewBtns.forEach((b) => b.addEventListener("click", () => this.setView(b.dataset.view)));
     this.applyView();
 
-    document.getElementById("pick-a-game-btn").addEventListener("click", () => openPicker());
+    document.getElementById("pick-a-game-btn").addEventListener("click", () => openPick(this.games));
+
+    this.filtersBtn = document.getElementById("filters-btn");
+    this.filtersBadge = document.getElementById("filters-badge");
+    this.filtersBtn.addEventListener("click", () =>
+      openFilters(this.advFilters, this.getFilteredGames({ skipAdvanced: true }), (chosen) => {
+        this.advFilters = activeFilterCount(chosen) ? chosen : null;
+        this.applyFiltersButton();
+        this.updateList();
+      })
+    );
 
     this.sortSel.addEventListener("change", () => this.updateList());
 
@@ -124,6 +137,14 @@ export class LibraryPage {
       b.classList.toggle("active", on);
       b.setAttribute("aria-pressed", String(on));
     });
+  }
+
+  applyFiltersButton() {
+    const n = activeFilterCount(this.advFilters);
+    this.filtersBtn.classList.toggle("active", n > 0);
+    this.filtersBtn.setAttribute("aria-pressed", String(n > 0));
+    this.filtersBadge.hidden = n === 0;
+    this.filtersBadge.textContent = n;
   }
 
   applyFavoritesButton() {
@@ -233,8 +254,10 @@ export class LibraryPage {
     this.searchInput.placeholder = this.activeTags.size > 0 ? "" : SEARCH_PLACEHOLDER;
   }
 
-  getFilteredGames() {
+  getFilteredGames({ skipAdvanced = false } = {}) {
     let filtered = GAMES;
+
+    if (this.advFilters && !skipAdvanced) filtered = filtered.filter((g) => matchGame(g, this.advFilters));
 
     if (this.favoritesOnly) filtered = filtered.filter((g) => g.favorite);
 
@@ -305,7 +328,7 @@ export class LibraryPage {
       empty.innerHTML = `
         <div class="picker-empty-icon">${icon("alert", "icon-hero")}</div>
         <h3>${this.favoritesOnly ? "No favorites match your search" : "No games match your search"}</h3>
-        <p>Try adjusting your query or keywords</p>
+        <p>${this.advFilters ? "Try loosening your filters or search" : "Try adjusting your query or keywords"}</p>
       `;
       this.grid.appendChild(empty);
     } else {

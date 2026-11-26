@@ -21,7 +21,7 @@ export function LibraryShell() {
       ${LibraryHero({
         title: "Game Library",
         intro:
-          "Welcome to game night! 🎲 Here's the whole collection. Grab some snacks, browse the shelf, or can't decide? Hit <strong>Pick a Game</strong> and let fate choose tonight's winner."
+          "Welcome to game night! 🎲 Here's the whole collection. Grab some snacks, browse the shelf, or can't decide? Narrow things down with <strong>Filters</strong>, then hit <strong>Pick a Game</strong> and let fate choose tonight's winner from the list."
       })}
       ${LibraryToolbar()}
       ${GamesGrid()}
