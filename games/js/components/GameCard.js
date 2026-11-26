@@ -38,6 +38,7 @@ export function createGameCard(game) {
     <div class="game-card-body">
       <div class="game-card-main-info">
         <h3 class="game-card-title">${favoriteStar(game)}${esc(game.title)}</h3>
+        ${game.aka ? `<div class="game-card-aka">aka ${esc(game.aka)}</div>` : ""}
         <div class="game-meta-row">
           <span class="game-meta">${icon("users")} ${playersLabel(game)} players</span>
           <span class="game-meta">${icon("clock")} ${playtimeLabel(game)}</span>

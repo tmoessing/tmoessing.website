@@ -4,6 +4,7 @@
  * Each GAMES entry:
  *   id           unique slug (string)
  *   title        display name (string)
+ *   aka          alternate name shown under the title, e.g. "Oh H*ll" (optional; searchable)
  *   cover        image path (e.g. "../games/images/catan.jpg"); "" => generated placeholder
  *   description  short blurb (string)
  *   minPlayers   number
@@ -1062,5 +1063,32 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=determine+the+relationship+improv+game"
+  },
+  {
+    id: "moessing-bridge",
+    title: "Moessing Bridge",
+    aka: "Oh H*ll",
+    cover: "",
+    description: "The family's take on Oh H*ll, a classic trick-taking game with the exact same rules. Every round you bid exactly how many tricks you'll win, and you only score if you nail it. The hand size climbs and falls each round, and the dealer can't let the bids add up to an even split, so somebody always gets burned.",
+    minPlayers: 3,
+    maxPlayers: 7,
+    playtimeMin: 45,
+    playtimeMax: 90,
+    categories: ["Card Game", "Competitive", "Strategy", "Family"],
+    complexity: "medium",
+    bggWeight: 1.73,
+    tags: ["Classic Deck", "Trick-Taking", "Bidding", "Trump Suit", "Oh H*ll"],
+    bggUrl: "https://boardgamegeek.com/boardgame/1115/oh-hell",
+    howToPlay: {
+      goal: "Score the most points by winning exactly the number of tricks you bid each round.",
+      steps: [
+        "Use a standard 52-card deck, aces high. Round one deals 1 card each; add a card every round up to the max (or as many as the deck allows), then count back down to 1.",
+        "After dealing, flip the next card face up. Its suit is trump for the round. If no cards are left, play the round with no trump.",
+        "Starting left of the dealer, each player bids how many tricks they'll take. The dealer bids last and can't make the total bids equal the number of tricks.",
+        "The player left of the dealer leads. Follow suit if you can; if you can't, play any card, including a trump. The highest trump wins the trick, or the highest card of the led suit if no trump was played. The winner leads next.",
+        "Hit your bid exactly and score 10 plus 1 per trick (common house scoring). Miss by any amount, over or under, and score nothing. Highest total after the last round wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+oh+hell+card+game"
   }
 ];

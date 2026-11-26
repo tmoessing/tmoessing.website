@@ -156,6 +156,7 @@ function detailsHTML(game) {
           <h2 class="game-details-title">${favoriteStar(game, "icon-lg")}${esc(game.title)}</h2>
           ${complexityBadge(game)}
         </div>
+        ${game.aka ? `<div class="game-details-aka">aka ${esc(game.aka)}</div>` : ""}
         <div class="game-meta-row">
           <span class="game-meta">${icon("users", "icon-md")} ${playersLabel(game)} players</span>
           <span class="game-meta">${icon("clock", "icon-md")} ${playtimeLabel(game)}</span>
