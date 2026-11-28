@@ -22,6 +22,7 @@ walmart:
   - 617765768 | 1 | Freshness Guaranteed Chicken Breast Tenderloins, 1.0-4.2 lb Tray | chicken tenders
   - 10309187 | 1 | Barilla Fettuccine Pasta, 16 oz | fettuccine
   - 10294615 | 1 | Sweet Baby Ray's Original Barbecue Sauce, 18 oz | BBQ sauce
+  - 10451002 | 1 | Great Value Vegetable Oil, 48 fl oz | oil
 ---
 
 ## Ingredients

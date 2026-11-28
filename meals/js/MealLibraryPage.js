@@ -16,7 +16,9 @@ import { openWeekPlanner } from "./WeekPlanner.js";
 
 const VIEW_KEY = "meal-library-view";
 const DATA_URL = "../meals/data/meals.json?v=1";
-const SHOW_HIDDEN = new URLSearchParams(location.search).has("hidden");
+const GRANDMA_TAG = "Grandma";
+const TRY_TAG = "Want to Try";
+const SHOW_HIDDEN =new URLSearchParams(location.search).has("hidden");
 
 export class MealLibraryPage {
   constructor() {
@@ -25,6 +27,8 @@ export class MealLibraryPage {
     this.courses = [];
     this.course = null; // selected course chip, or null for "All"
     this.query = "";
+    this.onlyGrandma = false; // "Only Grandma's" toggle
+    this.hideTry = false; // "Hide Want to Try" toggle
     this.sortKey = "alpha";
     this.view = localStorage.getItem(VIEW_KEY) === "list" ? "list" : "grid";
     this.bySlug = {};
@@ -38,6 +42,7 @@ export class MealLibraryPage {
     this.gridBtn = document.getElementById("view-grid");
     this.listBtn = document.getElementById("view-list");
     this.courseEl = document.getElementById("course-filter");
+    this.togglesEl = document.getElementById("tag-toggles");
 
     if (this.gridBtn) this.gridBtn.addEventListener("click", () => this.setView("grid"));
     if (this.listBtn) this.listBtn.addEventListener("click", () => this.setView("list"));
@@ -73,6 +78,7 @@ export class MealLibraryPage {
     }
 
     await this.load();
+    this.renderToggles();
     this.renderCourses();
     this.render();
   }
@@ -116,6 +122,40 @@ export class MealLibraryPage {
     return this.bySlug;
   }
 
+  /**
+   * On/off chips under the search bar: "Only Grandma's" (recipes tagged
+   * Grandma) and "Hide Want to Try" (drops recipes tagged Want to Try). Each
+   * chip only appears when some loaded recipe has that tag.
+   */
+  renderToggles() {
+    if (!this.togglesEl) return;
+    const hasTag = (tag) => this.meals.filter((m) => (m.tags || []).includes(tag)).length;
+    const toggles = [
+      { key: "onlyGrandma", label: "Only Grandma's", count: hasTag(GRANDMA_TAG) },
+      { key: "hideTry", label: "Hide Want to Try", count: hasTag(TRY_TAG) }
+    ].filter((t) => t.count > 0);
+
+    this.togglesEl.innerHTML = "";
+    this.togglesEl.hidden = toggles.length === 0;
+    toggles.forEach((t) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "course-chip";
+      btn.innerHTML = `${esc(t.label)} <span class="course-count">${t.count}</span>`;
+      const sync = () => {
+        btn.classList.toggle("active", this[t.key]);
+        btn.setAttribute("aria-pressed", String(this[t.key]));
+      };
+      btn.addEventListener("click", () => {
+        this[t.key] = !this[t.key];
+        sync();
+        this.render();
+      });
+      sync();
+      this.togglesEl.appendChild(btn);
+    });
+  }
+
   /** Course chips: "All" plus one per course, each with its recipe count. */
   renderCourses() {
     if (!this.courseEl) return;
@@ -156,6 +196,8 @@ export class MealLibraryPage {
 
   visibleMeals() {
     let list = this.meals;
+    if (this.onlyGrandma) list = list.filter((m) => (m.tags || []).includes(GRANDMA_TAG));
+    if (this.hideTry) list = list.filter((m) => !(m.tags || []).includes(TRY_TAG));
     if (this.course) {
       list = list.filter((m) => (m.categories || []).includes(this.course));
     }
@@ -192,8 +234,8 @@ export class MealLibraryPage {
     this.grid.innerHTML = "";
 
     if (list.length === 0 && this.meals.length > 0) {
-      const what = [this.course, this.query && `“${this.query}”`].filter(Boolean).join(" + ");
-      this.grid.innerHTML = `<p class="meals-empty">No meals match ${esc(what)}. Try a different search or course.</p>`;
+      const what = [this.onlyGrandma && "Grandma's", this.course, this.query && `“${this.query}”`].filter(Boolean).join(" + ");
+      this.grid.innerHTML = `<p class="meals-empty">No meals match ${esc(what || "these filters")}. Try a different search or filter.</p>`;
     } else {
       const frag = document.createDocumentFragment();
       list.forEach((m) => frag.appendChild(createMealCard(m)));
@@ -203,7 +245,7 @@ export class MealLibraryPage {
     if (this.countEl) {
       const n = list.length;
       const total = this.meals.length;
-      this.countEl.textContent = this.query || this.course
+      this.countEl.textContent = n !== total
         ? `${n} of ${total} meal${total === 1 ? "" : "s"}`
         : `${total} meal${total === 1 ? "" : "s"}`;
     }

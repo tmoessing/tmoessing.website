@@ -20,6 +20,8 @@ walmart:
   - 177236407 | 1 | Kadoya Pure Sesame Oil, 5.5 oz | sesame oil
   - 10315653 | 1 | Great Value Naturally Brewed Soy Sauce, 15 fl oz | soy sauce
   - 780477258 | 1 | Spice Islands Sesame Seed, 2.2 oz | sesame seeds
+  - 23848086 | 1 | Marketside Fresh Baby Spinach, 11 oz | spinach
+  - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
 hidden: true
 ---
 ## Ingredients

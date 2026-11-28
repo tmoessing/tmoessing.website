@@ -15,6 +15,7 @@ walmart:
   - 10315162 | 1 | Great Value Pure Granulated Sugar, 4 lb | sugar
   - 10292454 | 1 | Steinfeld's Home Style Sauerkraut, 32 oz | sauerkraut
   - 23816525 | 1 | Great Value Hickory Smoked Bacon, 12 oz | bacon
+  - 31016108 | 1 | Morton & Bassett Caraway Seeds, 2 oz | caraway seeds
 hidden: true
 ---
 ## Ingredients

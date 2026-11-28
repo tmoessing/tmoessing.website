@@ -14,6 +14,7 @@ tags:
 walmart:
   - 152351343 | 1 | Great Value Swiss Deli Style Sliced Cheese, 8 oz | Swiss cheese
   - 24269854 | 1 | Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks | butter
+  - 225989296 | 1 | Seattle Sourdough Sandwich Round Bread Loaf, 24 oz | sourdough round
 hidden: true
 ---
 ## Ingredients

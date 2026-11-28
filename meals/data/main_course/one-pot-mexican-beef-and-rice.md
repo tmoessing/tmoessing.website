@@ -28,6 +28,7 @@ walmart:
   - 51259361 | 1 | Fresh Green Onions, 1 Bunch | green onions
   - 10452371 | 2 | Great Value Finely Shredded Mozzarella, 8 oz | mozzarella cheese
   - 160597260 | 1 | Fresh Cilantro, 1 Bunch | cilantro
+  - 10315102 | 1 | Great Value Extra Virgin Olive Oil, 17 fl oz | olive oil
 ---
 
 ## Ingredients

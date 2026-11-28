@@ -13,6 +13,7 @@ tags:
   - Grandma
 walmart:
   - 178881423 | 1 | Choice Angus Flank Steak Tray | flank steak
+  - 374562233 | 1 | Mr. Yoshida's Original Gourmet Sauce, 86 fl oz | Mr. Yoshida's sauce
 hidden: true
 ---
 ## Ingredients
