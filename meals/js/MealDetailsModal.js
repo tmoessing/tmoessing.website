@@ -7,7 +7,7 @@
  *   window.__openMealDetails for cards to call. It also keeps the URL hash in
  *   sync (meal-library/#slug) so recipes are shareable and deep-linkable.
  * - lockScroll() / unlockScroll(): ref-counted body scroll lock, shared with
- *   the picker so stacked modals don't unlock the page prematurely.
+ *   the week planner so stacked modals don't unlock the page prematurely.
  */
 import {
   esc,
@@ -99,8 +99,8 @@ function nutritionRow(meal) {
 }
 
 function detailsHTML(meal) {
-  const cover = meal.image || placeholderDataURI(meal.title);
-  const fallback = placeholderDataURI(meal.title);
+  const cover = meal.image || placeholderDataURI(meal);
+  const fallback = placeholderDataURI(meal);
 
   const cats = (meal.categories || [])
     .map((c) => `<span class="skill-tag category-tag">${esc(c)}</span>`)

@@ -4,6 +4,7 @@
  * Each GAMES entry:
  *   id           unique slug (string)
  *   title        display name (string)
+ *   aka          alternate name shown under the title, e.g. "Oh H*ll" (optional; searchable)
  *   cover        image path (e.g. "../games/images/catan.jpg"); "" => generated placeholder
  *   description  short blurb (string)
  *   minPlayers   number
@@ -19,6 +20,7 @@
  *   bggUrl       BoardGameGeek URL (string)
  *   howToPlay    { goal: string, steps: string[] } short rules summary
  *   howToPlayVideo YouTube 'How to Play' URL (string)
+ *   favorite     true for a personal favorite (optional; shows a star + Favorites filter)
  *
  * Data here is author-controlled static content. If untrusted data is ever
  * added, switch user-facing fields from innerHTML to textContent.
@@ -83,6 +85,7 @@ export const GAMES = [
   },
   {
     id: "catan",
+    favorite: true,
     title: "Catan",
     cover: "../games/images/catan.jpg",
     description: "Players collect and trade resources like lumber, brick, wool, grain, and ore to build roads, settlements, and cities on the modular island of Catan. Includes the 5-6 Player Expansion.",
@@ -119,7 +122,7 @@ export const GAMES = [
     categories: ["Party", "Word Game", "Family", "Competitive"],
     complexity: "easy",
     bggWeight: 1.25,
-    tags: ["Team Play", "Clue Giving", "Word Association", "Deduction"],
+    tags: ["Team Play", "Clue Giving", "Word Association", "Deduction", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/178900/codenames",
     howToPlay: {
       goal: "Be the first team to find all of your agents on the 5×5 grid of words.",
@@ -320,7 +323,7 @@ export const GAMES = [
     categories: ["Party", "Word Game", "Competitive", "Family"],
     complexity: "easy",
     bggWeight: 1.2,
-    tags: ["Team Play", "Clue Giving", "Real-Time", "Communication"],
+    tags: ["Team Play", "Clue Giving", "Real-Time", "Communication", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/1111/taboo",
     howToPlay: {
       goal: "Score more points than the other team by getting your teammates to guess words.",
@@ -335,6 +338,7 @@ export const GAMES = [
   },
   {
     id: "trial-by-trolley",
+    favorite: true,
     title: "Trial by Trolley",
     cover: "../games/images/trial-by-trolley.jpg",
     description: "A dark-humor party game from Cyanide & Happiness where players must argue why the trolley driver should spare their track and run over the other team instead.",
@@ -445,7 +449,7 @@ export const GAMES = [
     categories: ["Party", "Bluffing", "Competitive"],
     complexity: "easy",
     bggWeight: 1.2,
-    tags: ["Humor", "Writing", "Guessing", "Deduction", "Paper and Pencil"],
+    tags: ["Humor", "Writing", "Guessing", "Deduction", "Paper and Pencil", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/10934/the-game-of-things",
     howToPlay: {
       goal: "Score points by guessing who wrote which answer, and by staying hidden.",
@@ -560,6 +564,7 @@ export const GAMES = [
   },
   {
     id: "we-didnt-playtest-this-at-all",
+    favorite: true,
     "title": "We Didn't Playtest This at All",
     cover: "../games/images/we-didnt-playtest-this-at-all.jpg",
     description: "An intentionally ridiculous and chaotic card game where your sole objective is to win. Includes the Legacies expansion, allowing players to write on cards, apply stickers, and permanently alter the game in search of ridiculous victory.",
@@ -695,7 +700,7 @@ export const GAMES = [
     categories: ["Social Deduction", "Bluffing", "Party"],
     complexity: "medium",
     bggWeight: 1.38,
-    tags: ["Hidden Roles", "Player Elimination", "Team Play", "Deduction", "Narrator Needed", "No Props Needed", "Classic"],
+    tags: ["Hidden Roles", "Player Elimination", "Team Play", "Deduction", "Narrator Needed", "No Props Needed", "Classic", "Zoom Friendly"],
     bggUrl: "https://boardgamegeek.com/boardgame/925/werewolf",
     howToPlay: {
       goal: "Citizens win by eliminating all the Mafia. The Mafia wins once they equal or outnumber the citizens.",
@@ -745,7 +750,7 @@ export const GAMES = [
     categories: ["Party", "Social Deduction"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Deduction", "Roleplay", "Observation", "No Props Needed", "Icebreaker"],
+    tags: ["Deduction", "Roleplay", "Observation", "No Props Needed", "Icebreaker", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "As the Psychiatrist, figure out the “condition” the whole group secretly shares.",
@@ -770,7 +775,7 @@ export const GAMES = [
     categories: ["Party", "Word Game"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Word Guessing", "Deduction", "No Props Needed", "Icebreaker", "Communication"],
+    tags: ["Word Guessing", "Deduction", "No Props Needed", "Icebreaker", "Communication", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Figure out the secret verb the group chose.",
@@ -845,7 +850,7 @@ export const GAMES = [
     categories: ["Party", "Word Game", "Competitive"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Team Play", "Charades", "Clue Giving", "Real-Time", "Memory", "Paper and Pencil"],
+    tags: ["Team Play", "Charades", "Clue Giving", "Real-Time", "Memory", "Paper and Pencil", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Score the most points for your team across three rounds.",
@@ -870,7 +875,7 @@ export const GAMES = [
     categories: ["Party", "Competitive"],
     complexity: "easy",
     bggWeight: null,
-    tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker"],
+    tags: ["Memory", "Team Play", "Secret Names", "Paper and Pencil", "Icebreaker", "Zoom Friendly"],
     bggUrl: "",
     howToPlay: {
       goal: "Recruit everyone onto your team by figuring out who wrote which name.",
@@ -882,5 +887,779 @@ export const GAMES = [
       ]
     },
     howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+name+game+party+game"
+  },
+  {
+    id: "azul",
+    title: "Azul",
+    cover: "../games/images/azul.jpg",
+    description: "A gorgeous tile-drafting game where players compete as artisans decorating a Portuguese palace wall, grabbing colorful tiles from shared factories and arranging them into scoring patterns.",
+    minPlayers: 2,
+    maxPlayers: 4,
+    playtimeMin: 30,
+    playtimeMax: 45,
+    categories: ["Strategy", "Board Game", "Family", "Competitive"],
+    complexity: "medium",
+    bggWeight: 1.77,
+    tags: ["Tile Drafting", "Pattern Building", "Set Collection", "Abstract", "Hate Drafting"],
+    bggUrl: "https://boardgamegeek.com/boardgame/230802/azul",
+    howToPlay: {
+      goal: "Score the most points by completing rows, columns, and color sets on your wall.",
+      steps: [
+        "On your turn, take all tiles of one color from a factory display (the rest slide to the center) or all of one color from the center pile.",
+        "Place the tiles into one of your five pattern lines. Each line holds only one color, and any tiles that don't fit fall to your floor line as penalties.",
+        "When every tile has been taken, completed pattern lines move one tile to your wall and score points for each tile it touches in a row or column.",
+        "The game ends after a round in which someone finishes a full horizontal row. Add bonuses for complete rows, columns, and colors; highest score wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=dXuucWGrFMQ"
+  },
+  {
+    id: "here-to-slay",
+    title: "Here to Slay",
+    cover: "../games/images/here-to-slay.jpg",
+    description: "A fantasy card game from the creators of Unstable Unicorns where you build a party of heroes, roll dice to slay monsters, and sabotage your friends along the way.",
+    minPlayers: 2,
+    maxPlayers: 6,
+    playtimeMin: 30,
+    playtimeMax: 60,
+    categories: ["Card Game", "Strategy", "Dice", "Competitive"],
+    complexity: "medium",
+    bggWeight: 1.69,
+    tags: ["Fantasy", "Dice Rolling", "Take That", "Hand Management", "Variable Player Powers"],
+    bggUrl: "https://boardgamegeek.com/boardgame/299252/here-to-slay",
+    howToPlay: {
+      goal: "Be the first to slay 3 monsters, or to build a party with 6 different hero classes.",
+      steps: [
+        "Everyone starts with a Party Leader card that sets their class and gives a special power.",
+        "On your turn you get 3 action points. Spend them to draw a card, play a Hero or Item, roll to use a Hero's ability, or spend all 3 to attack a monster.",
+        "Most actions involve rolling 2 dice against a target number. Other players can play Modifier cards to boost or wreck your roll, or Challenge cards to block a card you're playing.",
+        "Slaying a monster requires the right heroes in your party plus a successful roll. The first player to hit either win condition wins immediately."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=gsPZoEJyYMM"
+  },
+  {
+    id: "5-second-rule",
+    title: "5 Second Rule",
+    cover: "../games/images/5-second-rule.jpg",
+    description: "A fast, frantic party game where you have to name three things in a category before the twisty timer runs out. Sounds easy... until the pressure hits and your brain goes blank.",
+    minPlayers: 3,
+    maxPlayers: 6,
+    playtimeMin: 20,
+    playtimeMax: 30,
+    categories: ["Party", "Family", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: 1.1,
+    tags: ["Timer", "Rapid Fire", "Name Three", "Real-Time", "Under Pressure", "Zoom Friendly"],
+    bggUrl: "https://boardgamegeek.com/boardgame/86073/5-second-rule",
+    howToPlay: {
+      goal: "Be the first player to move your pawn to the finish by answering prompts under pressure.",
+      steps: [
+        "The player to your left reads a card aloud, like “Name 3 types of cheese,” and flips the 5-second timer.",
+        "Shout out three valid answers before the timer runs out. Answers already given this turn don't count.",
+        "Get all three in time and move forward. Fail, and the next player gets the same prompt, but they can't repeat any of your answers.",
+        "Special cards like Pass and Switch let you dodge or redirect a tough prompt. First to the finish wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=XUvK5lE4Mj4"
+  },
+  {
+    id: "buzzword",
+    title: "Buzzword",
+    cover: "../games/images/buzzword.jpg",
+    description: "A team party game where every clue on a card secretly contains the same hidden word. Race the timer to shout out the full answers and crack the buzzword.",
+    minPlayers: 4,
+    maxPlayers: 12,
+    playtimeMin: 45,
+    playtimeMax: 45,
+    categories: ["Party", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: 1.17,
+    tags: ["Team Play", "Clue Giving", "Timer", "Guessing", "Wordplay", "Zoom Friendly"],
+    bggUrl: "https://boardgamegeek.com/boardgame/8690/buzzword",
+    howToPlay: {
+      goal: "Score the most points for your team by guessing answers that all contain the round's buzzword.",
+      steps: [
+        "Split into two teams. The reader draws a card and announces the buzzword, like “Fire,” but keeps the clues secret.",
+        "Flip the 45-second timer. The reader gives clues one at a time; the team shouts the full answer, which always includes the buzzword (e.g. “A truck that puts out fires” → Fire Truck).",
+        "Each correct answer scores points. Pass if you're stuck and move to the next clue.",
+        "When time runs out, the other team can steal any unanswered clues. Play alternates; highest score at the end wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=ulAXZhCd2YI"
+  },
+  {
+    id: "why-are-you-like-this",
+    title: "Why Are You Like This?",
+    cover: "../games/images/why-are-you-like-this.jpg",
+    description: "An Exploding Kittens party game where teammates talk, draw, or act out secret words, but each round's challenge card throws in a ridiculous twist that makes it way harder.",
+    minPlayers: 2,
+    maxPlayers: 99,
+    playtimeMin: 15,
+    playtimeMax: 15,
+    categories: ["Party", "Word Game", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Team Play", "Charades", "Drawing", "Clue Giving", "Timer", "Humor"],
+    bggUrl: "https://boardgamegeek.com/boardgame/425079/why-are-you-like-this",
+    howToPlay: {
+      goal: "Get your team to guess as many secret words as possible before time runs out.",
+      steps: [
+        "Split into teams. On your turn, draw a challenge card; it sets how you must give clues, plus a silly twist or restriction.",
+        "Start the timer and work through word cards, talking, drawing, or gesturing as the challenge allows.",
+        "Every word your team guesses before time is up scores a point. Break the challenge's rule and that word doesn't count.",
+        "Pass to the next team and keep rotating. Playing as a couple? Use the two-player Date Night mode."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/watch?v=IzGRFHWCGhA"
+  },
+  {
+    id: "swedish-twister",
+    title: "Swedish Twister",
+    cover: "../games/images/swedish-twister.jpg",
+    description: "A no-equipment balance game, like Ninja for your feet. Everyone's feet stay linked in a circle while you take turns stretching to tag someone else's foot. Wobble, fall, or touch the floor and you're out.",
+    minPlayers: 4,
+    maxPlayers: 15,
+    playtimeMin: 5,
+    playtimeMax: 15,
+    categories: ["Party", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Physical", "Balance", "Player Elimination", "Last One Standing"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the last player still standing.",
+      steps: [
+        "Stand in a tight circle, shoulder to shoulder, with each foot touching your neighbors' feet.",
+        "The first player moves one foot to touch any other player's foot. That player must then move the foot that was touched to tag someone else, and so on.",
+        "Once a foot is placed it stays put: no pivoting, sliding, or readjusting. You can lean on each other with your hands for balance.",
+        "If you fall, can't reach, or touch the floor with anything but your feet, you're out. Rules vary by group, so agree on house rules first."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=swedish+twister+party+game+feet+circle"
+  },
+  {
+    id: "dtr",
+    title: "DTR (Determine the Relationship)",
+    cover: "../games/images/dtr.jpg",
+    description: "An improv guessing game. Two players leave the room while everyone else comes up with two secret relationships, like teacher and student or cop and speeder. The pair acts out a scene together, each guessing who they're playing and who the other person is.",
+    minPlayers: 4,
+    maxPlayers: 20,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Improv", "Roleplay", "Acting", "Guessing", "No Props Needed", "Humor", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Act out the scene and figure out the relationship: your role and your partner's.",
+      steps: [
+        "Two players leave the room.",
+        "Everyone else comes up with two relationships, like teacher and student, parent and child, or police officer and speeder.",
+        "Bring one player back in and tell them both relationships. They pick one and secretly choose which role they'll play.",
+        "Bring the second player back. The two act out a scene together, staying in character.",
+        "Each player tries to guess the relationship and who the other person is playing. Then swap in a new pair."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=determine+the+relationship+improv+game"
+  },
+  {
+    id: "moessing-bridge",
+    title: "Moessing Bridge",
+    aka: "Oh H*ll",
+    cover: "../games/images/moessing-bridge.jpg",
+    description: "The family's take on Oh H*ll, a classic trick-taking game with the exact same rules. Every round you bid exactly how many tricks you'll win, and you only score if you nail it. The hand size climbs and falls each round, and the dealer can't let the bids add up to an even split, so somebody always gets burned.",
+    minPlayers: 3,
+    maxPlayers: 7,
+    playtimeMin: 45,
+    playtimeMax: 90,
+    categories: ["Card Game", "Competitive", "Strategy", "Family"],
+    complexity: "medium",
+    bggWeight: 1.73,
+    tags: ["Classic Deck", "Trick-Taking", "Bidding", "Trump Suit", "Oh H*ll"],
+    bggUrl: "https://boardgamegeek.com/boardgame/1115/oh-hell",
+    howToPlay: {
+      goal: "Score the most points by winning exactly the number of tricks you bid each round.",
+      steps: [
+        "Use a standard 52-card deck, aces high. Round one deals 1 card each; add a card every round up to the max (or as many as the deck allows), then count back down to 1.",
+        "After dealing, flip the next card face up. Its suit is trump for the round. If no cards are left, play the round with no trump.",
+        "Starting left of the dealer, each player bids how many tricks they'll take. The dealer bids last and can't make the total bids equal the number of tricks.",
+        "The player left of the dealer leads. Follow suit if you can; if you can't, play any card, including a trump. The highest trump wins the trick, or the highest card of the led suit if no trump was played. The winner leads next.",
+        "Hit your bid exactly and score 10 plus 1 per trick (common house scoring). Miss by any amount, over or under, and score nothing. Highest total after the last round wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+oh+hell+card+game"
+  },
+  {
+    id: "speed",
+    title: "Speed",
+    cover: "../games/images/speed.jpg",
+    description: "A head-to-head race with a standard deck and zero turns. Both players slam cards onto the two center piles at the same time, one rank higher or lower, and the first to get rid of every card wins. Fast hands beat big brains here.",
+    minPlayers: 2,
+    maxPlayers: 2,
+    playtimeMin: 5,
+    playtimeMax: 10,
+    categories: ["Card Game", "Competitive", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Speed", "Shedding", "Two Player"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to play every one of your cards.",
+      steps: [
+        "Deal 20 cards to each player: 15 face down as your draw pile, plus 5 in your hand. Put two face-down piles of 5 off to the side and two face-down cards in the center.",
+        "Both players flip a center card at the same time, and then it's on. There are no turns.",
+        "Play a card from your hand onto either center pile if it's one rank higher or lower than the top card. Aces wrap both ways, so King-Ace-2 works.",
+        "Draw from your pile to keep 5 cards in your hand. If neither player can move, both flip a card from the side piles onto the center piles together. When the side piles run out, shuffle the center piles to make new ones.",
+        "When your hand and draw pile are empty, you win."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+speed+card+game"
+  },
+  {
+    id: "james-bond",
+    title: "James Bond",
+    cover: "../games/images/james-bond.jpg",
+    description: "A chaotic real-time matching game. Everyone races at once, swapping cards with the four in the middle to turn each of their 4-card piles into four of a kind. The catch is you can only hold one pile at a time, so you'd better remember what's in the others.",
+    minPlayers: 2,
+    maxPlayers: 4,
+    playtimeMin: 5,
+    playtimeMax: 15,
+    categories: ["Card Game", "Competitive", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Speed", "Set Collection", "Memory"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to turn every one of your piles into four of a kind and shout \"James Bond!\"",
+      steps: [
+        "Deal 4 cards face up in the middle. Split the rest into face-down piles of 4: 6 piles each with 2 players, 4 with 3 players, or 3 with 4 players.",
+        "On \"go,\" everyone plays at once. Pick up one of your piles and swap cards with the middle, one for one.",
+        "You can only hold one pile at a time. Set it down face down before picking up another.",
+        "Once every pile you have is four of a kind, yell \"James Bond!\" and flip them all face up to prove it. If you're wrong, you're out of that round."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+james+bond+card+game"
+  },
+  {
+    id: "kemps",
+    title: "Kemps",
+    cover: "../games/images/kemps.jpg",
+    description: "A team card game built on secret signals. You and your partner agree on a sneaky sign, then everyone races to swap cards for four of a kind. When you've got it, flash the signal so your partner can yell \"Kemps!\" before the other team catches on and calls you out.",
+    minPlayers: 4,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Bluffing", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Teams", "Secret Signals", "Real-Time", "Set Collection"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Signal your partner when you have four of a kind so they can call \"Kemps!\" without the other team catching your signal first.",
+      steps: [
+        "Split into teams of two, with partners sitting across from each other. Each team picks a secret signal (a wink, a cough, a scratch) away from everyone else.",
+        "Deal 4 cards to each player and 4 face up in the middle. On \"go,\" everyone swaps with the middle at once, one card for one, always keeping 4 in hand.",
+        "When nobody wants the middle cards, the dealer clears them and deals 4 fresh ones.",
+        "Got four of a kind? Give your signal. If your partner sees it, they yell \"Kemps!\" and point at you. If you really have it, your team scores; if not, you lose a point.",
+        "If you catch the other team's signal, yell \"Stop Kemps!\" (or \"Counter-Kemps!\") at the player with four of a kind. Call it right and your team scores instead. Play to an agreed score, and fake signals are fair game."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+kemps+card+game"
+  },
+  {
+    id: "spoons",
+    title: "Spoons",
+    cover: "../games/images/spoons.jpg",
+    description: "Pass cards around the circle as fast as you can, hunting for four of a kind. There's one fewer spoon than players in the middle, and the moment someone grabs one, it's a free-for-all. Whoever ends up empty-handed takes a letter.",
+    minPlayers: 3,
+    maxPlayers: 13,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Set Collection", "Grab", "Elimination"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Don't be the one left without a spoon. Avoid spelling S-P-O-O-N.",
+      steps: [
+        "Put spoons in the middle, one fewer than the number of players. Deal 4 cards to each player and give the rest of the deck to the dealer.",
+        "The dealer draws a card and passes one card face down to the left. Everyone keeps passing one card left at the same time, always holding 4. The last player discards into a pile.",
+        "When you have four of a kind, grab a spoon. You can grab it quietly to see how long it takes the others to notice.",
+        "As soon as anyone takes a spoon, everyone else can grab one too. The player left without a spoon gets a letter: S, then P, and so on.",
+        "Spell SPOON and you're out. Remove a spoon each round, and the last player standing wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+spoons+card+game"
+  },
+  {
+    id: "nertz",
+    title: "Nertz",
+    cover: "../games/images/nertz.jpg",
+    description: "Competitive solitaire with no turns. Everyone plays their own deck at the same time, racing to build shared foundation piles in the middle and empty their Nertz pile. It's frantic, loud, and one of the best games you can play with a stack of standard decks.",
+    minPlayers: 2,
+    maxPlayers: 8,
+    playtimeMin: 20,
+    playtimeMax: 45,
+    categories: ["Card Game", "Competitive"],
+    complexity: "medium",
+    bggWeight: null,
+    tags: ["Classic Deck", "Real-Time", "Solitaire", "One Deck Per Player", "Pounce"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Empty your Nertz pile first while getting as many cards as possible into the center. First to 100 points wins.",
+      steps: [
+        "Each player needs their own deck with a different back. Deal yourself a 13-card Nertz pile (top card face up) and 4 face-up cards in a row as your work piles. The rest of your deck is your stock.",
+        "On \"go,\" everyone plays at once. Any ace goes to the middle to start a shared foundation, which anyone can build up in suit from ace to king.",
+        "On your work piles, build down in alternating colors, solitaire style. You can move cards from your Nertz pile, your waste pile, or other work piles there.",
+        "Flip your stock three cards at a time onto a waste pile, and play the top card wherever it fits.",
+        "When your Nertz pile is empty, yell \"Nertz!\" and the hand ends. Score +1 for each of your cards in the center and -2 for each card left in your Nertz pile."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+nertz+card+game"
+  },
+  {
+    id: "egyptian-ratscrew",
+    title: "Egyptian Ratscrew",
+    cover: "../games/images/egyptian-ratscrew.jpg",
+    description: "A slapping game of reflexes and nerve. Players flip cards into the middle one at a time, and the first to slap a double or sandwich takes the pile. Face cards start a challenge that can swing the whole game, so keep your eyes up and your hands ready.",
+    minPlayers: 2,
+    maxPlayers: 6,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Card Game", "Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Slapping", "Real-Time", "Reflexes"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Win every card in the deck.",
+      steps: [
+        "Deal out the whole deck face down. Don't look at your cards.",
+        "Going around, each player flips the top card of their pile face up onto the center pile.",
+        "When someone flips a face card or ace, the next player has a set number of chances to flip a face card or ace of their own: 4 for an ace, 3 for a king, 2 for a queen, 1 for a jack. If they fail, the player who started the challenge takes the pile. If they succeed, the challenge passes to the next player.",
+        "Anyone can slap the pile on a double (two of the same rank in a row) or a sandwich (same rank with one card between). The first hand down takes the whole pile. A wrong slap costs you a card, which goes under the pile.",
+        "If you run out of cards, you can still slap your way back in. Whoever ends up with every card wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+egyptian+ratscrew"
+  },
+  {
+    id: "bs",
+    title: "BS",
+    cover: "../games/images/bs.jpg",
+    description: "A bluffing game also known as Cheat or I Doubt It. Play cards face down and say what they are, truthfully or not. Anyone can call \"BS!\" If you're caught lying, you take the whole pile, but call it wrong and the pile is yours.",
+    minPlayers: 3,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Card Game", "Bluffing", "Party", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Classic Deck", "Bluffing", "Shedding", "Lying", "Cheat"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the first to get rid of all your cards.",
+      steps: [
+        "Deal out the whole deck. With more than 6 players, shuffle in a second deck.",
+        "The first player plays one or more cards face down and says they're aces. The next player plays and says they're 2s, then 3s, and so on up to kings, then back to aces.",
+        "You must play at least one card on your turn, whether or not you have the right rank. Lie if you need to.",
+        "Anyone can call \"BS!\" right after a play. Flip the cards: if the player lied, they take the whole pile. If they told the truth, the caller takes it.",
+        "The first player to empty their hand, and survive the BS calls on their last play, wins."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+bs+card+game"
+  },
+  {
+    id: "ninja",
+    title: "Ninja",
+    cover: "../games/images/ninja.jpg",
+    description: "A no-equipment reflex game. Everyone stands in a circle striking ninja poses, then takes turns making one swift move to slap someone else's hand. Get hit on a hand and you lose it. Lose both and you're out. Last ninja standing wins.",
+    minPlayers: 3,
+    maxPlayers: 15,
+    playtimeMin: 5,
+    playtimeMax: 20,
+    categories: ["Party", "Family", "Competitive"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Physical", "Active", "Reflexes", "Elimination"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Be the last ninja with a hand left.",
+      steps: [
+        "Stand in a circle. On the count of three, everyone shouts \"Ninja!\" and jumps into a pose. Freeze there.",
+        "Going around the circle, each player gets one quick, single motion to try to slap another player's hand. Wherever you end up, freeze there.",
+        "The player being attacked can make one motion to dodge. It must happen during the attack, not after.",
+        "If your hand gets slapped, that hand is out. Put it behind your back. Lose both and you're out of the game.",
+        "Keep going until only one ninja is left. Moving when it isn't your turn (other than dodging) costs you a hand."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+ninja+hand+slap+party+game"
+  },
+  {
+    id: "signs",
+    title: "Signs",
+    cover: "../games/images/signs.jpg",
+    description: "A sneaky circle game. Everyone picks a secret hand sign, and the sign gets passed around the circle by flashing your own sign and then someone else's. One player stands in the middle trying to catch the pass. Get caught and you're it.",
+    minPlayers: 6,
+    maxPlayers: 20,
+    playtimeMin: 10,
+    playtimeMax: 30,
+    categories: ["Party", "Family"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Secret Signals", "Observation", "Sneaky", "Large Group"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pass the sign without getting caught by the player in the middle.",
+      steps: [
+        "Sit in a circle. Everyone picks a simple, unique hand sign, like tugging an ear, a salute, or a thumbs up, and shows it to the group.",
+        "One player goes in the middle as \"it\" and closes their eyes while someone starts the game.",
+        "To pass, do your own sign and then someone else's sign. That person must quickly do their own sign, then pass it to someone else the same way.",
+        "Everyone else keeps doing small fake motions to cover the passes.",
+        "If the player in the middle catches someone doing a sign, they swap places and the caught player becomes it."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=signs+game+circle+party+game+how+to+play"
+  },
+  {
+    id: "triggers",
+    title: "Triggers",
+    cover: "../games/images/triggers.jpg",
+    description: "A hilarious hidden-reaction game. Everyone secretly gets a trigger, like \"every time Jenny smiles, you sneeze,\" and has to react whenever it happens. Hang out, chat, and watch the chaos unfold while you try to crack everyone else's trigger.",
+    minPlayers: 5,
+    maxPlayers: 15,
+    playtimeMin: 15,
+    playtimeMax: 30,
+    categories: ["Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["No Props Needed", "Acting", "Guessing", "Observation", "Humor", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Figure out everyone else's secret trigger while reacting to your own.",
+      steps: [
+        "Sit in a circle. Each player secretly tells the person on their right a trigger: something that happens and how they must react. For example, \"Every time someone says 'okay,' you clap.\"",
+        "Keep triggers secret from everyone else. Start chatting normally, or play another simple game while you hang out.",
+        "Whenever your trigger happens, you must react, every single time.",
+        "When you think you've figured out someone's trigger, call it out. If you're right, they reveal it.",
+        "Keep going until every trigger is cracked. The best triggers are subtle enough to be tricky but happen often enough to be fun."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=triggers+party+game+secret+reaction"
+  },
+  {
+    id: "jackbox-party-pack-1",
+    title: "The Jackbox Party Pack",
+    cover: "../games/images/jackbox-party-pack-1.jpg",
+    description: "Five party games in one (2014): You Don't Know Jack 2015, Fibbage XL, Drawful, Word Spud, and Lie Swatter. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. The one that started it all, with trivia, bluffing and drawing. Lie Swatter even supports up to 100 players.",
+    minPlayers: 1,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia", "Word Game"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: You Don't Know Jack 2015, Fibbage XL, Drawful, Word Spud, Lie Swatter.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+1+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-2",
+    title: "The Jackbox Party Pack 2",
+    cover: "../games/images/jackbox-party-pack-2.jpg",
+    description: "Five party games in one (2015): Fibbage 2, Quiplash XL, Earwax, Bidiots, and Bomb Corp.. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Includes Quiplash XL, the battle of funny answers, and Earwax, where you match sound effects to absurd prompts.",
+    minPlayers: 1,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Word Game"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Fibbage 2, Quiplash XL, Earwax, Bidiots, Bomb Corp..",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+2+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-3",
+    title: "The Jackbox Party Pack 3",
+    cover: "../games/images/jackbox-party-pack-3.jpg",
+    description: "Five party games in one (2016): Quiplash 2, Trivia Murder Party, Guesspionage, Tee K.O., and Fakin' It. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. A fan favorite. Trivia Murder Party turns wrong answers into deadly mini-games, and in Tee K.O. you design T-shirts and battle them out.",
+    minPlayers: 1,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia", "Bluffing"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Quiplash 2, Trivia Murder Party, Guesspionage, Tee K.O., Fakin' It.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+3+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-4",
+    title: "The Jackbox Party Pack 4",
+    cover: "../games/images/jackbox-party-pack-4.jpg",
+    description: "Five party games in one (2017): Fibbage 3, Survive the Internet, Monster Seeking Monster, Bracketeering, and Civic Doodle. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Survive the Internet twists your friends' words out of context, and Bracketeering plays with up to 16.",
+    minPlayers: 2,
+    maxPlayers: 16,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Bluffing"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Fibbage 3, Survive the Internet, Monster Seeking Monster, Bracketeering, Civic Doodle.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+4+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-5",
+    title: "The Jackbox Party Pack 5",
+    cover: "../games/images/jackbox-party-pack-5.jpg",
+    description: "Five party games in one (2018): You Don't Know Jack: Full Stream, Split the Room, Mad Verse City, Zeeple Dome, and Patently Stupid. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Rap battles with robots in Mad Verse City, ridiculous inventions in Patently Stupid, and divisive hypotheticals in Split the Room.",
+    minPlayers: 1,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: You Don't Know Jack: Full Stream, Split the Room, Mad Verse City, Zeeple Dome, Patently Stupid.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+5+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-6",
+    title: "The Jackbox Party Pack 6",
+    cover: "../games/images/jackbox-party-pack-6.jpg",
+    description: "Five party games in one (2019): Trivia Murder Party 2, Push the Button, Role Models, Joke Boat, and Dictionarium. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Push the Button is a social-deduction game about finding the aliens aboard your spaceship, and Trivia Murder Party is back for round two.",
+    minPlayers: 1,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia", "Social Deduction"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Trivia Murder Party 2, Push the Button, Role Models, Joke Boat, Dictionarium.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+6+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-7",
+    title: "The Jackbox Party Pack 7",
+    cover: "../games/images/jackbox-party-pack-7.jpg",
+    description: "Five party games in one (2020): Quiplash 3, The Devils and the Details, Champ'd Up, Talking Points, and Blather 'Round. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. The Devils and the Details is a chaotic co-op game about surviving suburban chores, and Talking Points makes you improvise a presentation on slides you've never seen.",
+    minPlayers: 2,
+    maxPlayers: 8,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Cooperative", "Word Game"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Quiplash 3, The Devils and the Details, Champ'd Up, Talking Points, Blather 'Round.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+7+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-8",
+    title: "The Jackbox Party Pack 8",
+    cover: "../games/images/jackbox-party-pack-8.jpg",
+    description: "Five party games in one (2021): Drawful Animate, The Wheel of Enormous Proportions, Job Job, The Poll Mine, and Weapons Drawn. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Weapons Drawn is a drawing-based murder mystery, Job Job builds interview answers from other players' words, and Drawful now animates.",
+    minPlayers: 2,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Social Deduction", "Trivia"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Drawful Animate, The Wheel of Enormous Proportions, Job Job, The Poll Mine, Weapons Drawn.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+8+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-9",
+    title: "The Jackbox Party Pack 9",
+    cover: "../games/images/jackbox-party-pack-9.jpg",
+    description: "Five party games in one (2022): Fibbage 4, Quixort, Junktopia, Nonsensory, and Roomerang. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Roomerang is a reality-show elimination game, Quixort is team-based trivia sorting, and Fibbage 4 brings back the bluffing.",
+    minPlayers: 1,
+    maxPlayers: 10,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Trivia"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Fibbage 4, Quixort, Junktopia, Nonsensory, Roomerang.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+9+all+games+explained"
+  },
+  {
+    id: "jackbox-party-pack-10",
+    title: "The Jackbox Party Pack 10",
+    cover: "../games/images/jackbox-party-pack-10.jpg",
+    description: "Five party games in one (2023): Tee K.O. 2, Fixy Text, Timejinx, Hypnotorious, and Dodo Re Mi. Play on the TV while everyone uses their phone as a controller, so no extra controllers needed. Dodo Re Mi is a rhythm game where you play in a band, Hypnotorious is a hidden-identity game, and Fixy Text has everyone co-writing the same text at once.",
+    minPlayers: 1,
+    maxPlayers: 9,
+    playtimeMin: 15,
+    playtimeMax: 90,
+    categories: ["Party", "Social Deduction", "Trivia"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Jackbox", "Video Game", "Phones as Controllers", "Play Online", "Audience Mode", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Pick a game from the pack and get the most points, laughs, or votes from your friends.",
+      steps: [
+        "Launch the pack on a TV, console, or computer and pick a game: Tee K.O. 2, Fixy Text, Timejinx, Hypnotorious, Dodo Re Mi.",
+        "Everyone grabs a phone, goes to jackbox.tv, and enters the four-letter room code on screen. No app needed.",
+        "The first player to join is the VIP and starts the game once everyone's in.",
+        "Answer prompts, draw, vote, or bluff on your phone while the TV shows everyone's answers. Player counts vary by game, and extra people can join as the audience to vote.",
+        "Playing long-distance? Share your screen on a video call. Friends join from their own phones with the same room code."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=jackbox+party+pack+10+all+games+explained"
+  },
+  {
+    id: "among-us",
+    title: "Among Us",
+    cover: "../games/images/among-us.jpg",
+    description: "The online social-deduction hit. A crew of players runs tasks around a spaceship while one or more secret impostors sabotage the ship and pick people off. Call emergency meetings, argue about who's sus, and vote someone out before the impostors win.",
+    minPlayers: 4,
+    maxPlayers: 15,
+    playtimeMin: 15,
+    playtimeMax: 60,
+    categories: ["Social Deduction", "Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Video Game", "Play Online", "Hidden Roles", "Cross-Platform", "Zoom Friendly"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Crewmates win by finishing every task or voting out all the impostors. Impostors win by eliminating enough of the crew or sabotaging the ship.",
+      steps: [
+        "Everyone installs Among Us on a phone, PC, or console and joins the same lobby with a room code.",
+        "The game secretly picks one or more impostors. Everyone else is a crewmate.",
+        "Crewmates walk the ship finishing tasks. Impostors fake tasks, sneak through vents, sabotage systems, and eliminate crewmates.",
+        "Find a body or hit the emergency button to call a meeting. Discuss, accuse, and vote someone off the ship, or skip.",
+        "Keep going until one side wins. On a video call, mute during rounds and talk only in meetings."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=how+to+play+among+us+beginners"
+  },
+  {
+    id: "spaceteam",
+    title: "Spaceteam",
+    cover: "../games/images/spaceteam.jpg",
+    description: "A cooperative shouting game for phones. Everyone's screen shows a different panel of absurd controls, but the instructions show up on someone else's screen. Yell commands across the room fast enough to keep your falling-apart spaceship flying.",
+    minPlayers: 2,
+    maxPlayers: 8,
+    playtimeMin: 5,
+    playtimeMax: 20,
+    categories: ["Cooperative", "Party"],
+    complexity: "easy",
+    bggWeight: null,
+    tags: ["Video Game", "Phones as Controllers", "Shouting", "Real-Time", "Same Room"],
+    bggUrl: "",
+    howToPlay: {
+      goal: "Work together to survive as many sectors of space as possible before your ship falls apart.",
+      steps: [
+        "Everyone installs the free Spaceteam app and connects in the same room over the same Wi-Fi or Bluetooth.",
+        "Each player gets a control panel full of weirdly named buttons, sliders, and dials.",
+        "An instruction with a timer appears on your screen, like \"Set Gelatinous Darkbucket to 3,\" but it's usually on someone else's panel. Shout it out!",
+        "If you have the matching control, do it fast. Missed instructions damage the ship.",
+        "Survive a sector to warp to the next, which gets faster and weirder. Watch out for asteroids and wormholes, which make you shake or flip your phone."
+      ]
+    },
+    howToPlayVideo: "https://www.youtube.com/results?search_query=spaceteam+app+gameplay"
   }
 ];

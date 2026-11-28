@@ -1,10 +1,10 @@
 /**
  * Pure helpers for the meal library: HTML escaping, tag colors, a generated
- * cover placeholder, the meal match predicate + sort comparators, prep-time /
- * cost buckets, a tiny Markdown renderer, and Google Calendar helpers
+ * cover placeholder, sort comparators, a tiny Markdown renderer, and Google Calendar helpers
  * (next-week day chooser, ingredient extraction, 5 PM event links).
  * No DOM state, no data imports — safe to reuse anywhere.
  */
+import { illustratedCoverSVG } from "./placeholders.js";
 
 /** Escape a string for safe use inside an HTML attribute or text node. */
 export function esc(str) {
@@ -62,117 +62,19 @@ export function getTagStyle(tagName) {
 }
 
 /**
- * Generate an inline SVG data-URI cover from a meal's title, so the grid and
- * reveal look complete with zero image files. Real photos drop in later by
- * setting `image` on the data — no code change needed.
+ * Inline SVG data-URI cover for a meal with no photo: an illustration for its
+ * course (see placeholders.js), tinted per title. Real photos drop in later by
+ * setting `image` on the data — no code change needed. Accepts a meal object,
+ * or a bare title string (treated as a Main Course).
  */
-export function placeholderDataURI(title) {
-  const t = title || "Meal";
-  let hash = 0;
-  for (let i = 0; i < t.length; i++) hash = t.charCodeAt(i) + ((hash << 5) - hash);
-  const hue = Math.abs(hash) % 360;
-  const initials = t
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-  const svg =
-    `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">` +
-    `<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">` +
-    `<stop offset="0" stop-color="hsl(${hue},58%,52%)"/>` +
-    `<stop offset="1" stop-color="hsl(${(hue + 45) % 360},58%,38%)"/>` +
-    `</linearGradient></defs>` +
-    `<rect width="400" height="400" fill="url(#g)"/>` +
-    `<text x="50%" y="50%" font-family="Segoe UI, system-ui, sans-serif" font-size="150" ` +
-    `font-weight="700" fill="rgba(255,255,255,0.92)" text-anchor="middle" ` +
-    `dominant-baseline="central">${esc(initials)}</text></svg>`;
-  return "data:image/svg+xml," + encodeURIComponent(svg);
-}
-
-/* ---------- shuffle ---------- */
-
-/** Fisher-Yates shuffle. Returns a new array. */
-export function shuffle(list) {
-  const arr = [...list];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-/* ---------- filter buckets ---------- */
-
-/** Resolve a time filter into a { lo, hi } minute bucket, or null for "any". */
-export function timeBucket(filters) {
-  switch (filters.time) {
-    case "u15": return { lo: 0, hi: 15 };
-    case "15-30": return { lo: 15, hi: 30 };
-    case "30-60": return { lo: 30, hi: 60 };
-    case "60+": return { lo: 60, hi: Infinity };
-    case "custom": {
-      const lo = Number.isFinite(filters.timeLo) ? filters.timeLo : 0;
-      const hi = Number.isFinite(filters.timeHi) ? filters.timeHi : Infinity;
-      return { lo, hi };
-    }
-    default: return null; // "any"
-  }
-}
-
-/** Resolve a cost filter into a { lo, hi } dollar bucket, or null for "any". */
-export function costBucket(filters) {
-  switch (filters.cost) {
-    case "budget": return { lo: 0, hi: 8 };
-    case "u10": return { lo: 0, hi: 10 };
-    case "10-20": return { lo: 10, hi: 20 };
-    case "20+": return { lo: 20, hi: Infinity };
-    case "custom": {
-      const lo = Number.isFinite(filters.costLo) ? filters.costLo : 0;
-      const hi = Number.isFinite(filters.costHi) ? filters.costHi : Infinity;
-      return { lo, hi };
-    }
-    default: return null; // "any"
-  }
-}
-
-/**
- * Does a meal satisfy the current filter state?
- * time: total minutes fall inside the bucket.
- * cost: estimatedCost falls inside the bucket.
- * servings: meal serves at least the requested number.
- * categories: OR — meal has at least one selected category (empty set => any).
- */
-export function matchMeal(meal, filters) {
-  const t = timeBucket(filters);
-  if (t) {
-    const mins = totalMinutes(meal);
-    if (!(mins >= t.lo && mins <= t.hi)) return false;
-  }
-
-  const c = costBucket(filters);
-  if (c) {
-    const cost = num(meal.estimatedCost);
-    if (!(cost >= c.lo && cost <= c.hi)) return false;
-  }
-
-  if (filters.servings && filters.servings !== "any") {
-    const need = Number(filters.servings);
-    if (!(num(meal.servings) >= need)) return false;
-  }
-
-  if (filters.categories && filters.categories.size > 0) {
-    const has = (meal.categories || []).some((cat) => filters.categories.has(cat));
-    if (!has) return false;
-  }
-
-  return true;
+export function placeholderDataURI(meal) {
+  const m = typeof meal === "string" ? { title: meal } : meal || {};
+  return "data:image/svg+xml," + encodeURIComponent(illustratedCoverSVG(m));
 }
 
 /* ---------- sorting ---------- */
 
-/** Return a new, sorted array. key: alpha | time | cost | servings | random. */
+/** Return a new, sorted array. key: alpha | time | cost | servings. */
 export function sortMeals(meals, key) {
   const arr = [...meals];
   switch (key) {
@@ -185,8 +87,6 @@ export function sortMeals(meals, key) {
     case "servings":
       arr.sort((a, b) => num(a.servings) - num(b.servings));
       break;
-    case "random":
-      return shuffle(arr);
     case "alpha":
     default:
       arr.sort((a, b) => String(a.title).localeCompare(String(b.title)));

@@ -10,13 +10,14 @@ import {
   playersLabel,
   playtimeLabel,
   complexityBadge,
+  favoriteStar,
   esc
 } from "../filters.js";
 import { icon } from "../icons.js";
 
 export function createGameCard(game) {
   const card = document.createElement("div");
-  card.className = "game-card";
+  card.className = game.favorite ? "game-card is-favorite" : "game-card";
   card.dataset.id = game.id;
 
   const cover = game.cover || placeholderDataURI(game.title);
@@ -36,7 +37,8 @@ export function createGameCard(game) {
     </div>
     <div class="game-card-body">
       <div class="game-card-main-info">
-        <h3 class="game-card-title">${esc(game.title)}</h3>
+        <h3 class="game-card-title">${favoriteStar(game)}${esc(game.title)}</h3>
+        ${game.aka ? `<div class="game-card-aka">aka ${esc(game.aka)}</div>` : ""}
         <div class="game-meta-row">
           <span class="game-meta">${icon("users")} ${playersLabel(game)} players</span>
           <span class="game-meta">${icon("clock")} ${playtimeLabel(game)}</span>

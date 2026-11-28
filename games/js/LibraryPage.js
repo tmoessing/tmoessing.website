@@ -1,17 +1,20 @@
 /**
  * The game library grid page: renders every game and wires the toolbar
- * (search with tag autocomplete, sort, large-card / small-card / list view) and the
- * Pick-a-Game button. Search, tags and sort are mirrored into the URL so a
- * filtered view can be shared.
+ * (search with tag autocomplete, sort, large-card / small-card / list view),
+ * the Filters wizard (players / duration / category / complexity) and the
+ * Pick-a-Game button, which picks at random from whatever the list shows.
+ * Search, tags and sort are mirrored into the URL so a filtered view can be
+ * shared.
  */
 import { GAMES, CATEGORIES } from "../data/games.js";
 import { createGameCard } from "./components/GameCard.js";
-import { sortGames, esc } from "./filters.js";
-import { openPicker } from "./components/PickerModal.js";
+import { sortGames, matchGame, esc } from "./filters.js";
+import { openFilters, openPick, activeFilterCount } from "./components/PickerModal.js";
 import { icon } from "./icons.js";
 import { readUrlState, writeFilters } from "./urlState.js";
 import { SEARCH_PLACEHOLDER } from "./components/SearchBox.js";
 import { VIEW_OPTIONS } from "./components/ViewToggle.js";
+import { PRESETS, isDigital } from "./components/PresetFilters.js";
 
 const VIEW_KEY = "library-view";
 const VIEWS = VIEW_OPTIONS.map((o) => o.view);
@@ -32,6 +35,9 @@ export class LibraryPage {
     this.activeTags = new Set();
     this.selectedSuggestionIndex = 0;
     this.view = readStoredView();
+    this.favoritesOnly = false;
+    this.activePresets = new Set();
+    this.advFilters = null; // state from the Filters wizard, or null
   }
 
   init() {
@@ -55,9 +61,36 @@ export class LibraryPage {
     this.viewBtns.forEach((b) => b.addEventListener("click", () => this.setView(b.dataset.view)));
     this.applyView();
 
-    document.getElementById("pick-a-game-btn").addEventListener("click", () => openPicker());
+    document.getElementById("pick-a-game-btn").addEventListener("click", () => openPick(this.games));
+
+    this.filtersBtn = document.getElementById("filters-btn");
+    this.filtersBadge = document.getElementById("filters-badge");
+    this.filtersBtn.addEventListener("click", () =>
+      openFilters(this.advFilters, this.getFilteredGames({ skipAdvanced: true }), (chosen) => {
+        this.advFilters = activeFilterCount(chosen) ? chosen : null;
+        this.applyFiltersButton();
+        this.updateList();
+      })
+    );
 
     this.sortSel.addEventListener("change", () => this.updateList());
+
+    this.presetBtns = Array.from(document.querySelectorAll(".preset-chip[data-preset]"));
+    this.presetBtns.forEach((b) =>
+      b.addEventListener("click", () => {
+        const id = b.dataset.preset;
+        this.activePresets.has(id) ? this.activePresets.delete(id) : this.activePresets.add(id);
+        this.applyPresetButtons();
+        this.updateList();
+      })
+    );
+
+    this.favBtn = document.getElementById("favorites-toggle");
+    this.favBtn.addEventListener("click", () => {
+      this.favoritesOnly = !this.favoritesOnly;
+      this.applyFavoritesButton();
+      this.updateList();
+    });
 
     this.searchBox.addEventListener("click", () => this.searchInput.focus());
     this.searchInput.addEventListener("input", () => {
@@ -78,7 +111,11 @@ export class LibraryPage {
 
   /** Restore search text, tags and sort from a shared link. */
   applyUrlState() {
-    const { q, tags, sort } = readUrlState();
+    const { q, tags, sort, fav, presets } = readUrlState();
+    presets.forEach((id) => PRESETS.some((p) => p.id === id) && this.activePresets.add(id));
+    this.applyPresetButtons();
+    this.favoritesOnly = fav;
+    this.applyFavoritesButton();
     if (q) {
       this.searchInput.value = q;
       this.searchQuery = q.toLowerCase().trim();
@@ -92,6 +129,27 @@ export class LibraryPage {
     const validSort = sort && [...this.sortSel.options].some((o) => o.value === sort);
     this.sortSel.value = validSort ? sort : "alpha";
     this.renderActiveTags();
+  }
+
+  applyPresetButtons() {
+    this.presetBtns.forEach((b) => {
+      const on = this.activePresets.has(b.dataset.preset);
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
+  }
+
+  applyFiltersButton() {
+    const n = activeFilterCount(this.advFilters);
+    this.filtersBtn.classList.toggle("active", n > 0);
+    this.filtersBtn.setAttribute("aria-pressed", String(n > 0));
+    this.filtersBadge.hidden = n === 0;
+    this.filtersBadge.textContent = n;
+  }
+
+  applyFavoritesButton() {
+    this.favBtn.classList.toggle("active", this.favoritesOnly);
+    this.favBtn.setAttribute("aria-pressed", String(this.favoritesOnly));
   }
 
   onSearchKeydown(e) {
@@ -196,8 +254,21 @@ export class LibraryPage {
     this.searchInput.placeholder = this.activeTags.size > 0 ? "" : SEARCH_PLACEHOLDER;
   }
 
-  getFilteredGames() {
+  getFilteredGames({ skipAdvanced = false } = {}) {
     let filtered = GAMES;
+
+    if (this.advFilters && !skipAdvanced) filtered = filtered.filter((g) => matchGame(g, this.advFilters));
+
+    if (this.favoritesOnly) filtered = filtered.filter((g) => g.favorite);
+
+    // Preset chips: a game must pass every active preset.
+    const presets = PRESETS.filter((p) => this.activePresets.has(p.id));
+    if (presets.length) filtered = filtered.filter((g) => presets.every((p) => p.match(g)));
+
+    // Digital games stay hidden unless a revealing preset is on or the user
+    // is searching / filtering by tag (so searching "jackbox" still works).
+    const reveal = presets.some((p) => p.reveal) || this.searchQuery || this.activeTags.size > 0;
+    if (!reveal) filtered = filtered.filter((g) => !isDigital(g));
 
     // Locked tags: a game must have every one (as a tag or a category).
     if (this.activeTags.size > 0) {
@@ -212,7 +283,7 @@ export class LibraryPage {
     if (this.searchQuery) {
       const q = this.searchQuery;
       filtered = filtered.filter((g) =>
-        [g.title, g.description || "", ...(g.tags || []), ...(g.categories || [])].some((s) =>
+        [g.title, g.aka || "", g.description || "", ...(g.tags || []), ...(g.categories || [])].some((s) =>
           s.toLowerCase().includes(q)
         )
       );
@@ -226,7 +297,9 @@ export class LibraryPage {
     writeFilters({
       q: this.searchInput.value.trim(),
       tags: Array.from(this.activeTags),
-      sort: this.sortSel.value
+      sort: this.sortSel.value,
+      fav: this.favoritesOnly,
+      presets: Array.from(this.activePresets)
     });
     this.render();
   }
@@ -259,8 +332,8 @@ export class LibraryPage {
       empty.className = "picker-empty library-empty";
       empty.innerHTML = `
         <div class="picker-empty-icon">${icon("alert", "icon-hero")}</div>
-        <h3>No games match your search</h3>
-        <p>Try adjusting your query or keywords</p>
+        <h3>${this.favoritesOnly ? "No favorites match your search" : "No games match your search"}</h3>
+        <p>${this.advFilters ? "Try loosening your filters or search" : "Try adjusting your query or keywords"}</p>
       `;
       this.grid.appendChild(empty);
     } else {
