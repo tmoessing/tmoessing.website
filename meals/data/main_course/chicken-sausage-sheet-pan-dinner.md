@@ -20,6 +20,7 @@ walmart:
   - 129692794 | 1 | Great Value Original Breakfast Pork Sausage Links, 12 oz | sausage
   - 44390964 | 1 | Fresh Whole Sweet Potato | sweet potato
   - 735585383 | 1 | Great Value Frozen Broccoli Florets, 12 oz | broccoli
+  - 10315102 | 1 | Great Value Extra Virgin Olive Oil, 17 fl oz | olive oil
 ---
 
 ## Ingredients

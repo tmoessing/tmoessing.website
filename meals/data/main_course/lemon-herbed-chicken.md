@@ -20,6 +20,7 @@ walmart:
   - 41752773 | 3 | Fresh Lemon, Each | lemons
   - 44391100 | 1 | Fresh Garlic Bulb, Each | garlic
   - 3953481268 | 1 | Fresh Thyme, 0.5 oz | fresh thyme
+  - 10315102 | 1 | Great Value Extra Virgin Olive Oil, 17 fl oz | olive oil
 ---
 
 ## Ingredients

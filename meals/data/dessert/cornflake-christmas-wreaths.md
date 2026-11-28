@@ -19,6 +19,7 @@ walmart:
   - 10291399 | 1 | Blue Bonnet Vegetable Oil Spread Sticks, 16 oz | margarine
   - 826143995 | 1 | Jet-Puffed Marshmallows, 12 oz | marshmallows
   - 730184952 | 1 | Great Value Toasted Corn Flakes, 18 oz | corn flakes
+  - 780539148 | 1 | Ferrara Red Hots Cinnamon Candy, 5.5 oz | red hots
 hidden: true
 ---
 ## Ingredients

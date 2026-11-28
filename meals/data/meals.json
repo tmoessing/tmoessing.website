@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T00:53:05.710Z",
+  "generatedAt": "2026-11-28T15:58:57.210Z",
   "categories": [
     "Breakfast",
     "Main Course",
@@ -460,6 +460,12 @@
           "qty": 1,
           "name": "Sweet Baby Ray's Original Barbecue Sauce, 18 oz",
           "for": "BBQ sauce"
+        },
+        {
+          "id": "10451002",
+          "qty": 1,
+          "name": "Great Value Vegetable Oil, 48 fl oz",
+          "for": "oil"
         }
       ],
       "slug": "bbq-chicken-asparagus-fettuccine",
@@ -524,6 +530,18 @@
           "qty": 1,
           "name": "Spice Islands Sesame Seed, 2.2 oz",
           "for": "sesame seeds"
+        },
+        {
+          "id": "23848086",
+          "qty": 1,
+          "name": "Marketside Fresh Baby Spinach, 11 oz",
+          "for": "spinach"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
         }
       ],
       "hidden": true,
@@ -1062,6 +1080,12 @@
           "qty": 1,
           "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
           "for": "butter"
+        },
+        {
+          "id": "225989296",
+          "qty": 1,
+          "name": "Seattle Sourdough Sandwich Round Bread Loaf, 24 oz",
+          "for": "sourdough round"
         }
       ],
       "hidden": true,
@@ -1275,6 +1299,12 @@
           "qty": 1,
           "name": "Great Value Frozen Broccoli Florets, 12 oz",
           "for": "broccoli"
+        },
+        {
+          "id": "10315102",
+          "qty": 1,
+          "name": "Great Value Extra Virgin Olive Oil, 17 fl oz",
+          "for": "olive oil"
         }
       ],
       "slug": "chicken-sausage-sheet-pan-dinner",
@@ -1524,6 +1554,12 @@
           "qty": 1,
           "name": "Great Value Toasted Corn Flakes, 18 oz",
           "for": "corn flakes"
+        },
+        {
+          "id": "780539148",
+          "qty": 1,
+          "name": "Ferrara Red Hots Cinnamon Candy, 5.5 oz",
+          "for": "red hots"
         }
       ],
       "hidden": true,
@@ -1962,6 +1998,12 @@
           "qty": 1,
           "name": "Choice Angus Flank Steak Tray",
           "for": "flank steak"
+        },
+        {
+          "id": "374562233",
+          "qty": 1,
+          "name": "Mr. Yoshida's Original Gourmet Sauce, 86 fl oz",
+          "for": "Mr. Yoshida's sauce"
         }
       ],
       "hidden": true,
@@ -3056,6 +3098,12 @@
           "qty": 1,
           "name": "Fresh Thyme, 0.5 oz",
           "for": "fresh thyme"
+        },
+        {
+          "id": "10315102",
+          "qty": 1,
+          "name": "Great Value Extra Virgin Olive Oil, 17 fl oz",
+          "for": "olive oil"
         }
       ],
       "slug": "lemon-herbed-chicken",
@@ -3362,6 +3410,12 @@
           "qty": 1,
           "name": "Fresh Cilantro, 1 Bunch",
           "for": "cilantro"
+        },
+        {
+          "id": "10315102",
+          "qty": 1,
+          "name": "Great Value Extra Virgin Olive Oil, 17 fl oz",
+          "for": "olive oil"
         }
       ],
       "slug": "one-pot-mexican-beef-and-rice",
@@ -3970,6 +4024,12 @@
           "qty": 1,
           "name": "Great Value Hickory Smoked Bacon, 12 oz",
           "for": "bacon"
+        },
+        {
+          "id": "31016108",
+          "qty": 1,
+          "name": "Morton & Bassett Caraway Seeds, 2 oz",
+          "for": "caraway seeds"
         }
       ],
       "hidden": true,
@@ -4671,6 +4731,89 @@
       "slug": "yorkshire-pudding",
       "body": "## Ingredients\n- 1 cup flour\n- 1 cup milk\n- ½ tsp salt\n- 2 eggs, well beaten\n- ¼ cup butter (or ¼ cup hot roast drippings)\n\n## Instructions\n1. Heat the oven to 400°F. Melt the butter in a 9x13 glass pan in the oven.\n2. Sift the flour and salt together.\n3. Mix the milk and eggs, add to the dry ingredients, and beat with a rotary beater until smooth.\n4. Pour the batter into the hot pan and bake for 30 minutes.\n\n## Tips\n- Making a roast? Use ¼ cup hot drippings instead of the butter.\n\n## Notes\nFrom \"Cook Like Kathleen,\" Grandma Kathleen Moessing's family cookbook.",
       "totalTime": 40
+    },
+    {
+      "title": "Yummy Sweet Potato Casserole",
+      "description": "Buttery mashed sweet potatoes under a crisp brown sugar–pecan crumble.",
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 12,
+      "categories": [
+        "Side Dish",
+        "Vegetarian",
+        "American",
+        "Comfort Food"
+      ],
+      "tags": [
+        "Holiday",
+        "Thanksgiving"
+      ],
+      "recipeSource": "https://www.allrecipes.com/recipe/21261/yummy-sweet-potato-casserole/",
+      "walmart": [
+        {
+          "id": "44390964",
+          "qty": 5,
+          "name": "Fresh Whole Sweet Potato",
+          "for": "sweet potatoes"
+        },
+        {
+          "id": "103020312",
+          "qty": 1,
+          "name": "Great Value White Large Eggs, 12 Count",
+          "for": "eggs"
+        },
+        {
+          "id": "10315162",
+          "qty": 1,
+          "name": "Great Value Pure Granulated Sugar, 4 lb",
+          "for": "sugar"
+        },
+        {
+          "id": "10450114",
+          "qty": 1,
+          "name": "Great Value Whole Vitamin D Milk, Gallon",
+          "for": "milk"
+        },
+        {
+          "id": "24269854",
+          "qty": 1,
+          "name": "Great Value Sweet Cream Salted Butter, 16 oz, 4 Sticks",
+          "for": "butter"
+        },
+        {
+          "id": "21368021",
+          "qty": 1,
+          "name": "Great Value Pure Vanilla Extract, 1 fl oz",
+          "for": "vanilla"
+        },
+        {
+          "id": "10315012",
+          "qty": 1,
+          "name": "Great Value Light Brown Sugar, 32 oz",
+          "for": "brown sugar"
+        },
+        {
+          "id": "10403017",
+          "qty": 1,
+          "name": "Great Value All-Purpose Flour, 5 lb",
+          "for": "flour"
+        },
+        {
+          "id": "432520440",
+          "qty": 1,
+          "name": "Great Value Pecan Halves, 8 oz",
+          "for": "pecans"
+        }
+      ],
+      "nutrition": {
+        "calories": 226,
+        "fat": "11g",
+        "carbs": "30g",
+        "protein": "3g"
+      },
+      "slug": "yummy-sweet-potato-casserole",
+      "body": "## Ingredients\n**Sweet Potatoes**\n- 4 cups peeled, cubed sweet potatoes (about 2 ½ lbs whole)\n- 2 large eggs, beaten\n- ½ cup sugar\n- ½ cup milk\n- 4 tbsp butter, softened\n- ½ tsp vanilla\n- ½ tsp salt\n\n**Pecan Topping**\n- ½ cup packed brown sugar\n- ⅓ cup flour\n- 3 tbsp butter, softened\n- ½ cup chopped pecans\n\n## Instructions\n1. Heat the oven to 325°F.\n2. Cover the sweet potatoes with water in a saucepan and boil until fork-tender, 10–15 minutes. Drain.\n3. Mash the sweet potatoes, then mix in the eggs. Add the sugar, milk, butter, vanilla, and salt and mix until smooth. Spread in a 9x13 baking dish.\n4. Mix the brown sugar and flour, then cut in the butter until it looks like coarse crumbs. Stir in the pecans and sprinkle over the sweet potatoes.\n5. Bake about 30 minutes, until the topping is lightly browned.\n\n## Tips\n- Make it up to 2 days ahead: refrigerate the filling and topping separately, then top and bake (add a few minutes if it's cold).\n- Leftovers keep 3–4 days. Reheat covered at 350°F for 20–25 minutes.\n- Several reviewers say the filling is thin in a 9x13; use more sweet potatoes or an 8x8 pan if you want it thicker.",
+      "totalTime": 60
     }
   ]
 }
